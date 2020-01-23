@@ -1,43 +1,45 @@
 import Link from "next/link";
+import BlogList from "../component/BlogList";
 
-const Intro = () => {
-  return (
-    <>
-      <h1>Notes for web</h1>
-      <p> also known as blogging</p>
-      <p>
-        I love writing in my note book the pen and paper could write for days.
-        Now I will open up and share the thing that have sparked my interests
-      </p>
-    </>
-  );
-};
-
-const PostLink2 = props => {
-  <li>
-    <Link href={`/post?=${props.title}`}>
-      <a>{props.title}</a>
-    </Link>
-  </li>;
-};
-
-const PostLink = props => (
-  <li>
-    <Link href="/p/[id]" as={`/p/${props.id}`}>
-      <a>{props.id}</a>
-    </Link>
-  </li>
-);
-
-export default function Blog() {
+export default function Blog(props) {
   return (
     <div>
       <h1>BLOG IT</h1>
-      <ul>
-        <PostLink id="hello next" />
-        <PostLink id="hello nextNext" />
-        <PostLink id="hello nextNextnext" />
-      </ul>
+      <section>
+        <BlogList allBlog={props.Blogs} />
+      </section>
     </div>
   );
 }
+//https://blog.toukopeltomaa.com/next-js-markdown-blog#gets-posts-from-posts-folder
+
+Blog.getInitialProps = async function() {
+  const siteConfig = await import(`../data/config.json`);
+  const posts = (context => {
+    const keys = context.keys();
+    const values = keys.map(context);
+
+    const data = keys.map((key, index) => {
+      const slug = key
+        .replace(/^.*[\\\/]/, "")
+        .split(".")
+        .slice(0, -1)
+        .join(".");
+
+      const value = values[index];
+      const document = matter(value.default);
+
+      return {
+        document,
+        slug
+      };
+    });
+
+    return data;
+  })(require.context("../POST", true, /\.md$/));
+
+  return {
+    allBlogs: posts,
+    ...siteCongig
+  };
+};
