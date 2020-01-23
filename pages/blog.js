@@ -6,7 +6,7 @@ export default function Blog(props) {
     <div>
       <h1>BLOG IT</h1>
       <section>
-        <BlogList allBlog={props.Blogs} />
+        <BlogList allBlog={props.allBlogs} />
       </section>
     </div>
   );
@@ -40,6 +40,6 @@ Blog.getInitialProps = async function() {
 
   return {
     allBlogs: posts,
-    ...siteCongig
+    ...siteConfig
   };
 };

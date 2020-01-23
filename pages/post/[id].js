@@ -1,3 +1,4 @@
+import * as React from "react";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 
