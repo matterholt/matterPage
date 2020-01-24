@@ -7,6 +7,7 @@
     "@mdx-js/loader": "^1.5.5",
     "@next/mdx": "^9.2.0",
     "@sanity/client": "^0.147.3",
+    "@sanity/image-url": "^0.140.17",
     "gray-matter": "^4.0.2",
     "groq": "^0.147.8",
     "next": "^9.2.0",
