@@ -12,7 +12,7 @@ function Blog(props) {
         ({ _id, title = "", slug = "", _updatedAt = "" }) =>
           slug && (
             <li key={_id}>
-              <Link prefetch href="/post/[slug]" as={`/post/${slug.current}`}>
+              <Link href="/post/[slug]" as={`/post/${slug.current}`}>
                 <a>{title}</a>
               </Link>{" "}
               ({new Date(_updatedAt).toDateString()})
