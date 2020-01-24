@@ -1,4 +1,5 @@
 import Nav from "../component/nav";
+
 function HomePage() {
   return (
     <div>

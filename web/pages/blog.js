@@ -1,47 +1,32 @@
 import React from "react";
-import matter from "gray-matter";
 import Link from "next/link";
+import groq from "groq";
+import client from "../client";
 
-export default class extends React.Component {
-  static async getInitialProps() {
-    const posts = (ctx => {
-      const keys = ctx.keys();
-      const values = keys.map(ctx);
-
-      const data = keys.map((key, index) => {
-        const slug = key
-          .replace(/^.*[\\\/]/, "")
-          .split(".")
-          .slice(0, -1)
-          .join(".");
-        const value = values[index];
-        const document = matter(value);
-        return {
-          document,
-          slug
-        };
-      });
-      return data;
-    })(require.context("../POSTS", true, /\.md$/));
-    return {
-      posts
-    };
-  }
-  render() {
-    return (
-      <>
-        <h1>Posts</h1>
-        {this.props.posts.map(
-          ({
-            document: { data },
-            slug
-          } = (
-            <Link href={{ pathname: "/post", query: { id: slug } }} key={slug}>
-              <h2>{data.title}</h2>
-            </Link>
-          ))
-        )}
-      </>
-    );
-  }
+function Blog(props) {
+  const { posts = [] } = props;
+  return (
+    <div>
+      <h1>Welcome to a blog!</h1>
+      {posts.map(
+        ({ _id, title = "", slug = "", _updatedAt = "" }) =>
+          slug && (
+            <li key={_id}>
+              <Link prefetch href="/post/[slug]" as={`/post/${slug.current}`}>
+                <a>{title}</a>
+              </Link>{" "}
+              ({new Date(_updatedAt).toDateString()})
+            </li>
+          )
+      )}
+    </div>
+  );
 }
+
+Blog.getInitialProps = async () => ({
+  posts: await client.fetch(groq`
+    *[_type == "post" && publishedAt < now()]|order(publishedAt desc)
+  `)
+});
+
+export default Blog;
