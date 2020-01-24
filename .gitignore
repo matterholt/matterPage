@@ -1,6 +1,12 @@
 .DS_STORE
 node_modules
 
+node_modules
+dist
+.next
+out
+.DS_Store
+sanitytutorialblog
 
 // .gitnignore
 # next.js build output
