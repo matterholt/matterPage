@@ -12,8 +12,10 @@ const ItemCard = props => {
       <p>{title}</p>
       <style jsx>{`
         .itemCard {
+          padding: 10px;
           margin: 10px;
-          height: 175px;
+          width: 100px;
+          height: 150px;
           background: hsl(40, 89%, 55%);
           color: #291528;
         }
@@ -49,6 +51,11 @@ function HomePage() {
         <ItemCard title="Blog" svg_icon={<BlogSvg />} />
         <ItemCard title="About" svg_icon={<AboutSvg />} />
       </div>
+      <p className={style.description}>
+        Take a look at some projects or even by blog where I write about the
+        problems that have ran into I want to know more about my careers and
+        other interest than check out the about
+      </p>
       <Nav />
     </main>
   );
