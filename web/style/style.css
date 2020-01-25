@@ -1,0 +1,16 @@
+body {
+    font-family: Helvetica,
+        "Trebuchet MS",
+        Verdana,
+        sans-serif;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    background: #291528;
+    color: #80ddbb;
+
+}
+
+h1 {
+    margin: 0;
+}

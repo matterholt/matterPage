@@ -1,8 +1,10 @@
 import Link from "next/link";
+import style from "./nav_style.module.css";
+
 export default function Nav() {
   return (
-    <nav>
-      <ul>
+    <nav className={style.bar}>
+      <ul className={style.navlist}>
         <li>
           <Link href="/">
             <a>Home</a>
@@ -24,6 +26,12 @@ export default function Nav() {
           </Link>
         </li>
       </ul>
+      <style jsx>{`
+        li {
+          width: 52px;
+          text-align: center;
+        }
+      `}</style>
     </nav>
   );
 }

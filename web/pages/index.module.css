@@ -1,0 +1,49 @@
+.main {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+
+.landing {
+    display: flex;
+    flex-flow: column;
+    background: hsl(40, 89%, 55%);
+    width: 100%;
+}
+
+.title {
+    font-size: 55px;
+    display: flex;
+    flex-flow: column;
+    color: #291528;
+    letter-spacing: 2px;
+    font-family: 'Bangers',
+        cursive;
+
+}
+
+.title_sectionOne {
+    margin: 15px;
+    align-self: flex-start;
+}
+
+.title_sectionTwo {
+    margin: 15px;
+    align-self: flex-end;
+}
+
+.name {
+    color: #291528;
+    margin: 5px 10px;
+}
+
+.description {
+    padding: 15px;
+    line-height: 2;
+}
+
+.cards {
+    height: 750px;
+
+}
