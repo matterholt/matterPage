@@ -1,3 +1,20 @@
+:root {
+    --main-blue: #2e4052;
+    --main-purple: #291528;
+    --light-accent: #ffc857;
+    --light_white-accent: #cfcfcd;
+}
+
+/*
+
+    --main-bg-color: #291528;
+    --light-accent: hsl(40, 89%, 55%);
+    --light-mint: #80ddbb;
+
+*/
+
+
+
 body {
     font-family: Helvetica,
         "Trebuchet MS",
@@ -6,9 +23,8 @@ body {
     display: flex;
     padding: 0;
     margin: 0;
-    background: #291528;
-    color: #80ddbb;
-
+    background: var(--main-blue);
+    color: var(--light_white-accent);
 }
 
 h1 {

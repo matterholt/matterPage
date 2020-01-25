@@ -12,11 +12,15 @@ const ItemCard = props => {
       <p>{title}</p>
       <style jsx>{`
         .itemCard {
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
           padding: 10px;
           margin: 10px;
           width: 100px;
           height: 150px;
-          background: hsl(40, 89%, 55%);
+          background: var(--light-accent);
           color: #291528;
         }
       `}</style>

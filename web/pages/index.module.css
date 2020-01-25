@@ -8,7 +8,7 @@
 .landing {
     display: flex;
     flex-flow: column;
-    background: hsl(40, 89%, 55%);
+    background: var(--light-accent);
     width: 100%;
 }
 
@@ -16,7 +16,7 @@
     font-size: 55px;
     display: flex;
     flex-flow: column;
-    color: #291528;
+    color: var(--main-purple);
     letter-spacing: 2px;
     font-family: 'Bangers',
         cursive;
@@ -34,7 +34,7 @@
 }
 
 .name {
-    color: #291528;
+    color: var(--main-purple);
     margin: 5px 10px;
 }
 
@@ -45,6 +45,8 @@
 
 .cards {
     display: flex;
+    justify-content: space-evenly;
     min-height: 150px;
+    width: 100%;
 
 }

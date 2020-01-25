@@ -2,7 +2,7 @@
      width: 100%;
      padding: 10px 0;
      margin-bottom: 10px;
-     background: hsl(40, 89%, 55%);
+     background: var(--light-accent);
      width: 100%;
  }
 

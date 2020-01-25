@@ -14,13 +14,13 @@ export default function AboutSVG() {
         y="0.5"
         width="136"
         height="191"
-        fill="#291528"
-        stroke="#80DDBB"
+        fill=" var(--main-blue)"
+        stroke="var(--light_white-accent)"
       />
-      <ellipse cx="68" cy="68.5" rx="41" ry="39.5" fill="#F2AE26" />
+      <ellipse cx="68" cy="68.5" rx="41" ry="39.5" fill="var(--light-accent)" />
       <path
         d="M123 175H13.5752C9.38959 155.564 28.1186 112 67.3907 112C106.257 112 123 152.213 123 175Z"
-        fill="#F2AE26"
+        fill="var(--light-accent)"
       />
     </svg>
   );
