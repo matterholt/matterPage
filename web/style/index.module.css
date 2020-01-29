@@ -1,0 +1,23 @@
+@media only screen and (max-width: 550px) {}
+
+.landing {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+
+.name {
+    color: var(--main-blue);
+    margin: 5px 10px;
+}
+
+.description_other {
+    padding: 15px;
+    line-height: 2;
+    background-color: var(--light-accent);
+    color: var(--main-blue);
+    width: 75%;
+    margin: 30px;
+    border-radius: 5px;
+}

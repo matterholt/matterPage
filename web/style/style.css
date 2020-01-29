@@ -5,16 +5,6 @@
     --light_white: #b3b6b7;
 }
 
-/*
-
-    --main-bg-color: #291528;
-    --light-accent: hsl(40, 89%, 55%);
-    --light-mint: #80ddbb;
-
-*/
-
-
-
 body {
     font-family: Helvetica,
         "Trebuchet MS",
@@ -29,4 +19,67 @@ body {
 
 h1 {
     margin: 0;
+}
+
+@font-face {
+    font-family: 'Bangers';
+    src: url("../assets/fonts/Bangers/Bangers-Regular.ttf")
+}
+
+@font-face {
+    font-family: 'Open_Sans';
+    src: url("../assets/fonts/Open_Sans/OpenSans-Regular.ttf")
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../assets/fonts/Roboto/Roboto-Regular.ttf")
+}
+
+
+.main {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    background-color: #2e4052;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffc857' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    flex-flow: column;
+}
+
+.description {
+    padding: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.7px;
+    background-color: var(--light-accent);
+    color: #222;
+    margin: 10px;
+    border-radius: 5px;
+    font-family: 'Roboto',
+        sans-serif;
+}
+
+.description_other {
+    padding: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.7px;
+    background-color: var(--main-blue);
+    color: #a49fa3;
+    margin: 10px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title {
+    display: flex;
+    flex-flow: column;
+    color: var(--light_white);
+    letter-spacing: 2px;
+    font-family: 'Bangers',
+        cursive;
+    margin: 0 25px;
+}
+
+.subtitle {
+    font-family: 'Roboto',
+        sans-serif;
 }
