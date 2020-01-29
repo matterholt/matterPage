@@ -1,3 +1,17 @@
+@media only screen and (max-width: 550px) {
+    .title {
+        font-size: 55px;
+        display: flex;
+        flex-flow: column;
+        color: var(--main-blue);
+        letter-spacing: 2px;
+        font-family: 'Bangers',
+            cursive;
+
+    }
+
+}
+
 .main {
     width: 100vw;
     min-height: 100vh;
@@ -8,15 +22,17 @@
 .landing {
     display: flex;
     flex-flow: column;
-    background: var(--light-accent);
+    background-color: #2e4052;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffc857' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .title {
-    font-size: 55px;
     display: flex;
-    flex-flow: column;
-    color: var(--main-purple);
+    color: var(--light_white);
     letter-spacing: 2px;
     font-family: 'Bangers',
         cursive;
@@ -24,23 +40,40 @@
 }
 
 .title_sectionOne {
+    font-size: 4rem;
     margin: 15px;
     align-self: flex-start;
 }
 
 .title_sectionTwo {
+    font-size: 2rem;
     margin: 15px;
     align-self: flex-end;
 }
 
 .name {
-    color: var(--main-purple);
+    color: var(--main-blue);
     margin: 5px 10px;
 }
 
 .description {
     padding: 15px;
     line-height: 2;
+    letter-spacing: 0.5px;
+    background-color: var(--light-accent);
+    color: #222;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.description_other {
+    padding: 15px;
+    line-height: 2;
+    background-color: var(--light-accent);
+    color: var(--main-blue);
+    width: 75%;
+    margin: 30px;
+    border-radius: 5px;
 }
 
 .cards {

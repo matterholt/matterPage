@@ -7,6 +7,7 @@ function AboutPage() {
       <Nav />
       <main>
         <article>
+          <p></p>
           <p>
             Work as a Validation Technician for 14 years. Started to learn
             Python to help automate task that would slow down and annoy the
