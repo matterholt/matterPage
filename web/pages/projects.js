@@ -1,13 +1,9 @@
-import Nav from "../component/nav";
+import Layout from "../component/Layout";
 
-export default function Project() {
+const Content = () => {
   return (
-    <main className="main">
-      <Nav />
-      <div className="title">
-        <h1>Projects</h1>
-        <h2>Idea have been made</h2>
-      </div>
+    <>
+      <h2>Idea have been made</h2>
       <div className="description">
         <p>
           My projects consist of script and app that aid in my daily work.
@@ -20,6 +16,14 @@ export default function Project() {
           team.
         </p>
       </div>
+    </>
+  );
+};
+
+export default function Project() {
+  return (
+    <main className="main">
+      <Layout children={Content} subtitle="Projects" />
     </main>
   );
 }

@@ -1,10 +1,9 @@
 import Link from "next/link";
-import style from "./nav_style.module.css";
 
 export default function Nav() {
   return (
-    <nav className={style.bar}>
-      <ul className={style.navlist}>
+    <nav className="bar">
+      <ul className="navlist">
         <li>
           <Link href="/">
             <a>Home</a>
@@ -27,6 +26,20 @@ export default function Nav() {
         </li>
       </ul>
       <style jsx>{`
+        .bar {
+          width: 100%;
+          padding: 10px 0;
+          margin-bottom: 10px;
+          background: var(--light-accent);
+          width: 100%;
+        }
+
+        .navlist {
+          list-style: none;
+          display: flex;
+          flex-flow: row;
+          text-align: center;
+        }
         li {
           width: 52px;
           text-align: center;

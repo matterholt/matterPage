@@ -1,5 +1,5 @@
-import Nav from "../component/nav";
 import style from "../style/index.module.css";
+import Layout from "../component/Layout";
 
 import BlogSvg from "../assets/blogSVG.js";
 import AboutSvg from "../assets/aboutSVG";
@@ -75,16 +75,11 @@ const SecondHalf = () => {
 function HomePage() {
   return (
     <main className="main">
-      <Nav />
-
-      <div className="title">
-        <h1>Matterholt</h1>
-        <h2>a Developer and problem solver</h2>
-      </div>
-
       <section>
-        <FirstType />
-        <SecondHalf />
+        <Layout
+          children={<FirstType />}
+          subtitle="a Developer and problem solver"
+        />
       </section>
     </main>
   );

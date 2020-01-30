@@ -69,9 +69,11 @@ h1 {
     font-family: 'Roboto', sans-serif;
 }
 
-.title {
+.header {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
+    justify-content: start;
+    align-items: center;
     color: var(--light_white);
     letter-spacing: 2px;
     font-family: 'Bangers',
@@ -79,7 +81,15 @@ h1 {
     margin: 0 25px;
 }
 
+.title {
+    font-size: 80px;
+    font-weight: bolder;
+    width: 50%;
+}
+
 .subtitle {
     font-family: 'Roboto',
         sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
 }

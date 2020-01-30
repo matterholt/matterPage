@@ -4,7 +4,7 @@
 
 ideas/TODO:
 
-[ ] 01-2020 Add layout page could allow for bet css, and consistence flow. definitely remove duplicated code.
+[X] 01-2020 Add layout page could allow for bet css, and consistence flow. definitely remove duplicated code.
 
 [ ] 01-2020 remove sanity.io and replace with MDX (react markdown)
 
