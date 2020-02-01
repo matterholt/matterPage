@@ -1,8 +1,14 @@
 :root {
-    --main-blue: #2e4052;
-    --main-purple: #291528;
-    --light-accent: #ffc857;
-    --light_white: #b3b6b7;
+    --main_blue: #2e4052;
+    --main_purple: #291528;
+    --light_blue: #b8bacf;
+    --main_orange: #ffcb47;
+}
+
+.temp {
+    --main_red: #663f46;
+    --light-gray: #b3b6b7;
+    --light_white: #e8ebe4;
 }
 
 body {
@@ -10,11 +16,8 @@ body {
         "Trebuchet MS",
         Verdana,
         sans-serif;
-    display: flex;
     padding: 0;
     margin: 0;
-    background: var(--main-blue);
-    color: var(--light_white-accent);
 }
 
 h1 {
@@ -36,60 +39,39 @@ h1 {
     src: url("../assets/fonts/Roboto/Roboto-Regular.ttf")
 }
 
-
 .main {
     width: 100vw;
     min-height: 100vh;
-    display: flex;
     background-color: #2e4052;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffc857' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-    flex-flow: column;
 }
 
-.description {
-    padding: 15px;
-    line-height: 1.6;
-    letter-spacing: 0.7px;
-    background-color: var(--light-accent);
-    color: #222;
-    margin: 10px;
-    border-radius: 5px;
-    font-family: 'Roboto',
-        sans-serif;
-}
 
-.description_other {
-    padding: 15px;
-    line-height: 1.6;
-    letter-spacing: 0.7px;
-    background-color: var(--main-blue);
-    color: #a49fa3;
-    margin: 10px;
-    border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
-}
 
-.header {
-    display: flex;
-    flex-flow: row;
-    justify-content: start;
-    align-items: center;
-    color: var(--light_white);
-    letter-spacing: 2px;
-    font-family: 'Bangers',
-        cursive;
-    margin: 0 25px;
-}
-
-.title {
-    font-size: 80px;
-    font-weight: bolder;
-    width: 50%;
-}
 
 .subtitle {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.content {
+    min-height: 60vh;
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: 20% 1fr;
+    padding: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.7px;
+    background-color: var(--light_blue);
+    color: var(--main_purple);
+    border: 1px solid var(--main_orange);
+    margin: 10px;
+    border-radius: 5px;
     font-family: 'Roboto',
         sans-serif;
-    font-weight: bolder;
-    font-size: 40px;
+
+}
+
+.writeup {
+    grid-column-start: 2;
+    grid-row-start: 2;
 }

@@ -5,18 +5,18 @@ import Footer from "./Footer";
 
 export default function Layout(props) {
   return (
-    <div>
+    <div className="layout">
       <Nav />
-      <Header subtitle={props.subtitle} />
+      <Header />
       <div className="content">{props.children}</div>
       <Footer />
-      <style jsx>
-        {`
-          .content {
-            min-height: 60vh;
-          }
-        `}
-      </style>
+      <style jsx>{`
+        .layout {
+          width: 100vw;
+          display: flex;
+          flex-flow: column;
+        }
+      `}</style>
     </div>
   );
 }

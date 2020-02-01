@@ -27,11 +27,7 @@ export default function Nav() {
       </ul>
       <style jsx>{`
         .bar {
-          width: 100%;
-          padding: 10px 0;
-          margin-bottom: 10px;
-          background: var(--light-accent);
-          width: 100%;
+          background: var(--main_orange);
         }
 
         .navlist {
@@ -39,10 +35,13 @@ export default function Nav() {
           display: flex;
           flex-flow: row;
           text-align: center;
+          justify-content: space-evenly;
+          margin: 0;
         }
         li {
           width: 52px;
           text-align: center;
+          margin: 5px;
         }
       `}</style>
     </nav>
