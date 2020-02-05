@@ -1,7 +1,6 @@
 import React from "react";
 import matter from "gray-matter";
 import Link from "next/link";
-
 export default class extends React.Component {
   static async getInitialProps() {
     // Get posts from folder
@@ -15,10 +14,10 @@ export default class extends React.Component {
           .split(".")
           .slice(0, -1)
           .join(".");
-        const value = values[index];
+        const value = values[index].default;
         // Parse document
-
         const document = matter(value);
+
         return {
           document,
           slug
