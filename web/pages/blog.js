@@ -1,8 +1,6 @@
 import React from "react";
 import Layout from "../component/Layout";
 
-import BlogPost from "../data/test.md";
-
 const NotesPreview = () => {
   return (
     <li key={props.key} className="content__container">
@@ -39,8 +37,6 @@ const BlogContent = () => {
     <div className="project_container">
       <h2 className="repo_project">Dev Notes</h2>
       <Description />
-      <p>BELOW THIS WILL BE THE LIST OF THE BLOG STUFFF</p>
-      <BlogPost />
     </div>
   );
 };
@@ -48,7 +44,6 @@ const BlogContent = () => {
 export default function Blog(props) {
   return (
     <main className="main">
-      <POST />
       <Layout children={<BlogContent />} subtitle="Programer Notes" />
     </main>
   );
