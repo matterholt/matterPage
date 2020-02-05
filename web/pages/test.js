@@ -17,14 +17,14 @@ export default class extends React.Component {
         const value = values[index].default;
         // Parse document
         const document = matter(value);
-
+        console.log(slug);
         return {
           document,
           slug
         };
       });
       return data;
-    })(require.context("../post", true, /\.md$/));
+    })(require.context("../posts", true, /\.md$/));
     return {
       posts
     };
