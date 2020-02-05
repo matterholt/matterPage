@@ -1,6 +1,11 @@
+/* add transitions for header*/
+
 .header_container {
     overflow: hidden;
-    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
     width: 100%;
 }
 
@@ -61,7 +66,7 @@
 
 .bg_pattern:nth-child(6) {
     grid-column: 5;
-    grid-row: 4;
+    grid-row: 3;
 }
 
 .bg_orange {

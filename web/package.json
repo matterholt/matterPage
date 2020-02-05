@@ -5,12 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "@mdx-js/loader": "^1.5.5",
-    "@next/mdx": "^9.2.0",
-    "@sanity/block-content-to-react": "^2.0.7",
-    "@sanity/client": "^0.147.3",
-    "@sanity/image-url": "^0.140.17",
+    "@next/mdx": "^9.2.1",
     "gray-matter": "^4.0.2",
-    "groq": "^0.147.8",
     "next": "^9.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
