@@ -4,8 +4,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 500px;
+    height: 350px;
     width: 100%;
 }
 
@@ -14,31 +13,34 @@
     grid-template-columns: repeat(8, 100px);
     grid-template-rows: repeat(5, 100px);
     letter-spacing: 2px;
+    margin: 0 25px;
     font-family: 'Bangers',
         cursive;
-    margin: 0 25px;
-    font-size: 50px;
     font-weight: bolder;
     transform: rotate(15deg);
 }
 
 .headOne {
-    grid-area: head1;
     align-self: center;
     justify-self: center;
     transform: rotate(-15deg);
+    font-size: 35px;
+    white-space: nowrap;
     z-index: 10;
-    grid-column: 3;
+    grid-column: 1;
     grid-row: 2;
 }
 
 .headTwo {
-    grid-area: head2;
     align-self: center;
     justify-self: center;
     transform: rotate(-15deg);
+    white-space: nowrap;
+    letter-spacing: 8px;
     z-index: 10;
-    grid-column: 5;
+    color: var(--light_white);
+    font-size: 100px;
+    grid-column: 4;
     grid-row: 3;
 }
 
@@ -76,8 +78,6 @@
 }
 
 .bg_orange:nth-child(7) {
-
-
     grid-column: 7;
     grid-row: 3;
 
@@ -85,7 +85,6 @@
 }
 
 .bg_orange:nth-child(8) {
-
     grid-column: 1;
     grid-row: 4;
 

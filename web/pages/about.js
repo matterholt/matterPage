@@ -1,7 +1,8 @@
 import Layout from "../component/Layout";
-const PageName = () => {
+
+const Content = () => {
   return (
-    <div>
+    <div className="project_container">
       <div className="description">
         <h2>Developer and problem solver</h2>
         <p>
@@ -18,16 +19,6 @@ const PageName = () => {
           Check out my Projects to see what I have built or my Notes to see the
           things that I have learn
         </p>
-      </div>
-    </div>
-  );
-};
-const Content = () => {
-  return (
-    <>
-      <PageName />
-      <div className="description">
-        <h2>Other then developer</h2>
         <p>
           Work as a Validation Technician for 14 years. Started to learn Python
           to help automate task that would slow down and annoy the team. As my
@@ -41,14 +32,14 @@ const Content = () => {
           with wood as well.
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
 function AboutPage() {
   return (
     <main className="main">
-      <Layout children={<Content />} />
+      <Layout children={<Content />} title="About Me" />
     </main>
   );
 }

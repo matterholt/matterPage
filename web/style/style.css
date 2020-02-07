@@ -58,7 +58,6 @@ h1 {
     min-height: 60vh;
     display: grid;
     grid-template-columns: 10% 3fr 10%;
-    grid-template-rows: 1fr;
     padding: 15px;
     line-height: 1.6;
     letter-spacing: 0.7px;
@@ -91,6 +90,8 @@ h1 {
 }
 
 .project_container {
+    padding: 0;
+    margin: 0;
     grid-column: 2;
 }
 

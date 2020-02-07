@@ -1,7 +1,7 @@
 import React from "react";
+import matter from "gray-matter";
+import Link from "next/link";
 import Layout from "../component/Layout";
-import BlogList from "../component/Blog_list";
-
 const Description = () => {
   return (
     <>
@@ -24,24 +24,57 @@ const Description = () => {
 const BlogContent = () => {
   return (
     <div className="project_container">
-      <h2 className="repo_project">Dev Notes</h2>
       <Description />
     </div>
   );
 };
-/*
-export default function Blog(props) {
+
+export default function BogPost(props) {
   return (
     <main className="main">
-      <Layout children={<BlogContent />} subtitle="Programer Notes" />
+      <Layout title="Dev Notes">
+        <BlogContent />
+        <ul className="project_container">
+          {props.posts.map(({ document: { data }, slug }) => (
+            <li className="content__container">
+              <Link
+                href={{ pathname: "../post", query: { id: slug } }}
+                key={slug}
+              >
+                <a className="content_title">{data.title}</a>
+              </Link>
+              <p>{data.description} </p>
+            </li>
+          ))}
+        </ul>
+      </Layout>
     </main>
   );
 }
-*/
-export default function Blog(props) {
-  return (
-    <main className="main">
-      <BlogList />
-    </main>
-  );
-}
+
+BogPost.getInitialProps = async function() {
+  // Get posts from folder
+  const posts = (ctx => {
+    const keys = ctx.keys();
+    const values = keys.map(ctx);
+    const data = keys.map((key, index) => {
+      // Create slug from filename
+      const slug = key
+        .replace(/^.*[\\\/]/, "")
+        .split(".")
+        .slice(0, -1)
+        .join(".");
+      const value = values[index].default;
+      // Parse document
+      const document = matter(value);
+      return {
+        document,
+        slug
+      };
+    });
+    return data;
+  })(require.context("../posts", true, /\.md$/));
+  return {
+    posts
+  };
+};

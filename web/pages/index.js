@@ -17,7 +17,7 @@ const Content = () => {
 function HomePage() {
   return (
     <main className="main">
-      <Layout children={<Content />} />
+      <Layout children={<Content />} title="Website, where I create" />
     </main>
   );
 }

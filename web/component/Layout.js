@@ -4,10 +4,11 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default function Layout(props) {
+  const { title } = props;
   return (
     <div className="layout">
       <Nav />
-      <Header />
+      <Header pageName={title} />
       <div className="content">{props.children}</div>
       <Footer />
       <style jsx>{`
