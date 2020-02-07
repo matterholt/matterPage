@@ -1,7 +1,8 @@
 ---
-title: Hellow world trying to work
+title: Building a Blog with Next.js
 date: 13-11-2018
 writtenBy: matterholt
+description: Every Dev should have a blog and it is about time for me to start mine. Read this post and learn how to use MDX and a library gray-matter to build an area document the thing we learn.
 ---
 
 ## Example post

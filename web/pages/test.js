@@ -33,11 +33,19 @@ export default class extends React.Component {
     return (
       <>
         <h1>Posts</h1>
-        {this.props.posts.map(({ document: { data }, slug }) => (
-          <Link href={{ pathname: "/post", query: { id: slug } }} key={slug}>
-            <h2>{data.title}</h2>
-          </Link>
-        ))}
+        <ul>
+          {this.props.posts.map(({ document: { data }, slug }) => (
+            <li>
+              <Link
+                href={{ pathname: "/post", query: { id: slug } }}
+                key={slug}
+              >
+                <a>{data.title}</a>
+              </Link>
+              <p>{data.description} </p>
+            </li>
+          ))}
+        </ul>
       </>
     );
   }

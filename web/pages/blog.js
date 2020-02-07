@@ -1,17 +1,6 @@
 import React from "react";
 import Layout from "../component/Layout";
-
-const NotesPreview = () => {
-  return (
-    <li key={props.key} className="content__container">
-      <h3 className="repo_title">{title}</h3>
-      <p> {purpose}</p>
-      <p>
-        <strong>Link:</strong> {link}
-      </p>
-    </li>
-  );
-};
+import BlogList from "../component/Blog_list";
 
 const Description = () => {
   return (
@@ -40,11 +29,19 @@ const BlogContent = () => {
     </div>
   );
 };
-
+/*
 export default function Blog(props) {
   return (
     <main className="main">
       <Layout children={<BlogContent />} subtitle="Programer Notes" />
+    </main>
+  );
+}
+*/
+export default function Blog(props) {
+  return (
+    <main className="main">
+      <BlogList />
     </main>
   );
 }
