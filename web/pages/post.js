@@ -1,21 +1,26 @@
 import React from "react";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
-export default class extends React.Component {
-  static async getInitialProps({ query }) {
-    const post = await import(`../posts/${query.id}.md`);
-    const document = matter(post.default);
-    return {
-      ...document
-    };
-  }
-  render() {
-    return (
-      <>
-        <h1>{this.props.data.title}</h1>
-        <i>{`Written by ${this.props.data.writtenBy} | ${this.props.data.date}`}</i>
-        <ReactMarkdown source={this.props.content} />
-      </>
-    );
-  }
+import Layout from "../component/Layout";
+
+export default function Post(props) {
+  return (
+    <main className="main">
+      <Layout title="Dev Post">
+        <div className="project_container">
+          <h1>{props.data.title}</h1>
+          <i>{`Written by ${props.data.writtenBy} | ${props.data.date}`}</i>
+          <ReactMarkdown source={props.content} />
+        </div>
+      </Layout>
+    </main>
+  );
 }
+
+Post.getInitialProps = async function({ query }) {
+  const post = await import(`../posts/${query.id}.md`);
+  const document = matter(post.default);
+  return {
+    ...document
+  };
+};

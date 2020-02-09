@@ -1,33 +1,39 @@
 import Layout from "../component/Layout";
-import ItemListCards from "../component/ItemList";
+import Link from "next/link";
 import repos from "../data/projectList";
+
 const Description = () => {
   return (
-    <>
-      <div className="description">
-        <p>
-          My projects consist of script and app that aid in my daily work.
-          Python allows me to extract or add data to the a database or a simple
-          directory creation for the current project that I'm working on.
-        </p>
-        <p>
-          I would like to see and create a way to share and track data with in
-          the group and would allow better direction and understanding among the
-          team.
-        </p>
-      </div>
-    </>
+    <div className="description">
+      <p>
+        Inspired by my current FEA engineering position. There are a few using
+        Python that automate task and create a better work flow for the
+        engineers. I have also use web technologies to build some small web apps
+        that help with some other task.
+      </p>
+    </div>
   );
 };
+function ItemCard(props) {
+  const { title, content, link } = props.itemsList;
+  return (
+    <li key={props.key} className="content__container">
+      <h3 className="content_title">{title}</h3>
+      <p> {content}</p>
+      <Link href={link}>
+        <a>{link} </a>
+      </Link>
+    </li>
+  );
+}
 
 const ProjectList = () => {
   const ProjectItemList = repos.map((repoItem, repoKey) => {
-    return <ItemListCards itemsList={repoItem} key={repoKey} />;
+    return <ItemCard itemsList={repoItem} key={repoKey} />;
   });
 
   return (
     <div className="project_container">
-      <h2 className="repo_project">Project list</h2>
       <Description />
       {ProjectItemList}
     </div>
@@ -37,7 +43,7 @@ const ProjectList = () => {
 export default function Project() {
   return (
     <main className="main">
-      <Layout children={<ProjectList />} subtitle="Projects" />
+      <Layout children={<ProjectList />} title="Projects" />
     </main>
   );
 }

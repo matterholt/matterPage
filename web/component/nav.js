@@ -27,7 +27,7 @@ export default function Nav() {
       </ul>
       <style jsx>{`
         .bar {
-          background: var(--light_blue);
+          background: var(--light_white);
           border-bottom: 1px solid var(--main_orange);
         }
 

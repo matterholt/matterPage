@@ -4,7 +4,6 @@ const Content = () => {
   return (
     <div className="project_container">
       <div className="description">
-        <h2>Developer and problem solver</h2>
         <p>
           Matthew Atterholt, <br /> I enjoy using programing to solve problems.
           I find myself using Python to create small application. I being a user

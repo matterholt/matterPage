@@ -1,4 +1,19 @@
 import style from "../style/header.module.css";
+
+export default function Header(props) {
+  return (
+    <div className={style.header_container}>
+      <div className={style.header}>
+        <h1 className={style.headOne}>Matt Atterholt</h1>
+        <h1 className={style.headTwo}>{props.pageName}</h1>
+      </div>
+    </div>
+  );
+}
+
+/*
+interested header
+
 export default function Header(props) {
   return (
     <div className={style.header_container}>
@@ -19,3 +34,4 @@ export default function Header(props) {
     </div>
   );
 }
+*/

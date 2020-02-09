@@ -10,7 +10,6 @@ export default function Layout(props) {
       <Nav />
       <Header pageName={title} />
       <div className="content">{props.children}</div>
-      <Footer />
       <style jsx>{`
         .layout {
           width: 100vw;
