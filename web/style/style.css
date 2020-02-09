@@ -58,7 +58,7 @@ h1 {
 .content {
     min-height: 60vh;
     display: grid;
-    grid-template-columns: 20% 3fr 20%;
+    grid-template-columns: 10% 1fr 10%;
     padding: 15px;
     line-height: 1.6;
     letter-spacing: 0.7px;

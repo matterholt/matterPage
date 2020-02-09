@@ -4,7 +4,7 @@
 
 ideas/TODO:
 
-[] 02-2020 css style on the blog write ups
+[] 02-2020 improve css when shrink to phone screen
 
 [] 02-2020 better naming for css classes
 
@@ -19,6 +19,8 @@ ideas/TODO:
 [] 02-2020 change the repo list to git hub fetch, use a list of what want to show, and ranking,
 
 ## DONE
+
+[X] 02-2020 css style on the blog write ups
 
 [X] 02-2020 DESIGN, blue background with a card with lighter colors with an angle,
 
