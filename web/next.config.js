@@ -10,3 +10,15 @@ module.exports = {
     return config;
   }
 };
+
+/*
+module.exports = {
+  exportPathMap: function() {
+    return {
+      '/': { page: '/' }
+      '/about': { page: '/about' }
+      // etc...
+    }
+  }
+}
+*/
