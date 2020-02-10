@@ -20,8 +20,8 @@ function ItemCard(props) {
     <li key={props.key} className="content__container">
       <h3 className="content_title">{title}</h3>
       <p> {content}</p>
-      <Link href={link}>
-        <a>{link} </a>
+      <Link href={link} prefetch={false}>
+        <a>{link}</a>
       </Link>
     </li>
   );

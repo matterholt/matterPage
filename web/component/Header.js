@@ -1,9 +1,10 @@
 import style from "../style/header.module.css";
-
+import TestImage from "../component/Image";
 export default function Header(props) {
   return (
     <div className={style.header_container}>
       <div className={style.header}>
+        <TestImage />
         <h1 className={style.headOne}>Matt Atterholt</h1>
         <h1 className={style.headTwo}>{props.pageName}</h1>
       </div>
@@ -12,7 +13,7 @@ export default function Header(props) {
 }
 
 /*
-interested header
+ header
 
 export default function Header(props) {
   return (

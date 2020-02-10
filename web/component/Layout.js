@@ -7,8 +7,8 @@ export default function Layout(props) {
   const { title } = props;
   return (
     <div className="layout">
-      <Nav />
       <Header pageName={title} />
+      <Nav />
       <div className="content">{props.children}</div>
       <style jsx>{`
         .layout {
