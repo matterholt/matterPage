@@ -10,11 +10,6 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </li>
-        <li>
           <Link href="/blog">
             <a>Blog</a>
           </Link>
@@ -22,6 +17,11 @@ export default function Nav() {
         <li>
           <Link href="/projects">
             <a>Projects</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/about">
+            <a>About</a>
           </Link>
         </li>
       </ul>
@@ -38,6 +38,7 @@ export default function Nav() {
           text-align: center;
           justify-content: space-evenly;
           margin: 0;
+          padding: 0;
         }
         li {
           width: 52px;

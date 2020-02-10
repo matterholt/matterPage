@@ -6,6 +6,7 @@
     --my_gray: #464646;
 }
 
+
 .temp {
     --main_red: #663f46;
     --light-gray: #b3b6b7;
@@ -105,4 +106,13 @@ h1 {
 .description {
     grid-column: 2;
     grid-row: 1;
+}
+
+@media (max-width: 480px) {
+    .content {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        margin: 0px;
+    }
+
 }
