@@ -6,15 +6,19 @@ Items to work on...
 
 ideas/TODO:
 
+[] 02-2020 Add some header rules to page, learn
+
+[] 02-2020 NAVIGATION-> make button larger and give some style to improve clickage
+
 [] 02-2020 improve css when shrink to phone screen
 
 [] !IMPORTANT WHILE REVIEW, Add readme to my project that describe the project/ scripts that have have built
 
-[]02-2020 add image to the top header,
+[] 02-2020 add image to the top header,
 
-[]02-2020 Add scroll to the the top on pages, mainly the blog and projects
+[] 02-2020 Add scroll to the the top on pages, mainly the blog and projects
 
-[]02-2020 HOME page add more detail or space, define that the page is about!
+[] 02-2020 HOME page add more detail or space, define that the page is about!
 
 [] 02-2020 ABOUT page separate out try to make it more about personal and other projects
 
@@ -24,11 +28,15 @@ ideas/TODO:
 
 [] slow transition on load
 
-[]02-2020 Add more details for Project Repos
+[] 02-2020 Add more details for Project Repos
 
 []02-2020 Add tags to the projects that help define
 
 [] 02-2020 change the repo list to git hub fetch, use a list of what want to show, and ranking
+
+## Future feature
+
+[] 02-2020 circle nav that click and expands to see the list of possible pages to go to
 
 ## DONE
 

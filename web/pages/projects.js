@@ -35,7 +35,7 @@ const ProjectList = () => {
   return (
     <div className="project_container">
       <Description />
-      {ProjectItemList}
+      <ul className="project_container">{ProjectItemList}</ul>
     </div>
   );
 };

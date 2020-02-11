@@ -39,11 +39,14 @@ export default function Nav() {
           justify-content: space-evenly;
           margin: 0;
           padding: 0;
+          height: 50px;
+          font-size: 1.2rem;
         }
         li {
           width: 52px;
           text-align: center;
           margin: 5px;
+          align-self: center;
         }
       `}</style>
     </nav>
