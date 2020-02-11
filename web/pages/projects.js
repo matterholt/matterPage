@@ -17,7 +17,7 @@ const Description = () => {
 function ItemCard(props) {
   const { title, content, link } = props.itemsList;
   return (
-    <li key={props.key} className="content__container">
+    <li key={props.keyID} className="content__container">
       <h3 className="content_title">{title}</h3>
       <p> {content}</p>
       <Link href={link} prefetch={false}>
@@ -29,13 +29,13 @@ function ItemCard(props) {
 
 const ProjectList = () => {
   const ProjectItemList = repos.map((repoItem, repoKey) => {
-    return <ItemCard itemsList={repoItem} key={repoKey} />;
+    return <ItemCard itemsList={repoItem} keyID={repoKey} />;
   });
 
   return (
     <div className="project_container">
       <Description />
-      {ProjectItemList}
+      <ul className="project_container">{ProjectItemList}</ul>
     </div>
   );
 };
