@@ -57,9 +57,9 @@ h1 {
 }
 
 .content {
-    min-height: 60vh;
-    display: grid;
-    grid-template-columns: 10% 1fr 10%;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
     padding: 15px;
     line-height: 1.6;
     letter-spacing: 0.7px;
@@ -106,13 +106,4 @@ h1 {
 .description {
     grid-column: 2;
     grid-row: 1;
-}
-
-@media (max-width: 480px) {
-    .content {
-        grid-template-columns: 1fr;
-        padding: 15px;
-        margin: 0px;
-    }
-
 }
