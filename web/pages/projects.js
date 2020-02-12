@@ -6,14 +6,16 @@ const Description = () => {
   return (
     <div className="description">
       <p>
-        Inspired by my current FEA engineering position. There are a few using
-        Python that automate task and create a better work flow for the
-        engineers. I have also use web technologies to build some small web apps
-        that help with some other task.
+        Most of my project have been strongly inspired by my engineering
+        position in the FEA group. The technologies have consist of Python and
+        JavaScript.
       </p>
     </div>
   );
 };
+/*
+temporary moved from 
+
 function ItemCard(props) {
   const { title, content, link } = props.itemsList;
   return (
@@ -26,24 +28,27 @@ function ItemCard(props) {
     </li>
   );
 }
-
-const ProjectList = () => {
-  const ProjectItemList = repos.map((repoItem, repoKey) => {
-    return <ItemCard itemsList={repoItem} keyID={repoKey} />;
-  });
-
-  return (
-    <div className="project_container">
-      <Description />
-      <ul className="project_container">{ProjectItemList}</ul>
-    </div>
-  );
-};
-
+*/
 export default function Project() {
   return (
     <main className="main">
-      <Layout children={<ProjectList />} title="Projects" />
+      <Layout title="Projects">
+        <Description />
+
+        <ul className="project_container">
+          {repos.map((repoItem, repoKey) => {
+            return (
+              <li key={repoKey} className="content__container">
+                <h3 className="content_title">{repoItem.title}</h3>
+                <p> {repoItem.content}</p>
+                <Link href={repoItem.link} prefetch={false}>
+                  <a>{repoItem.link}</a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </Layout>
     </main>
   );
 }

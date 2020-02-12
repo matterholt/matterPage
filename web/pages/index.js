@@ -7,9 +7,9 @@ const Content = () => {
       <section className="description">
         <p>
           Matthew Atterholt, <br /> I enjoy using programing to solve problems.
-          I find myself using Python to create small application. I being a user
-          and a developer, communicate with the team to insure that my
-          application will to assist the them to complete task and ship results.
+          I find myself using Python to create small applications. I being a
+          user and a developer, communicate with the team to insure that my
+          application will assist them to complete task and ship results.
         </p>
       </section>
     </div>

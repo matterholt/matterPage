@@ -43,11 +43,12 @@ h1 {
 }
 
 .main {
+    display: flex;
+    flex-flow: column;
     width: 100vw;
     min-height: 100vh;
     background-color: #2e4052;
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%464646' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-    display: flex;
     justify-content: center;
 }
 
@@ -57,9 +58,11 @@ h1 {
 }
 
 .content {
-    min-height: 60vh;
-    display: grid;
-    grid-template-columns: 10% 1fr 10%;
+    min-height: 100vh;
+    max-width: 550px;
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
     padding: 15px;
     line-height: 1.6;
     letter-spacing: 0.7px;
@@ -81,6 +84,7 @@ h1 {
     padding: 25px;
     background: linear-gradient(150deg, #93a0ae 20%, #6b7c8e, #93a0ae);
     border-radius: 5px;
+    max-width: 550px;
     color: var(--main_purple);
     margin: 25px 0;
 }
@@ -92,27 +96,14 @@ h1 {
 }
 
 .project_container {
+    display: flex;
+    flex-flow: column;
     padding: 0;
     margin: 0;
     grid-column: 2;
 }
 
-.gradient_card {
-    background: linear-gradient(125deg, #657280, #464646);
-    border-radius: 5px;
-    box-shadow: 1px 5px 9px;
-}
-
 .description {
     grid-column: 2;
     grid-row: 1;
-}
-
-@media (max-width: 480px) {
-    .content {
-        grid-template-columns: 1fr;
-        padding: 15px;
-        margin: 0px;
-    }
-
 }
