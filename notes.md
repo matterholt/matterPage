@@ -8,6 +8,8 @@ ideas/TODO:
 
 [] 02-2020 Add some header rules to page, learn
 
+[] 02-2020 Safari web browser has a css issue on the project page
+
 [] 02-2020 css font size, change to rem, to have a better scaling of fonts
 
 [] 02-2020 NAVIGATION-> make button larger and give some style to improve clickage

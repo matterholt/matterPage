@@ -6,10 +6,9 @@ const Description = () => {
   return (
     <div className="description">
       <p>
-        Inspired by my current FEA engineering position. There are a few using
-        Python that automate task and create a better work flow for the
-        engineers. I have also use web technologies to build some small web apps
-        that help with some other task.
+        Most of my project have been strongly inspired by my engineering
+        position in the FEA group. The technologies have consist of Python and
+        JavaScript.
       </p>
     </div>
   );
