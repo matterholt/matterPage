@@ -42,7 +42,7 @@ export default function Project() {
                 <h3 className="content_title">{repoItem.title}</h3>
                 <p> {repoItem.content}</p>
                 <Link href={repoItem.link} prefetch={false}>
-                  <a>{repoItem.link}</a>
+                  <a>To Github Repository</a>
                 </Link>
               </li>
             );
