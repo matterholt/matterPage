@@ -63,7 +63,6 @@ h1 {
     display: flex;
     flex-flow: column;
     justify-items: center;
-    align-self: center;
     padding: 15px;
     line-height: 1.6;
     letter-spacing: 0.7px;

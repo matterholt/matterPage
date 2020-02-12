@@ -13,6 +13,8 @@ const Description = () => {
     </div>
   );
 };
+/*
+temporary moved from 
 
 function ItemCard(props) {
   const { title, content, link } = props.itemsList;
@@ -26,17 +28,26 @@ function ItemCard(props) {
     </li>
   );
 }
-
+*/
 export default function Project() {
-  const ProjectItemList = repos.map((repoItem, repoKey) => {
-    return <ItemCard itemsList={repoItem} keyID={repoKey} />;
-  });
-
   return (
     <main className="main">
       <Layout title="Projects">
         <Description />
-        <ul className="project_container">{ProjectItemList}</ul>
+
+        <ul className="project_container">
+          {repos.map((repoItem, repoKey) => {
+            return (
+              <li key={repoKey} className="content__container">
+                <h3 className="content_title">{repoItem.title}</h3>
+                <p> {repoItem.content}</p>
+                <Link href={repoItem.link} prefetch={false}>
+                  <a>{repoItem.link}</a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </Layout>
     </main>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import matter from "gray-matter";
 import Link from "next/link";
 import Layout from "../component/Layout";
+
 const Description = () => {
   return (
     <div className="description">
