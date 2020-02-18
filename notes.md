@@ -6,6 +6,10 @@ Items to work on...
 
 ideas/TODO:
 
+[] 02-2020 Add style to the blog post, currently it is full width.
+
+[] 02-2020 Sort post via Date, and if date has not past or current the do not show on blog list.
+
 [] 02-2020 Add some header rules to page, learn
 
 [] 02-2020 Safari web browser has a css issue on the project page
