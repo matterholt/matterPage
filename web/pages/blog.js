@@ -24,6 +24,7 @@ export default function BogPost(props) {
         <Description />
         <ul className="project_container">
           {props.posts.map(({ document: { data }, slug }) => (
+            // sort by date
             <li className="content__container">
               <Link
                 href={{ pathname: "../post", query: { id: slug } }}
