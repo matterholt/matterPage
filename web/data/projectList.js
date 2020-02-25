@@ -2,7 +2,7 @@ const repos = [
   {
     title: "Work Hour Log",
     content:
-      "We worked in logging the hours with excel. \
+      "Weekly hours are logged using spread sheets \
       Creating a front end web app to calculate the hours for the week.\
        Primary language was JavaScript with REACT.js",
     link: "https://github.com/matterholt/workHourLog"
