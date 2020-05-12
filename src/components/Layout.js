@@ -15,7 +15,7 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-export default function Layout({ children }) {
+export const Layout = ({ children }) => {
   const { title, description, other } = useSiteMetadata();
 
   return (
@@ -25,4 +25,4 @@ export default function Layout({ children }) {
       {children}
     </Container>
   );
-}
+};
