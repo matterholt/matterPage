@@ -1,0 +1,26 @@
+{
+  "name": "matterpage",
+  "version": "1.0.0",
+  "description": "blog build",
+  "main": "index.js",
+  "dependencies": {
+    "gastby": "^1.0.1",
+    "gatsby": "^2.21.22",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "gatsby develop -p 9988 -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matterholt/matterPage.git"
+  },
+  "author": "MAtterholt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matterholt/matterPage/issues"
+  },
+  "homepage": "https://github.com/matterholt/matterPage#readme"
+}
