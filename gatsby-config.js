@@ -14,6 +14,7 @@ const siteMetadata = {
 module.exports = {
   siteMetadata,
   plugins: [
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
