@@ -1,5 +1,15 @@
 import React from "react";
 
+import { useSiteMetadata } from "../hooks/useSiteMetaData";
+
 export default () => {
-  return <h1>Hello World!</h1>;
+  const { title, description, other } = useSiteMetadata();
+
+  return (
+    <>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <p>{other}</p>
+    </>
+  );
 };
