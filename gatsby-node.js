@@ -1,7 +1,7 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require(`path`);
 // Create pages for the blog post
-exports.cratePages = ({ actions, graphql }) => {
+exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve("src/templates/blogPostTemplate.js");
   return graphql(`
@@ -18,13 +18,16 @@ exports.cratePages = ({ actions, graphql }) => {
       }
     }
   `).then((result) => {
-    if (result.error) {
+    // Promise from the graphql,
+    // check if there is an error
+    if (result.errors) {
       throw result.errors;
     }
-    const posts = results.data.allMdx.nodes;
+    //
+    const posts = result.data.allMdx.nodes;
     // create page for each MDX file
     posts.forEach((post) => {
-      this.cratePages({
+      createPage({
         path: post.fields.slug,
         component: blogPostTemplate,
         context: {
