@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXRender } from "gatsby-plugin-mdx";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Layout } from "../components/Layout";
 
 export default ({ data }) => {
@@ -9,7 +9,7 @@ export default ({ data }) => {
     <Layout>
       <h1>{frontmatter.title}</h1>
       <p>{frontmatter.date}</p>
-      <MDXRender>{body}</MDXRender>
+      <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   );
 };
@@ -25,4 +25,3 @@ export const query = graphql`
     }
   }
 `;
-//"/2019/2019-06-01-hello-world/"
