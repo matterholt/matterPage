@@ -1,6 +1,9 @@
 # Personal Blog of Matthew Atterholt
 
 Start documenting the things that I have learn, Practice writing and sharing with others
+## todo
+
+- [ ] add header to page
 
 ## Build V2
 
