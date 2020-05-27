@@ -1,6 +1,6 @@
 :root {
   --main-white: #DAD2D8;
-  --main-black: #09171c;
+  --main-black: #16323c;
   --fav-dark: #06384d;
   --fav-accent: #dcb122;
   font-size: 62.5%;
@@ -8,6 +8,8 @@
 
 body {
   background-color: var(--main-black);
+  margin: 0;
+  padding: 0;
 }
 
 

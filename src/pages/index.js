@@ -21,26 +21,27 @@ const content__article = css`
 const content_header = css`
   display: flex;
   flex-wrap: wrap;
+  flex-flow: row-reverse;
+  justify-content: space-between;
   padding-bottom: 10px;
   border-bottom: solid 2px var(--fav-accent);
 `;
 
-const blog_date = css`
+const content__header_date = css`
   font-size: 1rem;
   color: gray;
-  width: 100%;
   text-align: right;
 `;
 
-const blog_excerpt = css`
-  margin-top: 15px;
-  color: var(--fav-dark);
-`;
-
-const content_header__h1 = css`
+const content_header_title = css`
   font-size: 2.5rem;
   font-weight: 900;
   margin: 2px;
+`;
+
+const content_excerpt = css`
+  margin-top: 15px;
+  color: var(--fav-dark);
 `;
 
 export default ({ data }) => {
@@ -51,10 +52,10 @@ export default ({ data }) => {
           <article css={content__article} key={id}>
             <Link to={fields.slug}>
               <div css={content_header}>
-                <p css={blog_date}>{frontmatter.date}</p>
-                <h1 css={content_header__h1}>{frontmatter.title}</h1>
+                <p css={content__header_date}>{frontmatter.date}</p>
+                <h1 css={content_header_title}>{frontmatter.title}</h1>
               </div>
-              <p css={blog_excerpt}>{excerpt}</p>
+              <p css={content_excerpt}>{excerpt}</p>
             </Link>
           </article>
         );

@@ -12,15 +12,12 @@ const container = css`
 `;
 
 export const Layout = ({ children }) => {
-  const { title, description, other } = useSiteMetadata();
+  const { title, description } = useSiteMetadata();
 
   return (
     <div>
       <Header siteTitle={title} siteDescription={description} />
-      <main css={container}>
-        <p>{other}</p>
-        {children}
-      </main>
+      <main css={container}>{children}</main>
     </div>
   );
 };

@@ -4,7 +4,6 @@ const siteMetadata = {
   title: `The Localhost Blog`,
   description: `this is my coding blog where I write about my coding journey.`,
   dev: `Matterholt`,
-  other: `links to all my code`,
 };
 
 /**
