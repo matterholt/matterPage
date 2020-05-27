@@ -1,20 +1,6 @@
 const { useEffect, useState } = React;
 const { Spring } = ReactSpring;
 
-function Header({ siteTitle, siteDescription }) {
-  return (
-    <header>
-      <div>
-        <h1>{siteTitle}</h1>
-        <p>{siteDescription}</p>
-      </div>
-      <p>
-        Matthew <br /> Atterholt
-      </p>
-    </header>
-  );
-}
-
 function Tags({ tags }) {
   const tagList = tags.map((x, y) => <p className="tag">{x}</p>);
   return <div className="tag_box">{tagList}</div>;
@@ -24,7 +10,7 @@ function BlogPost({ title }) {
   const frontmatter = {
     id: 1,
     title: "First Blog Post on Gatsby",
-    date: "2020/05/31"
+    date: "2020/05/31",
   };
   const excerpt =
     "Creating a foundation in Programing, using code and programing to levearge the work space. I want to be better and learn all things. OK not really but I have curiosity";

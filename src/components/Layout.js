@@ -19,10 +19,12 @@ export const Layout = ({ children }) => {
   const { title, description, other } = useSiteMetadata();
 
   return (
-    <Container>
+    <div>
       <Header siteTitle={title} siteDescription={description} />
-      <p>{other}</p>
-      {children}
-    </Container>
+      <main>
+        <p>{other}</p>
+        {children}
+      </main>
+    </div>
   );
 };
