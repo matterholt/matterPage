@@ -2,17 +2,13 @@ import React, { Children } from "react";
 import Header from "../components/Header";
 import { useSiteMetadata } from "../hooks/useSiteMetaData";
 
-import styled from "@emotion/styled";
-//import { css } from "@emotion/core";
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core";
 
-const Container = styled.div`
-  background-color: #39a0ed;
-  margin: 3rem auto;
-  max-width: 600px;
+const container = css`
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   align-items: center;
-  justify-content: center;
 `;
 
 export const Layout = ({ children }) => {
@@ -21,7 +17,7 @@ export const Layout = ({ children }) => {
   return (
     <div>
       <Header siteTitle={title} siteDescription={description} />
-      <main>
+      <main css={container}>
         <p>{other}</p>
         {children}
       </main>

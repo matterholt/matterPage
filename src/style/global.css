@@ -1,5 +1,5 @@
 :root {
-  --main-white: #ebebd3;
+  --main-white: #DAD2D8;
   --main-black: #09171c;
   --fav-dark: #06384d;
   --fav-accent: #dcb122;
@@ -10,47 +10,14 @@ body {
   background-color: var(--main-black);
 }
 
-main {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
-article {
-  background-color: var(--main-white);
-  display: flex;
-  flex-direction: column-reverse;
-  margin-top: 25px;
-  padding: 15px;
-  max-width: 768px;
-  box-shadow: 5px 7px 9px black;
-}
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
-.content_header {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 10px;
-  border-bottom: solid 2px var(--fav-accent);
 
-}
 
-content_header__h1 {
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin: 2px;
-}
-
-.blog_date {
-  font-size: 0.5rem;
-  color: gray;
-  width: 100%;
-  text-align: right;
-}
 
 @media screen and (min-width: 576px) {
   .blog_date {
@@ -67,15 +34,6 @@ content_header__h1 {
   article {
     border-radius: 5px;
   }
-}
-
-.blog_excert {
-  margin-top: 15px;
-  color: var(--fav-dark);
-}
-
-.blog_content {
-  align-content: start;
 }
 
 .tag_box {
