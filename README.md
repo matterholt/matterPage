@@ -3,7 +3,9 @@
 Start documenting the things that I have learn, Practice writing and sharing with others
 ## todo
 
-- [ ] add header to page
+- [ ] add dark theme and light theme (write up on how)
+- [X] better style and css 
+- [X] add header to page
 
 ## Build V2
 
