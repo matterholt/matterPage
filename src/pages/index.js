@@ -14,7 +14,7 @@ const content__article = css`
   flex-direction: column-reverse;
   margin-top: 25px;
   padding: 15px;
-  min-width: 500px;
+  max-width: 500px;
   box-shadow: 5px 7px 9px black;
 `;
 

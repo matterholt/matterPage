@@ -2,16 +2,29 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Layout } from "../components/Layout";
-import Dump from "../components/Dump";
 
-import styled from "@emotion/styled";
-const Posts = styled.div`
-  background: white;
-`;
-const PostNav = styled.div`
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core";
+
+const content_header = css`
   display: flex;
+  flex-wrap: wrap;
+  flex-flow: row-reverse;
   justify-content: space-between;
-  width: 450px;
+  padding-bottom: 10px;
+  border-bottom: solid 2px var(--fav-accent);
+`;
+const blog__post = css``;
+const content__article = css`
+  font-size: 1.5rem;
+  background-color: var(--main-white);
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  padding: 15px;
+  max-width: 500px;
+  box-shadow: 5px 7px 9px black;
+  line-height: 20px;
 `;
 
 export default ({ data, pageContext }) => {
@@ -19,12 +32,16 @@ export default ({ data, pageContext }) => {
   const { previous, next } = pageContext;
   return (
     <Layout>
-      <Posts>
-        <h1>{frontmatter.title}</h1>
-        <p>{frontmatter.date}</p>
+      <div css={content__article}>
+        <div css={content_header}>
+          <p>{frontmatter.date}</p>
+          <h1>{frontmatter.title}</h1>
+        </div>
+
         <MDXRenderer>{body}</MDXRenderer>
-      </Posts>
-      <PostNav>
+      </div>
+
+      <div>
         {previous === false ? null : (
           <>
             {previous && (
@@ -43,7 +60,7 @@ export default ({ data, pageContext }) => {
             )}
           </>
         )}
-      </PostNav>
+      </div>
     </Layout>
   );
 };
