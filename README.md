@@ -1,4 +1,7 @@
 # Personal Blog of Matthew Atterholt
+[live link](https://matterholtdevlop.netlify.app/)
+
+!! needs some work!!
 
 Start documenting the things that I have learn, Practice writing and sharing with others
 ## todo
