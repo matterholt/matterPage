@@ -1,8 +1,8 @@
 // siteMetadata common pieces of data
 // remove from the module to clean it up
 const siteMetadata = {
-  title: `The Localhost Blog`,
-  description: `this is my coding blog where I write about my coding journey.`,
+  title: `Matterholt Dev Blog`,
+  description: `My coding blog where I write about my coding journey and things that I'm learning.`,
   dev: `Matterholt`,
 };
 
