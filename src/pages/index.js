@@ -34,7 +34,7 @@ const content__header_date = css`
 `;
 
 const content_header_title = css`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 900;
   margin: 2px;
 `;

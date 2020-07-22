@@ -14,7 +14,7 @@ const content_header = css`
   padding-bottom: 10px;
   border-bottom: solid 2px var(--fav-accent);
 `;
-const blog__post = css``;
+
 const content__article = css`
   font-size: 1.5rem;
   background-color: var(--main-white);
@@ -22,9 +22,25 @@ const content__article = css`
   flex-direction: column;
   margin-top: 25px;
   padding: 15px;
-  max-width: 500px;
   box-shadow: 5px 7px 9px black;
-  line-height: 20px;
+  width: 90%;
+  max-width: 650px;
+`;
+
+const articleNav = css`
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+`;
+const articleNav_action = css`
+  font-size: 1.5rem;
+  margin: 25px;
+  background-color: #3d555d;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 100px;
+  text-align: center;
+  color: var(--main-white);
 `;
 
 export default ({ data, pageContext }) => {
@@ -41,12 +57,12 @@ export default ({ data, pageContext }) => {
         <MDXRenderer>{body}</MDXRenderer>
       </div>
 
-      <div>
+      <div css={articleNav}>
         {previous === false ? null : (
           <>
             {previous && (
               <Link to={previous.fields.slug}>
-                <p>{previous.frontmatter.title}</p>
+                <p css={articleNav_action}>{previous.frontmatter.title}</p>
               </Link>
             )}
           </>
@@ -55,7 +71,7 @@ export default ({ data, pageContext }) => {
           <>
             {next && (
               <Link to={next.fields.slug}>
-                <p>{next.frontmatter.title}</p>
+                <p css={articleNav_action}>{next.frontmatter.title}</p>
               </Link>
             )}
           </>

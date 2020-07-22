@@ -29,9 +29,9 @@ export default function Header({ siteTitle, siteDescription }) {
   return (
     <header css={header}>
       <div>
-        <Link to="/"></Link>
-        <h1>{siteTitle}</h1>
-
+        <Link to="/">
+          <h1>{siteTitle}</h1>
+        </Link>
         <p>{siteDescription}</p>
       </div>
       <p>
