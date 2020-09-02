@@ -22,7 +22,7 @@ const content__article = css`
   flex-direction: column;
   margin-top: 25px;
   padding: 15px;
-  box-shadow: 5px 7px 9px black;
+  border-bottom: solid 2px var(--fav-accent);
   width: 90%;
   max-width: 650px;
 `;

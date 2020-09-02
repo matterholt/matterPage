@@ -15,7 +15,7 @@ const content__article = css`
   margin-top: 25px;
   padding: 15px;
   max-width: 500px;
-  box-shadow: 5px 7px 9px black;
+  box-shadow: 5px 7px 9px #cacdd1;
 `;
 
 const content_header = css`
@@ -24,6 +24,7 @@ const content_header = css`
   flex-flow: row-reverse;
   justify-content: space-between;
   padding-bottom: 10px;
+  color: var(--fav-dark);
   border-bottom: solid 2px var(--fav-accent);
 `;
 

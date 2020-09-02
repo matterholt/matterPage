@@ -6,8 +6,8 @@ import { jsx, css } from "@emotion/core";
 const header = css`
    {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: var(--fav-dark);
-    color: var(--main-white);
+    background-color: var(--main-white);
+    color: var(--fav-dark);
     display: flex;
     align-items: center;
     justify-content: space-between;

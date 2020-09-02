@@ -9,6 +9,7 @@ const container = css`
   display: flex;
   flex-flow: column;
   align-items: center;
+  background-color: var(--main-white);
 `;
 
 export const Layout = ({ children }) => {

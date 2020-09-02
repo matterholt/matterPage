@@ -1,19 +1,35 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../asset/font/Montserrat-Regular.ttf');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../asset/font/Roboto-Thin.ttf');
+  font-weight: 100;
+  font-style: normal;
+}
+
 :root {
-  --main-white: #D2DAD7;
+  --main-white: #eaedf2;
   --main-black: #16323c;
   --fav-dark: #06384d;
-  --fav-accent: #dcb122;
+  --fav-accent: #a6815a;
   font-size: 62.5%;
 }
 
+
+
 body {
-  background-color: var(--main-black);
+  font-family: 'Montserrat';
   margin: 0;
   padding: 0;
 }
 
 code {
-  background: whitesmoke;
+  background: white;
   display: inline-block;
   overflow: scroll;
   width: 100%;
