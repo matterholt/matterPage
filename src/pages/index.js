@@ -15,7 +15,7 @@ const content__article = css`
   margin-top: 25px;
   padding: 15px;
   max-width: 500px;
-  box-shadow: 5px 7px 9px #cacdd1;
+  box-shadow: 1px 5px 25px #cacdd1;
 `;
 
 const content_header = css`
