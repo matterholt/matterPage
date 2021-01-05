@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from "gatsby";
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
@@ -34,9 +34,11 @@ export default function Header({ siteTitle, siteDescription }) {
         </Link>
         <p>{siteDescription}</p>
       </div>
-      <p>
-        Matthew <br /> Atterholt
-      </p>
+      <nav>
+        <Link to="/blog">
+          <p>Blog</p>
+        </Link>
+      </nav>
     </header>
   );
 }

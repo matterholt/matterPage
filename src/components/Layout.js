@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+ 
 import Header from "../components/Header";
 import { useSiteMetadata } from "../hooks/useSiteMetaData";
 
@@ -10,6 +10,7 @@ const container = css`
   flex-flow: column;
   align-items: center;
   background-color: var(--main-white);
+  min-height: 100vh;
 `;
 
 export const Layout = ({ children }) => {
