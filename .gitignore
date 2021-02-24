@@ -1,4 +1,5 @@
 # project dependencies
+dist
 
 .cache
 node_modules
