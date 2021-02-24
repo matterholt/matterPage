@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+
+		"emmet.includeLanguages": {
+			"\"liquid\"": "\"html\" ",
+		},
+		"files.associations": {
+			"*html": "html", 
+			"*liquid": "html"
+		},
+		
+	}
+}

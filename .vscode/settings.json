@@ -1,0 +1,6 @@
+{
+    "emmet.includeLanguages": {
+        "\"liquid\"": "\"html\" "
+    },
+    "html-css-class-completion.enableEmmetSupport": true
+}
