@@ -1,12 +1,18 @@
 // const pluginSass = require('"eleventy-plugin-sass"')
 
 
-module.exports = function (eleventyConfig) {
-    //    eleventyConfig.addPlugin(pluginSass, sassPluginOptions)
+module.exports = function (config) {
+    //    config.addPlugin(pluginSass, sassPluginOptions)
+ 
+    config.addPlugin(require("@11ty/eleventy-navigation"));
+    config.addShortcode('navlist', require('./lib/shortcode/navlist.js'))
+
+
     return{
-    dir: {
-        input: "src",
-        output: "dist"
-    }}
+        dir: {
+            input: "src",
+            output: "dist"
+        }
+    }
 }
 

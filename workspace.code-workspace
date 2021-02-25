@@ -11,8 +11,12 @@
 		},
 		"files.associations": {
 			"*html": "html", 
-			"*liquid": "html"
+			"*liquid": "html",
+			"*njk":"html"
 		},
+		"cSpell.words": [
+			"eleventy"
+		],
 		
 	}
 }
