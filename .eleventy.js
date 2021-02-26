@@ -5,7 +5,7 @@ const
 
 module.exports = function (config) {
     //    config.addPlugin(pluginSass, sassPluginOptions)
- 
+
     config.addPlugin(require("@11ty/eleventy-navigation"));
     config.addShortcode('navlist', require('./lib/shortcode/navlist.js'))
     config.addTransform('postcss', require('./lib/transforms/postcss'))
