@@ -1,0 +1,30 @@
+.landing__header {
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    grid-template-rows: 50px 1fr 50px;
+    height: 100vh;
+    padding: 15px;
+    background-color: var(--main-hex-light);
+    font-size: 2rem;
+    font-weight: 200;
+    margin-top: 40px;
+}
+
+.landing__h1 {
+    font-size: 5rem;
+    border-bottom: 5px solid var(--main-orange);
+    margin-bottom: 30px;
+}
+
+.landing__subtitle {
+    margin-bottom: 15px;
+}
+
+
+.landing__Intro {
+    font-size: 1.5rem;
+    font-weight: 100;
+    grid-column: 2;
+    grid-row: 2;
+    place-self: center;
+}

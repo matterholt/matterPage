@@ -2,17 +2,19 @@
 
 
 <header>
+    <h1 class="pageTitle">{{ pageTitle }}</h1>
+
     <nav>
         {% navlist collections.all | eleventyNavigation, page, 1  %}
     </nav>
+    
 </header>
 
-<h1>{{ pageTitle }}</h1>
 <main>
 
 {{ content | safe}}
 
-</main>`
+</main>
 
 
 
