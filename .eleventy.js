@@ -11,6 +11,8 @@ module.exports = function (config) {
     config.addTransform('postcss', require('./lib/transforms/postcss'))
     config.addWatchTarget('./src/scss/')
 
+    config.addPassthroughCopy("./src/fonts");
+
 
     return{
         dir: {
