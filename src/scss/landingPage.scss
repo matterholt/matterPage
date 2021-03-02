@@ -1,5 +1,6 @@
 .landing__section{
-    grid-column: 2
+    grid-row: 1;
+    grid-column: 2;
 
 }
 .landing__header {
@@ -8,21 +9,48 @@
 }
 
 
+
 .landing__title {
-    font-weight: 500;
+    font-weight: 900;
     font-size: 3.5rem;
+    margin:50px 0px;
+    padding-bottom: 15px; 
+    border-bottom: 4px solid var(--main-bronze);
 }
 
 .landing__subtitle {
     font-size:2.5rem;
+    font-weight: 500;
+    line-height: 4rem;
+    margin:50px 0px;
 }
-
 
 .landing__Intro {
-font-size: 1.5rem;
-font-weight: 200;
+    margin:50px 0px;
+    font-size: 1.5rem;
+    font-weight: 200;
+    display: flex;
+}
+.landing__IntroContext{
+    flex-shrink:7;
+    width:50%;
+    padding: 0 15px;
+    
 }
 
-.landing__aside{
+.landing__profileImage {
+    flex-grow:  4;
+    justify-self: center;
+    align-self: center;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+}
 
+
+.lastest_post{
+    grid-row: 2;
+    grid-column: 2;
+    background-color: rgba(95, 158, 160, 0.178) ;
+    height: 100vh;
 }
