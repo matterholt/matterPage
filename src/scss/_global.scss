@@ -10,16 +10,13 @@
     font-style: normal;
 }
 
-Roboto-Light html {
-    font-size: 62.5%;
-}
 
 :root {
     --main-hex-dark: #06384d;
     /* --main-orange: #FDCA40; */
     /* --main-orange: #ff8800bb; */
     /* --main-orange: #9B4828; */
-    --main-orange: #a6815a;
+    --main-bronze: #a6815a;
     --main-hex-light: #eaedf2;
     --main-white: #eaedf2;
 
@@ -39,25 +36,17 @@ h1,
 h2,
 h3 {
     font-family: Montserrat;
-    font-size: 2.0rem;
-    font-weight: 900;
+        margin: 0;
+        padding: 0;
 }
 
-p,
-li,
-a {
-    font-family: Roboto;
-    font-weight: 100;
-    font-size: 1.8rem;
-}
-
-
-h1,
-h2,
-h3,
 ul,
 p {
+  font-family: Roboto;
     margin: 0;
     padding: 0;
     margin-bottom: 15px;
+}
+section{
+    min-height: 80vh;
 }
