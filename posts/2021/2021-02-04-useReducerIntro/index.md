@@ -11,11 +11,11 @@ The useReducer does well with managing multiple states that change together. The
 
 userReducer is similar to redux as in managing state by passing in a reducer function that is a switch statement looking for an action to perform than updating the state. This is more of a convention, I think it would be good to determine where the line is draw between convention and the actual API
 
-when the useReducer is called inside the component, the function requires two arguments. First one is a function, referred to as a reducer function and is where the state can be updated and then return. The reducer function also requires two arguments. First is the current state, the other would be what action to update the state. If fact the second argument is often called "action".
+when the useReducer is called inside the component, the function requires two arguments. First, one is a function, referred to as a reducer function, and is where the state can be updated and then return. The reducer function also requires two arguments. First is the current state, the other would be what action to update the state. In fact, the second argument is often called "action".
 
-Now the useReducer is deconstructed into an  array. The first value is the state, the other is a the function reducer function commonly referred as the dispatch. 
+Now the useReducer is deconstructed into an array. The first value is the state, the other is a function reducer function commonly referred to as the dispatch.
 
-Below are code example on useReducer, the very useful and powerful useReducer. 
+Below are code example on useReducer, the very useful and powerful useReducer.
 
 ### Passing the increment step prop as the action
 
