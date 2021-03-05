@@ -53,4 +53,15 @@
     grid-column: 2;
     background-color: rgba(95, 158, 160, 0.178) ;
     height: 100vh;
+    font-size: 2rem;
+    display:flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+
+.landing__featurePost {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }

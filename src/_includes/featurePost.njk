@@ -1,5 +1,21 @@
-<h2>Feature articles</h2>
-<ul>
-    <li>one</li>
-<li>two</li>
+
+<div class="landing__featurePost">
+{% assign reverseOrderPost = collections.post  || reverse %}
+{% assign latestPost =  reverseOrderPost[0].data %}
+
+<h1>TITLE: {{ latestPost.title }}</h1>
+<ul className="landing__featurePost">
+    <li>DATE: {{latestPost.date}}</li>
+    <li>DESCRIPTION: {{latestPost.slug}}</li>
+    <li>
+        Tags:
+        <ul>
+            {%- for tag in latestPost.tags -%}
+            <li>{{tag}}</li>
+            {%- endfor -%}
+        </ul>
+    </li>
+
+
 </ul>
+</div>
