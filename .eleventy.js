@@ -1,4 +1,4 @@
-// const pluginSass = require('"eleventy-plugin-sass"')
+// used to sort articles
 const
     dev = (global.dev = process.env.ELEVENTY_ENV === "development");
     now = new Date()
@@ -12,6 +12,12 @@ module.exports = function (config) {
     config.addWatchTarget('./src/scss/')
 
     config.addPassthroughCopy("./src/fonts");
+
+    config.addCollection("post", (collection) =>
+      collection
+        .getFilteredByGlob(`./src/articles/*.md`)
+        .filter((p) => dev || (p.data.published && p.date <= now))
+    );
 
 
     return{

@@ -11,9 +11,14 @@
 </header>
 
 <main>
+    {% block content %}
 
 {{ content | safe}}
 
+{% include "partials/pagelist.njk" %}
+    
+
+{% endblock %}
 </main>
 
 
