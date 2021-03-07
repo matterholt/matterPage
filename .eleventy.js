@@ -3,8 +3,13 @@ const
     dev = (global.dev = process.env.ELEVENTY_ENV === "development");
     now = new Date()
 
+const dateformat = require('./lib/filters/dataformat')
+    
+
 module.exports = function (config) {
     //    config.addPlugin(pluginSass, sassPluginOptions)
+
+    config.addFilter("datefriendly",dateformat.friendly)
 
     config.addPlugin(require("@11ty/eleventy-navigation"));
     config.addShortcode('navlist', require('./lib/shortcode/navlist.js'))

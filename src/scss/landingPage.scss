@@ -48,20 +48,67 @@
 }
 
 
-.lastest_post{
+.landing___contentPost {
     grid-row: 2;
     grid-column: 2;
-    background-color: rgba(95, 158, 160, 0.178) ;
+
     height: 100vh;
     font-size: 2rem;
     display:flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 15px;
 }
 
 
-.landing__featurePost {
+.postListing {
+        margin-top: 40px;
+        width: 75%;
+    &__heading {
+        margin-bottom:30px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    &__title{
+        font-weight: 900;
+        font-size: 2.5rem;
+
+        text-transform: uppercase;
+        
+    }
+    &__date{
+        font-size: 1rem;
+    }
+    &__description{
+        
+
+    }
+
+}
+
+.postTag {
     display:flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    font-size:1.5rem;
+    margin: 15px 0;
+     width:100%;
+    h4 {
+        margin-right: 5px;
+    }
+
+}
+
+.postTag__tagList{
+    font-size:1rem;
+    list-style: none;
+    display: flex;
+        li {
+            background-color: #bdc8cc;
+            margin: 5px;
+            padding: 10px;
+            font-weight: 700;
+            border-radius: 5px;
+        }
 }

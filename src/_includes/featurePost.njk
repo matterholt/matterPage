@@ -1,21 +1,26 @@
 
-<div class="landing__featurePost">
 {% assign reverseOrderPost = collections.post  || reverse %}
 {% assign latestPost =  reverseOrderPost[0].data %}
 
-<h1>TITLE: {{ latestPost.title }}</h1>
-<ul className="landing__featurePost">
-    <li>DATE: {{latestPost.date}}</li>
-    <li>DESCRIPTION: {{latestPost.slug}}</li>
-    <li>
-        Tags:
-        <ul>
+<div class="postListing">
+    <div class="postListing__heading">
+
+        <h3 class="postListing__title">{{ latestPost.title }}</h3>
+    
+            <p class="postListing__date">DATE: {{latestPost.date | datefriendly }}</p>
+    </div>
+    
+        <p class="postListing__description">DESCRIPTION: {{latestPost.slug}}</p>
+        
+
+
+    <div class="postTag">
+        <h4>Tags:</h4>
+        <ul class="postTag__tagList">
             {%- for tag in latestPost.tags -%}
             <li>{{tag}}</li>
             {%- endfor -%}
         </ul>
-    </li>
+    </div>
 
-
-</ul>
 </div>
