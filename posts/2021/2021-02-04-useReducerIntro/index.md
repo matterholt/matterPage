@@ -1,6 +1,6 @@
 ---
 title: Intro to the useReducer Hook
-date: 2020-02-04
+date: 2021-02-04
 published: true
 slug: Understanding on how the useReducer API works and convention that make it powerful
 ---

@@ -1,7 +1,7 @@
 ---
 title: Building a Menu Component
-date: 2020-02-05
-published: trues
+date: 2021-02-05
+published: true
 slug: Explanation of the Menu Component that I built
 ---
 # Mobile Navigation Component
