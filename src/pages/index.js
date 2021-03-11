@@ -2,6 +2,7 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 
 import { Layout } from "../components/Layout";
+import Landing from "../components/Landing"
 
 import "../style/global.css";
 /** @jsx jsx */
@@ -48,6 +49,7 @@ const content_excerpt = css`
 export default ({ data }) => {
   return (
     <Layout>
+      <Landing />
       {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => {
         return (
           <article css={content__article} key={id}>
