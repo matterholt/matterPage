@@ -1,0 +1,31 @@
+.pageList{
+    article{
+    margin: 25px 0;
+    display:grid;
+    grid-template-columns: 1fr 25%;
+    grid-template-rows: 50px 1fr;
+}
+}
+
+.articlePage__heading{
+    grid-row:1;
+    grid-column:1 ;
+    align-self: center;
+    
+}
+.articlePage__description{
+    grid-row: 2;
+    grid-column: 1;
+   align-self: center;
+   color: var(--main-fav-light)
+}
+.articlePage__readMore {
+        grid-row:2;
+        grid-column:2;
+        place-self: center;
+}
+.articlePage__date{
+            grid-row:1;
+            grid-column:2;
+            place-self: center;
+}

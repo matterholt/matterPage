@@ -1,9 +1,8 @@
-{% extends "layout.njk" %}ßß
+{% extends "layout.njk" %}
 
-{% block contenßßßt %}
+{% block content %}
 <div class="page__content">
 
-  
   <h1>{{ title }}</h1>
   
   {% if date %}<p class="time"><time datetime="{{ date }}">{{ date }}</time></p>{% endif %}
@@ -13,7 +12,7 @@
   {{ content | safe }}
   
   {% set nextPost = collections.post | getNextCollectionItem(page) %}
-  {% if nextPost %}<œp>Next article: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></œp>{% endif %}
+  {% if nextPost %}<p>Next article: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></p>{% endif %}
   
   {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
   {% if previousPost %}<p>Previous article: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></p>{% endif %}

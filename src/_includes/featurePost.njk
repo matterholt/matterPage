@@ -1,5 +1,5 @@
 
-{% assign reverseOrderPost = collections.post  || reverse %}
+{% assign reverseOrderPost = collections.post %}
 {% assign latestPost =  reverseOrderPost[0]%}
 
 <div class="postListing">
@@ -9,7 +9,11 @@
         <p class="postListing__date">{{latestPost.data.date | datefriendly }}</p>
     </div>
 
-        <p class="postListing__description">DESCRIPTION: {{latestPost.data.slug}}</p>
+
+        <p class="postListing__description">{{latestPost.data.slug}}</p>
+    <div class="link_dark postLink">
+            <a  href="{{ latestPost.url }}">READ MORE</a>
+    </div>
 
     <div class="postTag">
         <h4>Tags:</h4>
@@ -19,6 +23,5 @@
             {%- endfor -%}
         </ul>
     </div>
-            <a href="{{ latestPost.url }}">READ MORE</a>
 
 </div>

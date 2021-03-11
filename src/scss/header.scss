@@ -5,6 +5,7 @@ header{
     align-items: center;
     padding: 10px;
     font-size: 1.2rem;
+    border-bottom: 4px solid var(--main-fav-bronze);
 
 }
 .pageTitle{
@@ -15,9 +16,11 @@ header{
 nav {
     ul {
         list-style: none;
+        font-size: 1.5rem;
+        color: var(--main-fav-light);
         display: flex;
-        flex-direction: row;
-
+        align-items: center;
+        text-transform: uppercase;
         li {
             padding: 10px;
         }

@@ -11,14 +11,13 @@
 }
 
 
+
 :root {
-    --main-hex-dark: #06384d;
-    /* --main-orange: #FDCA40; */
-    /* --main-orange: #ff8800bb; */
-    /* --main-orange: #9B4828; */
-    --main-bronze: #a6815a;
-    --main-hex-light: #eaedf2;
-    --main-white: #eaedf2;
+    --main-black: #464a4c;
+    --main-fav-dark: #06384d;
+    --main-fav-light: #eaedf2;
+    --main-fav-bronze: #b98f62;
+    --main-white: #f4f6f8;
 
 }
 
@@ -26,8 +25,6 @@ html,
 body {
     margin: 0;
     padding: 0;
-    color: var(--main-hex-dark);
-    background-color: var(--main-hex-light);
     scroll-behavior: smooth;
     font-size: 62.5%;
 }
