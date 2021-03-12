@@ -47,6 +47,7 @@ const content_excerpt = css`
 `;
 
 const NextSection = css`
+margin-top: 50px;
   font-size: 2.3rem;
   font-weight: 900;
   color: var(--fav-dark);
@@ -55,7 +56,8 @@ const NextSection = css`
   padding: 20px 0;
   text-align: center;
    @media (max-width: 768px) {
-         width: 100%;
+         width: auto;
+         padding: 20px;
 `;
 
 export default ({ data }) => {
