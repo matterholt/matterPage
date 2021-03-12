@@ -51,16 +51,18 @@ const NextSection = css`
   font-weight: 900;
   color: var(--fav-dark);
   border-bottom: solid 2px var(--fav-accent);
-  width: 50%;
+  width: 75%;
   padding: 20px 0;
   text-align: center;
+   @media (max-width: 768px) {
+         width: 100%;
 `;
 
 export default ({ data }) => {
   return (
     <Layout>
       <LandingSection />
-      <h2 css={NextSection}>Some things that I have learnt</h2>
+      <h2 css={NextSection}>Articles</h2>
       {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => {
         return (
           <article css={content__article} key={id}>
