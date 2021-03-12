@@ -46,10 +46,21 @@ const content_excerpt = css`
   color: var(--fav-dark);
 `;
 
+const NextSection = css`
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: var(--fav-dark);
+  border-bottom: solid 2px var(--fav-accent);
+  width: 50%;
+  padding: 20px 0;
+  text-align: center;
+`;
+
 export default ({ data }) => {
   return (
     <Layout>
       <Landing />
+      <h2 css={NextSection}>Some things that I have learnt</h2>
       {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => {
         return (
           <article css={content__article} key={id}>

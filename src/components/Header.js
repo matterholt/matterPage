@@ -34,9 +34,7 @@ export default function Header({ siteTitle, siteDescription }) {
         </Link>
         <p>{siteDescription}</p>
       </div>
-      <p>
-        Matthew <br /> Atterholt
-      </p>
+
     </header>
   );
 }
