@@ -31,7 +31,7 @@ const landing_card = css`
 
 
 
-export default function Landing() {
+export default function LandingSection() {
   return (
     <section id="landing" css={landingsection}>
       <div css={landing_card}>
@@ -43,13 +43,12 @@ export default function Landing() {
             Specialized in React. I build web applications, that solve problems
             and help people get things done. Always eager to help others, learn
             from fellow developers. NEXT.js is my go to in frameworks to build
-            apps. I have done some work in the Backend development to understand basic concepts.
-            I enjoy using JavaScript and Python.
+            apps. I have done some work in the Backend development to understand
+            basic concepts. I enjoy using JavaScript and Python.
           </p>
         </div>
-
       </div>
-      <SocialLink/>
+      <SocialLink />
     </section>
   );
 }

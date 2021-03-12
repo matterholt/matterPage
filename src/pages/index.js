@@ -2,7 +2,7 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 
 import { Layout } from "../components/Layout";
-import Landing from "../components/Landing"
+import LandingSection from "../components/LandingSection";
 
 import "../style/global.css";
 /** @jsx jsx */
@@ -59,7 +59,7 @@ const NextSection = css`
 export default ({ data }) => {
   return (
     <Layout>
-      <Landing />
+      <LandingSection />
       <h2 css={NextSection}>Some things that I have learnt</h2>
       {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => {
         return (
