@@ -15,6 +15,8 @@ const landingsection = css`
     padding: 25px;
     min-height: 50vh;
     font-size: 2rem;
+    @media (max-width: 768px) {
+        margin: 5px 0;
   }
 `;
 
@@ -27,13 +29,15 @@ const landing_card = css`
   border-radius: 10px;
   display: grid;
   place-items: center;
+  @media (max-width: 768px) {
+         width: 100%;
 `;
 
 
 
 export default function LandingSection() {
   return (
-    <section id="landing" css={landingsection}>
+    <section id="landing" css={landingsection }>
       <div css={landing_card}>
         <div>
           <h3>Front End Engineer</h3>
