@@ -45,7 +45,7 @@ export default function LandingSection() {
         </div>
         <div>
           <p>
-            At the ready to help others and eager to learn from others. I have
+            At the ready to help and eager to learn from others. I have
             been working with React.js and other React libraries to build
             components and web applications. NEXT.js is my go-to framework to
             build web applications. I am fairly conformable with Python Flask
