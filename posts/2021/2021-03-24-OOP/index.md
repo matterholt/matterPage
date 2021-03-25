@@ -39,14 +39,13 @@ Example is not too bad if one or two but could get complicated as the program gr
 
 ```python
 
-# Classes serve as a blue print.
+# Python class serve as a blue print.
 
-Class  Burrito :
+class  Burrito :
     def __init__(self,meat,bean,sauce):
         self.meat = meant
         self.bean = bean
         self.sauce = sauce
-
 
 my_burrito  = Burrito('chicken','black beans','hot')
 
@@ -56,7 +55,6 @@ print(my_burrito.meat)
 ```
 
 Technically more lines of code. But where we have more lines of code we make up for it ease of understanding and versatility . Since the class serves as a blue print a programer, letting them know what is required for the instance.
-
 
 This is just a start of OOP, and a lot more concepts and techniques to understand. Should have a general idea on classes and such. Next we can look a bit more on the main concepts of OOP.
 
@@ -76,32 +74,51 @@ There are 4 main principles to follow when working in the OOP paradigm.
 3. Inheritance - The ability to pass data from a parent classes into another.
 4. Polymorphism - creating many methods that do the same task 
 
-Encapsulation, is keeping the important/secret information inside the class and only exposing methods or properties that would be need to accomplish a task. If accessible out side of the class would be referred as Public or External Interface. If wanted to keep methods or properties from getting changed, would be called a Private or Internal interface. 
+**Encapsulation**, is keeping the important/secret information inside the class and only exposing methods or properties that would be need to accomplish a task. If accessible out side of the class would be referred as Public or External Interface. If wanted to keep methods or properties from getting changed, would be called a Private or Internal interface. 
 
-Abstraction, remove the complicated things processes and 
+**Abstraction**, remove the complicated processes and supplying a simple interface. so any complicated logic to obtain the values that we are looking for has been abstracted away, resulting in a simple high level external interface. Abstraction is simple hide the logic just return and expose the answer. It doesn't matter how the task is completed just need the answer.
+
+**Inheritance**, help keep code DRY (Don't Repeat Yourself). Say you have made a class and about to make another one that could share attributes or behaviors. Then it might be a good idea to place the the common attribute in a general class and have the "child" class inherit those common attributes and define more specific inside the "child" class. 
+
+**Polymorphism**, say we have a common method in the parent class and most of the time the method would be good to use.but when a child class inherits a method from a parent, but in the child class we need to change said method to do something a bit different. The method name would remain the same but would perform the action define in child instead of the parent. This would be referred to as *Method Overriding*. There is a a technique called *Method Overloading*. Which would have methods would have multiple methods with the same name but with different number parameter. This concept is a little complex but the thing to remember is that whe a method from a parent class doesn't quite match what need to be done the method can be redefine in the child and still have the same outside interaction. 
+
 
 
 ## Parts to create Class Objects
 
-class is an abstract blueprint
-Instance is the object that is build from classes
-attribute are items that are used to create the instance of the object, 
-function called methods
+- class - is an abstract blueprint of an object
+- Instance - is the object that is build from classes
+- attribute -  are items that are used to create the instance of the object, 
+- function  called methods
+- private variables : specifically used by class internally
+- private methods : specifically used by class internally
 
-super();
 
-- private variables
-- private methods ??
-- sdf
 
+- Initialization method for class
+### Python
+**def \__init\__(self,a,b):** --> Python dunder method, which initialize the object with the class attributes 
+### Javascript
+**constructor(a,b){}** : JavaScript way of initializing the class object
+
+
+- Inheritance 
+
+### Python
+**class Child(Parent):** -->  define a parent class on a child class
+**super()** -->  way of defining attributes from  a parent class
+
+### Javascript
+**class Child extends Parent{}** --> JS defining a class that has a parent class
+**super()** --> JavaScript way of defining attributes from  a parent class
 
 
 ## Additional Resources
-Educative, JavaScript examples, very detailed and very good
-[What is Object Oriented Programming? OOP Explained in Depth](https://www.educative.io/blog/object-oriented-programming)
-
 - Free CodeCamp, general OOP 
 [How to explain object-oriented programming concepts to a 6-year-old](https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/)
+
+- Educative, JavaScript examples, very detailed and very good
+[What is Object Oriented Programming? OOP Explained in Depth](https://www.educative.io/blog/object-oriented-programming)
 
 - Real Python, Python examples
 [Object-Oriented Programming (OOP) in Python 3](https://realpython.com/python3-object-oriented-programming/#instantiate-an-object-in-python)
