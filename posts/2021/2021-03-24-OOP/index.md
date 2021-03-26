@@ -1,7 +1,10 @@
-## title: A over view of Object Oriented Programing
+---
+title: A over view of Object Oriented Programing
 date: 2021-03-24
 published: true
 slug: A quick look into the programming paradigm of Object-Oriented. Object-Oriented Programming or OOP, is a process of structuring code. The closer, we as programmers capture these program design patterns, the code-base will be more manageable and easier for future engineers to make changes.
+---
+
 
 # Key Concepts for OOP
 
