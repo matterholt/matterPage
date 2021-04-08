@@ -26,7 +26,11 @@ module.exports = function (config) {
         .filter((p) => dev || (p.data.published && p.date <= now))
     );
 
-
+    config.addCollection("latest", (collection) =>
+      collection
+        .getFilteredByGlob(`./src/articles/*.md`)
+        .filter((p) => dev || (p.data.published && p.date <= now))
+    );
 
     return{
         dir: {
