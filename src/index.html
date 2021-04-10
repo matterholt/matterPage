@@ -7,62 +7,46 @@ eleventyNavigation:
   order: 100
 ---
 
- <section id="landing" class=" landing__section">
-   <div class="landing__content">
-
-     <div class="landing__header">
+ <section id="landing" class="landing__section landingSection--layout">
        <h3 class="landing__title">Software Engineer</h3>
-      </div>
       <div class="landing__subtitle">
         <p>
           At the ready to help and eager to learn from others. I have been working with React.js and other React libraries to build components and web applications. NEXT.js is my go-to framework to build web applications. I am fairly conformable with Python Flask and Node Express frameworks to build a basic Backend. My goal is to keep my code clean and maintainable. I strive to build a product that solves the client’s goals and contributes to the overall success of the product.
         </p>
       </div>
-
-    </div>
     </section>
 
-<div class=" landing__substance">
+<aside class="landing__sideInfo-layout landingBackground__personal">
 
-  
-  <aside>
-    <div class="landing__Intro">
-      <div class="landing__profileImage">
+      <div class="personal__profileImage">
         <img alt="Matterholt profile pic" src="./images/randomPic.png" width="250px" />
       </div>
 
         <p>
-
-Previously a mechanical engineer, There I perform Finite Element Analysis to validate the performance of automotive products. In 2017, started to learn about programming in Python, to automate tasks within the group. I enjoyed working on these problems that could be solved through programing. From there a passion to develop my skills as Software Engineer was set.
+        Previously a mechanical engineer, There I perform Finite Element Analysis to validate the performance of automotive products. In 2017, started to learn about programming in Python, to automate tasks within the group. I enjoyed working on these problems that could be solved through programing. From there a passion to develop my skills as Software Engineer was set.
         </p>
         
-        <div  class="introContent__additional">
+        <div  class="personal__additional">
             <p>
-              More on my background  <span class="additional_link"><a href="/about">ABOUT</a>.</span>
+              More on my background  <span class="personal__additional-link "><a href="/about">ABOUT</a>.</span>
             </p>
             <p>  
-              Finite Element Analysis??? curious...  <span class="additional_link"><a href="/about">F.E.A.</a></span>
+              Finite Element Analysis??? curious...  <span class="personal__additional-link "><a href="/about">F.E.A.</a></span>
             </p>
           </div>
-      </div>
-    </aside>
-    
 
+  </aside>
     
-    
-  </div>
-    
-<div class="other">
-      <div class="hidden landing__LatestPost landing___content ">
-      <h2>
-        Latest Things that I have been learning
-      </h2>
-      {% include featurePost.njk %}
-      
+<div class="landing__content--layout landing__content">
+    <div class="landingContent__latestArticles--layout">
+        <h2>
+          Latest Things that I have been learning
+        </h2>
+        {% include featurePost.njk %}
     </div>
     
     
-    <div class="hidden landing__FavCode landing___content ">
+    <div class="landing___content ">
       <h2>Projects</h2>
     </div>
-</div>
+  </div>
