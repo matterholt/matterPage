@@ -1,9 +1,7 @@
 .landing__section{
     grid-row: 1;
-    grid-column: 2;
+    grid-column: 1 / span 5;
    place-self:center;
-   position: relative;
-   z-index: 10;  
 }
 
 
@@ -36,8 +34,8 @@ padding: 10px 50px;
     font-size: 1.5rem;
     font-weight: 200;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+
 
 }
 .landing__IntroContent {
@@ -59,8 +57,6 @@ padding: 10px 50px;
     margin-left: 10px;
     font-size: 2rem;
 }
-
-
 
 .landing__profileImage{
         border-radius: 10px;
@@ -140,4 +136,21 @@ padding: 10px 50px;
             font-weight: 700;
             border-radius: 5px;
         }
+}
+
+.landing__substance{
+        grid-row: 2;
+        grid-column: 4 / span 2;
+    display:flex;
+    background-color: teal;
+}
+.other{
+            grid-row: 2;
+            grid-column: 1 / span 3;
+            background-color: cadetblue;
+}
+
+
+.hidden{
+    display:none;
 }

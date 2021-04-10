@@ -36,10 +36,12 @@
     }
 }
 
-main{
+.pageLayout{
     display: grid;
-    grid-template-columns: 15% 1fr 15%;
+    grid-template-columns: repeat(5,20%);
     grid-template-rows: auto;
+    width: 100vw;
+    margin:0;
 }
 
 .page__content{
@@ -48,7 +50,6 @@ main{
     font-size: 2rem;
     display:flex;
     flex-direction: column;
-
 }
 
 .image__background{

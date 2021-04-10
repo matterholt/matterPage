@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 100
 ---
 
- <section id="landing" class="landing__section">
+ <section id="landing" class=" landing__section">
    <div class="landing__content">
 
      <div class="landing__header">
@@ -18,19 +18,27 @@ eleventyNavigation:
           At the ready to help and eager to learn from others. I have been working with React.js and other React libraries to build components and web applications. NEXT.js is my go-to framework to build web applications. I am fairly conformable with Python Flask and Node Express frameworks to build a basic Backend. My goal is to keep my code clean and maintainable. I strive to build a product that solves the client’s goals and contributes to the overall success of the product.
         </p>
       </div>
-      <div class="landing__Intro">
-        <div class="landing__profileImage">
-          <img alt="Matterholt profile pic" src="./images/randomPic.png" width="250px" />
-        </div>
-        
-        <div class="landing__IntroContent">
-          <p class="introContent__textCard">
-            I was a mechanical engineering, There I perform Finite Element Analysis to validate the performance on automotive products. 
-             In 2017, started to learn about programing in Python, to automate task in the group. I enjoyed working on these problems
-             that could be solved through programing. From there a passion create a career as Software Engineer was set.
-          </p>
 
-          <div  class="introContent__additional">
+    </div>
+    </section>
+
+<div class=" landing__substance">
+
+  
+  <aside>
+    <div class="landing__Intro">
+      <div class="landing__profileImage">
+        <img alt="Matterholt profile pic" src="./images/randomPic.png" width="250px" />
+      </div>
+      
+      <div class="landing__IntroContent">
+        <p class="introContent__textCard">
+          I was a mechanical engineering, There I perform Finite Element Analysis to validate the performance on automotive products. 
+          In 2017, started to learn about programing in Python, to automate task in the group. I enjoyed working on these problems
+          that could be solved through programing. From there a passion create a career as Software Engineer was set.
+        </p>
+        
+        <div  class="introContent__additional">
             <p>
               More on my background  <span class="additional_link"><a href="/about">ABOUT</a>.</span>
             </p>
@@ -41,26 +49,24 @@ eleventyNavigation:
         </div>
         
       </div>
-    </div>
-    </section>
+    </aside>
     
-  
 
-
-  <div class="landing__LatestPost landing___content ">
-    <h2>
-      Latest Things that I have been learning
-    </h2>
+    
+    
+  </div>
+    
+<div class="other">
+      <div class="hidden landing__LatestPost landing___content ">
+      <h2>
+        Latest Things that I have been learning
+      </h2>
       {% include featurePost.njk %}
-
-  </div>
-
-
-  <div class="landing__FavCode landing___content ">
-      <h2>Projects</h2>
-  </div>
-
-
-
       
-  </div>
+    </div>
+    
+    
+    <div class="hidden landing__FavCode landing___content ">
+      <h2>Projects</h2>
+    </div>
+</div>
