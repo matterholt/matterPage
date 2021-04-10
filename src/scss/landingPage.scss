@@ -4,12 +4,10 @@
    place-self:center;
 }
 
-
 .landing__content{
 padding: 10px 50px;
  border-radius:2px;
 }
-
 
 .landing__title {
     font-weight: 900;
@@ -29,39 +27,10 @@ padding: 10px 50px;
     }
 }
 
-.landing__Intro {
-    margin:50px 0px;
-    font-size: 1.5rem;
-    font-weight: 200;
-    display: flex;
-    flex-direction: column;
 
 
-}
-.landing__IntroContent {
-    padding: 2em 3em;
-    width: 50%;
-    border-radius: 5px;
-    box-shadow: 5px 8px 10px #d3d5d7;
-}
-.introContent__additional{
-    font-weight: 100;
-    color: rgb(107, 106, 106);
-    margin: 15px 0px;
-    p{
-        margin-top: 10px;
-    }
-}
-.additional_link{
-    font-weight: bold;
-    margin-left: 10px;
-    font-size: 2rem;
-}
 
-.landing__profileImage{
-        border-radius: 10px;
-        overflow: hidden;
-}
+
 .landing__LatestPost{
     grid-row: 2;
     grid-column: 2;
@@ -71,7 +40,6 @@ padding: 10px 50px;
         grid-row: 3;
         grid-column: 2;
 }
-
 
 .landing___content {
     font-size: 2rem;
@@ -140,9 +108,8 @@ padding: 10px 50px;
 
 .landing__substance{
         grid-row: 2;
-        grid-column: 4 / span 2;
+        grid-column: 4 / span 2 ;
     display:flex;
-    background-color: teal;
 }
 .other{
             grid-row: 2;
@@ -153,4 +120,38 @@ padding: 10px 50px;
 
 .hidden{
     display:none;
+}
+
+
+// Quick Blip of Personal Info
+
+.landing__profileImage {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.landing__Intro {
+    font-size: 1.7rem;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+
+}
+
+.introContent__additional {
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: rgb(107, 106, 106);
+    margin: 15px 0px;
+
+    p {
+        margin-top: 10px;
+    }
+}
+
+.additional_link {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 2rem;
 }
