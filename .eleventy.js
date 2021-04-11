@@ -20,6 +20,16 @@ module.exports = function (config) {
     config.addPassthroughCopy("./src/images");
 
 
+    config.addFilter("first", (value) => {
+        const latestPost = value.map(x => {
+            const { title, slug } = x.data
+            const url = x.data.page.url
+            return { title, slug, url };
+        })
+        return latestPost.slice(0,3);
+    });
+
+
     config.addCollection("post", (collection) =>
       collection
         .getFilteredByGlob(`./src/articles/*.md`)
