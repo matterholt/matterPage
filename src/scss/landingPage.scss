@@ -30,14 +30,30 @@
 .landing__sideInfo-layout {
     grid-row: 2;
     grid-column: 4 / span 2;
-    align-items: center;
+    margin:0 15px;
 }
 .landingBackground__personal {
     font-size: 1.7rem;
     font-weight: 200;
+}
+.personal__container{
+    padding: 15px;
+    background-color: var(--main-fav-dark);
+    color: var(--main-fav-light);
+    border-radius: 5px;
+    display:grid;
+    grid-template-rows: 350px 1fr 150px 150px;
+}
+.personal__externalLinks{
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.personal__flexCenter {
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .personal__profileImage {
     border-radius: 10px;
@@ -55,22 +71,23 @@
     font-size: 2rem;
 }
 // Articles and project content
-.landing__content--layout{
-    grid-row: 2;
-    grid-column: 1 / span 3;
-    align-items: center;
-}
 .landing__content {
     font-size: 2rem;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     padding:0 30px;
-}
-.landingContent__latestArticles--layout{
-    display: flex;
-    flex-direction: column;
+    grid-column: 1 / span 3;
     min-height: 50vw;
+    &--layoutArticles{
+        grid-row: 2;
+    }
+    &--layoutProjects{
+         grid-row: 3;
+         background-color: red;
+    }
 }
+
 .landing__sectionTitle{
     text-align: center;
     font-weight: 900;
