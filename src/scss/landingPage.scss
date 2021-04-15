@@ -62,13 +62,19 @@
 .personal__additional {
     font-weight: 100;
     font-size: 1.5rem;
-    color: rgb(107, 106, 106);
+    color: var(--main-fav-dark);
     margin: 15px 0px;
+    padding: 20px;
+    background-color: var(--main-white);
+    border-radius: 5px;
 }
 .personal__additional-link {
     font-weight: bold;
     margin-left: 10px;
     font-size: 2rem;
+    color: var(--main-fav-bronze);
+
+
 }
 // Articles and project content
 .landing__content {
