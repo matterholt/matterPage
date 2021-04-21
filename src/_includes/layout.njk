@@ -3,9 +3,10 @@
 
 <header>
     <div>
-        <h1 class="pageTitle">{{ pageTitle }}</h1>
+        <h1 class="pageTitle">Matterholt</h1>
         <p>FULL STACK, REACT.js, OPEN TO LEARN, DIVERSE IN KNOWLEDGE</p>
     </div>
+    <p>{{ pageTitle }}</p>
 
     <nav>
         {% navlist collections.all | eleventyNavigation, page, 1  %}
@@ -14,11 +15,11 @@
 </header>
 
 <main class="pageLayout">
+    
     {% block content %}
 
-{{ content | safe}}
-
-  {% include "partials/pagelist.njk" %}
+    {{ content | safe}}
+    {% include "partials/pagelist.njk" %}
     
 
 {% endblock %}

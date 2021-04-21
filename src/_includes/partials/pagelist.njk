@@ -1,9 +1,9 @@
 
 {% if pagelist %}
 
-<aside class="pageList page__content">
+<div class="pageContent">
     {%- for post in pagelist -%}
-    <article >
+    <article  class="postListing">
         <div class="articlePage__heading">
             <h2 class="link_dark"><a href="{{ post.url}}">{{ post.data.title }}</a></h2>
         </div>
@@ -16,7 +16,7 @@
         
     </article>
     {%- endfor -%}
-</aside>
+</div>
 
 
 {% endif %}

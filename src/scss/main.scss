@@ -3,6 +3,8 @@
 @import 'landingPage';
 @import 'landingArticle';
 @import 'articlePage';
+@import 'pagesLayout';
+
 .lightScheme {
     background-color: var(--main-white);
     color: var(--main-black);
@@ -40,7 +42,6 @@
 .pageLayout{
     display: grid;
     grid-template-columns: repeat(5,20%);
-    grid-template-rows: auto;
     margin:0;
 }
 
