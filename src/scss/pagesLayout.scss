@@ -1,5 +1,21 @@
 .pageContent{
-    margin-top: 50px;
     grid-column: 2 / span 3;
+    grid-row: 2;
     font-size: 2rem;
+}
+.pageContent__nav--upper{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2rem;
+       grid-column: 2 / span 3;
+       grid-row: 1;
+       margin-top: 50px;
+}
+.pageContent__nav--lower {
+    margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 2rem;
+    grid-column: 2 / span 3;
+    grid-row: 3;
 }

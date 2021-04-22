@@ -14,30 +14,7 @@
     color: var(--main-white);
     background-color: var(--main-black);
 }
-.postLink{
-    display:flex;
-    justify-content: flex-end;
-    margin: 1px;
-}
 
-.link_dark{
-    a {
-         color: var(--main-fav-bronze);
-         text-decoration: none;
-         padding-bottom: 2px;
-    }
-    a:active{
-        color:rgb(143, 147, 199);
-    }
-    a:hover{
-        border-bottom:solid 2px var(--main-fav-light);
-    }
-    strong{
-        color: var(--main-white);
-        padding-bottom: 2.1px;
-        font-weight: 900;
-    }
-}
 
 .pageLayout{
     display: grid;

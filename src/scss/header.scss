@@ -13,16 +13,50 @@ header{
 }
 
 
+
+.postLink {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1px;
+}
+
+
 nav {
-    ul {
+    align-self: stretch;
+}
+
+.link_dark {
+
         list-style: none;
+        padding: 0;
+        margin: 0;
         font-size: 1.5rem;
         color: var(--main-fav-light);
         display: flex;
         align-items: center;
         text-transform: uppercase;
-        li {
-            padding: 10px;
+        li{
+            margin-left: 25px;
+            border-radius: 5px;
+            overflow: hidden;
         }
+   
+    a {
+        color: var(--main-fav-bronze);
+        text-decoration: none;
+        padding: 15px;
+    }
+    strong{
+        border-bottom:solid 2px var(--main-fav-dark);
+        color:var(--main-fav-dark);
+        padding: 15px;
+    }
+
+    a:active {
+        color: rgb(143, 147, 199);
+    }
+
+    a:hover {
+        border-bottom: solid 2px var(--main-fav-dark);
     }
 }

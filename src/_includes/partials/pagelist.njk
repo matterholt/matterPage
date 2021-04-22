@@ -20,8 +20,9 @@
 
 
 {% endif %}
+
 {% if pagination.href.previous or pagination.href.next %}
-<nav class="pagenav">
+<nav class="pageContent__nav--upper">
 
   {% if pagination.href.previous %}
     <p><a href="{{ pagination.href.previous }}">previous</a></p>
@@ -35,7 +36,8 @@
 {% endif %}
 
 {% if pagination.href.previous or pagination.href.next %}
-<nav class="pagenav">
+
+<nav class="pageContent__nav--lower">
 
   {% if pagination.href.previous %}
     <p><a href="{{ pagination.href.previous }}">previous</a></p>

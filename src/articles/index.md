@@ -9,5 +9,5 @@ pagination:
     data : collections.post
     alias : pagelist
     reverse : true
-    size : 10
+    size : 2
 ---
