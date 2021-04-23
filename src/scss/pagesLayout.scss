@@ -2,7 +2,9 @@
     grid-column: 2 / span 3;
     grid-row: 2;
     font-size: 2rem;
+    margin-top:25px;
 }
+
 .pageContent__nav--upper{
         display: flex;
         justify-content: space-between;
@@ -13,9 +15,19 @@
 }
 .pageContent__nav--lower {
     margin-top: 50px;
-        display: flex;
-        justify-content: space-between;
-        font-size: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    font-size: 2rem;
+    margin: 25px 0;
     grid-column: 2 / span 3;
     grid-row: 3;
+}
+
+.pageContent__nav--prevPage{
+    grid-column: 1;
+    justify-self: start;
+}
+.pageContent__nav--nextPage{
+    grid-column: 2;
+    justify-self: end;
 }

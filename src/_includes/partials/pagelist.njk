@@ -1,51 +1,38 @@
 
+
 {% if pagelist %}
 
 <div class="pageContent">
+
     {%- for post in pagelist -%}
-    <article  class="postListing">
-        <div class="articlePage__heading">
+    <article  class="articleCard">
+        <div class="articleCard__heading">
             <h2 class="link_dark"><a href="{{ post.url}}">{{ post.data.title }}</a></h2>
         </div>
-        {% if post.data.date %}<p class="time articlePage__date"><time datetime="{{ post.data.date }}">{{ post.data.date | datefriendly}}</time></p>{% endif %}
+        {% if post.data.date %}<p class="time articleCard__date"><time datetime="{{ post.data.date }}">{{ post.data.date | datefriendly}}</time></p>{% endif %}
         
-        <p class="articlePage__description">{{ post.data.slug }}</p>   
-         <div class="link_dark articlePage__readMore">
+        <p class="articleCard__description">{{ post.data.slug }}</p>   
+         <div class="link_dark articleCard__readMore">
             <a  href="{{ post.url }}">READ MORE</a>
          </div>
-        
     </article>
     {%- endfor -%}
-</div>
 
+  </div>
 
 {% endif %}
 
-{% if pagination.href.previous or pagination.href.next %}
-<nav class="pageContent__nav--upper">
 
-  {% if pagination.href.previous %}
-    <p><a href="{{ pagination.href.previous }}">previous</a></p>
-  {% endif %}
-
-  {% if pagination.href.next %}
-    <p><a href="{{ pagination.href.next }}">next</a></p>
-  {% endif %}
-
-</nav>
-{% endif %}
 
 {% if pagination.href.previous or pagination.href.next %}
-
 <nav class="pageContent__nav--lower">
 
   {% if pagination.href.previous %}
-    <p><a href="{{ pagination.href.previous }}">previous</a></p>
+    <p class="pageContent__nav--prevPage"><a href="{{ pagination.href.previous }}">previous</a></p>
   {% endif %}
 
   {% if pagination.href.next %}
-    <p><a href="{{ pagination.href.next }}">next</a></p>
+    <p class="pageContent__nav--nextPage"><a href="{{ pagination.href.next }}">next</a></p>
   {% endif %}
-
 </nav>
 {% endif %}

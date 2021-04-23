@@ -5,24 +5,36 @@
 {% assign latestThreeArticles = reverseOrderPost  | first  %}
 
 
+
+
+
  
     <h2 class="landing__sectionTitle">
       Latest Articles
     </h2>
-{%- for i in  latestThreeArticles -%}
-<div class="postListing">
 
-    <div class="postListing__heading">
-        <h3 class="postListing__title">{{ i.title }}</h3>
-    </div>
-    
-    <p class="postListing__description">{{i.slug }}</p>
-    <div class=" postLink">
-        <a  href="{{ i.url }}">READ MORE</a>
-    </div>
-    
-</div>
-{%- endfor -%}
+        {%- for post in  latestThreeArticles -%}
+
+
+            <article  class="articleCard">
+        <div class="articleCard__heading">
+            <h2 class="link_dark"><a href="{{ post.url}}">{{ post.title }}</a></h2>
+        </div>
+        {% if post.date %}<p class="time articleCard__date"><time datetime="{{ post.date }}">{{ post.date | datefriendly}}</time></p>{% endif %}
+        
+        <p class="articleCard__description">{{ post.slug }}</p>   
+         <div class="link_dark articleCard__readMore">
+            <a  href="{{ post.url }}">READ MORE</a>
+         </div>
+    </article>
+
+
+        
+
+    {%- endfor -%}
+
+
+
 <div class="articlePage__linkArticlePage">
     <a class="articlePage__linkArticlePage--button" href="/articles/">All Articles</a>
 </div>

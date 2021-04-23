@@ -1,3 +1,4 @@
+// remove style or mod below
 .pageList{
     article{
     margin: 25px 0;
@@ -52,5 +53,67 @@
     &--button:active {
         color: var(--main-white);
         background-color: var(--main-fav-bronze);
+    }
+}
+// ^ end mod ^
+
+
+.articleCard {
+    margin-top: 60px;
+    padding: 15px;
+    background-color: #f0f1f3;
+    border-radius: 5px;
+    box-shadow: 3px 5px 9px #00000014;
+
+
+    &__heading {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    &__title {
+        font-weight: 900;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+    }
+
+    &__date {
+        font-size: 1rem;
+    }
+
+    &__description {
+        margin: 25px 0;
+        padding: 15px;
+    }
+
+}
+
+.postTag {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 15px 0;
+    width: 100%;
+
+    h4 {
+        margin-right: 5px;
+    }
+
+}
+
+.postTag__tagList {
+    font-size: 1rem;
+    list-style: none;
+    display: flex;
+
+    li {
+        background-color: #bdc8cc;
+        margin: 5px;
+        padding: 10px;
+        font-weight: 700;
+        border-radius: 5px;
     }
 }

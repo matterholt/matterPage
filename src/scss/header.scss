@@ -30,7 +30,6 @@ nav {
         list-style: none;
         padding: 0;
         margin: 0;
-        font-size: 1.5rem;
         color: var(--main-fav-light);
         display: flex;
         align-items: center;
@@ -38,18 +37,17 @@ nav {
         li{
             margin-left: 25px;
             border-radius: 5px;
-            overflow: hidden;
         }
    
     a {
         color: var(--main-fav-bronze);
         text-decoration: none;
-        padding: 15px;
+        padding: 5px;
     }
     strong{
         border-bottom:solid 2px var(--main-fav-dark);
         color:var(--main-fav-dark);
-        padding: 15px;
+        padding: 5px;
     }
 
     a:active {
@@ -58,5 +56,7 @@ nav {
 
     a:hover {
         border-bottom: solid 2px var(--main-fav-dark);
+
+            margin-bottom: -2px;
     }
 }

@@ -14,11 +14,13 @@
   <div class="articlePage__nav">
 
     {% set nextPost = collections.post | getNextCollectionItem(page) %}
-    {% if nextPost %}<p>Next article: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></p>{% endif %}
+    {% if nextPost %}<p class="pageContent__nav--nextPage">Next article: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></p>{% endif %}
     
     {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
-    {% if previousPost %}<p>Previous article: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></p>{% endif %}
+    {% if previousPost %}<p class="pageContent__nav--prevPage">Previous article: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></p>{% endif %}
   </div>
   
 </div>
 {% endblock %}
+
+
