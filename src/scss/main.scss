@@ -20,6 +20,12 @@
     grid-template-columns: repeat(5,20%);
     margin:0;
 }
+@media only screen and (max-width: 600px) {
+    .pageLayout {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 .page__content{
     grid-column: 2;
