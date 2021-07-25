@@ -1,25 +1,32 @@
+---
 
-
+import SocialLink from "../components/SocialLink.jsx"
+---
 
 
     <section class="landingsection" >
-      <div >
+      <div class="landing_card">
         <div>
-          <h3>FullStack Engineer that specialized in React</h3>
+          <h3>FullStack Engineer</h3>
         </div>
         <div>
           <p>
-            At the ready to help and eager to learn from others. I have been
-            working with React.js and other React libraries to build components
-            and web applications. NEXT.js is my go-to framework to build web
-            applications. I am fairly conformable with Python Flask and Node
-            Express frameworks to build a basic Backend. My goal is to keep my
+          I have specialized in learning React and React Native. 
+          </p>
+          <p>
+            At the ready to help and eager to learn from others. NEXT.js is my go-to framework to build web
+            applications. I am conformable with Node Express frameworks to build a 
+            basic Backend.
+          
+          </p>
+          <p>
+           My goal is to keep my
             code clean and maintainable. I strive to build a product that solves
             the client’s goals and contributes to the overall success of the
-            product.
-          </p>
+            product.</p>
         </div>
       </div>
+      <SocialLink />
     </section>
 
 <style>
@@ -29,10 +36,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 25px;
-    min-height: 50vh;
+    min-height: 80vh;
     font-size: 2rem;
+}
+.landing_card {
+  line-height: 1.6;
+  color: var(--fav-dark);
+  background-color: var(--main-white);
+  width: 75%;
+  padding: 50px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
 }
 
 
