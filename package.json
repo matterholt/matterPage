@@ -2,27 +2,22 @@
   "name": "matterpage",
   "version": "1.0.0",
   "description": "blog build",
-  "main": "index.js",
   "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "@mdx-js/mdx": "^1.6.1",
-    "@mdx-js/react": "^1.6.1",
-    "gastby": "^1.0.1",
-    "gatsby": "^2.21.22",
-    "gatsby-plugin-emotion": "^4.3.1",
-    "gatsby-plugin-mdx": "^1.2.6",
-    "gatsby-source-filesystem": "^2.3.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@astrojs/renderer-react": "^0.1.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "astro": "^0.17.3"
+  },
   "scripts": {
-    "dev": "gatsby develop -p 9988 -o"
+    "start": "astro dev",
+    "build": "astro build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/matterholt/matterPage.git"
+  },
+  "snowpack": {
+    "workspaceRoot": "../.."
   },
   "author": "MAtterholt",
   "license": "ISC",

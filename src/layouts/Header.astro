@@ -1,0 +1,39 @@
+---
+  import SocialLink from "../components/SocialLink.jsx"
+
+  let siteTitle = "Matterholt Devs"
+  let siteDescription ="FULL STACK, REACT.js, OPEN TO LEARN, DIVERSE IN KNOWLEDGE"
+---
+
+<style>
+header
+   {
+     font-family: Helvetica, Arial, sans-serif;
+    color: var(--fav-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+
+  }
+      h1 {
+      font-size: 3.5rem;
+      margin: 2px;
+      font-weight: 900;
+    }
+    p {
+      font-weight: 100;
+      font-size: 1.2rem;
+    }
+
+  </style>
+
+    <header class="header">
+      <div>
+
+          <h1>{siteTitle}</h1>
+      
+        <p>{siteDescription}</p>
+      </div><SocialLink/>
+
+    </header>

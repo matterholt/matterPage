@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300&display=swap');
+
+
+
+
+:root {
+    --main-white: #eaedf2;
+    --main-black: #16323c;
+    --fav-dark: #06384d;
+    --fav-accent: #a6815a;
+    font-size: 62.5%;
+}
+
+
+
+body {
+    font-family: 'Montserrat',sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-white);
+    color: var(--main-black);
+}
+
+code {
+    background: white;
+    display: inline-block;
+    overflow: scroll;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 576px) {
+    .blog_date {
+        width: 150px;
+    }
+
+
+    .content_header {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    article {
+        border-radius: 5px;
+
+    }
+}
+
+.tag_box {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    margin-top: 15px;
+}
+
+.tag {
+    background-color: var(--fav-dark);
+    color: var(--main-white);
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+}
