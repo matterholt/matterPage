@@ -4,7 +4,6 @@ const contact__icons = {
   textAlign: "center",
   display: "flex",
   justifyContent: "right",
-  width: "50%",
 };
 
 const contact__icons_a =
