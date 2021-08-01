@@ -1,14 +1,23 @@
 ---
     import BaseHead from "./BaseHead.astro"
     import Header from './Header.astro'
-    import SocialLink from "../components/SocialLink.jsx"
-
 ---
 <html lang="en">
 <BaseHead/>
   <body>
   <Header />
     <slot />
-          <SocialLink />
   </body>
 </html>
+
+<style>
+
+body {
+    font-family: 'Montserrat',sans-serif;
+    margin: 0;
+    padding: 30px;
+    background-color: var(--main-white);
+    color: var(--main-black);
+    font-size: 1.5rem;
+}
+</style>
