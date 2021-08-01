@@ -1,0 +1,59 @@
+---
+import PageLayout from '../layouts/PageLayout'
+
+
+
+const jobsDescrption ={
+    workingDate : "March 2005 - 2013",
+    employer : "Ftech R&D North America",
+    location : "Troy Ohio",
+    jobTitle : "Validation Technician",
+    jobResponsibilies :[
+        'Global Environmental Conference 2012, Presentation on Lightweight vehicles equals better fuel efficiency',
+        'Contribute heavily to the Maker Layout competition for a Rear Sub 2010 to 2011, Project Leader was absent when it was time to send out our results and I stepped up to the plate to finish the job.',
+        'Create and perform Finite Element Analysis.'
+    ]
+
+}
+
+---
+<PageLayout>
+<h2>Automotive Engineering</h2>
+<p>
+Started in 2005 working in automotive engineering in the research and
+ development department. I have learned the importance of communication among a team.
+  Developed the grit to accomplish tough deadlines and achieve difficult performance 
+  targets. Most importantly how to continually learn from peers and to help others in their
+   careers. 
+   </p>
+<div class="workingHistory_container">
+<p class="work_date">{jobsDescrption.workingDate}
+</p>
+<h3 class="work__jobTitle">
+Ftech R&D North America, Troy Ohio —  Validation Technician
+</h3>
+<ul>
+<li>
+Global Environmental Conference 2012, Presentation on Lightweight vehicles equals better fuel efficiency
+</li>
+<li>
+Contribute heavily to the Maker Layout competition for a Rear Sub 2010 to 2011, Project Leader was absent when it was time to send out our results and I stepped up to the plate to finish the job.
+</li>
+<li>
+Create and perform Finite Element Analysis.
+</li>
+</ul>
+
+</div>
+</PageLayout>
+<style>
+.workingHistory_container{
+    background-color: white;
+    padding: 20px;
+}
+.work__date{
+    font-style: italic;
+}
+
+
+</style>
