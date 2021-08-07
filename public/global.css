@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300&display=swap');
 
 
-
-
 :root {
     --main-white: #eaedf2;
     --main-black: #16323c;
     --fav-dark: #06384d;
     --fav-accent: #a6815a;
-    font-size: 62.5%;
+     font-size: 62.5%;
 }
-
-
-
+body{
+    margin:0
+}
 
 
 code {

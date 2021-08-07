@@ -1,19 +1,22 @@
 ---
   import SocialLink from "../components/SocialLink.jsx"
+  import SVG from "../components/SVG.astro"
 
   let siteTitle = "Matterholt Devs"
-  let siteDescription ="FULL STACK, REACT.js, OPEN TO LEARN, DIVERSE IN KNOWLEDGE"
+  let siteDescription ="REACT, REACT NATIVE, OPEN TO LEARN, DIVERSE IN KNOWLEDGE"
 ---
 
 <style>
 header
    {
-     font-family: Helvetica, Arial, sans-serif;
-    color: var(--fav-dark);
+     font-family: Helvetica, Arial, sans-serif;   
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 1.2rem;
+    background-color: var(--fav-dark);
+    color: var(--main-white);
+    padding: 20px;
   }
       h1 {
 
@@ -27,14 +30,16 @@ header
   </style>
 
     <header class="header">
+
       <div>
-<a href="/">
+      <a href="/">
           <h1>{siteTitle}</h1>
-</a>
+        </a>
         <p>{siteDescription}</p>
       </div>
 
       <a href="workHistory">Work</a>
+
 
 
     </header>
