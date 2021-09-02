@@ -1,4 +1,4 @@
-export const jobsDescription = [
+export const AutomotiveEngineering = [
   {
     workingDate: "March 2021 - PRESENT",
     employer: "Ftech R&D North America",
