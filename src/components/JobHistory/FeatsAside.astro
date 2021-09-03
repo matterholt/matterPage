@@ -2,9 +2,38 @@
     const { feat } = Astro.props;
     const {
         year,
+        quickSum,
         description} = feat
 ---
-<div>
-    {year}
+<div class="aside__container">
+<div class="aside__header">
+    <p class="quickSummary">{quickSum}</p>
+    <p class="date">{year}</p>
+</div>
     <p>{description}</p>
 </div>
+
+
+<style>
+p{
+    font-size: 1.5rem;
+    margin-bottom: 0;
+
+}
+.aside__container{
+    padding:10px;
+    margin: 50px 0;
+}
+.aside__header{
+    display:flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.date{
+    font-size:1rem;
+
+}
+.quickSummary{
+    font-weight: 900;
+}
+</style>

@@ -1,8 +1,8 @@
 ---
 // Custom Components
 import PageLayout from '../layouts/PageLayout'
-import CareerHistory from '../components/JobHistory/CareerHistory.astro'
-import Accomplishments from "../components/JobHistory/Accomplishments.astro"
+import CareerHistory from '../components/jobHistory/CareerHistory.astro'
+import Accomplishments from "../components/jobHistory/Accomplishments.astro"
 
 //Infomation Input
 import jobHistory from "../utils/data/jobHistory.json"
@@ -22,13 +22,13 @@ const {feats} = accomplishments
             </div>
             <div class="workSection">
                 <h3 class="workSection__header">Automotive Engineering</h3>
-                <p>Started in 2005 in automotive engineering research and 
+                <p class="workSection__context">Started in 2005 in automotive engineering research and 
                 development. Team communication, grit to accomplish tough deadlines 
                 and achieve difficult performance targets are among the most valuable 
                 assets I have developed. Above all, it is important to me to continually
                 learn from peers and to help others succeed in their careers.
                 </p>
-            <CareerHistory AutomotiveEngineering={AutomotiveEngineering}/>
+                <CareerHistory AutomotiveEngineering={AutomotiveEngineering}/>
             </div>
         </section>
         <Accomplishments feats={feats}/>
@@ -53,8 +53,12 @@ const {feats} = accomplishments
     .workSection__header{
         text-align: center;
     }
+    .workSection__context{
+
+    }
     .workSection{
-        marign: 25px 0;
+        max-width: 768px;
+        margin: 25px 0;
     }
 
     @media (max-width: 630px) { 
