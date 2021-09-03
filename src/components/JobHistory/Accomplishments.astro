@@ -1,0 +1,24 @@
+---
+import accomplishments from '../../utils/data/accomplishments.json';
+const {feats} = accomplishments
+
+import FeatAside from "./FeatsAside.astro"
+---
+
+<aside>
+    <h1>Accomplishments</h1>
+    <ul>
+    {feats.map(x => <li key={x.id}><FeatAside feat={x}/></li>)}
+    </ul>
+</aside>
+
+<style>
+    aside{
+         max-width: 640px;
+         }
+ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+</style>
