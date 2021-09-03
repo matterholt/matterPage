@@ -1,14 +1,12 @@
 ---
-import accomplishments from '../../utils/data/accomplishments.json';
-const {feats} = accomplishments
-
 import FeatAside from "./FeatsAside.astro"
+const {feats} = Astro.props
 ---
 
 <aside>
-    <h1>Accomplishments</h1>
+    <h3>Accomplishments</h3>
     <ul>
-    {feats.map(x => <li key={x.id}><FeatAside feat={x}/></li>)}
+     {feats.map(x => <li key={x.id}><FeatAside feat={x}/></li>)}
     </ul>
 </aside>
 
