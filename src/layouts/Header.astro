@@ -2,8 +2,10 @@
   import SocialLink from "../components/SocialLink.jsx"
   import SVG from "../components/SVG.astro"
 
+  import Navigation from "../components/Navigation.astro"
+
   let siteTitle = "Matterholt Devs"
-  let siteDescription ="REACT, REACT NATIVE, OPEN TO LEARN, DIVERSE IN KNOWLEDGE"
+  let siteDescription ="Matthew Atterholt, 60% Mech.Engineer, 40% Developer, 100% Husband and Father, "
 ---
 
 <style>
@@ -14,8 +16,7 @@ header
     align-items: center;
     justify-content: space-between;
     font-size: 1.2rem;
-    background-color: var(--fav-dark);
-    color: var(--main-white);
+    color: var(--fav-dark);
     padding: 20px;
   }
       h1 {
@@ -36,8 +37,6 @@ header
         </a>
         <p>{siteDescription}</p>
     </div>
+    <Navigation/>
 
-        <nav>
-          <a href="/experiance">experiance</a>
-        </nav>
     </header>
