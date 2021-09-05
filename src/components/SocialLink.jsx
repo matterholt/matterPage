@@ -6,15 +6,14 @@ const contact__icons = {
   justifyContent: "right",
 };
 
-const contact__icons_a =
-   {
-    fontSize: "1.2rem",
-    color: "#06384d",
-    display: "flex",
-    flexFlow: "column",
-    marginRight: 20,
-    padding: 10,
-  }
+const contact__icons_a = {
+  fontSize: "1.2rem",
+  color: "#06384d",
+  display: "flex",
+  flexFlow: "column",
+  marginRight: 20,
+  padding: 10,
+};
 
 export default function SocialLink() {
   return (

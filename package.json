@@ -6,7 +6,8 @@
     "@astrojs/renderer-react": "^0.1.5"
   },
   "devDependencies": {
-    "astro": "^0.17.3"
+    "astro": "^0.17.3",
+    "prettier": "2.3.2"
   },
   "scripts": {
     "start": "astro dev",

@@ -4,8 +4,10 @@ date: 2021-02-04
 published: true
 slug: Understanding on how the useReducer API works and convention that make it powerful
 ---
-** Thanks to Kent C Dodds, for this workshop on useReducer.
-## useReducer setup 
+
+\*\* Thanks to Kent C Dodds, for this workshop on useReducer.
+
+## useReducer setup
 
 The useReducer does well with managing multiple states that change together. The useReducer hook really excels when managing objects of state. Like a menu with sub-menus, only one menu should be open at once. The useReducer can set the open menu state.
 
@@ -30,7 +32,7 @@ const onClickHandler = () => setState(step) //action is an obj
 
 function reducerFunc (state, action){
 // allow the reducer update the state instead of inside the compoent
-return state + step 
+return state + step
 }
 ```
 
@@ -49,7 +51,7 @@ const onClickHandler = () => setState({count:count + step}) //action is an obj
 function reducerFunc (state,action){
 // spread new state into previous state to maintain any properties,
 // over write the properties that change
-return ({...state, ...action}) 
+return ({...state, ...action})
 }
 ```
 
@@ -58,7 +60,7 @@ return ({...state, ...action})
 ```jsx
 const [state,setState] = React.useReducer(reducerFunc, initialState)
 //action is an func
-const onClickHandler = () => setState({count: currentStaet.count + step}) 
+const onClickHandler = () => setState({count: currentStaet.count + step})
 
 ...
 
@@ -70,7 +72,7 @@ return (
 {
 ...state,
 ...(typeof action === "function" ? action(state) : action
-}) 
+})
 }
 ```
 
@@ -85,7 +87,7 @@ const [state, dispatch] = React.useReducer(reducerFunc, {
 const {count} = state
   const increment = () => dispatch({ type: 'INCREMENT', step })
   const decrement = () => dispatch({ type: 'DECREMENT', step })
-  
+
   return(
   <div>
       <button onClick={increment}>+</button>
