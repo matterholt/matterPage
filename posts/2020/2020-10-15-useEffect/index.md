@@ -24,14 +24,14 @@ To keep the useState from calling every time the component is called, React useS
 To view the concept use the code below
 
 ```js
-function Greeting({ initValue = "" }) {
+function Greeting({ initValue = '' }) {
   //every time the input changes component get rendered
-  console.log("component get rendered");
+  console.log('component get rendered');
 
   function getInitValue() {
     // only called when the component first gets rendered
-    console.log("values get called");
-    return window.localStorage.getItem("name" || initialName);
+    console.log('values get called');
+    return window.localStorage.getItem('name' || initialName);
   }
 
   const [values, setValues] = useState(getInitValue);

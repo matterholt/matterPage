@@ -16,9 +16,9 @@ To get right in it below is a snippet a creation of a component in react. Looks 
 const uiElement = <p id="contain"> The quick fox</p>; //JSX
 
 // Essentially what the above code gets compiled to
-const uiElement = React.createElement("p", {
-  id: "contain",
-  children: "The quick fox",
+const uiElement = React.createElement('p', {
+  id: 'contain',
+  children: 'The quick fox',
 }); // compiled version
 ```
 

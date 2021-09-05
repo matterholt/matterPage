@@ -62,9 +62,11 @@ funciton SubMenuOne (props){
 return(
 
 {" "}
+
 <div>
   <h2> Items from {props.subMenuName} </h2>
-</div>) }
+</div>
+) }
 
 funciton topBarNav (){
 
@@ -85,16 +87,17 @@ const [state, dispatch] = useReducer(reducer, isShownDefault);
 retun(
 
 {" "}
+
 <ul>
   <li>
     <span className="linked sub">
-      <a onClick={() => dispatch({ type: "product" })}>Products</a>
+      <a onClick={() => dispatch({ type: 'product' })}>Products</a>
     </span>
     {state.product ? <SubMenuOne title="subMenu 1" /> : null}
   </li>
   <li>
     <span className="linked sub">
-      <a onClick={() => dispatch({ type: "product" })}>Products</a>
+      <a onClick={() => dispatch({ type: 'product' })}>Products</a>
     </span>
     {state.product ? <SubMenuOne title="subMenu 2" /> : null}
   </li>

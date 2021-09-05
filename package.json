@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "astro dev",
-    "build": "astro build"
+    "build": "astro build",
+    "format": "prettier -w ."
   },
   "repository": {
     "type": "git",
