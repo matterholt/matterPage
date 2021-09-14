@@ -5,11 +5,13 @@ import LandingSection from '../components/landing/LandingHero.astro'
 import PageLayout from '../layouts/PageLayout'
 
 let title = 'Matterholt';
+let page = 'home'
 let description = 'The perfect starter for your perfect blog.';
-let permalink = 'https://example.com/';
+let permalink = 'https://matterholt.com/';
+
 
 ---
-<PageLayout>
+<PageLayout CurrentPage={page}>
         <LandingSection/>
 </PageLayout>
 
