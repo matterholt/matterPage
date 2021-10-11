@@ -12,6 +12,28 @@ import accomplishments from '../utils/data/accomplishments.json';
 // Deconstruct Json Data
 const {AutomotiveEngineering} = jobHistory
 const {feats} = accomplishments
+
+
+const freelance = [
+        {
+      "workingDate": "Jun 2021 - Dec 2021",
+      "employer": "Freelance",
+      "location": "Home",
+      "jobTitle": "Lily's Ingredient Checker",
+      "jobResponsibilities": [
+        "Client developed a strong knowledge of harmful ingredients that are in product. They wanted to allow other people to be able to have access to the information and remove the constant requests to check whether the product is harmful. The app would need to be able to receive a picture of an ingredient label. The image would need to use machine learning to extract the text and have it compared to the data base. I decided to use React Native and more specifically Infinite Red's React Native boiler plate to have everything set up."
+      ]
+    },
+]
+/*
+TODO
+    - rename the CareerHistory prop names
+    - optional chaining or a turnarry to allow to add a tech used for projects
+    - jobHistroy json, better match freelanceing project descriptions
+    - review grammer
+
+
+*/
 ---
 <PageLayout>
         <div class="workHistory_layout">
@@ -20,10 +42,13 @@ const {feats} = accomplishments
             <div class="workSection">
                 <h3 class="workSection__header">Part Time Freelance Developer</h3>
                 <p class="workSection__context">
-                After learning HTML/CSS and JavaScript. I started with React.js
-
+                    I have invested in learning React.js, with that all the tool that are used to 
+                    help create modern web applications I have also branched out into React Native to
+                    be able to buld mobile apps. I enjoy all web developement, such as building blogs,
+                     eshops and web applications. I perfer to build meaniful and useful web applications.
+                     I won't shy away from new challenges, always open to learn somethign new. 
                 </p>
-                <p> Lily's Mobile app</p>
+                <CareerHistory AutomotiveEngineering={freelance}/>
             </div>
             <div class="workSection">
                 <h3 class="workSection__header">Automotive Engineering</h3>
