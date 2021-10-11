@@ -15,34 +15,21 @@ const Routes = [
 ---
 <nav>
 {Routes.map(route =>
-
-        <a href={route.path}>{route.pageName}</a>
-
+        <a class="navLink" href={route.path}>{route.pageName}</a>
  )}</nav>
 
 <style>
 nav{
-    display:flex;
     padding: 10px;
+     width: 50vw;
+    display: flex;
+    justify-content: end;
 }
 .navLink{
-    margin: 10px 20px;
+    margin: 10px;
     padding:10px;
     text-transform: uppercase;
-    border-radius: 5px;
 }
 
-.navLink:hover{
-    background-color: var(--fav-accent);
-    color:var(--main-white);
-}
-.navLink:focus{
-    background-color: var(--fav-accent);
-    color:var(--main-white);
-}
-.navLink:active{
-    background-color: var(--fav-accent);
-    color:var(--main-white);
-}
 
 </style>
