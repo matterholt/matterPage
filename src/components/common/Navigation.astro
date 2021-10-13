@@ -1,0 +1,38 @@
+---
+import NavLink from "./NavLink.astro"
+const Routes = [    
+    {
+    id: 100,
+    pageName: "home",
+    path: "/",
+},
+    {
+    id: 200,
+    pageName: "experiance",
+    path: "/experiance",
+},
+]
+
+
+const {navPage} = Astro.props
+
+
+---
+<nav>
+{Routes.map(route =>
+<NavLink
+navPage = {navPage}
+pageName = {route.pageName}
+path ={route.path}
+/>
+)}</nav>
+
+<style>
+nav{
+    padding: 10px;
+     width: 50vw;
+    display: flex;
+    justify-content: end;
+
+}
+</style>
