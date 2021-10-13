@@ -1,7 +1,8 @@
 ---
   import BaseHead from "./BaseHead.astro"
-    import Header from './Header.astro'
-   import Navigation from "../components/Navigation.astro"
+  import Header from './Header.astro'
+  import Navigation from "../components/Navigation.astro"
+  const {navPage} = Astro.props
 
 ---
  <!DOCTYPE html>
@@ -10,10 +11,9 @@
 <BaseHead/>
   <body>
   <Header>
-      <Navigation />
+      <Navigation navPage={navPage}/>
   </Header>
   <main>
-
     <slot />
     </main>
   </body>
