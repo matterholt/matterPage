@@ -1,0 +1,130 @@
+---
+// Custom Components
+import PageLayout from '../layouts/PageLayout'
+import CareerHistory from '../components/JobHistory/CareerHistory.astro'
+import Accomplishments from '../components/JobHistory/Accomplishments.astro'
+
+//Infomation Input
+import jobHistory from "../utils/data/jobHistory.json"
+import accomplishments from '../utils/data/accomplishments.json';
+
+
+// Deconstruct Json Data
+const {AutomotiveEngineering} = jobHistory
+const {feats} = accomplishments
+
+const freelance = [
+        {
+      "workingDate": "Jun 2021 - Dec 2021",
+      "employer": "Freelance",
+      "location": "Home",
+      "jobTitle": "Lily's Ingredient Checker",
+      "jobResponsibilities": [
+        "Client developed a strong knowledge of harmful ingredients that are in product. They wanted to allow other people to be able to have access to the information and remove the constant requests to check whether the product is harmful. The app would need to be able to receive a picture of an ingredient label. The image would need to use machine learning to extract the text and have it compared to the data base. I decided to use React Native and more specifically Infinite Red's React Native boiler plate to have everything set up."
+      ]
+    },
+]
+/*
+TODO
+    - rename the CareerHistory prop names
+    - optional chaining or a turnarry to allow to add a tech used for projects
+    - jobHistroy json, better match freelanceing project descriptions
+    - review grammer
+
+
+*/
+---
+<PageLayout navPage="experiance">
+        <div class="workHistory_layout">
+        <h2 class="workHistory__title">experiance</h2>
+        <section class="workHistory__container">
+            <div class="workSection">
+                <h3 class="workSection__header">Part Time Freelance Developer</h3>
+                <p class="workSection__context">
+                    I have invested in learning React.js, with that all the tool that are used to 
+                    help create modern web applications I have also branched out into React Native to
+                    be able to buld mobile apps. I enjoy all web developement, such as building blogs,
+                     eshops and web applications. I perfer to build meaniful and useful web applications.
+                     I won't shy away from new challenges, always open to learn somethign new. 
+                </p>
+                <CareerHistory AutomotiveEngineering={freelance}/>
+            </div>
+            <div class="workSection">
+                <h3 class="workSection__header">Automotive Engineering</h3>
+                <p class="workSection__context"> 
+                    In 2005 I joined the CAE / Vailidatation group, The group was a new group and
+                    consist of 4 people including me. I needed to learn on my own, to be adaptable
+                    to any new jobs presented to the group. Being a newly establish group
+                    I established best practices and methods that are still in use today.
+                    In my 10 plus years of experience, I have participated in difficult competitions
+                    that challenge the spirit to achieve difficult performance targets. To have the grit
+                    to accomplish projects to meet tough deadlines Above all, it is important to me to continually
+                    learn from peers and to help others succeed in their careers.
+                </p>
+                <CareerHistory AutomotiveEngineering={AutomotiveEngineering}/>
+            </div>
+        </section>
+        <Accomplishments feats={feats}/>
+        </div>
+</PageLayout>
+
+<style>
+.inlineLink{
+    border-bottom: 1px solid;
+}
+.workHistory__title{
+    text-align: center;
+    grid-column: 1/3;
+    grid-row: 1;
+    font-size:40px;
+    text-transform:uppercase;
+    margin:50px; 
+    padding: 20px;
+    color:var(--fav-dark)
+}
+    h3{
+        font-size:2.5rem;
+  
+    }
+    p{
+        line-height: 1.5;
+    }
+    .workHistory__container{
+        grid-column: 1;
+        grid-row:2;
+        padding: 0px 50px;
+        
+    }
+    .workHistory_layout{
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr 350px;
+        padding:20px;
+    }
+
+    .workSection__header{
+        text-align: center;
+        color: var(--fav-dark);
+        border-bottom: solid var( --fav-accent);
+        padding: 20px;
+        margin: 0;
+    }
+    .workSection__context{
+
+    }
+    .workSection{
+        padding: 0 20px;
+        margin-bottom: 70px;
+    }
+
+    @media (max-width: 630px) { 
+    .workHistory_layout{
+        display: flex;
+        flex-flow: column-reverse;
+    }
+
+
+     }
+
+
+</style>

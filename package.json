@@ -6,11 +6,18 @@
     "@astrojs/renderer-react": "^0.1.5"
   },
   "devDependencies": {
-    "astro": "^0.17.3"
+    "@snowpack/plugin-postcss": "^1.4.3",
+    "astro": "^0.17.3",
+    "autoprefixer": "^10.3.7",
+    "cssnano": "^5.0.8",
+    "postcss": "^8.3.9",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "2.3.2"
   },
   "scripts": {
     "start": "astro dev",
-    "build": "astro build"
+    "build": "astro build",
+    "format": "prettier -w ."
   },
   "repository": {
     "type": "git",

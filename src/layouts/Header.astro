@@ -3,42 +3,35 @@
   import SVG from "../components/SVG.astro"
 
   let siteTitle = "Matterholt Devs"
-  let siteDescription ="REACT, REACT NATIVE, OPEN TO LEARN, DIVERSE IN KNOWLEDGE"
+  let siteDescription ="Matthew Atterholt,Mech.Engineer, Front-End Developer "
 ---
 
 <style>
 header
    {
-     font-family: Helvetica, Arial, sans-serif;   
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 1.2rem;
-    background-color: var(--fav-dark);
-    color: var(--main-white);
+    color: var(--fav-dark);
     padding: 20px;
   }
       h1 {
-
       margin: 0px;
       font-weight: 900;
     }
     p {
-      font-weight: 100;
+      font-weight: 300;
     }
 
   </style>
 
     <header class="header">
-
-      <div>
+    <div>
       <a href="/">
           <h1>{siteTitle}</h1>
         </a>
         <p>{siteDescription}</p>
-      </div>
-
-
-
-
+    </div>
+       <slot />
     </header>

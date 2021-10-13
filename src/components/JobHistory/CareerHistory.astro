@@ -1,7 +1,17 @@
 ---
-    import {jobsDescription} from "./jobHistory.js"
     import JobPosition from "./JobPosition.astro"
+    const {AutomotiveEngineering} = Astro.props
 ---
+    
 <ul>
-    {jobsDescription.map((job)=> (<JobPosition job={job} />))}
+    {AutomotiveEngineering.map((job)=> (<JobPosition job={job} />))}
 </ul>
+
+<style>
+    ul{
+        padding: 0px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+</style>

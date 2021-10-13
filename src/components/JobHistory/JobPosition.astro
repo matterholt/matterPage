@@ -1,12 +1,70 @@
 ---
     const { job } = Astro.props;
-       const {workingDate,
-    employer,
-    location,
-    jobTitle,
-    jobResponsibilities} = job
+    const {
+        workingDate,
+        employer,
+        location,
+        jobTitle,
+        jobResponsibilities} = job
 ---
+    <li class="card">
+
+    <div class="card_header">
+        <h4 class="card_title">{jobTitle}</h4>
+        <div class="card_sub">
+            <p class="subText">{workingDate}</p>
+            <p class="subText"> {location} </p>
+        </div>
+    </div>
     
-    <p>
-    {jobTitle}
-    </p>
+    <ul class="responsibily_list">
+  {jobResponsibilities.map((resposibility)=>
+       <li class="card_content">{resposibility}</li>)}
+    </ul>
+    </li>
+
+    <style>
+    .card{
+        list-style:none;
+        margin: 20px 0;
+        padding: 0px;
+        font-size: 12px;
+        
+    }
+    
+    .card_title{
+        font-size:1.8em;
+        font-weight: 700;
+        margin:0;
+    }
+    .card_sub{
+        display: flex;
+        flex-flow: column;
+        align-items: end;
+        font-weight: 200;
+    }
+    .subText{
+        margin:2px;
+    }
+    .card_header{
+        display:flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 25px;
+        border-bottom: solid 2px var(--fav-dark);
+        padding-bottom: 10px;
+
+    }
+    .card_content{
+        font-size:1.2em;
+    }
+    .responsibily_list{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    li{
+        margin: 12px 0;
+        line-height: 1.5;
+    }
+    </style>

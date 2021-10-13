@@ -4,6 +4,7 @@ date: 2021-02-05
 published: true
 slug: Explanation of the Menu Component that I built
 ---
+
 # Mobile Navigation Component
 
 Dropdown Menu to navigate through a website or app. The component is somewhat modular and allows the addition of any number of routes and sub-routes to be displayed. There is a code sandbox with code.. [click to see code](<[https://codesandbox.io/s/mobile-nav-qln8p](https://codesandbox.io/s/mobile-nav-qln8p)>)

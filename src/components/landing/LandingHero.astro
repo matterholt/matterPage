@@ -1,0 +1,70 @@
+---
+import SocialLink from "../../components/SocialLink.jsx"
+---
+
+    <section class="landingsection" >
+      <div class="landing_card">
+        <div class="landing_title">
+          <h2>React Front End Engineer</h2>
+        </div>
+        <div class="subcontent">
+          <p>
+         I build digital products that help enhance and improve the world. 
+         I have ambition work the Full stack of web developement. Currently narrowed my focus and 
+         specialized React and React Native developement. I find all aspects of programing interesting,
+         specially if it can improve peoples daily task. I have dabble in  Node, 
+         Python for automation and even visual basic to help with some excel. 
+            </p>
+        </div>
+      </div>
+      <SocialLink />
+    </section>
+
+<style>
+h2{
+  margin:0;
+}
+.landing_title{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--fav-dark);
+    border-bottom: solid var( --fav-accent);
+    margin-bottom: 20px;
+    padding:10px;
+    width: 55vw;
+}
+.subtitle{
+  font-size:1.5rem;
+  font-weight: 100;
+  width:52%;
+}
+.subcontent{
+  color:#396071;
+  font-size: 1.5rem;
+  text-align: center;
+  width:50vw;
+}
+.landingsection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    font-size: 2rem;
+}
+.landing_card {
+  line-height: 1.6;
+  color: var(--fav-dark);
+  background-color: var(--main-white);
+  width: 75%;
+  padding: 50px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+
+
+</style>

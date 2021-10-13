@@ -65,11 +65,11 @@ try {
 // inside the handleSubmit function
 // inside the try statement
 
-const res = await fetch("/api/login", {
-  method: "POST",
+const res = await fetch('/api/login', {
+  method: 'POST',
   headers: {
-    "Content-type": "application/json",
-    Authorization: "Bearer " + DID_Token,
+    'Content-type': 'application/json',
+    Authorization: 'Bearer ' + DID_Token,
   },
   body: JSON.stringify(body),
 });

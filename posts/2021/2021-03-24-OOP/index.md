@@ -5,7 +5,6 @@ published: true
 slug: A quick look into the programming paradigm of Object-Oriented. Object-Oriented Programming or OOP, is a process of structuring code. The closer, we as programmers capture these program design patterns, the code-base will be more manageable and easier for future engineers to make changes.
 ---
 
-
 # Key Concepts for OOP
 
 ## what is it
@@ -75,7 +74,7 @@ There are 4 main principles to follow when working in the OOP paradigm.
 
 **Inheritance**, help keep code DRY (Don't Repeat Yourself). Say you have made a class and about to make another one that could share attributes or behaviors. Then it might be a good idea to place the common attribute in a general class and have the "child" class inherit those common attributes and define more specifically inside the "child" class.
 
-**Polymorphism**, say we have a common method in the parent class and most of the time the method would be good to use. but when a child class inherits a method from a parent, but in the child class, we need to change the said method to do something a bit different. The method name would remain the same but would perform the action defined in the child instead of the parent. This would be referred to as *Method Overriding*. There is a technique called *Method Overloading*. Which would have methods would have multiple methods with the same name but with different number parameters. This concept is a little complex but the thing to remember is that when a method from a parent class doesn't quite match what needs to be done the method can be redefined in the child and still have the same outside interaction.
+**Polymorphism**, say we have a common method in the parent class and most of the time the method would be good to use. but when a child class inherits a method from a parent, but in the child class, we need to change the said method to do something a bit different. The method name would remain the same but would perform the action defined in the child instead of the parent. This would be referred to as _Method Overriding_. There is a technique called _Method Overloading_. Which would have methods would have multiple methods with the same name but with different number parameters. This concept is a little complex but the thing to remember is that when a method from a parent class doesn't quite match what needs to be done the method can be redefined in the child and still have the same outside interaction.
 
 ## Parts to create Class Objects
 
@@ -99,19 +98,19 @@ There are 4 main principles to follow when working in the OOP paradigm.
 
 ### Python
 
-**class Child(Parent):** -->  define a parent class on a child class
-**super()** -->  way of defining attributes from  a parent class
+**class Child(Parent):** --> define a parent class on a child class
+**super()** --> way of defining attributes from a parent class
 
 ### Javascript
 
 **class Child extends Parent{}** --> JS defining a class that has a parent class
-**super()** --> JavaScript way of defining attributes from  a parent class
+**super()** --> JavaScript way of defining attributes from a parent class
 
 ## Additional Resources
 
 - Free CodeCamp, general OOP
-[How to explain object-oriented programming concepts to a 6-year-old](https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/)
+  [How to explain object-oriented programming concepts to a 6-year-old](https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/)
 - Educative, JavaScript examples, very detailed and very good
-[What is Object Oriented Programming? OOP Explained in Depth](https://www.educative.io/blog/object-oriented-programming)
+  [What is Object Oriented Programming? OOP Explained in Depth](https://www.educative.io/blog/object-oriented-programming)
 - Real Python, Python examples
-[Object-Oriented Programming (OOP) in Python 3](https://realpython.com/python3-object-oriented-programming/#instantiate-an-object-in-python)
+  [Object-Oriented Programming (OOP) in Python 3](https://realpython.com/python3-object-oriented-programming/#instantiate-an-object-in-python)
