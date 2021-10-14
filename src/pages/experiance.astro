@@ -3,6 +3,7 @@
 import PageLayout from '../layouts/PageLayout'
 import CareerHistory from '../components/JobHistory/CareerHistory.astro'
 import Accomplishments from '../components/JobHistory/Accomplishments.astro'
+import TopPageCard from '../components/blocks/TopPageCard.astro'
 
 //Infomation Input
 import jobHistory from "../utils/data/jobHistory.json"
@@ -24,6 +25,10 @@ const freelance = [
       ]
     },
 ]
+const pageTitle = "experiance"
+
+
+
 /*
 TODO
     - rename the CareerHistory prop names
@@ -34,9 +39,12 @@ TODO
 
 */
 ---
-<PageLayout navPage="experiance">
+<PageLayout navPage={pageTitle}>
+        <TopPageCard
+        title = {pageTitle}
+        subcontent="Run down of my professional career history"
+        />
         <div class="workHistory_layout">
-        <h2 class="workHistory__title">experiance</h2>
         <section class="workHistory__container">
             <div class="workSection">
                 <h3 class="workSection__header">Part Time Freelance Developer</h3>
@@ -91,7 +99,7 @@ TODO
     }
     .workHistory__container{
         grid-column: 1;
-        grid-row:2;
+        grid-row:1;
         padding: 0px 50px;
         
     }

@@ -1,0 +1,54 @@
+---
+const {title ="Matt Devs", subcontent = 'everyday'} = Astro.props
+---
+
+<div class="page__introCard">
+<div class="page__titleContainer">
+    <h2 class="page__title">{title}</h2>
+</div>
+<div class="page__subcontentContainer">
+    <p class="page__subcontent">{subcontent}</p>
+</div>
+    <slot/>
+</div>
+
+<style>
+
+.page__introCard {
+  font-size: 2rem;
+  line-height: 1.6;
+  color: var(--fav-dark);
+  background-color: var(--main-white);
+  width: 50vw;
+  min-height: 50vh;
+  padding: 50px;
+  display: grid;
+  place-items: center;
+}
+.page__titleContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: solid var( --fav-accent);
+    width:100%;
+    padding:10px;
+}
+.page__title{
+    margin:0;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 800;
+}
+.page__subcontentContainer{
+    font-size: 0.7em;
+    text-align: center;
+    align-self: start;
+}
+.subcontent{
+    color:#396071;
+    font-size: 1.5rem;
+  
+}
+
+</style>
