@@ -1,29 +1,39 @@
 ---
   import BaseHead from "./BaseHead.astro"
   import Header from './Header.astro'
+  import Footer from './Footer.astro'
   import Navigation from "../components/common/Navigation.astro"
   const {navPage} = Astro.props
 
 ---
  <!DOCTYPE html>
 <html lang="en">
-
 <BaseHead/>
+
   <body>
-  <Header>
-      <Navigation navPage={navPage}/>
-  </Header>
-  <main>
-    <slot />
+    <Header>
+        <Navigation navPage={navPage}/>
+    </Header>
+    <main>
+      <slot />
     </main>
   </body>
+  <Footer/>
 </html>
 
 <style>
+main{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
 body {
     margin: 0;
     padding: 0;
+    
     background-color: var(--main-white);
     color: var(--main-black);
     font-size: 1.5rem;
