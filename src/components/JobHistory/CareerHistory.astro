@@ -1,10 +1,10 @@
 ---
     import JobPosition from "./JobPosition.astro"
-    const {AutomotiveEngineering} = Astro.props
+    const {positionTitle} = Astro.props
 ---
     
 <ul>
-    {AutomotiveEngineering.map((job)=> (<JobPosition job={job} />))}
+    {positionTitle.map((job)=> (<JobPosition job={job} />))}
 </ul>
 
 <style>
