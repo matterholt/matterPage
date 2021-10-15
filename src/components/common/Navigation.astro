@@ -21,18 +21,27 @@ const {navPage} = Astro.props
 <nav>
 {Routes.map(route =>
 <NavLink
-navPage = {navPage}
-pageName = {route.pageName}
-path ={route.path}
+    navPage = {navPage}
+    pageName = {route.pageName}
+    path ={route.path}
 />
 )}</nav>
 
 <style>
+
 nav{
     padding: 10px;
-     width: 50vw;
+     /* width: 50vw; */
     display: flex;
     justify-content: end;
+}
 
+@media (max-width:480px){
+nav{    
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    justify-content: start;
+}
 }
 </style>
