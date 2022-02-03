@@ -1,0 +1,29 @@
+---
+// Component Imports
+import MainHead from "../components/MainHead.astro"
+
+
+let title = 'Matterholt Made';
+let description = "Personal site where discuss and show what I build for the web";
+let canonicalURL = Astro.request.canonicalURL;
+---
+
+<html lang="en">
+	<head>
+		<MainHead {title} {description} {canonicalURL} />
+		<style global>
+			@import "../styles/global.css";
+		</style>
+	</head>
+
+	<body class="bg-slate-900 text-slate-200">
+	<header class="">
+		<h1>Matterholt Made</h1>
+	
+	</header>
+	
+
+
+
+	</body>
+</html>
