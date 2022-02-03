@@ -1,12 +1,16 @@
 ---
 // Component Imports
 import MainHead from "../components/MainHead.astro"
-
+import SectionTitle from "../components/SectionTitle.astro"
+import SectionContainer from '../components/SectionContainer.astro'
 
 let title = 'Matterholt Made';
 let description = "Personal site where discuss and show what I build for the web";
 let canonicalURL = Astro.request.canonicalURL;
 ---
+
+
+
 
 <html lang="en">
 	<head>
@@ -14,13 +18,49 @@ let canonicalURL = Astro.request.canonicalURL;
 		<style global>
 			@import "../styles/global.css";
 		</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 
-	<body class="bg-slate-900 text-slate-200">
-	<header class="">
-		<h1>Matterholt Made</h1>
+	<body class= "text-myDark ">
+
+	<header class="grid place-items-center min-h-screen bg-myDark text-slate-200">	
+			<nav class="fixed right-1">
+				<ul class="uppercase text-accent font-thin text-xl text-right">
+					<li><a href="#projects">projects</a></li>
+					<li><a href="#experences">experences</a></li>
+					<li><a href="#about">about</a></li>
+					<li><a href="#other">other</a></li>
+				</ul>
+			</nav>
+
+		<div class="w-9/12">
+			<h1 class="text-5xl uppercase bold m-10 flex">Matterholt made</h1>
+			<p> Build products for the web,React.js React.js Native, Astro.js JAMStack</p>
+			
+		</div>
+
 	
 	</header>
+	<main>
+		<SectionContainer parentColor='bgLight'>
+			<SectionTitle title="projects" cssId="projects"/>
+		</SectionContainer>
+
+		<SectionContainer parentColor='bgDark'>
+			<SectionTitle title="experences" cssId="experences"/>
+		</SectionContainer>
+
+		<SectionContainer parentColor='bgLight'>
+			<SectionTitle title="about" cssId="about"/>
+		</SectionContainer>
+
+		<SectionContainer parentColor='bgDark'>
+			<SectionTitle title="other" cssId="other"/>
+		</SectionContainer>
+
+	</main>
 	
 
 

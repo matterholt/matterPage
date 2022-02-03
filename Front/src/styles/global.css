@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .bg-myDark {
+    background-color: #091f30;
+  }
+  .text-myDark {
+    color: #091f30;
+  }
+  .text-accent {
+    color: #d4b257;
+  }
+  .text-vertMode {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+  .customFont-Anton {
+    font-family: "Anton", sans-serif;
+  }
+}

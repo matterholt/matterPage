@@ -1,0 +1,11 @@
+---
+const {parentColor}=Astro.props
+
+const containerColor = {
+    bgDark: "bg-myDark text-slate-200",
+    bgLight: "bg-slate-200"
+}
+---
+<section class=`min-h-screen p-10 ${containerColor[parentColor]}`>
+    <slot/>
+</section>
