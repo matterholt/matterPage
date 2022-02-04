@@ -1,0 +1,32 @@
+---
+    const{title, cssId}=Astro.props
+
+
+// https://1stwebdesigner.com/css-text-effects/
+
+const content = "FIND"
+
+const overlayText="overlayText";
+---
+    <style>
+        .overlayText::after{
+            content: attr(title);
+            position: absolute;
+            color:#a0aec0;
+            left:5px;
+            top: 5px;
+        }
+        .overlayText::before{
+            content: attr(title);
+            position: absolute;
+            left:2px;
+            top:2px;
+            color:#091f30;
+        }
+        .overlayText{
+            color:#d4b257;
+        }
+            
+    </style>
+
+    <p id={cssId} title={title} class=" relative m-4 text-vertMode text-6xl bold uppercase customFont-Anton overlayText">{title}</p>

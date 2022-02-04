@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.root,
+#root,
+#docs-root {
+  --primary: #091f30;
+  --secondary: #a0aec0;
+  --accent: #d4b257;
+}
 
 @layer utilities {
   .bg-myDark {
