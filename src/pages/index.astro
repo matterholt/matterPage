@@ -1,22 +1,68 @@
 ---
-import PageLayout from '../layouts/PageLayout';
-import SocialLink from '../components/SocialLink.jsx';
-import TopPageCard from '../components/blocks/TopPageCard.astro'
+// Component Imports
+import MainHead from "../components/MainHead.astro"
+import SectionTitleDecor from "../components/SectionTitleDecor.astro"
+import SectionContainer from '../components/SectionContainer.astro'
+import HeaderPage from '../components/HeaderPage.astro'
 
-let title = 'Matterholt';
-let description = 'The perfect starter for your perfect blog.';
-let permalink = 'https://matterholt.com/';
 
-const pageTitle = "React Front End Engineer"
+import Projects from "../components/HomeSections/Projects.astro"
+
+let title = 'Matterholt Made';
+let description = "Personal site where discuss and show what I build for the web";
+let canonicalURL = Astro.request.canonicalURL;
 ---
-<PageLayout navPage='home'>
-        <TopPageCard
-        title = {pageTitle}
-        subcontent=" dtgdfdg"
-        >
-        <SocialLink />
-        </TopPageCard>
-
-</PageLayout>
 
 
+
+
+<html lang="en">
+	<head>
+		<MainHead {title} {description} {canonicalURL} />
+		<style global>
+			@import "../styles/global.css";
+		</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+	</head>
+
+	<body class= "text-myDark ">
+	<HeaderPage/>
+
+
+	<main>
+		<Projects/>
+
+
+
+
+
+		<SectionContainer parentColor='bgDark'>
+			<SectionTitleDecor title="experences" cssId="experences"/>
+		</SectionContainer>
+
+		<SectionContainer parentColor='bgLight'>
+			<SectionTitleDecor title="about" cssId="about"/>
+		
+			<p>Building Meaningful Software as a React Developer. Open to learning new ways to write code. Understanding of how others think. Eager to help others.</p>
+			
+			<p>I build digital products that help enhance and improve the world. 
+         I have ambition work the Full stack of web developement. Currently narrowed my focus and 
+         specialized React and React Native developement. I find all aspects of programing interesting,
+         specially if it can improve peoples daily task. I have dabble in  Node, 
+         Python for automation and even visual basic to help with some excel. "</p>
+		
+		</SectionContainer>
+
+		<SectionContainer parentColor='bgDark'>
+			<SectionTitleDecor title="other" cssId="other"/>
+		</SectionContainer>
+
+	</main>
+	
+
+
+
+	</body>
+</html>
