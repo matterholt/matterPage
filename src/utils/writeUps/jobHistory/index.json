@@ -1,4 +1,16 @@
 {
+  "FreelanceDeveloper":[
+    {
+      "workingDate": "Jun 2021 - Dec 2021",
+      "employer": "Freelance",
+      "location": "Home",
+      "jobTitle": "Lily's Ingredient Checker",
+      "jobResponsibilities": [
+        "Client developed a strong knowledge of harmful ingredients that are in product. They wanted to allow other people to be able to have access to the information and remove the constant requests to check whether the product is harmful. The app would need to be able to receive a picture of an ingredient label. The image would need to use machine learning to extract the text and have it compared to the data base. I decided to use React Native and more specifically Infinite Red's React Native boiler plate to have everything set up."
+      ]
+    }
+  ],
+  
   "AutomotiveEngineering": [
     {
       "workingDate": "March 2021 - PRESENT",
