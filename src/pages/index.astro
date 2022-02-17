@@ -7,7 +7,8 @@ import HeaderPage from '../components/HeaderPage.astro'
 import SocialLink from '../components/blocks/SocialLink.jsx';
 
 
-import Projects from "../components/HomeSections/Projects.astro"
+import Projects from "../components/sections/Projects.astro"
+import Experences from "../components/sections/Experences.astro"
 
 let title = 'Matterholt Made';
 let description = "Personal site where discuss and show what I build for the web";
@@ -28,63 +29,13 @@ let description = "Personal site where discuss and show what I build for the web
 		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> -->
 	</head>
 
-	<body class= "text-myDark ">
+	<body>
 	<HeaderPage/>
 	
 
 	<main>
 		<Projects/>
-
-
-
-
-
-		<SectionContainer parentColor='bgDark'>
-			<SectionTitleDecor title="experences" cssId="experences"/>
-			<div class="mr-36">
-				<ul class="flex">
-					<div class="flex flex-col w-6/12 ">
-						<h2 class="text-center my-10 text-6xl bold uppercase customFont-Anton ">experences</h2>
-						<li class="border border-[#d4b257] m-1 p-4 ">
-						<h3 class="font-black text-2xl">Automotive Engineering for the Validation Group</h3>
-						<p>In 2005 I joined the CAE / Vailidatation group, The group was a new group and
-						consist of 4 people including me. I needed to learn on my own, to be adaptable
-						to any new jobs presented to the group. Being a newly establish group
-						I established best practices and methods that are still in use today.
-						In my 10 plus years of experience, I have participated in difficult competitions
-						that challenge the spirit to achieve difficult performance targets. To have the grit
-						to accomplish projects to meet tough deadlines Above all, it is important to me to continually
-						learn from peers and to help others succeed in their careers.</p>
-						</li>
-					</div>
-				</ul>
-			</div>
-		</SectionContainer>
-
-
-
-
-
-
-
-
-
-		<SectionContainer parentColor='bgLight'>
-			<SectionTitleDecor title="about" cssId="about"/>
-		
-			<p>Building Meaningful Software as a React Developer. Open to learning new ways to write code. Understanding of how others think. Eager to help others.</p>
-			
-			<p>I build digital products that help enhance and improve the world. 
-         I have ambition work the Full stack of web developement. Currently narrowed my focus and 
-         specialized React and React Native developement. I find all aspects of programing interesting,
-         specially if it can improve peoples daily task. I have dabble in  Node, 
-         Python for automation and even visual basic to help with some excel. "</p>
-		
-		</SectionContainer>
-
-		<SectionContainer parentColor='bgDark'>
-			<SectionTitleDecor title="other" cssId="other"/>
-		</SectionContainer>
+		<Experences/>
 
 	</main>
 	
