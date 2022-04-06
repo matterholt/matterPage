@@ -1,10 +1,25 @@
 {
-  "AutomotiveEngineering": [
+  "AutomotiveDesignEngineering":{
+  "description":"",
+  "poistions":[
     {
-      "workingDate": "March 2021 - PRESENT",
+      "workingDate": "March 2022 - present",
       "employer": "Ftech R&D North America",
       "location": "Troy, Ohio",
-      "jobTitle": "Associate Engineer",
+      "jobTitle": "Principal Design Technician",
+      "jobResponsibilities": [
+        "waiting on descriptions"
+      ]
+    }
+  ]},
+  
+  "AutomotiveValidationEngineering": [
+
+    {
+      "workingDate": "March 2017 - 2021",
+      "employer": "Ftech R&D North America",
+      "location": "Troy, Ohio",
+      "jobTitle": "Principal Validation Technician",
       "jobResponsibilities": [
         "Provide support and direction for team members in product development and mentor new employees.",
         "Create and modify 3D model to meet requirements defined in the specification documents.",
@@ -13,21 +28,13 @@
       ]
     },
     {
-      "workingDate": "March 2017 - 2020",
-      "employer": "Ftech R&D North America",
-      "location": "Troy, Ohio",
-      "jobTitle": "Principal Validation Technician",
-      "jobResponsibilities": [
-        "Authored technical documents on meshing techniques and methods. The objective was to lay the foundation for future Engineers and Technicians to have the best quality mesh within a reasonable time.",
-        "Analysis of suspension systems and components ensuring that targets and design specification are met."
-      ]
-    },
-    {
       "workingDate": "March 2013 - 2017",
       "employer": "Ftech R&D North America",
       "location": "Troy, Ohio",
       "jobTitle": "Senior Validation Technician",
       "jobResponsibilities": [
+        "Authored technical documents on meshing techniques and methods. The objective was to lay the foundation for future Engineers and Technicians to have the best quality mesh within a reasonable time.",
+        "Analysis of suspension systems and components ensuring that targets and design specification are met.",
         "Led the correlation studies on suspension parts by analyzing the differences between the physical test setup and the FEA model. Documented my findings and presented them to the team.",
         "Implemented 3D printer process, defined parameters of modeling, and prepping print for presentations."
       ]

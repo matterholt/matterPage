@@ -1,8 +1,10 @@
-const cssnano = require('cssnano');
-const postcssPresetEnv = require('postcss-preset-env');
-const autoprefixer = require('autoprefixer');
-
+const path = require('path');
 
 module.exports = {
-  plugins: [autoprefixer(), cssnano(), postcssPresetEnv(),],
+	plugins: {
+		tailwindcss: {
+			config: path.join(__dirname, 'tailwind.config.js'), // update this if your path differs!
+		},
+		autoprefixer: {},
+	},
 };

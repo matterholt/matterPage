@@ -1,0 +1,31 @@
+---
+// Component Imports
+import  * as data from  '../../utils/writeUps/projects/index.json'
+import SectionTitleDecor from "../SectionTitleDecor.astro"
+import SectionContainer from '../SectionContainer.astro'
+
+import ProjectDetail from '../blocks/ProjectDetail.astro'
+
+const {projectsOne,projectsTwo} = data
+---
+		<SectionContainer parentColor='bgLight'>
+
+            <div class="">
+			<h2 class="text-center my-10 text-6xl bold uppercase customFont-Anton customBorderBottom">Projects</h2>
+
+			<div class="flex  flex-col md:flex-row">
+				<ul class="flex flex-col md:w-1/2 ">
+					{ 
+					projectsOne.map(project => <ProjectDetail project={project}/>)
+
+					}
+					</ul>
+				<ul class="flex flex-col md:w-1/2">
+					{ 
+					projectsTwo.map(project => <ProjectDetail project={project}/>)
+
+					}
+					</ul>
+			</div>
+            </div>
+		</SectionContainer>

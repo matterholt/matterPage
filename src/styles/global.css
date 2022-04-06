@@ -1,62 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300&display=swap');
-
-:root {
-  --main-white: #eaedf2;
-  --main-black: #16323c;
-  --fav-dark: #06384d;
-  --fav-accent: #a6815a;
-  font-size: 62.5%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-body {
-  margin: 0;
-}
-
-code {
-  background: white;
-  display: inline-block;
-  overflow: scroll;
-  width: 100%;
-  margin-top: 20px;
-  padding: 20px 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.root,
+#root,
+#docs-root {
+  --primary: #091f30;
+  --secondary: #a0aec0;
+  --accent: #d4b257;
+  --primary60: #6b7983;
+  --primary30: #b5bbc0;
+  --primary10: #e6e8ea;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media screen and (min-width: 576px) {
-  .blog_date {
-    width: 150px;
+@layer utilities {
+  .bg-myDark {
+    background-color: #091f30;
   }
-
-  .content_header {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  .text-myDark {
+    color: #091f30;
   }
-
-  article {
-    border-radius: 5px;
+  .primary60 {
+    background-color: #6b7983;
   }
-}
-
-.tag_box {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: start;
-  margin-top: 15px;
-}
-
-.tag {
-  background-color: var(--fav-dark);
-  color: var(--main-white);
-  width: max-content;
-  height: max-content;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 2px;
+  .primary30 {
+    background-color: #b5bbc0;
+  }
+  .primary10 {
+    background-color: #e6e8ea;
+  }
+  .fontprimary10 {
+    color: #e6e8ea;
+  }
+  .text-accent {
+    color: #d4b257;
+  }
+  .customBorderBottom {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #d4b257;
+  }
+  .text-vertMode {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+  .customFont-Anton {
+    font-family: "Anton", sans-serif;
+  }
 }

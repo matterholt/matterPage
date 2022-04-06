@@ -1,0 +1,29 @@
+---
+    const {project} = Astro.props
+    const {title,date,resposibility,details,techUsed}= project
+---
+
+<li class="border border-[#d4b257] m-1 p-4 primary10 ">
+    <h3 class="font-black text-2xl">{title}</h3>
+    <p>{date}</p>
+
+    <p class="py-4">
+
+    
+    <span class="font-semibold">Resposibilty:</span> 
+      {resposibility}
+    </p>
+
+    <p class="py-4">
+        <span class="font-semibold">Details:</span> 
+      {details}
+    </p>
+
+    <div class="py-4">
+     <p class="font-semibold">Technologies:</p> 
+      <ul class="flex flex-wrap flex-row">
+      {techUsed.map(tech=><p class="m-1 after:content-[','] after:ml-0.5 text-xs">{tech}</p>)}
+      </ul>
+    </div>
+    
+</li>

@@ -1,0 +1,44 @@
+---
+import  * as data from  '../../utils/writeUps/jobHistory/index.json'
+
+
+import SectionTitleDecor from "../SectionTitleDecor.astro"
+import SectionContainer from '../SectionContainer.astro'
+
+const {AutomotiveValidationEngineering} = data
+---
+		<SectionContainer parentColor='bgLight'>
+
+			<h2 class="text-center my-10 text-6xl bold uppercase customFont-Anton customBorderBottom">professional history</h2>
+
+			<div class="px-2  py-10" >
+				<h3 class="my-10 text-xl">Automotive Engineering for the Validation Group</h3>
+				<p>In 2005 I joined the CAE / Validation group, The group was a new group and consist of 4 people including me.
+				I needed to learn on my own, to be adaptable to any new jobs presented to the group.
+				Being a newly establish group I established best practices and methods that are still in use today. In my 10 plus years of experience, 
+				I have participated in difficult competitions that challenge the spirit to achieve difficult performance targets. To have the grit to
+				accomplish projects to meet tough deadlines Above all, it is important to me to continually learn from peers and to help others succeed in their careers.</p>
+			</div>
+
+
+
+				<ul class="flex flex-col">
+				{AutomotiveValidationEngineering.map((job)=>{
+					return(
+					<li class="border border-[#d4b257] m-1 p-4 primary10">
+					<h3 class="font-black text-2xl mb-5">{job.jobTitle}</h3>
+						<ul>
+							{job.jobResponsibilities.map(item=> <li class="py-2">{item}</li>)}
+						</ul>
+					</li>
+					)}
+				)}
+				</ul>
+
+
+		</SectionContainer>
+
+
+
+
+

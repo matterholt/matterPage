@@ -1,26 +1,46 @@
 ---
-import PageLayout from '../layouts/PageLayout';
-import SocialLink from '../components/SocialLink.jsx';
-import TopPageCard from '../components/blocks/TopPageCard.astro'
+// Component Imports
+import MainHead from "../components/MainHead.astro"
+import SectionTitleDecor from "../components/SectionTitleDecor.astro"
+import SectionContainer from '../components/SectionContainer.astro'
+import HeaderPage from '../components/HeaderPage.astro'
+import SocialLink from '../components/blocks/SocialLink.jsx';
 
-let title = 'Matterholt';
-let description = 'The perfect starter for your perfect blog.';
-let permalink = 'https://matterholt.com/';
 
-const pageTitle = "React Front End Engineer"
+import Projects from "../components/sections/Projects.astro"
+import Experences from "../components/sections/Experences.astro"
+
+let title = 'Matterholt Made';
+let description = "Front end developer that build ditital products with react.js";
+// let canonicalURL = Astro.request.canonicalURL;
 ---
-<PageLayout navPage='home'>
-        <TopPageCard
-        title = {pageTitle}
-        subcontent=" I build digital products that help enhance and improve the world. 
-         I have ambition work the Full stack of web developement. Currently narrowed my focus and 
-         specialized React and React Native developement. I find all aspects of programing interesting,
-         specially if it can improve peoples daily task. I have dabble in  Node, 
-         Python for automation and even visual basic to help with some excel. "
-        >
-        <SocialLink />
-        </TopPageCard>
-
-</PageLayout>
 
 
+
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <title>{title}</title>
+		<meta name="description" content={description}>
+
+		<style global>
+			@import "../styles/global.css";
+		</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+	</head>
+
+	<body class="bg-zinc-50 text-myDark">
+	<HeaderPage/>
+	<main>
+		<Projects/>
+		<Experences/>
+	</main>
+	<footer>
+		<SocialLink/>
+	</footer>
+
+	</body>
+</html>
