@@ -1,46 +1,61 @@
 ---
+// Style Imports
+import '../styles/global.css';
+import '../styles/home.css';
 // Component Imports
-import MainHead from "../components/MainHead.astro"
-import SectionTitleDecor from "../components/SectionTitleDecor.astro"
-import SectionContainer from '../components/SectionContainer.astro'
-import HeaderPage from '../components/HeaderPage.astro'
-import SocialLink from '../components/blocks/SocialLink.jsx';
+import Tour from '../components/Tour.astro';
+// You can import components from any supported Framework here!
+import ReactCounter from '../components/ReactCounter.jsx';
 
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'My Astro Site';
 
-import Projects from "../components/sections/Projects.astro"
-import Experences from "../components/sections/Experences.astro"
-
-let title = 'Matterholt Made';
-let description = "Front end developer that build ditital products with react.js";
-// let canonicalURL = Astro.request.canonicalURL;
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
 ---
-
-
-
-
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-	    <title>{title}</title>
-		<meta name="description" content={description}>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>{title}</title>
 
-		<style global>
-			@import "../styles/global.css";
-		</style>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-	</head>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-	<body class="bg-zinc-50 text-myDark">
-	<HeaderPage/>
+	<style>
+		header {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			max-width: min(100%, 68ch);
+		}
+	</style>
+</head>
+<body>
 	<main>
-		<Projects/>
-		<Experences/>
-	</main>
-	<footer>
-		<SocialLink/>
-	</footer>
+		<header>
+			<div>
+				<img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
+				<h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+			</div>
+		</header>
 
-	</body>
+		<Tour />
+
+		<!--
+
+		You can also use imported framework components directly in your markup!
+		
+		Note: by default, these components are NOT interactive on the client.
+		The `:visible` directive tells Astro to make it interactive.
+		
+		See https://docs.astro.build/core-concepts/component-hydration/ 
+
+		-->
+
+		<ReactCounter client:visible />
+	</main>
+</body>
 </html>
