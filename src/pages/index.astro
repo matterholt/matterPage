@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 // Component Imports
 import MainHead from "../components/MainHead.astro"
 import SectionTitleDecor from "../components/SectionTitleDecor.astro"
@@ -23,10 +25,8 @@ let description = "Front end developer that build ditital products with react.js
 		<meta charset="utf-8">
 	    <title>{title}</title>
 		<meta name="description" content={description}>
+	<meta name="viewport" content="width=device-width">
 
-		<style global>
-			@import "../styles/global.css";
-		</style>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
