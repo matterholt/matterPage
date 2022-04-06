@@ -1,0 +1,105 @@
+---
+title: React Hook useReducer
+date: 2020-07-09
+published: false
+slug: Create a navigation menu with useReducer
+---
+
+## A rundown on the Hook useReducer
+
+It has been several years since the release of hook in react. I have known about useReducer, but most of the time I am reaching for useState or useEffect. Till I wanted to impliment a feature to a navigation what need to handle some complex states. The feature goes something like this, if you can imagine there are two titles for drop down menues. When clicked upon the title the submenu component get renderd to the screen allowing user to navigate to the product. Say that what I am looking for is not with in the submenu that I have orginally selected. so naturally would check the next subtitle menu. Here are where things get complicated, without a thought the user should suppect that 1. Once the mouse travels off or clicked the boundries of the component that the open submenu will close, 2. If the user selects the other submenu title, they would expect the visiable submenu component would be closed and the new submenu would open. There are a few different states that would need to managaged and to just rely on useState could make the code more congested and possible prone for bugs
+
+With the complexity of the managing the state would be overwhelming I desired to give useReducer a go. So I understand that useReducer is simular Redux,and have simuliar "best practices". Such as the dispatch method where the actions sent from the component and the state gets update. They a bit different to which Redux is encourage to have all the state with in the store. The Hook useReducer is a bit more flexable and can add it to an indviual component or with useContext amoung the whole application. To put it simply it a gaint switch satement that centralize a set of states. A referance that I have came across is a man named Harry Wolf's "why I love useReducer"---LINK TO VIDEO---- video. He walks through the different login states that need to be manage when the user log's on a very informative and does a great job on useing the Hook, useReducer
+
+We understand the problem and have a idea on how to use the hook so let walk through on how to impliment the feature. After the sub-menu components have been created. There is no need for the sub-menus to be displayed at the start so we can define the inital state of isSubMenuShown to false. Actually since there is two sub-menus and the are independent of each other lets put the isSubMenuShown as an object that describes the menu for simplisity we subMenuOne and subMenuTwo. The final bit of code would look like such, and we can apply the state to each of the subMenu's component with in the parent, then apply a js ternary operator to define if to show or not show.
+
+```
+function SubMenuOne (props){
+return(
+<div>
+  <h2> Items from {props.subMenuName} </h2>
+</div>
+  )
+  }
+
+function topBarNav (){
+const isSubMenuShown = { subMenuOne: false, subMenuTwo: false };
+  function reducer(state, action) {
+  // Move to a custom hook??
+  switch (action.type) {
+    case "product":
+      return { product: !state.product, collection: false };
+    case "collection":
+      return { product: false, collection: !state.collection };
+    default:
+      throw new Error();
+  }
+}
+
+const [state, dispatch] = useReducer(reducer, isShownDefault);
+return(
+<ul>
+      <li>
+      <span className="linked sub">
+      </span>
+      {state.product ? <SubMenuOne  title='subMenu 1' /> : null}
+    </li>
+      <li>
+      <span className="linked sub">
+      </span>
+      {state.product ? <SubMenuOne title='subMenu 2' /> : null}
+    </li>
+</ul>
+```
+
+THis would be the basic structure and we can apply some logic to allow some interactions
+
+## Finial bit of code
+
+    ```
+
+funciton SubMenuOne (props){
+return(
+
+{" "}
+
+<div>
+  <h2> Items from {props.subMenuName} </h2>
+</div>
+) }
+
+funciton topBarNav (){
+
+const isSubMenuShown = { subMenuOne: false, subMenuTwo: false };
+function reducer(state, action) {
+// Move to a custom hook??
+switch (action.type) {
+case "product":
+return { product: !state.product, collection: false };
+case "collection":
+return { product: false, collection: !state.collection };
+default:
+throw new Error();
+}
+}
+
+const [state, dispatch] = useReducer(reducer, isShownDefault);
+retun(
+
+{" "}
+
+<ul>
+  <li>
+    <span className="linked sub">
+      <a onClick={() => dispatch({ type: 'product' })}>Products</a>
+    </span>
+    {state.product ? <SubMenuOne title="subMenu 1" /> : null}
+  </li>
+  <li>
+    <span className="linked sub">
+      <a onClick={() => dispatch({ type: 'product' })}>Products</a>
+    </span>
+    {state.product ? <SubMenuOne title="subMenu 2" /> : null}
+  </li>
+</ul>
+```

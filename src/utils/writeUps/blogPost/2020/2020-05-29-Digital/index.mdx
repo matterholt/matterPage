@@ -1,0 +1,52 @@
+---
+title: Digital Waste Inventory
+date: 2020-05-29
+published: false
+slug: how to review what is saved on Hard drive
+tags: ['Python', 'BitSaving', 'Script']
+---
+
+Recently listened to the ShopTalk show that had Gerry McGovern. It inspired me to take a look at what is being saved on our Hard drives and if it is really necessary to be there. I know for a fact that there are a lot of duplicate files and files that really should be kept. I think it was time to send Python after them and to hunt them down :)
+
+## First steps: take inventory
+
+Pick an unimportant of medium size directory, to reduce the risk of losing file you wish to keep and keep run times short. Python is able to walk the directory, subdirectories and file. To take inventory the function will walk through the dir and add new extension found in dir. If the extension is in the Python dictionary and increment it by 1. To make the python dictionary print nice going to create a print to terminal function
+
+```python
+# moudules
+import os
+from time import sleep
+
+# ! Add terminal feed back
+def terminal_print_dictionaries(specs):
+    """
+    nicely and slowly print dictionary to the terminal
+    will print highest value count first,
+    """
+    sorted_dict = sorted(specs.items(), key = lambda item: item[1], reverse = True)
+
+    print("Rundown of Search")
+    for key, val in sorted_dict:
+        sleep(0.2)
+        print(key,val)
+
+def take_inventory_dir(dir_path):
+  """
+  main lifting script will traverse through the directory looking for the files that can be removed
+  """
+  inventory_of_files = {}
+
+  for subdir, dirs, files in os.walk(dir_path):
+
+      for file_name in files:
+          inventory_extension = os.path.splitext(file_name)[1]
+
+          inventory_of_files['total'] = inventory_of_files.get('total',0)+1  # total file count in dir
+          inventory_of_files[inventory_extension] = inventory_of_files.get(inventory_extension,0)+1
+
+  return inventory_of_files
+
+terminal_print_dictionaries(take_inventory_dir("f:")) # windows dir, replace to what ever desired
+```
+
+Hopefully, we get a nicely printed dictionary of all file extensions that we are able to work with. It is nice to see how many files that are living in the directory, It allows us to scan down through and pick off any files that we know for a fact that we don't need. Even with this info, I am left asking more questions. Like the size of the files. and how to know what files are the most current and need to keep them? how to create a test for scripts.

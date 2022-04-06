@@ -1,0 +1,50 @@
+---
+title: Setting Default Props for React Comps
+date: 2020-07-15
+published: true
+slug: If a prop is miss or maybe not needed then default props can be created
+---
+
+## 3 way to set default props
+
+When working with components, props get past around like a ball on game day. Anyways there is the possibility that there could have some props have default values. Below are 3 ways that I have found.
+
+### React way
+
+React has a special property called defaultProps. Since the React Component is just an Object under the hood. We declare the component Name / object and apply the method '.defaultProps'. Here we are able to define the default props as an object.
+
+```js
+function Greeting(props) {
+  return <h1> Hello, {props.name}</h1>;
+}
+
+Greeting.defaultProps = {
+  name: 'Stranger',
+};
+
+ReactDOM.render(<Greeting />, document.getElementById('example1'));
+```
+
+### Operator way
+
+if keystrokes are your concern we are able to use Operator logic OR shown as ||. This could confuse and create make code a bit of a mess when dealing with more than one prop. but here is what it would look like.
+
+```js
+function Greeting(props) {
+  return <h1> Hello, {props.name || 'Stranger2'}</h1>;
+}
+
+ReactDOM.render(<Greeting />, document.getElementById('example2'));
+```
+
+### ES6 way
+
+When ES6 was released in 2015. ECMAScript dropped a lot of features to the Js language. So since React is basically JS we can use default parameters. easy peasy! The catch here is that we used another ES6 feature called destructuring assignment for the props.
+
+```js
+function Greeting({ name = 'Stranger3' }) {
+  return <h1> Hello, {name}</h1>;
+}
+
+ReactDOM.render(<Greeting />, document.getElementById('root'));
+```

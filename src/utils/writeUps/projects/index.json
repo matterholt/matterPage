@@ -1,0 +1,44 @@
+{
+    "projectsOne":[
+        {
+            "title" : "New Remodeling Business Website using JamStack",
+            "date": "2022-02",
+            "resposibility" : "Creating a website that would help a client launch their new business. I need to create a website that allowed the client to add content about their current projects and to be able to recieve inquiries about their services. The project is a prefect canidate for JAM stack",
+            "details" : "The project uses Astro.build is a modern server-side templating language. Being a landing page for a business I didn't want to ship a bunch of JS to the client. Astro ships only HTML & CSS, and less JavaScript, which allows fast pages. The Client wanted to add content about the projects that they have accomplished so I research into headless CMS and decided to use Strapi.io to handle content. For a simple email system I choose to use FORMSUBMIT. That will send e-mail to client inbox about any inquiries .The project allowed me to better understand SEO, and what needs to be on a site to get noticed. It also encouraged me to communicating and understand what the client need to accomplish their goal.",
+            "techUsed" : ["Astro.js","Tailwinds css","Netlify hosting site", "Strapi.io CMS", "Heroku hosting CMS", "formsubmit" ]
+         },
+         {
+            "title":"React Trivia Game",
+            "date": "2020-04",
+             "resposibility":"Challenge to build a small trivia game using create react app",
+             "details":"Using REACT.js with TypeScript to create a User interface for a simple game. Using moc service worker help with development and debugging. Working to implement testing with React testing library and jest.",
+             "techUsed":["REACT.js", "TypeScript", "moc servic worker", "react testing library"]
+         },
+         {
+             "title":"Visual basic / Excel",
+             "date": "2020-10",
+             "resposibility":"Create a process to help my team record and generate report using excel and visual basic",
+             "details":"I implemented a process of recording and documenting results using visual basic and Excel Macros. User would select the results file that would need to be documented. Upon selecting the file Visual basic would loop through the text searching for key displacement values that would be extracted out into an excel file and converted to stiffness values. At this point the engineer would be able to review and confirm that results make sense. Once the engineer approved the results then they would be able to commit them to the database, for simplicity would just be a worksheet that contained all model results for the whole project and a report could be generated. ",
+             "techUsed":["MicroSoft's Visual Basic","MicroSoft Office Excel"]
+         }
+    ],
+    "projectsTwo":[
+         {
+             "title":"React Native OCR Label Checker",
+             "date": "2021-10",
+             "resposibility" :"React Native project that is able user to snap pictures of labels and convert them to text. Allowing me to experience new technologies and other methods and techniques in developing an App. ",
+             "details":"I built an app with Infinite Red's React Native boilerplate called ignite. Allowing me to experience new technologies and other methods and techniques in developing an App. I went with React Native since I had a good good understanding of REACT.js. This app challenged me do to my lack of experience in mobile development. I had to spend some time researching and understand the React Native ecosystem to build the application. First I needed to understand how to perform Optical Character Recognition. I landed on Google's ML Kit Text Recognition API which allowed me to perform the OCR functions on device. Then learning how to handle the UI, I leaned on a component library called Native Base, which helped create clean user interfaces. This project challenge me and excited me in learning more about mobile development with React Native",
+             "techUsed":["TypeScript","React Native","Ignite boilerplate by Infinite Red ","Mobx State Tree","Native Base for UI","Jest","react-native-image-crop-picker","react-native-mlkit-ocr" ]
+         },
+         {
+             "title":"Python Scripting",
+             "date": "2017-02",
+             "resposibility":"Research and create scripts with Python to automate daily task and improve efficiency in validation group.",
+             "details":"My start in the programing world. I started with building script that could extract results data from a file from an ABAQUS analysis. I attended Python training at DS Simulia which taught the basic of Python and have high level understanding of the Abaqus scripting capabilities. I have used Python to create EXCEL documents from stiffness results. These results were pulled from an SQL database that I created. I have explored a bit of data visualization and data manipulation. Allowed me to understand basic programing and the importance of unit testing. ",
+             "techUsed":["Python 3","Python 2","Anaconda","openpyxl","Jupyter notebook","Flask","Abaqua ODB library","pandas.py","Matplotlib"]
+         }
+    ]
+}
+
+
+

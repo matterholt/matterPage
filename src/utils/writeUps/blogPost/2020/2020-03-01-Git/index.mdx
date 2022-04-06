@@ -1,0 +1,41 @@
+---
+title: Git and Github Intro
+date: 2020-05-27
+published: true
+slug: Quick run down on git
+---
+
+They are two different entities but work together very well. git is the version control system that is installed on the local pc. GitHub is the storage for the code. It is possible to use each one separately. A repository is the code base that is being tracked by git. Github is able to store the repositories.
+
+Create a repo on Github and once confirmed the repository the screen will have the git commands that can be copied and paste into the terminal. Open the terminal and get to a working directory. Either mkdir and cd into the dir or cd the path of the dir that you wish to start the repository. Then copy paste the whole section of code and now you have started version controlling the codebase
+
+If you go and refresh your browser you can see that the freshly created repository has been updated. Let break down what happened. Back to the terminal.
+
+1. echo creates a file with the content of the repository, then we declare the name of the file which is markdown
+2. git init -> short for "initialize" wakes the git version control program up and assigns it to watch the working directory
+3. git add "name_file" -> tell git that the file creates need to be added to the stage. The staging is not the repository but the step before (!!!! not sure why there is add or staging area !!!!).
+4. git commit -m "describe change" -> any file/folder added to the staging area will be moved or committed to the repository and live in the repository as a change made. The commits should comment the will let you know the changes made in the future.
+5. git remote add origin "HTTPs..." -> assigns a remote location where the code will be saved. in this case is a GitHub repository.
+6. git push -u origin Master -> this command sends the local codebase to where the origin is assigned. "Master" is the name of the branch that the code is being saved. A good practice is to create a branch and push it to the new branch. This allows a review process before saving over the master branch. Later we can address the branching but let focus on the cycle of version control.
+
+## Practice cycle
+
+That is the first cycle of starting version control. The whole process is not going to happen every time. As you can imagine that 'git add' and 'git commit' is going to be commonly used. Let go through a the cycle if we are working on a of our
+
+1. for this example let create another file in the working directory. For simplicity in the terminal type
+   `echo "git a version control program " git_notes.md`
+2. git has a command called status which will show what git is currently doing with the files and can help know what is going on. It also can be executed at any time.
+
+- `git status`
+
+3. git add -a will add all file that has been changed,
+
+- `git status`
+
+4. git commit -m "git note for reference"
+
+- `git status`
+
+5. There is no need to push every time a codebase change but git commit could be executed after a section of code is completed. This would make changed section small for review and keep it easier to compose what happens.
+
+git is a helpful tool to build code projects and is able to get you out some trouble. Git has few other features that are helpful like switching branches, pull, merge, fork, clone. and etc. Definitely worth their weight, but at the bare minimum this process can get you on your way to your coding project
