@@ -7,6 +7,9 @@
   --primary: #091f30;
   --secondary: #a0aec0;
   --accent: #d4b257;
+  --primary60: #6b7983;
+  --primary30: #b5bbc0;
+  --primary10: #e6e8ea;
 }
 
 @layer utilities {
@@ -15,6 +18,18 @@
   }
   .text-myDark {
     color: #091f30;
+  }
+  .primary60 {
+    background-color: #6b7983;
+  }
+  .primary30 {
+    background-color: #b5bbc0;
+  }
+  .primary10 {
+    background-color: #e6e8ea;
+  }
+  .fontprimary10 {
+    color: #e6e8ea;
   }
   .text-accent {
     color: #d4b257;
