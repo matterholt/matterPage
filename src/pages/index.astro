@@ -11,7 +11,7 @@ import Projects from "../components/sections/Projects.astro"
 import Experences from "../components/sections/Experences.astro"
 
 let title = 'Matterholt Made';
-let description = "Personal site where discuss and show what I build for the web";
+let description = "Front end developer that build ditital products with react.js";
 // let canonicalURL = Astro.request.canonicalURL;
 ---
 
@@ -20,7 +20,10 @@ let description = "Personal site where discuss and show what I build for the web
 
 <html lang="en">
 	<head>
-		<!-- <MainHead {title} {description} /> -->
+		<meta charset="utf-8">
+	    <title>{title}</title>
+		<meta name="description" content={description}>
+
 		<style global>
 			@import "../styles/global.css";
 		</style>
@@ -35,8 +38,6 @@ let description = "Personal site where discuss and show what I build for the web
 		<Projects/>
 		<Experences/>
 	</main>
-	
-
 	<footer>
 		<SocialLink/>
 	</footer>
