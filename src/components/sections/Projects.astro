@@ -4,24 +4,24 @@ import  * as data from  '../../utils/writeUps/projects/index.json'
 import SectionTitleDecor from "../SectionTitleDecor.astro"
 import SectionContainer from '../SectionContainer.astro'
 
-import ProjectDetial from '../blocks/ProjectDetail.astro'
+import ProjectDetail from '../blocks/ProjectDetail.astro'
 
 const {projectsOne,projectsTwo} = data
 ---
 		<SectionContainer parentColor='bgLight'>
 
             <div class="">
-			<h2 class="text-center my-10 text-6xl bold uppercase customFont-Anton ">Projects</h2>
+			<h2 class="text-center my-10 text-6xl bold uppercase customFont-Anton customBorderBottom">Projects</h2>
 			<ul class="flex ">
 				<div class="flex flex-col w-6/12 ">
 					{ 
-					projectsOne.map(project => <ProjectDetial project={project}/>)
+					projectsOne.map(project => <ProjectDetail project={project}/>)
 
 					}
 					</div>
 				<div class="flex flex-col w-6/12 ">
 					{ 
-					projectsTwo.map(project => <ProjectDetial project={project}/>)
+					projectsTwo.map(project => <ProjectDetail project={project}/>)
 
 					}
 					</div>

@@ -34,6 +34,10 @@
   .text-accent {
     color: #d4b257;
   }
+  .customBorderBottom {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #d4b257;
+  }
   .text-vertMode {
     writing-mode: vertical-rl;
     text-orientation: upright;
