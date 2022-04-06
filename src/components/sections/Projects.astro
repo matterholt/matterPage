@@ -11,20 +11,21 @@ const {projectsOne,projectsTwo} = data
 		<SectionContainer parentColor='bgLight'>
 
             <div class="">
-			<h2 class="text-center text-6xl bold uppercase customFont-Anton customBorderBottom">Projects</h2>
-			<ul class="flex ">
-				<div class="flex flex-col w-6/12 ">
+			<h2 class="text-center my-10 text-6xl bold uppercase customFont-Anton customBorderBottom">Projects</h2>
+
+			<div class="flex  flex-col md:flex-row">
+				<ul class="flex flex-col md:w-1/2 ">
 					{ 
 					projectsOne.map(project => <ProjectDetail project={project}/>)
 
 					}
-					</div>
-				<div class="flex flex-col w-6/12 ">
+					</ul>
+				<ul class="flex flex-col md:w-1/2">
 					{ 
 					projectsTwo.map(project => <ProjectDetail project={project}/>)
 
 					}
-					</div>
-			</ul>
+					</ul>
+			</div>
             </div>
 		</SectionContainer>
