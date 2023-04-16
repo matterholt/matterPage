@@ -1,0 +1,25 @@
+---
+const { title, description, positions } = Astro.props;
+---
+
+<div class="px-2 py-10">
+  <h3 class="my-10 text-xl">{title}</h3>
+  <p>{description}</p>
+</div>
+
+<ul class="flex flex-col">
+  {
+    positions.map((job) => {
+      return (
+        <li class="border border-[#d4b257] m-1 p-4 primary10">
+          <h3 class="font-black text-2xl mb-5">{job.jobTitle}</h3>
+          <ul>
+            {job.jobResponsibilities.map((item) => (
+              <li class="py-2">{item}</li>
+            ))}
+          </ul>
+        </li>
+      );
+    })
+  }
+</ul>
