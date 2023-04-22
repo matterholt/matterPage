@@ -32,7 +32,7 @@ let description =
     />
   </head>
 
-  <body class="bg-zinc-50 text-myDark">
+  <body id="mainBody" class="bg-zinc-50 text-myDark">
     <HeaderPage />
     <main>
       <Experences />
@@ -44,3 +44,15 @@ let description =
     </footer>
   </body>
 </html>
+
+<style>
+  #mainBody {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main {
+    max-width: 1024px;
+  }
+</style>
