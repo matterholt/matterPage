@@ -1,5 +1,6 @@
 ---
 import SubTitle from "./SubTitle.astro";
+import MountianBullet from "./MountianBullet.astro";
 const { title, description, positions } = Astro.props;
 ---
 
@@ -19,7 +20,10 @@ const { title, description, positions } = Astro.props;
           </h4>
           <ul>
             {job.jobResponsibilities.map((item) => (
-              <li class="md:py-2"> 🔸 {item}</li>
+              <li class="md:py-2 flex items-center">
+                {" "}
+                <MountianBullet /> {item}
+              </li>
             ))}
           </ul>
         </li>
