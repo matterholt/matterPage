@@ -2,53 +2,34 @@
 import "../styles/global.css";
 
 // Component Imports
-import MainHead from "../components/MainHead.astro";
-import SectionTitleDecor from "../components/SectionTitleDecor.astro";
-import SectionContainer from "../components/SectionContainer.astro";
+import MainHead from "../layouts/MainHead.astro";
 import HeaderPage from "../components/HeaderPage.astro";
 import SocialLink from "../components/blocks/SocialLink.jsx";
-
-import Projects from "../components/sections/Projects.astro";
-import Experences from "../components/sections/Experences.astro";
-
-let title = "Matterholt Made";
-let description =
-  "Front end developer that build ditital products with react.js";
-// let canonicalURL = Astro.request.canonicalURL;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
+<MainHead>
   <body id="mainBody" class="bg-zinc-50 text-myDark">
     <HeaderPage />
     <main>
-      <Experences />
-
-      <Projects />
+      <ul>
+        keep on main
+        <li>header</li>
+        <li>current job <a href="/career">Career</a></li>
+        <li>latest blog post <a href="/blog">Blog</a></li>
+        <li>latest project <a href="/projects">Projects</a></li>
+      </ul>
     </main>
-    <footer>
-      <SocialLink />
-      <div class="m-2 text-xs text-right">
-        <p class="m-2 text-xs font-thin text-myDark">
-          ​All Rights Reserved |Website & Hosting by Matterholt made
-        </p>
-      </div>
-    </footer>
   </body>
-</html>
+</MainHead>
+
+<footer>
+  <SocialLink />
+  <div class="m-2 text-xs text-right">
+    <p class="m-2 text-xs font-thin text-myDark">
+      ​All Rights Reserved |Website & Hosting by Matterholt made
+    </p>
+  </div>
+</footer>
 
 <style>
   #mainBody {
