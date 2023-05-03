@@ -3,20 +3,26 @@ import "../styles/global.css";
 
 // Component Imports
 import MainHead from "../layouts/MainHead.astro";
-import HeaderPage from "../components/HeaderPage.astro";
+import HeaderPage from "../layouts/HeaderPage.astro";
 import SocialLink from "../components/blocks/SocialLink.jsx";
+import Experences from "../layouts/sections/Experences.astro";
+import NavigationBar from "../layouts/NavigationBar.astro";
 ---
 
 <MainHead>
   <body id="mainBody" class="bg-zinc-50 text-myDark">
-    <HeaderPage />
+    <HeaderPage>
+      <NavigationBar />
+    </HeaderPage>
+
     <main>
+      <Experences currentPostion={true} />
+
       <ul>
-        keep on main
         <li>header</li>
-        <li>current job <a href="/career">Career</a></li>
-        <li>latest blog post <a href="/blog">Blog</a></li>
-        <li>latest project <a href="/projects">Projects</a></li>
+        <li>current job</li>
+        <li>latest blog post</li>
+        <li>latest project</li>
       </ul>
     </main>
   </body>
