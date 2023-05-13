@@ -1,32 +1,8 @@
 ---
 const { pageId } = Astro.props;
+import activeNavigationPage from "@utils/helpers_build/currentNav.js";
 
-let navigationLinks = [
-  {
-    id: "home",
-    link: "\\",
-    title: "home",
-    activeClass: pageId == "home" ? "current" : "",
-  },
-  {
-    id: "career",
-    link: "\\career",
-    title: "career",
-    activeClass: pageId == "career" ? "current" : "",
-  },
-  {
-    id: "projects",
-    link: "\\projects",
-    title: "projects",
-    activeClass: pageId == "projects" ? "current" : "",
-  },
-  {
-    id: "writeups",
-    link: "\\writeups",
-    title: "write ups",
-    activeClass: pageId == "writeups" ? "current" : "",
-  },
-];
+let navigationLinks = activeNavigationPage(pageId);
 ---
 
 <div class="nav-container">
@@ -70,6 +46,7 @@ let navigationLinks = [
     }
     a:hover {
       background-color: var(--bg-primary-white);
+      color: var(--bg-primary);
     }
     .current {
       background-color: var(--bg-primary);
