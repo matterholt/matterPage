@@ -1,0 +1,9 @@
+---
+const { pageId } = Astro.props;
+import NavBar from "@layouts/html_styled_comps/NavBar.astro";
+---
+
+<body id="mainBody" class="bg-zinc-50 text-myDark">
+  <NavBar pageId={pageId} />
+  <slot />
+</body>

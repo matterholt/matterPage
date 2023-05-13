@@ -2,41 +2,34 @@
 import "../styles/global.css";
 
 // Component Imports
-import MainHead from "@layouts/MainHead.astro";
+import Main from "@layouts/html/Main.astro";
+import SectionContainer from "@layouts/SectionContainer.astro";
+
 import HeaderPage from "@layouts/HeaderPage.astro";
-import NavigationBar from "@layouts/NavigationBar.astro";
 import Experences from "@layouts/sections/Experences.astro";
 import Bio from "@layouts/sections/Bio.astro";
-import Footer from "@layouts/Footer.astro";
-import SectionContainer from "@layouts/SectionContainer.astro";
 ---
 
-<MainHead>
-  <body id="mainBody" class="bg-zinc-50 text-myDark">
-    <HeaderPage><NavigationBar slot="Nav" /></HeaderPage>
+<Main pageId="home">
+  <HeaderPage />
+  <Bio />
+  <SectionContainer>
+    <h2>Latest Post</h2>
+  </SectionContainer>
+  <Experences currentPostion={true} sectionTitle="current position" />
+  <SectionContainer>
+    <h2>Personal Project</h2>
+  </SectionContainer>
+</Main>
 
-    <main>
-      <Bio />
-      <SectionContainer>
-        <h2>Latest Post</h2>
-      </SectionContainer>
-      <Experences currentPostion={true} sectionTitle="current position" />
-      <SectionContainer>
-        <h2>Personal Project</h2>
-      </SectionContainer>
-      <Footer />
-    </main>
-
-    <style>
-      #mainBody {
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      main {
-        max-width: 1024px;
-      }
-    </style>
-  </body>
-</MainHead>
+<style>
+  #mainBody {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main {
+    max-width: 1024px;
+  }
+</style>

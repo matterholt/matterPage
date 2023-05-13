@@ -1,0 +1,79 @@
+---
+const { pageId } = Astro.props;
+
+let navigationLinks = [
+  {
+    id: "home",
+    link: "\\",
+    title: "home",
+    activeClass: pageId == "home" ? "current" : "",
+  },
+  {
+    id: "career",
+    link: "\\career",
+    title: "career",
+    activeClass: pageId == "career" ? "current" : "",
+  },
+  {
+    id: "projects",
+    link: "\\projects",
+    title: "projects",
+    activeClass: pageId == "projects" ? "current" : "",
+  },
+  {
+    id: "writeups",
+    link: "\\writeups",
+    title: "write ups",
+    activeClass: pageId == "writeups" ? "current" : "",
+  },
+];
+---
+
+<div class="nav-container">
+  <nav class="nav-position">
+    {
+      navigationLinks.map(({ id, link, title, activeClass }) => {
+        return (
+          <a class={activeClass} id={id} href={link}>
+            {title}
+          </a>
+        );
+      })
+    }
+  </nav>
+  <style>
+    .nav-container {
+      margin-bottom: 55px;
+    }
+    .nav-position {
+      z-index: 100px;
+      width: 100%;
+    }
+    nav {
+      border-radius: 5px;
+      padding: 15px;
+      display: flex;
+      height: 80px;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: #fafafa;
+    }
+    a {
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      width: 95px;
+
+      text-align: center;
+    }
+    a:hover {
+      background-color: var(--bg-primary-white);
+    }
+    .current {
+      background-color: var(--bg-primary);
+      color: var(--bg-primary-white);
+    }
+  </style>
+</div>
