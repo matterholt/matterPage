@@ -1,19 +1,22 @@
 ---
 const { frontmatter } = Astro.props;
 import Main from "@layouts/html/Main.astro";
+import SectionContainer from "@layouts/SectionContainer.astro";
 ---
 
 <Main>
-  <h2>{frontmatter.title}</h2>
-  <p>{frontmatter.author || "Matterholt"}</p>
-  <p>{frontmatter.pubDate.slice(0, 10)}</p>
-  <div class="writeup_tags">
-    {frontmatter.tags.map((tag) => <p class="writeup_tag">{tag}</p>)}
-  </div>
+  <SectionContainer>
+    <h2>{frontmatter.title}</h2>
+    <p>{frontmatter.author || "Matterholt"}</p>
+    <p>{frontmatter.pubDate.slice(0, 10)}</p>
+    <div class="writeup_tags">
+      {frontmatter.tags.map((tag) => <p class="writeup_tag">{tag}</p>)}
+    </div>
 
-  <div class="writeup_content">
-    <slot />
-  </div>
+    <div class="writeup_content">
+      <slot />
+    </div>
+  </SectionContainer>
 </Main>
 <style>
   h2 {
