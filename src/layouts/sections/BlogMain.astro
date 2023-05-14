@@ -1,0 +1,14 @@
+---
+import SectionContainer from "../SectionContainer.astro";
+
+const { lastestPost = false, sectionTitle = "Writes Ups" } = Astro.props;
+---
+
+<SectionContainer parentColor="bgLight">
+  <h2
+    class="text-center text-6xl bold uppercase customFont-Anton customBorderBottom"
+  >
+    {sectionTitle}
+  </h2>
+  <slot />
+</SectionContainer>

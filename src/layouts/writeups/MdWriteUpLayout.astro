@@ -1,0 +1,32 @@
+---
+const { frontmatter } = Astro.props;
+import Main from "@layouts/html/Main.astro";
+---
+
+<Main>
+  <h2>{frontmatter.title}</h2>
+  <p>{frontmatter.author || "Matterholt"}</p>
+  <p>{frontmatter.pubDate.slice(0, 10)}</p>
+  <div class="writeup_tags">
+    {frontmatter.tags.map((tag) => <p class="writeup_tag">{tag}</p>)}
+  </div>
+
+  <div class="writeup_content">
+    <slot />
+  </div>
+</Main>
+<style>
+  h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+  .writeup_tags {
+    display: flex;
+  }
+  .writeup_tag {
+    margin: 12px;
+  }
+  .writeup_content {
+    margin: 50px;
+  }
+</style>

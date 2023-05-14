@@ -1,7 +1,54 @@
 ---
 import Main from "@layouts/html/Main.astro";
+import BlogMain from "@layouts/sections/BlogMain.astro";
+
+const allPost = await Astro.glob("../pages/posts/*.md");
+
+const thisYearsPost = allPost.filter((post) => {
+  let current = post.frontmatter.pubDate.split("-")[0] === "2023";
+  return current;
+});
+const pastYearsPost = allPost.filter((post) => {
+  let current = post.frontmatter.pubDate.split("-")[0] != "2023";
+  return current;
+});
 ---
 
 <Main pageId="writeups">
-  <h1>BLOG/Writes ups</h1>
+  <BlogMain>
+    <h3>Current Year</h3>
+
+    <ul>
+      {
+        thisYearsPost.map((post) => (
+          <li>
+            <a href={post.url}>
+              {post.frontmatter.title} {post.frontmatter.pubDate}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <h3>Past Year</h3>
+    <ul>
+      {
+        pastYearsPost.map((post) => (
+          <li>
+            <a href={post.url}>
+              {post.frontmatter.title} {post.frontmatter.pubDate}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </BlogMain>
 </Main>
+<style>
+  h3 {
+    font-weight: 900;
+    font-size: 30px;
+  }
+  ul {
+    margin-bottom: 50px;
+  }
+</style>
