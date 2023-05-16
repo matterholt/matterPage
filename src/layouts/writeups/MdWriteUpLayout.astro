@@ -4,30 +4,60 @@ import Main from "@layouts/html/Main.astro";
 import SectionContainer from "@layouts/SectionContainer.astro";
 ---
 
-<Main>
+<Main pageId="writeups">
+  <div>create sub menu <br /> posts/ post_title/cc</div>
   <SectionContainer>
-    <h2>{frontmatter.title}</h2>
-    <p>{frontmatter.author || "Matterholt"}</p>
-    <p>{frontmatter.pubDate.slice(0, 10)}</p>
-    <div class="writeup_tags">
-      {frontmatter.tags.map((tag) => <p class="writeup_tag">{tag}</p>)}
+    <div class="writeup_header">
+      <div class="writeup_info">
+        <p>{frontmatter.author || "Matterholt"}</p>
+        <p>{frontmatter.pubDate.slice(0, 10)}</p>
+      </div>
+      <h2>{frontmatter.title}</h2>
+      <div class="writeup_tags">
+        {frontmatter.tags.map((tag) => <p class="writeup_tag">{tag}</p>)}
+      </div>
     </div>
-
     <div class="writeup_content">
       <slot />
     </div>
   </SectionContainer>
 </Main>
 <style>
+  .writeup_info {
+    justify-self: flex-end;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+    margin-bottom: 30px;
+  }
+  .writeup_header {
+    background-color: var(--bg-primary);
+    color: var(--accent);
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    display: grid;
+    font-size: 20px;
+  }
   h2 {
     font-size: 40px;
     text-align: center;
+    font-size: 2.3em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
   }
   .writeup_tags {
     display: flex;
+    justify-content: center;
+    margin: 10px;
+    font-size: 0.5em;
+    letter-spacing: 1px;
+    margin: 12px;
   }
   .writeup_tag {
-    margin: 12px;
+    border: 1px solid var(--bg-primary-white);
+    padding: 6px;
+    border-radius: 8px;
+    margin: 0px 10px;
   }
   .writeup_content {
     margin: 50px;
