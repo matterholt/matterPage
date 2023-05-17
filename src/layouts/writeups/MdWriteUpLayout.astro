@@ -5,7 +5,6 @@ import SectionContainer from "@layouts/SectionContainer.astro";
 ---
 
 <Main pageId="writeups">
-  <div>create sub menu <br /> posts/ post_title/cc</div>
   <SectionContainer>
     <div class="writeup_header">
       <div class="writeup_info">
@@ -13,16 +12,28 @@ import SectionContainer from "@layouts/SectionContainer.astro";
         <p>{frontmatter.pubDate.slice(0, 10)}</p>
       </div>
       <h2>{frontmatter.title}</h2>
+    </div>
+
+    <div class="writeup_actions">
+      <div class="writeup_tags">
+        <a href="./writeup"> writeup/posts/</a>
+      </div>
       <div class="writeup_tags">
         {frontmatter.tags.map((tag) => <p class="writeup_tag">{tag}</p>)}
       </div>
     </div>
+
     <div class="writeup_content">
       <slot />
     </div>
   </SectionContainer>
 </Main>
+
 <style>
+  .writeup_actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
   .writeup_info {
     justify-self: flex-end;
     letter-spacing: 1px;
@@ -61,5 +72,10 @@ import SectionContainer from "@layouts/SectionContainer.astro";
   }
   .writeup_content {
     margin: 50px;
+  }
+</style>
+<style is:global>
+  #writeups {
+    --section-margine-top: 0px;
   }
 </style>

@@ -22,9 +22,7 @@ const pastYearsPost = allPost.filter((post) => {
       {
         thisYearsPost.map((post) => (
           <li>
-            <a href={post.url}>
-              {post.frontmatter.title} {post.frontmatter.pubDate}
-            </a>
+            <a href={post.url}>{post.frontmatter.title}</a>
           </li>
         ))
       }
@@ -34,9 +32,7 @@ const pastYearsPost = allPost.filter((post) => {
       {
         pastYearsPost.map((post) => (
           <li>
-            <a href={post.url}>
-              {post.frontmatter.title} {post.frontmatter.pubDate}
-            </a>
+            <a href={post.url}>{post.frontmatter.title}</a>
           </li>
         ))
       }
