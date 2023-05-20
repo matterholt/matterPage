@@ -4,30 +4,37 @@ import BlogMain from "@layouts/sections/BlogMain.astro";
 
 const allPost = await Astro.glob("../pages/posts/*.md");
 
+const currentYear = "2023";
+
 const thisYearsPost = allPost.filter((post) => {
-  let current = post.frontmatter.pubDate.split("-")[0] === "2023";
+  let current = post.frontmatter.pubDate.split("-")[0] === currentYear;
   return current;
 });
+// sort it by date
+
 const pastYearsPost = allPost.filter((post) => {
-  let current = post.frontmatter.pubDate.split("-")[0] != "2023";
+  let current = post.frontmatter.pubDate.split("-")[0] != currentYear;
   return current;
 });
 ---
 
 <Main pageId="writeups">
   <BlogMain>
-    <h3>Current Year</h3>
+    <h3>Latest Published</h3>
+
+    <h3>Year {currentYear}</h3>
 
     <ul>
       {
         thisYearsPost.map((post) => (
           <li>
             <a href={post.url}>{post.frontmatter.title}</a>
+            {post.frontmatter.pubDate}
           </li>
         ))
       }
     </ul>
-    <h3>Past Year</h3>
+    <h3>Previous Year</h3>
     <ul>
       {
         pastYearsPost.map((post) => (

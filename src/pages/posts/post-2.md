@@ -1,8 +1,8 @@
 ---
 layout: ../..//layouts/writeups/MdWriteUpLayout.astro
-title: "2023 updates Developer Set up"
+title: "Next future post -POST2"
 pubDate: 2023-07-01
-slug: "Quick overview of my current development set up123"
+slug: "Next Intervuie"
 author: "Matterholt"
 tags: ["astro", "blogging", "learning in public"]
 ---

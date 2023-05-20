@@ -1,7 +1,7 @@
 ---
 layout: ../..//layouts/writeups/MdWriteUpLayout.astro
 title: "2023 Developer Set up"
-pubDate: 2023-07-01
+pubDate: 2023-05-20
 slug: "Quick overview of my current development set up"
 author: "Matterholt"
 image:

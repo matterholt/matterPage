@@ -1,6 +1,6 @@
 ---
 layout: ../..//layouts/writeups/MdWriteUpLayout.astro
-title: "2022 build Developer Set up"
+title: "last years something -post0"
 pubDate: 2022-07-01
 slug: "Quick overview of my current development set up"
 author: "Matterholt"
