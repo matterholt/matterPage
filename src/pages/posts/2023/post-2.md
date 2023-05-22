@@ -1,5 +1,5 @@
 ---
-layout: ../..//layouts/writeups/MdWriteUpLayout.astro
+layout: ../../../layouts/writeups/MdWriteUpLayout.astro
 title: "Next future post -POST2"
 pubDate: 2023-07-01
 slug: "Next Intervuie"

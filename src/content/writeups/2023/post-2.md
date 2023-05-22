@@ -1,16 +1,13 @@
 ---
-layout: ../..//layouts/writeups/MdWriteUpLayout.astro
-title: "last years something -post0"
-pubDate: 2022-07-01
-slug: "Quick overview of my current development set up"
+layout: ../../../layouts/writeups/MdWriteUpLayout.astro
+title: "Next future post -POST2"
+pubDate: 2023-07-01
+slug: "Next Intervuie"
 author: "Matterholt"
-image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
-  alt: "The full Astro logo."
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-# 2022 build Developer Set up
+# 2023 Developer Set up
 
 Published on: 2022-07-01
 

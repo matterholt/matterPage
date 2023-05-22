@@ -2,7 +2,7 @@ let [CURRENT_day, CURRENT_month, CURRENT_date, CURRENT_year, ...time] = Date().s
 
 export function sortDates(dateList, order = "accending") {
     if (order = "accending") {
-        return dateList.sort((a, b) => b.current - a.current)
+        return dateList.sort((a, b) => b.date - a.date)
     }
 }
 
@@ -11,6 +11,15 @@ const postListDataStruct = (postGlob) => ({
     postUrl: postGlob.url,
     date: postGlob.frontmatter.pubDate.slice(0, 10),
 });
+
+function sortsItsOuts() {
+
+
+    // return object with post listings, 
+    // latest pub, current year, archive
+    return []
+
+}
 
 
 export function writeUpPostListings(postsglobs) {
@@ -23,11 +32,12 @@ export function writeUpPostListings(postsglobs) {
 
 
     const thisYearsPost = postlist.filter((post) => {
-        let [year, month, date] = post.date.split("-")
+        let [year, ...rest] = post.date.split("-")
         return CURRENT_year === year;
     });
+
     const previousYearsPost = postlist.filter((post) => {
-        let [year, month, date] = post.date.split("-")
+        let [year, ...rest] = post.date.split("-")
         return CURRENT_year !== year;
     });
 
