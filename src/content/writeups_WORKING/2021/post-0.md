@@ -1,13 +1,16 @@
 ---
 layout: ../../../layouts/writeups/MdWriteUpLayout.astro
-title: "Next future post -POST2"
-pubDate: 2023-07-01
-slug: "Next Intervuie"
+title: "post fro 2021"
+pubDate: 2021-07-01
+slug: "post fro 2021"
 author: "Matterholt"
+image:
+  url: "https://docs.astro.build/assets/full-logo-light.png"
+  alt: "The full Astro logo."
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-# 2023 Developer Set up
+# 2022 build Developer Set up
 
 Published on: 2022-07-01
 

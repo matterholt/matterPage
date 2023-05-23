@@ -2,7 +2,7 @@ let [CURRENT_day, CURRENT_month, CURRENT_date, CURRENT_year, ...time] = Date().s
 
 export function sortDates(dateList, order = "accending") {
     if (order = "accending") {
-        return dateList.sort((a, b) => b.date - a.date)
+        return dateList.sort((a, b) => b.pubDate - a.pubDate)
     }
 }
 
@@ -13,7 +13,6 @@ const postListDataStruct = (postGlob) => ({
 });
 
 function sortsItsOuts() {
-
 
     // return object with post listings, 
     // latest pub, current year, archive
