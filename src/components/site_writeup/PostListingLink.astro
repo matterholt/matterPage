@@ -3,6 +3,8 @@
 postSetting -> allow the post listing, changes displayed props and sytles??
 
 */
+import InitialsIcon from "../blocks/InitialsIcon.astro";
+
 const { url, postGlob, postSetting } = Astro.props;
 
 const { title, pubDate, slug } = postGlob;
@@ -15,6 +17,8 @@ const { title, pubDate, slug } = postGlob;
         {title}
       </h4>
       <p>{pubDate.slice(0, 10)}</p>
+
+      <InitialsIcon size="25px" borderWidth="2px" />
     </div>
   </a>
   <p>{slug}</p>
