@@ -8,18 +8,20 @@ import SectionContainer from "@layouts/SectionContainer.astro";
 import HeaderPage from "@layouts/HeaderPage.astro";
 import Experences from "@layouts/sections/Experences.astro";
 import Bio from "@layouts/sections/Bio.astro";
+
+import CurrentPost from "@components/site_writeup/CurrentPost.astro";
 ---
 
 <Main pageId="home">
   <HeaderPage />
   <Bio />
-  <SectionContainer>
-    <h2>Latest Post</h2>
-  </SectionContainer>
+
+  <CurrentPost />
+
   <Experences currentPostion={true} sectionTitle="current position" />
-  <SectionContainer>
+  <!-- <SectionContainer>
     <h2>Personal Project</h2>
-  </SectionContainer>
+  </SectionContainer> -->
 </Main>
 
 <style>

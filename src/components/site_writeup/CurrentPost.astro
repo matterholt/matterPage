@@ -1,0 +1,53 @@
+---
+import SectionContainer from "@layouts/SectionContainer.astro";
+import {
+  writeUpPostListings,
+  sortDates,
+} from "@utils/helpers/blog_dates/index";
+
+const currentYearsPost = await Astro.glob("../../pages/posts/2023/*.md");
+let currentYearsPost_sorted = sortDates(currentYearsPost);
+
+const latestPost = currentYearsPost_sorted[0];
+const { url, frontmatter } = latestPost;
+const { title, pubDate, slug } = frontmatter;
+
+// TODO, sort post, clean data up
+---
+
+<SectionContainer>
+  <h2
+    class="text-center text-5xl bold uppercase customFont-Anton customBorderBottom"
+  >
+    Latest Post
+  </h2>
+  <a href={url}>
+    <div class="post_header">
+      <h4>
+        {title}
+      </h4>
+      <p>{pubDate.slice(0, 10)}</p>
+    </div>
+  </a>
+  <p>{slug}</p>
+</SectionContainer>
+
+<style>
+  h3 {
+    font-weight: 900;
+    font-size: 30px;
+  }
+  h4 {
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .post_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 5px;
+  }
+</style>
+<script></script>
