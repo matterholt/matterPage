@@ -1,10 +1,8 @@
 ---
 // Component Imports
-import * as data from "../../utils/writeUps/projects/index.json";
-import SectionTitleDecor from "../SectionTitleDecor.astro";
+import * as data from "@utils/writeUps/projects/index.json";
 import SectionContainer from "../SectionContainer.astro";
-
-import ProjectDetail from "../blocks/ProjectDetail.astro";
+import ProjectDetail from "@components/blocks/ProjectDetail.astro";
 
 const { projectsOne, projectsTwo } = data;
 ---
@@ -15,6 +13,7 @@ const { projectsOne, projectsTwo } = data;
   >
     Projects
   </h2>
+  <slot />
 
   <div class="flex flex-col md:flex-row">
     <ul class="flex flex-col md:w-1/2">

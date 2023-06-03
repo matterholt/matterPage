@@ -1,8 +1,11 @@
 ---
+layout: ../..//layouts/writeups/MdWriteUpLayout.astro
 title: Git and Github Intro
-date: 2020-05-27
+pubDate: 2020-05-27
 published: true
 slug: Quick run down on git
+author: "Matterholt"
+tags: ["Git", "Version control", "process"]
 ---
 
 They are two different entities but work together very well. git is the version control system that is installed on the local pc. GitHub is the storage for the code. It is possible to use each one separately. A repository is the code base that is being tracked by git. Github is able to store the repositories.

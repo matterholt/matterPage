@@ -1,0 +1,72 @@
+---
+import SubTitle from "@components/blocks/SubTitle.astro";
+---
+
+<header class="">
+  <slot name="Nav" />
+
+  <div class="top">
+    <div>
+      <div class="top_header-font top_header-layout">
+        <div class="specialChar">M</div>
+        <div class="theRestCar">atterholt</div>
+
+        <div class="specialChar">M</div>
+
+        <div class="theRestCar">ade</div>
+      </div>
+      <p class="sub">ADD SOME DESIGN or Something</p>
+    </div>
+    <p class="mt-4 text-right justify-self-end mr-10">
+      <span class="font-bold text-lg">Matthew Atterholt</span><br />
+      Husband, Father, Developer In Tech.
+    </p>
+  </div>
+</header>
+<style>
+  .titleBoundry {
+    display: flex;
+    height: min-content;
+  }
+  .top_header-layout {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: repeat(2, 100px);
+    line-height: 100px;
+  }
+  .top_header-font {
+    font-family: "Anton", sans-serif;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 8px;
+  }
+
+  .theRestCar {
+    align-items: center;
+    justify-self: flex-start;
+  }
+  .specialChar {
+    background-color: var(--bg-primary);
+    color: var(--accent);
+    font-size: 90px;
+    place-self: center;
+    padding: 5px;
+    padding-left: 10px;
+  }
+  header {
+    max-width: 1024px;
+    margin: 5px;
+  }
+  .top {
+    display: grid;
+    place-items: center;
+    height: 50vh;
+  }
+  .sub {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 5px 0px;
+    padding: 5px;
+  }
+</style>

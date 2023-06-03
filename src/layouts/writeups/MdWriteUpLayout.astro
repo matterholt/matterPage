@@ -1,0 +1,98 @@
+---
+const { frontmatter } = Astro.props;
+import Main from "@layouts/html/Main.astro";
+import SectionContainer from "@layouts/SectionContainer.astro";
+---
+
+<Main pageId="writeups">
+  <SectionContainer>
+    <div class="writeup_header">
+      <div class="writeup_info">
+        <p>{frontmatter.author || "Matterholt"}</p>
+        <p>{frontmatter.pubDate.slice(0, 10)}</p>
+      </div>
+      <h2>{frontmatter.title}</h2>
+    </div>
+
+    <div class="writeup_actions">
+      <div class="writeup_tags">
+        <a href="./writeup"> writeup/posts/</a>
+      </div>
+      <div class="writeup_tags">
+        {frontmatter.tags.map((tag) => <p class="writeup_tag">{tag}</p>)}
+      </div>
+    </div>
+
+    <div class="writeup_content">
+      <slot />
+    </div>
+  </SectionContainer>
+</Main>
+
+<style>
+  .writeup_actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .writeup_info {
+    justify-self: flex-end;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+    margin-bottom: 30px;
+  }
+  .writeup_header {
+    background-color: var(--bg-primary);
+    color: var(--accent);
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    display: grid;
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 40px;
+    text-align: center;
+    font-size: 2.3em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .writeup_tags {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    font-size: 0.5em;
+    letter-spacing: 1px;
+    margin: 12px;
+  }
+  .writeup_tag {
+    border: 1px solid var(--bg-primary-white);
+    padding: 6px;
+    border-radius: 8px;
+    margin: 0px 10px;
+  }
+  .writeup_content {
+    margin: 50px;
+  }
+</style>
+<style is:global>
+  #writeups {
+    --section-margine-top: 0px;
+  }
+  .writeup_content p {
+    margin: 5px;
+  }
+  .writeup_content h2 {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .writeup_content h1 {
+    font-weight: 800;
+    font-size: 1.5rem;
+  }
+  .writeup_content li {
+    margin: 10px;
+  }
+  .writeup_content ul {
+    margin: 5px 0px;
+  }
+</style>
