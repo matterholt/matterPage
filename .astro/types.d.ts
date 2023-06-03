@@ -102,30 +102,9 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"writeups_WORKING": {
-"2021/post-0.md": {
-  id: "2021/post-0.md",
-  slug: "post fro 2021",
-  body: string,
-  collection: "writeups_WORKING",
-  data: any
-} & { render(): Render[".md"] },
-"2022/post-0.md": {
-  id: "2022/post-0.md",
-  slug: "Quick overview of my current development set up",
-  body: string,
-  collection: "writeups_WORKING",
-  data: any
-} & { render(): Render[".md"] },
 "2023/post-1.md": {
   id: "2023/post-1.md",
   slug: "Quick overview of my current development set up",
-  body: string,
-  collection: "writeups_WORKING",
-  data: any
-} & { render(): Render[".md"] },
-"2023/post-2.md": {
-  id: "2023/post-2.md",
-  slug: "Next Intervuie",
   body: string,
   collection: "writeups_WORKING",
   data: any
