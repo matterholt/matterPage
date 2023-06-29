@@ -16,7 +16,7 @@ const { title, pubDate, slug } = postGlob;
       <h4 class="post_title">
         {title}
       </h4>
-      <p>{pubDate.slice(0, 10)}</p>
+      <p>{pubDate?.slice(0, 10) || ""}</p>
 
       <InitialsIcon size="25px" borderWidth="2px" />
     </div>

@@ -7,8 +7,10 @@ import {
   sortDates,
 } from "@utils/helpers/blog_dates/index";
 
-const currentYearsPost = await Astro.glob("../pages/posts/2023/*.md");
+const currentYearsPost = await Astro.glob("../pages/posts/2023/**/*.md");
 let currentYearsPost_sorted = sortDates(currentYearsPost);
+const previousYearsPost = await Astro.glob("../pages/posts/2022/**/*.md");
+let previousYearsPost_sorted = sortDates(previousYearsPost);
 
 const latestPost = currentYearsPost[0];
 
@@ -35,12 +37,12 @@ const latestPost = currentYearsPost[0];
         }
       </ul>
     </section>
-    <!-- {
-      previousYearsPost ? (
+    {
+      previousYearsPost_sorted ? (
         <section>
           <h3>Previous Year</h3>
           <ul>
-            {previousYearsPost.map((post) => (
+            {previousYearsPost_sorted.map((post) => (
               <li>
                 <PostListingLink url={post.url} postGlob={post.frontmatter} />
               </li>
@@ -48,7 +50,7 @@ const latestPost = currentYearsPost[0];
           </ul>
         </section>
       ) : null
-    } -->
+    }
   </BlogMain>
 </Main>
 
