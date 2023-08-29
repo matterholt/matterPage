@@ -22,11 +22,6 @@ const latestPost = currentYearsPost[0];
     <section class="blog_sections">
       <h3 class="section_header">Latest Published</h3>
 
-      <PostListingLink url={latestPost.url} postGlob={latestPost.frontmatter} />
-    </section>
-
-    <section class="blog_sections">
-      <h3 class="section_header">Other Post</h3>
       <ul class="list_container">
         {
           currentYearsPost_sorted.map((post) => (
