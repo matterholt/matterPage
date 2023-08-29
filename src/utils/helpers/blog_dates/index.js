@@ -1,9 +1,7 @@
 let [CURRENT_day, CURRENT_month, CURRENT_date, CURRENT_year, ...time] = Date().split(" ")
 
 export function sortDates(dateList, order = "accending") {
-    if (order = "accending") {
-        return dateList.sort((a, b) => b.pubDate - a.pubDate)
-    }
+    return dateList.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate))
 }
 
 const postListDataStruct = (postGlob) => ({
