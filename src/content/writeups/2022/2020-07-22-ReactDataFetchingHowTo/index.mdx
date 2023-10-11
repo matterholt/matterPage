@@ -1,0 +1,89 @@
+---
+title: How to fetching Data from React component
+date: 2020-07-22
+published: true
+slug: Getting the data from the api into the component for the user to use
+---
+
+## 3 ways to get data from an API into components
+
+To actually get data from an API the first option would be to use `Fetch()`. Which is a promised base JavaScript API that modern browsers(not IE) have implemented and standardize? There are also JS libraries that give additional features when fetching data such as Axios. but that is for another time. So we have a simple idea on how to make a call to get the data, but how and when should React make the call to get the data?
+
+So when should React make the call to the API? React's Docs states that 'You should populate data with AJAX calls in the componentDidMount lifecycle method'. This means that the method will be called after the first render() cycle, like the component has been mounted now run that code is contained in my brackets. This works with class base component but if want to stay functional we will reach for a Hook called `useEffect()`. Which can be used as a `componentDidMount()` method. Within these methods, the state can be updated and the data can be processed and passed to the components.
+
+The First way to pass state is Higher-Order Components. The request call will happen at the top component, where all other components are constructed. The state would be able to be passed and broken down into smaller bit an have them displayed.
+
+[code source ](https://github.com/matterholt/react_fetch/blob/master/README.md)
+
+```js
+
+class BodyForTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFetching: false,
+      users: [],
+    };
+  }
+
+
+  render() {
+      // within BodyForTable component the state is living and with in the map method the state is passing to other // comps to handle the display
+    return (
+      <TableBody>
+        {this.state.users.map((userInfo) => {
+          return <RowsTable userInfo={userInfo} key={userInfo.id} />;
+        })}
+      </TableBody>
+    );
+  }
+
+```
+
+Second way is using render props. It's a technique for sharing code between components. I haven't spent too much time working with this concept. It similar how I building layout pages. The BodyForTable is where the data is being fetch from and the render is a function that executes the child component that is define at a higher level.The props are passed to the children components which act as templates for that data. With react hooks it may not be needed as much but still good to know about.
+
+```js
+class BodyForTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFetching: false,
+      users: [],
+    };
+  }
+  render = () => this.props.children(this.state);
+
+```
+
+Finally React Hooks, Hook have been the main way that I have been writing React. Overall gives the code a cleaner look and is better for shareability. The code below may look like more code but with this example you can see the useEffect method and how the data is being called. The part that is important how the data is being stored with Hooks. Which is an deconstructed Array that calls the useState method which is how the data is called and updated. With hook we are able to get away from the class base component and use functional components.
+
+```js
+export default function HooksReactTable() {
+  const [usersList, setUsersList] = useState({ users: [], isFetching: false });
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        setUsersList({ users: usersList.users, isFetching: true });
+        const response = await axios.get(USER_SERVICE_URL);
+        setUsersList({ users: response.data, isFetching: false });
+      } catch (e) {
+        console.log(e);
+        setUsersList({ user: usersList.users, isFetching: false });
+      }
+    };
+    fetchUser();
+  }, []);
+
+  return (
+    <div>
+      <UserTables>
+        <BodyForTable userList={usersList.users} />
+      </UserTables>
+      <p>{usersList.isFetching ? 'Fetching Users ... ' : ''}</p>
+    </div>
+  );
+}
+```
+
+Hooks seem the way to go it allows the developer to build a custom hook that could control the state and removes some of the logic out of the components to keep it clean. There is probably a bit of class base component out in the wild, So at the very least we should be able to recognize these patterns that were and are used to build.

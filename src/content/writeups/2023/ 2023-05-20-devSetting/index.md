@@ -1,8 +1,10 @@
 ---
-layout: ../../../layouts/writeups/MdWriteUpLayout.astro
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: "2023 Developer Set up"
 pubDate: 2023-05-20
-slug: "Quick overview of my current development set up"
+
+published: true
+slug: "I have rocked the same setup since 2017. This year I was finally able to change everything up. From hardware to software that I used for daily development. Here is a  quick overview of my current development setup that I will be running this year"
 author: "Matterholt"
 image:
   url: ""

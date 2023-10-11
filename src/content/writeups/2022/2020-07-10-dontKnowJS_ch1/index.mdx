@@ -1,0 +1,39 @@
+---
+title: Notes on the "YDNJS"
+date: 2020-07-10
+published: true
+slug: Reading notes on the Chapter 1 of Book 1 "You Don't Know JS yet"
+---
+
+### Chapter 1 Book 1
+
+## What type of language is JS
+
+- JavaScript is a multi-paradigm language, which means that the way to code can be structure in be a Procedural, Object-Oriented, and Functional
+
+### JS developers responsibility in relation to building working code
+
+- JavaScript is also backward compatible, so if the JS that was written in the past year chances are it would still be able to be executable with JS engines of today and future. There is some catch though. Just because the methods and other features are releases in the language doesn't mean that they are currently implemented into the js engines. to simplify the browsers that run the JS. Hence the need for transpilers for the code such as Babel. This helps fill in the gaps between writing "future js code" and code that is supported in the current JS engines.
+- The main importance of transpilers (bridge gap) js code is that new methods are being added yearly. So when a JS developer starts to use these methods it is developers' responsibility to ensure that this code could be used by all no matter what the oldest-supported JS engine environments.
+- Recommended that developers use the latest version of JS so that their code is clean and communicates its ideas most effectively. [You Don't Know JS Yet: Get Started - 2nd Edition](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch1.md#backwards--forwards)
+- another way to help bridge that gap of writing the latest JS code and what need to be supported is something called a Pollyfill also known as a shim. In simplest form it is rewriting the new methods in a way that the older JS engines and old code to be able to execute the newest and stable JS code
+
+### How JS gets processed
+
+- Interpreted languages could be defined that the code that is written will get code would be executed as if it were being read from a book. (top-down) .
+- In contrast to being Compiled in which the code would be read and parsed into binary code, to which then could be executed.
+- Then Parsed languages in which are closer to complied languages in which the code written will be analysed before the program is executed
+- Parsed languages are first to read over a commonly create an Abstract Syntax Tree (AST). From there could be executed.
+- JS is def a parsed language resulting in error before execution and the AST. The JS engine converts to a byte like code. Then that code would be further optimized Just In Time (JIT) compiler. Finally, the JS virtual Machine (VM) executes the program.
+- Most would define JS as an interpreted (scripting) language, which may not be an accurate description. The indication of this would be how the errors are being presented with no indication that the program has ran up until that point of error. The indications of how JS is executed show more favoritism towards a compiled language than the popular opinion of JS being an interpreted language.
+
+### Web Assembly
+
+- WASM web assembly, able to write in any programming language that can be executed in JS engine.
+- Not only for web but the ability to Write once and be able to run on different Operating systems
+
+### Strict Mode
+
+- defined at the top of the page, but can also be defined with the scope of a function,
+- whatever code proceeds after the strict mode initialized will be evaluated strictly
+- should be in js files to help correctly write JS as it should be
