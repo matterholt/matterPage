@@ -1,13 +1,13 @@
 ---
-import SubTitle from "./SubTitle.astro";
+import { Content } from "@components/lib_comps";
 import InitialsIcon from "../blocks/InitialsIcon.astro";
 
 const { title, description, positions } = Astro.props;
 ---
 
 <div class="mx-2 mt-12 mb-6">
-  <SubTitle content={title} />
-  <p>{description}</p>
+  <Content elementTag="h3">{title}</Content>
+  <Content>{description}</Content>
 </div>
 
 <ul class="flex flex-col">
@@ -15,10 +15,10 @@ const { title, description, positions } = Astro.props;
     positions.map((job) => {
       return (
         <li class=" m-1 p-2 ">
-          <h4 class="font-medium text-2xl mb-2 leading-5 ">
-            {job.jobTitle}
-            <br /> <span>{job.workingDate}</span>
-          </h4>
+          <div class="job_postion-heading">
+            <Content elementTag="h4">{job.jobTitle}</Content>
+            <Content>{job.workingDate}</Content>
+          </div>
           <ul>
             {job.jobResponsibilities.map((item) => (
               <li class="md:py-2 flex items-center">
@@ -33,8 +33,8 @@ const { title, description, positions } = Astro.props;
   }
 </ul>
 <style>
-  span {
-    font-size: 10px;
-    width: 100%;
+  .job_postion-heading {
+    display: flex;
+    justify-content: space-between;
   }
 </style>

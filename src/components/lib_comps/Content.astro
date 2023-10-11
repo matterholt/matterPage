@@ -1,0 +1,59 @@
+---
+const {elementTag}= Astro.props
+
+const Element = elementTag ? elementTag :"p";
+---
+
+<Element class="content_commonformat">
+  <slot />
+</Element>
+
+
+<style scoped>
+        h4.content_commonformat {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+        line-height: 30px;
+
+    }
+
+    h3.content_commonformat {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: -0.6px;
+        line-height: 32px;
+
+    }
+
+    h2.content_commonformat {
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: -0.75px;
+        line-height: 40px;
+    }
+    h1.content_commonformat {
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: -0.75px;
+        line-height: 40px;
+    }
+    p.content_commonformat  {
+        font-size: 16px;
+        font-weight:400;
+        letter-spacing:normal;
+        line-height:24px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+
+    }
+    .content_commonformat{
+        color: var(--bg-primary-black);
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        maring-left: 0px;
+    }
+
+
+</style>

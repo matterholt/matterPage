@@ -1,4 +1,6 @@
 ---
+import { Content, Heading } from "@components/lib_comps";
+
 // Component Imports
 import * as data from "@utils/writeUps/projects/index.json";
 import SectionContainer from "../SectionContainer.astro";
@@ -8,11 +10,9 @@ const { projectsOne, projectsTwo } = data;
 ---
 
 <SectionContainer parentColor="bgLight">
-  <h2
-    class="text-center my-10 text-6xl bold uppercase customFont-Anton customBorderBottom"
-  >
-    Projects
-  </h2>
+  <Heading>
+    <Content elementTag="h2">Projects</Content>
+  </Heading>
   <slot />
 
   <div class="flex flex-col md:flex-row">

@@ -1,0 +1,37 @@
+---
+const {activeClass, id, link,title}= Astro.props
+
+---
+<a class={activeClass} id={id} href={link}>
+    {title}
+</a>
+
+
+
+<style>
+
+    a {
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      min-width: 95px;
+      padding: 5px;
+      text-align: center;
+    }
+    a:hover {
+      background-color: var(--bg-primary-white);
+      color: var(--bg-primary);
+    }
+    .current {
+      background-color: var(--bg-primary);
+      color: var(--bg-primary-white);
+    }
+    a::after {
+      content: "/";
+      color: var(--accent);
+      padding-left: 5px;
+    }
+  
+  </style>
+  

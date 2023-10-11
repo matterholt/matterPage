@@ -1,4 +1,5 @@
 ---
+import { Content, Heading } from "@components/lib_comps";
 import * as data from "@utils/writeUps/jobHistory/index.json";
 import SectionContainer from "../SectionContainer.astro";
 import JobPostions from "@components/blocks/JobPostions.astro";
@@ -14,11 +15,11 @@ const {
 ---
 
 <SectionContainer parentColor="bgLight">
-  <h2
-    class="text-center text-5xl bold uppercase customFont-Anton customBorderBottom"
-  >
-    {sectionTitle}
-  </h2>
+  <Heading>
+    <Content elementTag="h2">
+      {sectionTitle}
+    </Content>
+  </Heading>
   <slot />
 
   <JobPostions
