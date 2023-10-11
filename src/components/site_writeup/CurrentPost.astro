@@ -1,5 +1,7 @@
 ---
 import SectionContainer from "@layouts/SectionContainer.astro";
+import { Alink } from "@components/lib_comps";
+
 import {
   writeUpPostListings,
   sortDates,
@@ -30,6 +32,7 @@ const { title, pubDate, slug } = frontmatter;
     </div>
   </a>
   <p>{slug}</p>
+  <Alink id="test" link="./writeups" title="other write ups" />
 </SectionContainer>
 
 <style>

@@ -1,6 +1,7 @@
 ---
 const { pageId } = Astro.props;
 import activeNavigationPage from "@scripts/helpers_build/currentNav.js";
+import { Alink } from "@components/lib_comps";
 
 let navigationLinks = activeNavigationPage(pageId);
 ---
@@ -9,11 +10,7 @@ let navigationLinks = activeNavigationPage(pageId);
   <nav class="nav-position">
     {
       navigationLinks.map(({ id, link, title, activeClass }) => {
-        return (
-          <a class={activeClass} id={id} href={link}>
-            {title}
-          </a>
-        );
+        return <Alink {id} {link} {title} {activeClass} />;
       })
     }
   </nav>
