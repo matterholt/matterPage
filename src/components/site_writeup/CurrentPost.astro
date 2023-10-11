@@ -1,6 +1,6 @@
 ---
 import SectionContainer from "@layouts/SectionContainer.astro";
-import { Alink } from "@components/lib_comps";
+import { Alink, Content, Heading } from "@components/lib_comps";
 
 import {
   writeUpPostListings,
@@ -18,11 +18,9 @@ const { title, pubDate, slug } = frontmatter;
 ---
 
 <SectionContainer>
-  <h2
-    class="text-center text-5xl bold uppercase customFont-Anton customBorderBottom"
-  >
-    Latest Post
-  </h2>
+  <Heading>
+    <Content elementTag="h2">Latest Post</Content>
+  </Heading>
   <a href={url}>
     <div class="post_header">
       <h4>
