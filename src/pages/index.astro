@@ -3,7 +3,6 @@ import "../styles/global.css";
 
 // Component Imports
 import Main from "@layouts/html/Main.astro";
-import SectionContainer from "@layouts/SectionContainer.astro";
 
 import HeaderPage from "@layouts/HeaderPage.astro";
 import Experences from "@layouts/sections/Experences.astro";
@@ -14,7 +13,9 @@ import CurrentPost from "@components/site_writeup/CurrentPost.astro";
 
 <Main pageId="home">
   <HeaderPage />
+
   <Bio />
+
   <CurrentPost />
 
   <Experences currentPostion={true} sectionTitle="Current Position" />
