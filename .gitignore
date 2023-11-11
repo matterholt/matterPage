@@ -11,6 +11,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# astro config
+.astro
+.astro/
 
 # environment variables
 .env
@@ -21,3 +24,5 @@ pnpm-debug.log*
 
 ## other
 No_go_notes.md
+
+

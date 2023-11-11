@@ -1,5 +1,5 @@
 ---
-import { Content } from "@components/lib_comps";
+import { Content, Text } from "@components/lib_comps";
 ---
 
 <header class="">
@@ -15,15 +15,32 @@ import { Content } from "@components/lib_comps";
 
         <div class="theRestCar">ade</div>
       </div>
-      <p class="sub">ADD SOME DESIGN or Something</p>
     </div>
+
     <p class="mt-4 text-right justify-self-end mr-10">
       <span class="font-bold text-lg">Matthew Atterholt</span><br />
-       Husband, Father, Developer In Tech.
+      Husband, Father, Developer In Tech.
     </p>
+    <div class="hero_box">
+      <Text tag="p">
+        I'm all about diving into the latest in web technologies and soaking up
+        new knowledge. Day-to-day, I'm knee-deep in Vue.js and Node.js, but when
+        it comes to personal projects, I've got a soft spot for
+        Svelte.js/SvelteKit and Astro.build, especially for static sites.
+        Lately, I've been exploring Tauri, a native web-based framework, which
+        is nudging me to pick up Rust Lang. What really gets me going is
+        tackling challenges within my team and finding ways to use code and
+        programming to make everyone's tasks a bit smoother and more efficient
+        needs.
+      </Text>
+    </div>
   </div>
 </header>
 <style>
+  .hero_box {
+    width: 50%;
+    place-self: baseline;
+  }
   .titleBoundry {
     display: flex;
     height: min-content;

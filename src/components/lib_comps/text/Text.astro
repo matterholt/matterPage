@@ -1,11 +1,11 @@
 ---
-const { tag, fontSize = undefined, addAClass } = Astro.props;
+const { tag, fontSize = undefined, addAClass = [] } = Astro.props;
 
 const Element = tag || "div";
 // font-black text-3xl text-center mt-2 p-5 uppercase"
 ---
 
-<Element class:list={"content_commonformat"}>
+<Element class:list={["content_commonformat", ...addAClass]}>
   <slot />
 </Element>
 
