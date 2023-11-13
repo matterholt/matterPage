@@ -1,8 +1,10 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: FrontEnd Technical Questions
-date: 2020-08-20
+pubDate: 2020-08-20
 published: false
 slug: common question asked
+tags: ["knowledge"]
 ---
 
 1. Explain event delegation.

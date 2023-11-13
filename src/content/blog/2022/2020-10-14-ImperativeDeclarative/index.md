@@ -1,11 +1,12 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Imperative vrs Declarative
-date: 2020-10-14
+pubDate: 2020-10-14
 published: true
-slug: Figuring out what Imperative programing and Declarative programing
+slug: Figuring out what Imperative programming and Declarative programming
 ---
 
-I enjoy working with React.js , and since React is just javascript there should be a good foundation on Javascript. To be an engineer knowledge on general programing is good to have. So here is a blip of understanding, when a programing is Imperative or Declarative.
+I enjoy working with React.js , and since React is just javascript there should be a good foundation on Javascript. To be an engineer knowledge on general programming is good to have. So here is a blip of understanding, when a programming is Imperative or Declarative.
 
 React abstract the Imperative browser API. By abstracting the browser API, React would be declarative when working with browser API.
 
@@ -30,9 +31,9 @@ Other saying ideas on how to think about declarative programming
 
 ## Other Notes
 
-Declarative is not always pure and could require the use of Imperative programing.
+Declarative is not always pure and could require the use of Imperative programming.
 
-Functional Programing is a subset of declarative programing. Create function to execute a task and just call on it an you are not worried how the task is performed. map() vrs traditional For loop.
+Functional Programming is a subset of declarative programming. Create function to execute a task and just call on it an you are not worried how the task is performed. map() vrs traditional For loop.
 
 for better and full explanation follow link:
 [Imperative vs Declarative Programming](https://ui.dev/imperative-vs-declarative-programming/)

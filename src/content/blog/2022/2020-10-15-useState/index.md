@@ -1,6 +1,7 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Intro to useState Hook
-date: 2020-10-15
+pubDate: 2020-10-15
 published: true
 slug: State it's a big deal, The hook that controls State in React
 ---

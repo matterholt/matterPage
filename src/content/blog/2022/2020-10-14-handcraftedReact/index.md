@@ -1,6 +1,7 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: writing react elements
-date: 2020-10-14
+pubDate: 2020-10-14
 published: true
 slug: Working on the low level of react by hand crafting react elements.
 ---
@@ -40,12 +41,16 @@ ReactDOM.render(element, DOMId);
 Fairly simple but code is not normally this easy. Without getting too deep and complicated, how would you render a component with multiple children. I'll show you
 
 ```js
-const extraCreditRoot = document.getElementById('extraCredit');
+const extraCreditRoot = document.getElementById("extraCredit");
 const nestedElem = React.createElement(
-  'div',
+  "div",
   {
-    children: [React.createElement('h2', null, 'Hello'), React.createElement('h3', null, 'Nested'), React.createElement('h4', null, 'Element')],
-    className: 'container',
+    children: [
+      React.createElement("h2", null, "Hello"),
+      React.createElement("h3", null, "Nested"),
+      React.createElement("h4", null, "Element"),
+    ],
+    className: "container",
   }
   // "Uncomment this section and a string will generate in the DOM"
 );

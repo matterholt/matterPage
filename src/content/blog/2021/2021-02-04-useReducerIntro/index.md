@@ -1,8 +1,10 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Intro to the useReducer Hook
-date: 2021-02-04
+pubDate: 2021-02-04
 published: true
 slug: Understanding on how the useReducer API works and convention that make it powerful
+tags: [react]
 ---
 
 \*\* Thanks to Kent C Dodds, for this workshop on useReducer.

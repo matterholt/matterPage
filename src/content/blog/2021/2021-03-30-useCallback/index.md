@@ -1,8 +1,10 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: An overview of the hook called useCallback
-date: 2021-03-30
+pubDate: 2021-03-30
 published: false
 slug: Understanding when and what the useCallback is all about
+tags: [react]
 ---
 
 The useCallback hook is a function with dependencies. A similar idea of useEffect hook, as every time a dependency gets updated will execute the function. The hook can improve the performance of the app if the function is being called every render of the component. But this may not be true in every circumstance since react would need to keep track, in turn reducing the performance of the application.

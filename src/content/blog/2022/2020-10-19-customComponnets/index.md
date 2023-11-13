@@ -1,6 +1,7 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Creating Custom Components jsx and react
-date: 2020-10-19
+pubDate: 2020-10-19
 published: false
 slug: Creating component and how they get processed in babel
 ---
@@ -18,9 +19,9 @@ slug: Creating component and how they get processed in babel
 
   <div className="container">
     {/* jsx world, {} steps into js world, able to call function and past argument*/}
-    {Card({ children: 'Next Thing' })}
-    {Card({ children: 'Other Thing' })}
-    {Card({ children: 'Last Thing' })}
+    {Card({ children: "Next Thing" })}
+    {Card({ children: "Other Thing" })}
+    {Card({ children: "Last Thing" })}
   </div>;
   ```
 
@@ -30,8 +31,8 @@ slug: Creating component and how they get processed in babel
   //... continuation from code above
   <div className="container2">
     // will create component and element
-    {React.createElement(Card, { children: 'react create Card' })}
-    {React.createElement(Card, { children: 'Card will create component' })}
+    {React.createElement(Card, { children: "react create Card" })}
+    {React.createElement(Card, { children: "Card will create component" })}
   </div>
   ```
 

@@ -1,15 +1,14 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
-title: "Micro FrontEnds, There are several options"
+title: Micro FrontEnds, There are several options
 pubDate: 2023-08-27
-
 published: true
-slug: "Breaking a front end into separate app so it is easier to deploy and make change quickly, There are several way below list 5 different ways"
-author: "Matterholt"
+slug: Breaking a front end into separate app so it is easier to deploy and make change quickly, There are several way below list 5 different ways
+author: Matterholt
 image:
-  url: ""
-  alt: ""
-tags: ["micro", "development", "frontend", "architecture"]
+  url:
+  alt:
+tags: [micro, development, frontend, architecture]
 ---
 
 # Micro Front ends

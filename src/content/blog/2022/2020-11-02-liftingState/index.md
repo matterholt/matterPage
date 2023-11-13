@@ -1,6 +1,7 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Lifting State
-date: 2020-11-02
+pubDate: 2020-11-02
 published: true
 slug: Concepts where contained through Kent's explanation of how React lifts up state
 ---

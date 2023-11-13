@@ -1,17 +1,17 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
-title: "A overview of Object Oriented Programming"
+title: A overview of Object Oriented Programming
 pubDate: 2023-03-24
 published: true
-slug: " A quick look into the programming paradigm of Object-Oriented. Object-Oriented Programming or OOP, is a process of structuring code. The closer, we as programmers capture these program design patterns, the code-base will be more manageable and easier for future engineers to make changes."
-tags: [ "OOP", "development","programming"]
+slug: A quick look into the programming paradigm of Object-Oriented. Object-Oriented Programming or OOP, is a process of structuring code. The closer, we as programmers capture these program design patterns, the code-base will be more manageable and easier for future engineers to make changes.
+tags: [OOP, development, programming]
 ---
 
 # Key Concepts for OOP
 
 ## Code examples
- Code link to [Replit Python ](https://replit.com/@matterholt/OOP#main.py)
 
+Code link to [Replit Python ](https://replit.com/@matterholt/OOP#main.py)
 
 ## What is it
 
@@ -31,7 +31,7 @@ General simple example. ordering a burrito. You the customer are the calling the
 my_burrito = {'meat':'chicken', 'bean':'black beans', 'sauce':'hot'}
 
 # what type of meat for my order
-print(my_burrito["meat"])
+print(my_burrito[meat])
 
 ```
 
@@ -78,7 +78,7 @@ There are 4 main principles to follow when working in the OOP paradigm.
 
 **Abstraction**, remove the complicated processes and supplies a simple interface. so any complicated logic to obtain the values that we are looking for has been abstracted away, resulting in a simple high-level external interface. Abstraction is simple to hide the logic just return and expose the answer. It doesn't matter how the task is completed just need the answer.
 
-**Inheritance**, help keep code DRY (Don't Repeat Yourself). Say you have made a class and about to make another one that could share attributes or behaviors. Then it might be a good idea to place the common attribute in a general class and have the "child" class inherit those common attributes and define more specifically inside the "child" class.
+**Inheritance**, help keep code DRY (Don't Repeat Yourself). Say you have made a class and about to make another one that could share attributes or behaviors. Then it might be a good idea to place the common attribute in a general class and have the child class inherit those common attributes and define more specifically inside the child class.
 
 **Polymorphism**, say we have a common method in the parent class and most of the time the method would be good to use. but when a child class inherits a method from a parent, but in the child class, we need to change the said method to do something a bit different. The method name would remain the same but would perform the action defined in the child instead of the parent. This would be referred to as _Method Overriding_. There is a technique called _Method Overloading_. Which would have methods would have multiple methods with the same name but with different number parameters. This concept is a little complex but the thing to remember is that when a method from a parent class doesn't quite match what needs to be done the method can be redefined in the child and still have the same outside interaction.
 

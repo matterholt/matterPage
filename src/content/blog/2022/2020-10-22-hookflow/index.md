@@ -1,6 +1,7 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Understanding how the the flow of hook work.
-date: 2020-10-22
+pubDate: 2020-10-22
 published: false
 slug: If you are going to use a tool then it is best to learn how it works.
 ---

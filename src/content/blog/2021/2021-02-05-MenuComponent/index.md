@@ -1,8 +1,10 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Building a Menu Component
-date: 2021-02-05
+pubDate: 2021-02-05
 published: true
 slug: Explanation of the Menu Component that I built
+tags: [frontend]
 ---
 
 # Mobile Navigation Component

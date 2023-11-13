@@ -1,6 +1,7 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Passwordless authentication with Magic Link.
-date: 2020-08-20
+pubDate: 2020-08-20
 published: true
 slug: Allowing user to create account quickly and without worries
 ---
@@ -65,11 +66,11 @@ try {
 // inside the handleSubmit function
 // inside the try statement
 
-const res = await fetch('/api/login', {
-  method: 'POST',
+const res = await fetch("/api/login", {
+  method: "POST",
   headers: {
-    'Content-type': 'application/json',
-    Authorization: 'Bearer ' + DID_Token,
+    "Content-type": "application/json",
+    Authorization: "Bearer " + DID_Token,
   },
   body: JSON.stringify(body),
 });

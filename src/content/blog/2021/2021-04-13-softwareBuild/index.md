@@ -1,8 +1,10 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Software Stroy
-date: 2021-04-13
+pubDate: 2021-04-13
 published: true
 slug: building software
+tags: [thoughts]
 ---
 
 I have an idea of an app that I wish to build. Now I have a lot of ideas and side projects that I would like to work on but never seem to come to fruition. Some are lost of interest and others are unclear direction, this has to change. Knowing the problem now I am able to implement countermeasure to see the completion.

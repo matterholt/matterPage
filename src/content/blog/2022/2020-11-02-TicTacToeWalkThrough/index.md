@@ -1,6 +1,7 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Building Tic Tac Toe game with Hooks
-date: 2020-11-02
+pubDate: 2020-11-02
 published: true
 slug: Concepts where contained through Kent's explanation of how to build the tic tac toe game using Hooks
 ---

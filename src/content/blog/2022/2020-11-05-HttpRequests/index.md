@@ -1,6 +1,7 @@
 ---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Fetching HTTP request data on useEffect
-date: 2020-11-05
+pubDate: 2020-11-05
 published: true
 slug: Data helps move and create the app, Let explore how to get thing going in React
 ---
