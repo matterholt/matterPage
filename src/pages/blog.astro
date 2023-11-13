@@ -1,0 +1,11 @@
+---
+import { getCollection } from "astro:content";
+const publishedBlogEntries = await getCollection("blog", ({ data }) => {
+  return data.published !== true;
+});
+---
+
+<div>
+  <h1>BLOG</h1>
+  {JSON.stringify(publishedBlogEntries)}
+</div>
