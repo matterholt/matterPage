@@ -1,6 +1,8 @@
-import Text from "./text/Text.astro"
+import SectionContainer from "./SectionContainer.astro"
+import JobPositions from "./JobPositions.astro"
+import ProjectDetail from "./ProjectDetail.astro"
 
 
 export {
-    Text
+    SectionContainer, JobPositions, ProjectDetail
 }

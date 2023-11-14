@@ -1,18 +1,6 @@
 ---
 import SectionContainer from "@layouts/SectionContainer.astro";
-import { Alink, Content, Heading } from "@components/lib_comps";
-
-import {
-  writeUpPostListings,
-  sortDates,
-} from "@utils/helpers/blog_dates/index";
-
-const currentYearsPost = await Astro.glob("../../pages/posts/2023/**/*.md");
-let currentYearsPost_sorted = sortDates(currentYearsPost);
-
-const latestPost = currentYearsPost_sorted[0];
-const { url, frontmatter } = latestPost;
-const { title, pubDate, slug } = frontmatter;
+import { Alink, Content, Heading, PostIntro } from "@components/lib_comps";
 
 // TODO, sort post, clean data up
 ---

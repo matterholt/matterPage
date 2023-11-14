@@ -1,8 +1,7 @@
 ---
 import { Content, Heading } from "@components/lib_comps";
 import * as data from "./data/jobHistory.json";
-import SectionContainer from "../../SectionContainer.astro";
-import JobPostions from "@components/blocks/JobPostions.astro";
+import {JobPositions,SectionContainer} from "@components/blocks/";
 
 const { currentPostion = false, sectionTitle = "Professional history" } =
   Astro.props;
@@ -22,7 +21,7 @@ const {
   </Heading>
   <slot />
 
-  <JobPostions
+  <JobPositions
     title={MenuApplicationDeveloper?.title}
     description={MenuApplicationDeveloper?.description}
     positions={MenuApplicationDeveloper?.positions}
@@ -31,12 +30,12 @@ const {
   {
     !currentPostion ? (
       <>
-        <JobPostions
+        <JobPositions
           title={AutomotiveDesignEngineering?.title}
           description={AutomotiveDesignEngineering?.description}
           positions={AutomotiveDesignEngineering?.positions}
         />
-        <JobPostions
+        <JobPositions
           title={AutomotiveValidationEngineering?.title}
           description={AutomotiveValidationEngineering?.description}
           positions={AutomotiveValidationEngineering?.positions}
