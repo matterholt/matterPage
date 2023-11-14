@@ -1,50 +1,22 @@
 ---
-import { getCollection, getEntry } from "astro:content";
-import { Alink, Content, Heading } from "@components/lib_comps";
+import { PostIntro, Text, Heading } from "@components/lib_comps";
+import { filterCollectionsBy } from "@utils/post_collections/";
 
-// import { sortDates } from "@utils/helpers/blog_dates/index";
-
-function sortDates(dateList) {
-  console.log("TYPE", typeof dateList);
-  return dateList.sort((a, b) => b.data.pubDate - a.data.pubDate);
-}
-
-async function mostRecentPost(collectionType) {
-  const allBlogPosts = await getCollection("blog");
-  const yearToday = new Date().getFullYear();
-  if (collectionType === "most_recent") {
-    // pubDate: 2023-10-10T00:00:00.000Z,
-    const currentYear = allBlogPosts.filter((x) => {
-      const year = x.data.pubDate.getFullYear();
-      return year === yearToday;
-    });
-    console.log(currentYear.length);
-    let lastest = sortDates(currentYear);
-
-    return lastest[0];
-  }
-
-  return allBlogPosts;
-}
-
-// collections of tags
-const allBlogPosts = await mostRecentPost("most_recent");
-// console.log(allBlogPosts);
+const latestPost = await filterCollectionsBy("most_recent");
+const currentYear = await filterCollectionsBy("current_year");
 ---
 
 <div>
   <h1>BLOG</h1>
   <Heading>
-    <Content elementTag="h2">Latest Post</Content>
+    <Text tag="h2">Latest Post</Text>
   </Heading>
-  <a href={allBlogPosts.data.url}>
-    <div class="post_header">
-      <h4>
-        {allBlogPosts.data.title}
-      </h4>
-      <p>{allBlogPosts.data.pubDate}</p>
-    </div>
-  </a>
-  <p>{allBlogPosts.slug}</p>
-  <Alink id="test" link="./writeups" title="other write ups" />
+  <PostIntro postFrontMatter={latestPost} />
+
+  <Heading>
+    <Text tag="h2">2023 Post</Text>
+  </Heading>
+  {currentYear.map((x) => <PostIntro postFrontMatter={x} />)}
+
+  Link to previous years,
 </div>

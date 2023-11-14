@@ -1,19 +1,17 @@
 ---
-const {postFrontMatter, Text}= Astro.props
-
-
-
+const { postFrontMatter } = Astro.props;
+import { Text, Alink } from "@components/lib_comps/";
+import { SectionContainer } from "@components/blocks";
+console.log(postFrontMatter);
 ---
 
 <SectionContainer>
-    <a href={url}>
-      <div class="post_header">
-        <Text tag="h4">
-          {title}
-        </Text>
-        <p>{pubDate.slice(0, 10)}</p>
-      </div>
-    </a>
-    <p>{slug}</p>
-    <Alink id="test" link="./writeups" title="other write ups" />
-  </SectionContainer>
+  <div class="post_header">
+    <Text tag="h4">
+      {postFrontMatter.data.title}
+    </Text>
+    <p>{postFrontMatter.data.pubDate}</p>
+  </div>
+  <p>{postFrontMatter.slug}</p>
+  <Alink link={postFrontMatter.id}>Read Rest</Alink>
+</SectionContainer>

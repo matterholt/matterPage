@@ -10,7 +10,11 @@ let navigationLinks = activeNavigationPage(pageId);
   <nav class="nav-position">
     {
       navigationLinks.map(({ id, link, title, activeClass }) => {
-        return <Alink {id} {link} {title} {activeClass} />;
+        return (
+          <Alink {id} {link} {activeClass}>
+            {title}
+          </Alink>
+        );
       })
     }
   </nav>
