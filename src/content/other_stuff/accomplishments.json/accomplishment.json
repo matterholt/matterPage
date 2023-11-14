@@ -1,0 +1,76 @@
+{
+  "feats": [
+    {
+      "id": "12",
+      "year": "2021",
+      "title": "Excel and Visual Basic Automation",
+      "description": "I used Microsoft's Visual Basic and Excel to automate tasks that are repetitively executed by an Engineer. These tasks consist of copying data from a text file and pasting it into excel, then manipulating the data to get the stiffness values. By using Visual Basic,  I was able to create a form that the user could type in the info and then select the results file, then execute the extraction of data. The data would be automatically generated into an excel she. Results were then confirmed and then could be added to a database. To which then could be pulled from to generate reports for the team to make their judgments about the design. "
+    },
+    {
+      "id": "11",
+      "year": "2020",
+      "title": "Team Communication and Well-being",
+      "description": "Presented different set of challenges, I switched a role where I kept in contact with my team making sure that they were OK and help distribute workload so no one was getting stressed out with work. I encourage communication daily through slack and a weekly zoom meeting. Took this time to brainstorm with my small group to improve our work and encourage to learn new things and share information with the teams."
+    },
+    {
+      "id": "10",
+      "year": "2019",
+      "title": "Onboarding Program for new Hires",
+      "description": "Provided insight and my knowledge to building an official training program for new hires to learn how to create Finite element models for analysis using the best practices. Not only the techniques but what is the purpose of the model and how they should be thinking of the problems that could raise up during the development of a product."
+    },
+    {
+      "id": "9",
+      "year": "2018",
+      "title": "Python Programing",
+      "description": "Python Scripting training from Simulia for Scripting in Abaqus. Learn basic in  Python, intro to Object-Oriented Programming (OOP), and how to use the Abaqus module to create automation for analysis. I created a script that could extract data from a result file. I would clean data up and saved result data to a database. Then the script would generate a report in excel that was formatted and would be easily sent out to the team."
+    },
+    {
+      "id": "8",
+      "year": "2018",
+      "title": "Workplace Enhancement Group",
+      "description": "Part of the workplace enhancement team, A team that would meet and discuss ways to improve employee's time in the office. Items included open discussion tables, ways to encourage team building, and a space for teams to evaluate parts and discuss issues"
+    },
+    {
+      "id": "7",
+      "year": "2017",
+      "title": "3d printing department",
+      "description": "Created a proposal for the use of 3d printing in development. Implementing the use of 3d printing for prototyping and other issues where time and money could be saved. On a research project, a 3d printed part was used to check the clearance and fit of development parts. I was responsible for creating a 3d print of a custom prototype part. The 3d print was able to find an issue with a custom design part. Avoiding building a prototype part that would have been able to be implemented in the research project. This saved a time of 5 weeks and well over 5,000 dollars."
+    },
+    {
+      "id": "6",
+      "year": "2013",
+      "title": "Improving Product Correlation",
+      "description": "Pedal Correlation Report. Assign to determine the difference in results between physical tests and computer analysis and research and document method to improve the accuracy in our computer analysis. I improved our analysis accuracy by discussing the exact way the test engineer set up the test. Comparing 3D modal and reading the drawing of the physical part and how the part is represented in the finite element model. Finial I provided documentation of my findings and providing a method for future issues."
+    },
+    {
+      "id": "5",
+      "year": "2013",
+      "title": "Design Modeling with Catia V5",
+      "description": "Catia V5 modeling training. Basic modeling of solid parts and understanding working and manipulating geometry. Introduction of drawing creation"
+    },
+    {
+      "id": "4",
+      "year": "2012",
+      "title": "Improve Design with Optimization",
+      "description": " Presented in Japan at the Global F-tech Circle, Developing a method for model analysis that uses Optimization. The method was created to assist engineers in finding the optimal design for a structure. The method requires setting all requirements and restrictions for the product. Then end results would show the main area where the structure would need the most strength."
+    },
+    {
+      "id": "3",
+      "year": "2010",
+      "title": "Spirit of Challenge",
+      "description": "F-tech's Presidential award for helping to win the MDX platform for the company. I was part of the product validation team. I was responsible to create and accurately set up the computer analysis model for the product. From the analysis model, I would be able to validate whether the model would meet the OEM's requirements and be safe for consumers who buy the vehicle.  "
+    },
+    {
+      "id": "2",
+      "year": "2006",
+      "title": "Reduce development time",
+      "description": "Presented in Canada at the Global F-tech Circle. For improving the correlation between testing and finite element analysis. How to improve the confidence in a computer analysis model would remove the need for physical tests. This could reduce the development time and cost when there is high confidence in the finite element model."
+    },
+    {
+      "id": "1",
+      "year": "2005",
+      "title": "Started Engineering",
+      "description": "Graduated from college and landed a career in Automotive Engineering in the CAE group. Which is the use of computer software to simulate performance in order to improve product designs. This includes simulation, validation, and optimization of products. I learn how to perform accurate Finite Element Analysis on automotive sub-frames and suspension. Report and share my findings and provide ideas that improve the design.   How to work with a team and accomplish challenging goals. "
+    }
+  ]
+}

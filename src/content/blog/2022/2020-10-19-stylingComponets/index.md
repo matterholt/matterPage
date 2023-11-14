@@ -1,3 +1,11 @@
+---
+layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
+title: Styling Components
+pubDate: 2020-10-19
+published: true
+slug: add some styles to a react Component
+---
+
 ## Styling components
 
 - To give a component a styles there are two ways to assign style to the component first is `className` the other is inline and is created by the `style ={{}}` where camelCase properties are defined in an Object.
