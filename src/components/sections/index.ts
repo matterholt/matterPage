@@ -1,5 +1,7 @@
 import ProfessionalWorkExperience from "./professional_work_experience/ProfessionalWorkExperience.astro";
-import PersonalProjects from "./personal_projects/PersonalProjects.astro";
-import BackgroundBio from "./background_bio/BackgroundBio.astro";
+import HeroHome from "./hero_home/HeroHome.astro";
 
-export { ProfessionalWorkExperience, PersonalProjects, BackgroundBio };
+import PersonalProjects from "./personal_projects/PersonalProjects.astro";
+import PersonalBio from "./personal_bio/PersonalBio.astro";
+
+export { ProfessionalWorkExperience, HeroHome, PersonalProjects, PersonalBio };

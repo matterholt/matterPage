@@ -2,24 +2,11 @@
 import { PostIntro, Text, Heading } from "@components/lib_comps";
 import { filterCollectionsBy } from "@utils/post_collections/";
 
-import Main from "@layouts/html/Main.astro";
 const latestPost = await filterCollectionsBy("most_recent");
 const currentYear = await filterCollectionsBy("current_year");
 ---
 
-<Main pageId="writeups">
-  <Heading>
-    <Text tag="h2">Latest Post</Text>
-  </Heading>
-  <PostIntro postFrontMatter={latestPost} />
-
-  <Heading>
-    <Text tag="h2">2023 Post</Text>
-  </Heading>
-  {currentYear.map((x) => <PostIntro postFrontMatter={x} />)}
-
-  Link to previous years,
-</Main>
+{currentYear.map((x) => <PostIntro postFrontMatter={x} />)}
 
 <style>
   .blog_sections {

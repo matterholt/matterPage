@@ -13,5 +13,5 @@ console.log(postFrontMatter);
     <p>{postFrontMatter.data.pubDate}</p>
   </div>
   <p>{postFrontMatter.slug}</p>
-  <Alink link={postFrontMatter.id}>Read Rest</Alink>
+  <Alink link={`/posts/${postFrontMatter.slug}/`}>Read Rest</Alink>
 </SectionContainer>

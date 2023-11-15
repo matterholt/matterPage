@@ -1,5 +1,5 @@
 ---
-import { Content, Heading } from "@components/lib_comps";
+import { Text, Heading } from "@components/lib_comps";
 import { SectionContainer } from "@components/blocks";
 
 const { lastestPost = false, sectionTitle = "Writes Ups" } = Astro.props;
@@ -7,9 +7,9 @@ const { lastestPost = false, sectionTitle = "Writes Ups" } = Astro.props;
 
 <SectionContainer parentColor="bgLight">
   <Heading>
-    <Content elementTag="h2">
+    <Text tag="h2">
       {sectionTitle}
-    </Content>
+    </Text>
   </Heading>
   <slot />
 </SectionContainer>
