@@ -1,13 +1,13 @@
 ---
-import { Content } from "@components/lib_comps";
+import { Text } from "@components/lib_comps";
 import InitialsIcon from "../blocks/InitialsIcon.astro";
 
 const { title, description, positions } = Astro.props;
 ---
 
 <div class="mx-2 mt-12 mb-6">
-  <Content elementTag="h3">{title}</Content>
-  <Content>{description}</Content>
+  <Text tag="h3">{title}</Text>
+  <Text>{description}</Text>
 </div>
 
 <ul class="flex flex-col">
@@ -16,8 +16,8 @@ const { title, description, positions } = Astro.props;
       return (
         <li class=" m-1 p-2 ">
           <div class="job_postion-heading">
-            <Content elementTag="h4">{job.jobTitle}</Content>
-            <Content>{job.workingDate}</Content>
+            <Text tag="h4">{job.jobTitle}</Text>
+            <Text tag="p">{job.workingDate}</Text>
           </div>
           <ul>
             {job.jobResponsibilities.map((item) => (
@@ -35,6 +35,6 @@ const { title, description, positions } = Astro.props;
 <style>
   .job_postion-heading {
     display: flex;
-    justify-content: space-between;
+    justify-text: space-between;
   }
 </style>

@@ -1,6 +1,6 @@
 ---
 import * as data from "./data/personalProjects.json";
-import { Content, Heading } from "@components/lib_comps";
+import { Text, Heading } from "@components/lib_comps";
 import { ProjectDetail, SectionContainer } from "@components/blocks";
 
 const { projectsOne, projectsTwo } = data;
@@ -8,7 +8,7 @@ const { projectsOne, projectsTwo } = data;
 
 <SectionContainer parentColor="bgLight">
   <Heading>
-    <Content elementTag="h2">Projects</Content>
+    <Text tag="h2">Projects</Text>
   </Heading>
   <slot />
 

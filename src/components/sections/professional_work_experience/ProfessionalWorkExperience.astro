@@ -1,7 +1,7 @@
 ---
-import { Content, Heading } from "@components/lib_comps";
+import { Text, Heading } from "@components/lib_comps";
 import * as data from "./data/jobHistory.json";
-import {JobPositions,SectionContainer} from "@components/blocks/";
+import { JobPositions, SectionContainer } from "@components/blocks/";
 
 const { currentPostion = false, sectionTitle = "Professional history" } =
   Astro.props;
@@ -15,9 +15,9 @@ const {
 
 <SectionContainer parentColor="bgLight">
   <Heading>
-    <Content elementTag="h2">
+    <Text tag="h2">
       {sectionTitle}
-    </Content>
+    </Text>
   </Heading>
   <slot />
 

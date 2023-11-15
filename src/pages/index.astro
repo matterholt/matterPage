@@ -4,18 +4,16 @@ import "../styles/global.css";
 // Component Imports
 import Main from "@layouts/html/Main.astro";
 
-import HeaderPage from "@layouts/HeaderPage.astro";
 import {
   ProfessionalWorkExperience,
-  BackgroundBio,
+  PersonalBio,
+  HeroHome,
 } from "@components/sections/";
 ---
 
 <Main pageId="home">
-  <HeaderPage />
-
-  <BackgroundBio />
-
+  <HeroHome />
+  <PersonalBio />
   <ProfessionalWorkExperience
     currentPostion={true}
     sectionTitle="Current Position"
