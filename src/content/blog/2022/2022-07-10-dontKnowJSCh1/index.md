@@ -1,12 +1,12 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Notes on the YDNJS
-pubDate: 2020-07-10
+pubDate: 2022-07-10
 published: true
 slug: Reading notes on the Chapter 1 of Book 1 You Don't Know JS yet
 ---
 
-### Chapter 1 Book 1
+# Chapter 1 Book 1
 
 ## What type of language is JS
 

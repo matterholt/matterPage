@@ -1,10 +1,10 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Digital Waste Inventory
-pubDate: 2020-05-29
+pubDate: 2022-05-29
 published: false
 slug: how to review what is saved on Hard drive
-tags: ['Python', 'BitSaving', 'Script']
+tags: [Python, BitSaving, Script]
 ---
 
 Recently listened to the ShopTalk show that had Gerry McGovern. It inspired me to take a look at what is being saved on our Hard drives and if it is really necessary to be there. I know for a fact that there are a lot of duplicate files and files that really should be kept. I think it was time to send Python after them and to hunt them down :)

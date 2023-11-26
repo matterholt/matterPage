@@ -1,7 +1,7 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Interacting with DOM through React
-pubDate: 2020-11-05
+pubDate: 2022-11-05
 published: true
 slug: useRef and useEffect to get access to the DOM
 ---

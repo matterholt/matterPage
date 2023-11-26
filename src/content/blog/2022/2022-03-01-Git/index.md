@@ -1,7 +1,7 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Git and Github Intro
-pubDate: 2020-05-27
+pubDate: 2022-05-27
 published: true
 slug: Quick run down on git
 author: "Matterholt"

@@ -1,7 +1,7 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: JAMStack CMS
-pubDate: 2020-06-17
+pubDate: 2022-06-17
 published: true
 slug: Evaluating some of the CMS out in the web.
 ---

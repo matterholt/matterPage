@@ -18,9 +18,15 @@ import { SectionContainer } from "@components/blocks";
       <div class="writeup_tags">
         <!-- <a href="./writeup"> writeup/posts/</a> -->
       </div>
-      <div class="writeup_tags">
-        {frontmatter.tags.map((tag) => <p class="writeup_tag">{tag}</p>)}
-      </div>
+      {
+        frontmatter.tags ? (
+          <div class="writeup_tags">
+            {frontmatter.tags.map((tag) => (
+              <p class="writeup_tag">{tag}</p>
+            ))}
+          </div>
+        ) : null
+      }
     </div>
 
     <div class="writeup_content">

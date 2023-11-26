@@ -1,7 +1,7 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Imperative vrs Declarative
-pubDate: 2020-10-14
+pubDate: 2022-10-14
 published: true
 slug: Figuring out what Imperative programming and Declarative programming
 ---

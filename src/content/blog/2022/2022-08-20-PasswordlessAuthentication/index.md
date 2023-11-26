@@ -1,7 +1,7 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Passwordless authentication with Magic Link.
-pubDate: 2020-08-20
+pubDate: 2022-08-20
 published: true
 slug: Allowing user to create account quickly and without worries
 ---

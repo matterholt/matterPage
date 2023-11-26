@@ -1,7 +1,7 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: Building custom hooks
-pubDate: 2020-10-22
+pubDate: 2022-10-22
 published: true
 slug: Thinking about how we can extract logic out of the rendering and opening up the possibility to use it other places.
 ---
