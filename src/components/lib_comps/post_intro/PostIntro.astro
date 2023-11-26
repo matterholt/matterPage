@@ -9,6 +9,7 @@ const formatDate = [
   publishDate.getMonth() + 1,
   publishDate.getDate(),
 ].join("-");
+const titleLink = postFrontMatter.data.title.split(" ").join("-");
 
 console.log(publishDate, formatDate);
 ---
@@ -24,9 +25,7 @@ console.log(publishDate, formatDate);
 
   <Text tag="p">{postFrontMatter.slug}</Text>
   <div class="postIntro_link">
-    <Alink varient="base" link={`/posts/${postFrontMatter.slug}/`}>
-      contiue...
-    </Alink>
+    <Alink varient="base" link={`/posts/${titleLink}/`}>contiue...</Alink>
   </div>
 </SectionContainer>
 
