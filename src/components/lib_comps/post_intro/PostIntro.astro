@@ -1,17 +1,42 @@
 ---
-const { postFrontMatter } = Astro.props;
 import { Text, Alink } from "@components/lib_comps/";
 import { SectionContainer } from "@components/blocks";
-console.log(postFrontMatter);
+
+const { postFrontMatter } = Astro.props;
+const publishDate = postFrontMatter.data.pubDate;
+const formatDate = [
+  publishDate.getFullYear(),
+  publishDate.getMonth() + 1,
+  publishDate.getDate(),
+].join("-");
+
+console.log(publishDate, formatDate);
 ---
 
 <SectionContainer>
-  <div class="post_header">
+  <div class="postIntro_header">
     <Text tag="h4">
       {postFrontMatter.data.title}
     </Text>
-    <p>{postFrontMatter.data.pubDate}</p>
+
+    <Text tag="p">{formatDate}</Text>
   </div>
-  <p>{postFrontMatter.slug}</p>
-  <Alink link={`/posts/${postFrontMatter.slug}/`}>Read Rest</Alink>
+
+  <Text tag="p">{postFrontMatter.slug}</Text>
+  <div class="postIntro_link">
+    <Alink varient="base" link={`/posts/${postFrontMatter.slug}/`}>
+      contiue...
+    </Alink>
+  </div>
 </SectionContainer>
+
+<style>
+  .postIntro_header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .postIntro_link {
+    display: flex;
+    justify-content: flex-end;
+  }
+</style>

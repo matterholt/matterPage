@@ -1,13 +1,22 @@
 ---
-const { activeClass, id, link } = Astro.props;
+const { activeClass, id, link, varient = "page" } = Astro.props;
+
+const styleVarients = {
+  page: "internalPage",
+  base: "base",
+};
 ---
 
-<a class={activeClass} id={id} href={link}>
+<a
+  class:list={["link", activeClass, styleVarients[varient]]}
+  id={id}
+  href={link}
+>
   <slot />
 </a>
 
 <style>
-  a {
+  .link {
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 1px;
@@ -16,7 +25,7 @@ const { activeClass, id, link } = Astro.props;
     padding: 5px;
     text-align: center;
   }
-  a:hover {
+  .link:hover {
     background-color: var(--bg-primary-white);
     color: var(--bg-primary);
   }
@@ -24,9 +33,11 @@ const { activeClass, id, link } = Astro.props;
     background-color: var(--bg-primary);
     color: var(--bg-primary-white);
   }
-  a::after {
-    content: "/";
+  .link::after {
     color: var(--accent);
     padding-left: 5px;
+  }
+  .internalPage::after {
+    content: "/";
   }
 </style>

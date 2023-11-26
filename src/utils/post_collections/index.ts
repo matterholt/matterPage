@@ -1,7 +1,6 @@
 import { getCollection, getEntry } from "astro:content";
 
 function sortDates(dateList) {
-  console.log("TYPE", typeof dateList);
   return dateList.sort((a, b) => b.data.pubDate - a.data.pubDate);
 }
 
