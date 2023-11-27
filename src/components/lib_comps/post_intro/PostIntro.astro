@@ -1,0 +1,39 @@
+---
+import { Text, Alink } from "@components/lib_comps/";
+import { SectionContainer } from "@components/blocks";
+
+const { postFrontMatter } = Astro.props;
+const publishDate = postFrontMatter.data.pubDate;
+const formatDate = [
+  publishDate.getFullYear(),
+  publishDate.getMonth() + 1,
+  publishDate.getDate(),
+].join("-");
+const titleLink = postFrontMatter.data.title.split(" ").join("-");
+---
+
+<SectionContainer>
+  <div class="postIntro_header">
+    <Text tag="h4">
+      {postFrontMatter.data.title}
+    </Text>
+
+    <Text tag="p">{formatDate}</Text>
+  </div>
+
+  <Text tag="p">{postFrontMatter.slug}</Text>
+  <div class="postIntro_link">
+    <Alink varient="base" link={`/posts/${titleLink}/`}>contiue...</Alink>
+  </div>
+</SectionContainer>
+
+<style>
+  .postIntro_header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .postIntro_link {
+    display: flex;
+    justify-content: flex-end;
+  }
+</style>

@@ -3,21 +3,23 @@ import "../styles/global.css";
 
 // Component Imports
 import Main from "@layouts/html/Main.astro";
-import SectionContainer from "@layouts/SectionContainer.astro";
 
-import HeaderPage from "@layouts/HeaderPage.astro";
-import Experences from "@layouts/sections/Experences.astro";
-import Bio from "@layouts/sections/Bio.astro";
-
-import CurrentPost from "@components/site_writeup/CurrentPost.astro";
+import {
+  ProfessionalWorkExperience,
+  PersonalBio,
+  HeroHome,
+  LatestPost,
+} from "@components/sections/";
 ---
 
 <Main pageId="home">
-  <HeaderPage />
-  <Bio />
-  <CurrentPost />
-
-  <Experences currentPostion={true} sectionTitle="Current Position" />
+  <HeroHome />
+  <PersonalBio />
+  <LatestPost />
+  <ProfessionalWorkExperience
+    currentPostion={true}
+    sectionTitle="Current Position"
+  />
   <!-- <SectionContainer>
     <h2>Personal Project</h2>
   </SectionContainer> -->

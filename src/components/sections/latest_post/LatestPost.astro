@@ -1,0 +1,23 @@
+---
+import { PostIntro, Text, Heading, Alink } from "@components/lib_comps";
+import { filterCollectionsBy } from "@utils/post_collections/";
+import { SectionContainer } from "@components/blocks";
+
+const latestPost = await filterCollectionsBy("most_recent");
+
+const { id, link, title } = {
+  id: "writeups",
+  link: "\\writeups",
+  title: "write ups",
+};
+---
+
+<SectionContainer>
+  <Heading>
+    <Text tag="h2">Latest Post</Text>
+  </Heading>
+  <PostIntro postFrontMatter={latestPost} />
+  <Alink {id} {link}>
+    {title}
+  </Alink>
+</SectionContainer>

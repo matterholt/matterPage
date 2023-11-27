@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  if (blogEntries.length === 0) {
+    console.log(blogEntries);
+  }
+
+  return blogEntries.map((entry) => {
+    const titleLink = entry.data.title.split(" ").join("-");
+
+    return {
+      params: { title: titleLink },
+      props: { entry },
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Content />

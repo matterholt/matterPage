@@ -1,0 +1,46 @@
+---
+import { Text, Heading } from "@components/lib_comps";
+import * as data from "./data/jobHistory.json";
+import { JobPositions, SectionContainer } from "@components/blocks/";
+
+const { currentPostion = false, sectionTitle = "Professional history" } =
+  Astro.props;
+
+const {
+  AutomotiveValidationEngineering,
+  AutomotiveDesignEngineering,
+  MenuApplicationDeveloper,
+} = data;
+---
+
+<SectionContainer parentColor="bgLight">
+  <Heading>
+    <Text tag="h2">
+      {sectionTitle}
+    </Text>
+  </Heading>
+  <slot />
+
+  <JobPositions
+    title={MenuApplicationDeveloper?.title}
+    description={MenuApplicationDeveloper?.description}
+    positions={MenuApplicationDeveloper?.positions}
+  />
+
+  {
+    !currentPostion ? (
+      <>
+        <JobPositions
+          title={AutomotiveDesignEngineering?.title}
+          description={AutomotiveDesignEngineering?.description}
+          positions={AutomotiveDesignEngineering?.positions}
+        />
+        <JobPositions
+          title={AutomotiveValidationEngineering?.title}
+          description={AutomotiveValidationEngineering?.description}
+          positions={AutomotiveValidationEngineering?.positions}
+        />
+      </>
+    ) : null
+  }
+</SectionContainer>

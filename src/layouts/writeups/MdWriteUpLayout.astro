@@ -1,7 +1,7 @@
 ---
 const { frontmatter } = Astro.props;
 import Main from "@layouts/html/Main.astro";
-import SectionContainer from "@layouts/SectionContainer.astro";
+import { SectionContainer } from "@components/blocks";
 ---
 
 <Main pageId="writeups">
@@ -18,9 +18,15 @@ import SectionContainer from "@layouts/SectionContainer.astro";
       <div class="writeup_tags">
         <!-- <a href="./writeup"> writeup/posts/</a> -->
       </div>
-      <div class="writeup_tags">
-        {frontmatter.tags.map((tag) => <p class="writeup_tag">{tag}</p>)}
-      </div>
+      {
+        frontmatter.tags ? (
+          <div class="writeup_tags">
+            {frontmatter.tags.map((tag) => (
+              <p class="writeup_tag">{tag}</p>
+            ))}
+          </div>
+        ) : null
+      }
     </div>
 
     <div class="writeup_content">
