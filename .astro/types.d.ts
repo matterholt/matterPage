@@ -12,26 +12,12 @@ declare module 'astro:content' {
 	export { z } from 'astro/zod';
 
 	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
-	export type CollectionEntry<C extends keyof AnyEntryMap> = Flatten<AnyEntryMap[C]>;
 
-	// TODO: Remove this when having this fallback is no longer relevant. 2.3? 3.0? - erika, 2023-04-04
-	/**
-	 * @deprecated
-	 * `astro:content` no longer provide `image()`.
-	 *
-	 * Please use it through `schema`, like such:
-	 * ```ts
-	 * import { defineCollection, z } from "astro:content";
-	 *
-	 * defineCollection({
-	 *   schema: ({ image }) =>
-	 *     z.object({
-	 *       image: image(),
-	 *     }),
-	 * });
-	 * ```
-	 */
-	export const image: never;
+	export type CollectionKey = keyof AnyEntryMap;
+	export type CollectionEntry<C extends CollectionKey> = Flatten<AnyEntryMap[C]>;
+
+	export type ContentCollectionKey = keyof ContentEntryMap;
+	export type DataCollectionKey = keyof DataEntryMap;
 
 	// This needs to be in sync with ImageMetadata
 	export type ImageFunction = () => import('astro/zod').ZodObject<{
@@ -46,7 +32,8 @@ declare module 'astro:content' {
 				import('astro/zod').ZodLiteral<'tiff'>,
 				import('astro/zod').ZodLiteral<'webp'>,
 				import('astro/zod').ZodLiteral<'gif'>,
-				import('astro/zod').ZodLiteral<'svg'>
+				import('astro/zod').ZodLiteral<'svg'>,
+				import('astro/zod').ZodLiteral<'avif'>,
 			]
 		>;
 	}>;
@@ -86,7 +73,7 @@ declare module 'astro:content' {
 
 	export function getEntryBySlug<
 		C extends keyof ContentEntryMap,
-		E extends ValidContentEntrySlug<C> | (string & {})
+		E extends ValidContentEntrySlug<C> | (string & {}),
 	>(
 		collection: C,
 		// Note that this has to accept a regular string too, for SSR
@@ -111,7 +98,7 @@ declare module 'astro:content' {
 
 	export function getEntry<
 		C extends keyof ContentEntryMap,
-		E extends ValidContentEntrySlug<C> | (string & {})
+		E extends ValidContentEntrySlug<C> | (string & {}),
 	>(entry: {
 		collection: C;
 		slug: E;
@@ -120,7 +107,7 @@ declare module 'astro:content' {
 		: Promise<CollectionEntry<C> | undefined>;
 	export function getEntry<
 		C extends keyof DataEntryMap,
-		E extends keyof DataEntryMap[C] | (string & {})
+		E extends keyof DataEntryMap[C] | (string & {}),
 	>(entry: {
 		collection: C;
 		id: E;
@@ -129,7 +116,7 @@ declare module 'astro:content' {
 		: Promise<CollectionEntry<C> | undefined>;
 	export function getEntry<
 		C extends keyof ContentEntryMap,
-		E extends ValidContentEntrySlug<C> | (string & {})
+		E extends ValidContentEntrySlug<C> | (string & {}),
 	>(
 		collection: C,
 		slug: E
@@ -138,7 +125,7 @@ declare module 'astro:content' {
 		: Promise<CollectionEntry<C> | undefined>;
 	export function getEntry<
 		C extends keyof DataEntryMap,
-		E extends keyof DataEntryMap[C] | (string & {})
+		E extends keyof DataEntryMap[C] | (string & {}),
 	>(
 		collection: C,
 		id: E
@@ -188,6 +175,90 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"2020/2020-06-10-directions/index.md": {
+	id: "2020/2020-06-10-directions/index.md";
+  slug: "Working the daily job.";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-07-11-reactChallenge/idea.md": {
+	id: "2020/2020-07-11-reactChallenge/idea.md";
+  slug: "2020/2020-07-11-reactchallenge/idea";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-07-15-ReactDefaultProps/index.md": {
+	id: "2020/2020-07-15-ReactDefaultProps/index.md";
+  slug: "If a prop is miss or maybe not needed then default props can be created";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-07-22-ReactDataFetchingHowTo/index.md": {
+	id: "2020/2020-07-22-ReactDataFetchingHowTo/index.md";
+  slug: "Getting the data from the api into the component for the user to use";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-08-11-useReducerIntro/index.md": {
+	id: "2020/2020-08-11-useReducerIntro/index.md";
+  slug: "Create a navigation menu with useReducer";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-10-14-handcraftedReact/index.md": {
+	id: "2020/2020-10-14-handcraftedReact/index.md";
+  slug: "Working on the low level of react by hand crafting react elements.";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-10-15-jsx/index.md": {
+	id: "2020/2020-10-15-jsx/index.md";
+  slug: "Taking a look at JS";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-10-15-useEffect/index.md": {
+	id: "2020/2020-10-15-useEffect/index.md";
+  slug: "checking out useEffect and extracting logic out in to a custom hook";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-10-15-useState/index.md": {
+	id: "2020/2020-10-15-useState/index.md";
+  slug: "State it's a big deal, The hook that controls State in React";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-10-19-customComponnets/index.md": {
+	id: "2020/2020-10-19-customComponnets/index.md";
+  slug: "Creating component and how they get processed in babel";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-10-19-stylingComponets/index.md": {
+	id: "2020/2020-10-19-stylingComponets/index.md";
+  slug: "add some styles to a react Component";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2020/2020-11-02-TicTacToeWalkThrough/index.md": {
+	id: "2020/2020-11-02-TicTacToeWalkThrough/index.md";
+  slug: "Concepts where contained through Kent's explanation of how to build the tic tac toe game using Hooks";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "2021/2021-02-04-useReducerIntro/index.md": {
 	id: "2021/2021-02-04-useReducerIntro/index.md";
   slug: "Understanding on how the useReducer API works and convention that make it powerful";
@@ -216,113 +287,78 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"2022/2020-03-01-Git/index.md": {
-	id: "2022/2020-03-01-Git/index.md";
+"2022/2022-03-01-Git/index.md": {
+	id: "2022/2022-03-01-Git/index.md";
   slug: "Quick run down on git";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"2022/2020-08-20-FrontEndQuestion/index.md": {
-	id: "2022/2020-08-20-FrontEndQuestion/index.md";
-  slug: "common question asked";
+"2022/2022-05-29-Digital/index.md": {
+	id: "2022/2022-05-29-Digital/index.md";
+  slug: "how to review what is saved on Hard drive";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"2022/2020-08-20-PasswordlessAuthentication/index.md": {
-	id: "2022/2020-08-20-PasswordlessAuthentication/index.md";
+"2022/2022-06-10-cms/index.md": {
+	id: "2022/2022-06-10-cms/index.md";
+  slug: "Evaluating some of the CMS out in the web.";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2022/2022-07-10-dontKnowJSCh1/index.md": {
+	id: "2022/2022-07-10-dontKnowJSCh1/index.md";
+  slug: "Reading notes on the Chapter 1 of Book 1 You Don't Know JS yet";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2022/2022-08-20-PasswordlessAuthentication/index.md": {
+	id: "2022/2022-08-20-PasswordlessAuthentication/index.md";
   slug: "Allowing user to create account quickly and without worries";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"2022/2020-10-14-ImperativeDeclarative/index.md": {
-	id: "2022/2020-10-14-ImperativeDeclarative/index.md";
+"2022/2022-10-14-ImperativeDeclarative/index.md": {
+	id: "2022/2022-10-14-ImperativeDeclarative/index.md";
   slug: "Figuring out what Imperative programming and Declarative programming";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"2022/2020-10-14-handcraftedReact/index.md": {
-	id: "2022/2020-10-14-handcraftedReact/index.md";
-  slug: "Working on the low level of react by hand crafting react elements.";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"2022/2020-10-15-jsx/index.md": {
-	id: "2022/2020-10-15-jsx/index.md";
-  slug: "Taking a look at JS";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"2022/2020-10-15-useEffect/index.md": {
-	id: "2022/2020-10-15-useEffect/index.md";
-  slug: "checking out useEffect and extracting logic out in to a custom hook";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"2022/2020-10-15-useState/index.md": {
-	id: "2022/2020-10-15-useState/index.md";
-  slug: "State it's a big deal, The hook that controls State in React";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"2022/2020-10-19-customComponnets/index.md": {
-	id: "2022/2020-10-19-customComponnets/index.md";
-  slug: "Creating component and how they get processed in babel";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"2022/2020-10-19-stylingComponets/index.md": {
-	id: "2022/2020-10-19-stylingComponets/index.md";
-  slug: "add some styles to a react Component";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"2022/2020-10-22-MakingCustomHook/index.md": {
-	id: "2022/2020-10-22-MakingCustomHook/index.md";
+"2022/2022-10-22-MakingCustomHook/index.md": {
+	id: "2022/2022-10-22-MakingCustomHook/index.md";
   slug: "Thinking about how we can extract logic out of the rendering and opening up the possibility to use it other places.";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"2022/2020-10-22-hookflow/index.md": {
-	id: "2022/2020-10-22-hookflow/index.md";
+"2022/2022-10-22-hookflow/index.md": {
+	id: "2022/2022-10-22-hookflow/index.md";
   slug: "If you are going to use a tool then it is best to learn how it works.";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"2022/2020-11-02-TicTacToeWalkThrough/index.md": {
-	id: "2022/2020-11-02-TicTacToeWalkThrough/index.md";
-  slug: "Concepts where contained through Kent's explanation of how to build the tic tac toe game using Hooks";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"2022/2020-11-02-liftingState/index.md": {
-	id: "2022/2020-11-02-liftingState/index.md";
+"2022/2022-11-02-liftingState/index.md": {
+	id: "2022/2022-11-02-liftingState/index.md";
   slug: "Concepts where contained through Kent's explanation of how React lifts up state";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"2022/2020-11-05-DomIneractions/index.md": {
-	id: "2022/2020-11-05-DomIneractions/index.md";
+"2022/2022-11-05-DomIneractions/index.md": {
+	id: "2022/2022-11-05-DomIneractions/index.md";
   slug: "useRef and useEffect to get access to the DOM";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"2022/2020-11-05-HttpRequests/index.md": {
-	id: "2022/2020-11-05-HttpRequests/index.md";
+"2022/2022-11-05-HttpRequests/index.md": {
+	id: "2022/2022-11-05-HttpRequests/index.md";
   slug: "Data helps move and create the app, Let explore how to get thing going in React";
   body: string;
   collection: "blog";
@@ -356,24 +392,19 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"2023/2023-11-26-adwareHome/index.md": {
+	id: "2023/2023-11-26-adwareHome/index.md";
+  slug: "detail write up about making an old laptop into and server with Ubuntu, adding the ability to remote desktop using open-SSH, Finally adding a network level ad-blocker with adGuard home";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 
 	};
 
 	type DataEntryMap = {
-		"other_stuff": {
-"accomplishments.json/accomplishment": {
-	id: "accomplishments.json/accomplishment";
-  collection: "other_stuff";
-  data: any
-};
-"projects/projects": {
-	id: "projects/projects";
-  collection: "other_stuff";
-  data: any
-};
-};
-
+		
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

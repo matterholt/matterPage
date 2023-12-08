@@ -13,7 +13,7 @@ pnpm-debug.log*
 
 # astro config
 .astro
-.astro/
+*.astro/
 
 # environment variables
 .env
