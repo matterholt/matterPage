@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 // Component Imports
-import Main from "@layouts/html/Main.astro";
+import { PageLayout } from "@layouts/index";
 
 import {
   ProfessionalWorkExperience,
@@ -12,7 +12,7 @@ import {
 } from "@components/sections/";
 ---
 
-<Main pageId="home">
+<PageLayout pageId="home">
   <HeroHome />
   <PersonalBio />
   <LatestPost />
@@ -20,10 +20,7 @@ import {
     currentPostion={true}
     sectionTitle="Current Position"
   />
-  <!-- <SectionContainer>
-    <h2>Personal Project</h2>
-  </SectionContainer> -->
-</Main>
+</PageLayout>
 
 <style>
   #mainBody {
