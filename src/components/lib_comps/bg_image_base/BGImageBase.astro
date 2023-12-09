@@ -8,27 +8,32 @@ const {imageLayer} = Astro.props
 </div>
 <style>
   .base_image{
-    position:relative;
-    z-index: 5;
-    top: 0;
-    right:0;
-    --hero_background_image : url(/images/hero/profile2_me-whitewBG.png);
+
+    --hero_background_image : url(/images/hero/matterhorn-cutout.png);
   }
   .one_image {
-    position:absolute;
-    z-index: 10;
-    top: 0;
-    right:0;
+
+    height:700px;
+
     --hero_background_image : url(/images/hero/profile2_me-white.png);
 
   }
 
-
   .heroOverlay {
-    height: 100%;
-    
-    background-image: var(--hero_background_image );
     background-repeat: no-repeat;
     background-size: cover;
+    background-image:url(/images/hero/matterhorn-cutout.png);
+  }
+  .heroOverlay:before {
+    content: '';
+    /* position: absolute;x */
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    height: inherit;
+    background-color: #000406;
+    opacity: 0.3;
   }
 </style>

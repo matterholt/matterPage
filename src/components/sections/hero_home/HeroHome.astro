@@ -3,30 +3,28 @@ import { Text, Logo, BGImageBase } from "@components/lib_comps/index";
 ---
 
 <header class="hero">
-  <BGImageBase imageLayer="base_image" />
+  <BGImageBase imageLayer="base_image">
+    <div>
+      <Logo />
+      <Text tag="p">
+        Front end developer, Over-all Generalist and a bit of Designer Husband,
+        Father and few other things
+      </Text>
 
-  <div class="absolute top-0 left-0 z-20 h-full w-full">
-    <Logo />
-    <Text tag="p">
-      Front end developer, Over-all Generalist and a bit of Designer Husband,
-      Father and few other things
-    </Text>
+      <Text tag="p">
+        I'm all about diving into the latest in web technologies and soaking up
+        new knowledge. Day-to-day, I'm knee-deep in Vue.js and Node.js, but when
+        it comes to personal projects, I've got a soft spot for
+        Svelte.js/SvelteKit and Astro.build, especially for static sites.
+        Lately, I've been exploring Tauri, a native web-based framework, which
+        is nudging me to pick up Rust Lang. What really gets me going is
+        tackling challenges within my team and finding ways to use code and
+        programming to make everyone's tasks a bit smoother and more efficient
+        needs.
+      </Text>
+      <BGImageBase />
 
-    <Text tag="p">
-      I'm all about diving into the latest in web technologies and soaking up
-      new knowledge. Day-to-day, I'm knee-deep in Vue.js and Node.js, but when
-      it comes to personal projects, I've got a soft spot for
-      Svelte.js/SvelteKit and Astro.build, especially for static sites. Lately,
-      I've been exploring Tauri, a native web-based framework, which is nudging
-      me to pick up Rust Lang. What really gets me going is tackling challenges
-      within my team and finding ways to use code and programming to make
-      everyone's tasks a bit smoother and more efficient needs.
-    </Text>
-  </div>
-
-  <style>
-    .hero {
-      height: 1024px;
-    }
-  </style>
+      <style></style>
+    </div>
+  </BGImageBase>
 </header>
