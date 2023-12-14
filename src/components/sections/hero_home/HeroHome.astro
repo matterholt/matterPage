@@ -3,7 +3,7 @@ import { Text, Logo, BGImageBase } from "@components/lib_comps";
 import { NavBar } from "@components/blocks";
 ---
 
-<header class="hero layout">
+<header class="hero_home">
   <NavBar />
 
   <img class="hero_img" src="/images/hero/profile2_me2_b&w.png" />
@@ -29,16 +29,16 @@ import { NavBar } from "@components/blocks";
   </div>
 </header>
 <style>
+  .hero_home {
+    max-width: 1080px;
+    min-height: 880px;
+    display: flow-root;
+  }
+  .hero_subtitle {
+    margin-top: 8%;
+  }
   .hero_text {
     padding: 15% 0;
-  }
-  .hero {
-    min-width: 100vw;
-    min-height: 880px;
-    outline: solid;
-    display: flow-root;
-    outline: solid;
-    padding-left: 20px;
   }
   .hero_img {
     float: right;

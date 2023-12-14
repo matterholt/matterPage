@@ -3,7 +3,7 @@ const { pageId } = Astro.props;
 import NavBar from "@layouts/html_styled_comps/NavBar.astro";
 ---
 
-<body id={pageId} class="bg-zinc-50 text-myDark">
+<body id={pageId} class="bg-zinc-50 text-myDark flex flex-col items-center">
   <!-- <NavBar pageId={pageId} /> -->
   <slot />
 </body>
