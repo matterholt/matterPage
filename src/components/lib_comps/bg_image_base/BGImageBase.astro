@@ -1,39 +1,16 @@
 ---
-const {imageLayer} = Astro.props
-
+const { imageLayer } = Astro.props;
 ---
 
-<div class:list={[imageLayer,"heroOverlay w-screen overflow-none"]}>
+<div class:list={[imageLayer, "heroOverlay ", ""]}>
   <slot />
 </div>
 <style>
-  .base_image{
-
-    --hero_background_image : url(/images/hero/matterhorn-cutout.png);
-  }
-  .one_image {
-
-    height:700px;
-
-    --hero_background_image : url(/images/hero/profile2_me-white.png);
-
-  }
-
   .heroOverlay {
+    width: 60%;
+    height: 200vh;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-image:url(/images/hero/matterhorn-cutout.png);
-  }
-  .heroOverlay:before {
-    content: '';
-    /* position: absolute;x */
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-    height: inherit;
-    background-color: #000406;
-    opacity: 0.3;
+    background-image: url(/images/hero/profile2_me2_b&w.png);
+    float: right;
   }
 </style>

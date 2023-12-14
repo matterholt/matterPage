@@ -1,30 +1,47 @@
 ---
-import { Text, Logo, BGImageBase } from "@components/lib_comps/index";
+import { Text, Logo, BGImageBase } from "@components/lib_comps";
+import { NavBar } from "@components/blocks";
 ---
 
-<header class="hero">
-  <BGImageBase imageLayer="base_image">
-    <div>
-      <Logo />
-      <Text tag="p">
-        Front end developer, Over-all Generalist and a bit of Designer Husband,
-        Father and few other things
-      </Text>
+<header class="hero layout">
+  <NavBar />
 
-      <Text tag="p">
-        I'm all about diving into the latest in web technologies and soaking up
-        new knowledge. Day-to-day, I'm knee-deep in Vue.js and Node.js, but when
-        it comes to personal projects, I've got a soft spot for
-        Svelte.js/SvelteKit and Astro.build, especially for static sites.
-        Lately, I've been exploring Tauri, a native web-based framework, which
-        is nudging me to pick up Rust Lang. What really gets me going is
-        tackling challenges within my team and finding ways to use code and
-        programming to make everyone's tasks a bit smoother and more efficient
-        needs.
-      </Text>
-      <BGImageBase />
+  <img class="hero_img" src="/images/hero/profile2_me2_b&w.png" />
+  <Logo />
 
-      <style></style>
-    </div>
-  </BGImageBase>
+  <div class="hero_subtitle">
+    <Text tag="h2">
+      Front end developer, Over-all Generalist, a bit of Designer Husband,
+      Father and few other things
+    </Text>
+  </div>
+  <div class="hero_text">
+    <Text tag="p">
+      I'm all about diving into the latest in web technologies and soaking up
+      new knowledge. Day-to-day, I'm knee-deep in Vue.js and Node.js, but when
+      it comes to personal projects, I've got a soft spot for
+      Svelte.js/SvelteKit and Astro.build, especially for static sites. Lately,
+      I've been exploring Tauri, a native web-based framework, which is nudging
+      me to pick up Rust Lang. What really gets me going is tackling challenges
+      within my team and finding ways to use code and programming to make
+      everyone's tasks a bit smoother and more efficient needs.
+    </Text>
+  </div>
 </header>
+<style>
+  .hero_text {
+    padding: 15% 0;
+  }
+  .hero {
+    min-width: 100vw;
+    min-height: 880px;
+    outline: solid;
+    display: flow-root;
+    outline: solid;
+    padding-left: 20px;
+  }
+  .hero_img {
+    float: right;
+    shape-outside: url("/images/hero/profile2_me2_b&w.png");
+  }
+</style>

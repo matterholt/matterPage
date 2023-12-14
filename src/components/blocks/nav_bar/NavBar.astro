@@ -1,0 +1,25 @@
+---
+import { mainNavigation } from "@routes/mainNavigation";
+---
+
+<div class="nav_inflineFloat">
+  <nav>
+    {mainNavigation.map((link) => <a href={link.path}>{link.title}</a>)}
+  </nav>
+</div>
+
+<style>
+  .nav_inflineFloat {
+  }
+  nav {
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    left: 15%;
+    width: 80vw;
+    margin: 0 10px;
+    justify-content: space-evenly;
+    background-color: white;
+    border-bottom: solid black 2px;
+  }
+</style>
