@@ -1,7 +1,7 @@
 ---
-import { PostIntro, Text, Heading, Alink } from "@components/lib_comps/index";
+import { PostIntro, Text, Alink } from "@components/lib_comps/index";
 import { filterCollectionsBy } from "@utils/post_collections/";
-import { SectionContainer } from "@components/blocks";
+import { SectionContainer, InternalLink, DateIt } from "@components/blocks";
 
 const latestPost = await filterCollectionsBy("most_recent");
 
@@ -13,11 +13,20 @@ const { id, link, title } = {
 ---
 
 <SectionContainer>
-  <Heading>
-    <Text tag="h2">Latest Post</Text>
-  </Heading>
-  <PostIntro postFrontMatter={latestPost} />
-  <Alink {id} {link}>
+  <Text tag="h2">What has peek my Interest</Text>
+  <div class="latest_writeup">
+    <DateIt YY="2022" dd="14" mm="12" />
+    <PostIntro postFrontMatter={latestPost} />
+  </div>
+  <!-- <Alink {id} {link}>
     {title}
-  </Alink>
+  </Alink> -->
+  <InternalLink>Write Ups</InternalLink>
 </SectionContainer>
+<style>
+  .latest_writeup {
+    display: flex;
+    outline: solid;
+    padding: 20px;
+  }
+</style>
