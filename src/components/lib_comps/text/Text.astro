@@ -1,11 +1,17 @@
 ---
-const { tag, addAClass = "", Cssvars = {} } = Astro.props;
+const {
+  tag,
+  addAClass = "",
+  Cssvars = {},
+  class: className,
+  ...rest
+} = Astro.props;
 
 const Element = tag || "span";
 // font-black text-3xl text-center mt-2 p-5 uppercase"
 ---
 
-<Element class:list={["content_commonformat"]}>
+<Element class:list={["content_commonformat", className]} {...rest}>
   <slot />
 </Element>
 

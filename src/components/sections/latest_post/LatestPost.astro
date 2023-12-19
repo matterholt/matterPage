@@ -13,20 +13,29 @@ const { id, link, title } = {
 ---
 
 <SectionContainer>
-  <Text tag="h2">What has peek my Interest</Text>
-  <div class="latest_writeup">
-    <DateIt YY="2022" dd="14" mm="12" />
-    <PostIntro postFrontMatter={latestPost} />
+  <div class="latestpost_layout">
+    <Text tag="h2">What has peek my Interest</Text>
+    <div class="latestpost_writeup">
+      <PostIntro postFrontMatter={latestPost} />
+    </div>
+    <div class="latestpost_linktomore">
+      <InternalLink>Write Ups</InternalLink>
+    </div>
   </div>
-  <!-- <Alink {id} {link}>
-    {title}
-  </Alink> -->
-  <InternalLink>Write Ups</InternalLink>
 </SectionContainer>
 <style>
-  .latest_writeup {
-    display: flex;
-    outline: solid;
-    padding: 20px;
+  .latestpost_layout {
+    display: grid;
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 1fr 150px;
+  }
+  .latestpost_writeup {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .latestpost_linktomore {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: flex-end;
   }
 </style>

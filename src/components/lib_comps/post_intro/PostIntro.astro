@@ -1,33 +1,42 @@
 ---
+import { DateIt } from "@components/blocks";
 import { Text, Alink } from "@components/lib_comps/index";
-import { SectionContainer } from "@components/blocks";
 
 const { postFrontMatter } = Astro.props;
-const publishDate = postFrontMatter.data.pubDate;
-const formatDate = [
-  publishDate.getFullYear(),
-  publishDate.getMonth() + 1,
-  publishDate.getDate(),
-].join("-");
+
 const titleLink = postFrontMatter.data.title.split(" ").join("-");
+
+const latestPostDate = postFrontMatter.data.pubDate;
+const [year, month, date] = [
+  latestPostDate.getFullYear(),
+  latestPostDate.getMonth() + 1,
+  latestPostDate.getDate(),
+];
 ---
 
-<SectionContainer>
+<div class="writeup_summary">
+  <DateIt YY={year} dd={date} mm={month} />
+
   <div class="postIntro_header">
-    <Text tag="h4">
+    <Text tag="h4" class="title_placement">
       {postFrontMatter.data.title}
     </Text>
-
-    <Text tag="p">{formatDate}</Text>
   </div>
 
-  <Text tag="p">{postFrontMatter.slug}</Text>
-  <div class="postIntro_link">
+  <Text tag="p" class="content_placement">{postFrontMatter.slug}</Text>
+  <div class="postIntro_link link_placement">
     <Alink varient="base" link={`/posts/${titleLink}/`}>contiue...</Alink>
   </div>
-</SectionContainer>
+</div>
 
 <style>
+  .writeup_summary {
+    margin: 10px;
+    display: grid;
+
+    grid-template-columns: 130px 1fr;
+    grid-template-rows: 50px 1fr 25px;
+  }
   .postIntro_header {
     display: flex;
     justify-content: space-between;
@@ -35,5 +44,17 @@ const titleLink = postFrontMatter.data.title.split(" ").join("-");
   .postIntro_link {
     display: flex;
     justify-content: flex-end;
+  }
+  .title_placement {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .content_placement {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .link_placement {
+    grid-column: 2;
+    grid-row: 3;
   }
 </style>

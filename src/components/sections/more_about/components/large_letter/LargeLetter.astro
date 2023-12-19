@@ -1,0 +1,29 @@
+---
+import { Text } from "@components/lib_comps/index";
+---
+
+<div class="large_letter_circle">
+  <Text class="large_letter">T</Text>
+</div>
+<style>
+  .large_letter_circle {
+    border-radius: 100%;
+    background-color: var(--main_black);
+    height: 150px;
+    width: 150px;
+    color: var(--main_white);
+    position: relative;
+    top: -5em;
+    left: -5em;
+  }
+  .large_letter {
+    color: var(--main_gold);
+    font-size: 150px;
+    margin: auto 0;
+    position: absolute;
+    top: -5%;
+    left: 20%;
+    z-index: 10;
+    font-family: "Hanuman-reg Courier New", Courier, monospace;
+  }
+</style>

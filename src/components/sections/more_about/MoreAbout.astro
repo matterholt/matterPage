@@ -1,0 +1,33 @@
+---
+import { PostIntro, Text, Alink } from "@components/lib_comps/index";
+import { filterCollectionsBy } from "@utils/post_collections/";
+import { SectionContainer, InternalLink, DateIt } from "@components/blocks";
+import * as data from "./data/roles.json";
+
+import Card from "./components//card/Card.astro";
+---
+
+<SectionContainer class="temp_bg">
+  <Text tag="h2">Bit more about me</Text>
+  <Card>
+    <Text tag="h2">Random</Text>
+    <Text tag="p">asdfasdfasdf asdf asdf</Text>
+  </Card>
+  <Card>
+    <Text tag="h2">Random</Text>
+    <Text tag="p">asdfasdfasdf asdf asdf</Text>
+  </Card>
+  <Card>
+    <Text tag="h2">Random</Text>
+    <Text tag="p">asdfasdfasdf asdf asdf</Text>
+  </Card>
+</SectionContainer>
+
+<style>
+  .temp_bg {
+    background-color: var(--main_black);
+    color: var(--main_white);
+    width: 100%;
+    display: flex;
+  }
+</style>

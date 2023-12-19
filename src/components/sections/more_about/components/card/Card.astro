@@ -1,0 +1,18 @@
+---
+import LargeLetter from "../large_letter/LargeLetter.astro";
+---
+
+<div class="role_card">
+  <LargeLetter />
+  <slot />
+</div>
+
+<style>
+  .role_card {
+    background-color: var(--main_white);
+    color: var(--main_black);
+    border-radius: 5px;
+    width: 45%;
+    margin-top: 90px;
+  }
+</style>
