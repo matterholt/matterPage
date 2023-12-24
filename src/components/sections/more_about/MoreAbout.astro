@@ -7,27 +7,84 @@ import * as data from "./data/roles.json";
 import Card from "./components//card/Card.astro";
 ---
 
-<SectionContainer class="temp_bg">
-  <Text tag="h2">Bit more about me</Text>
-  <Card>
-    <Text tag="h2">Random</Text>
-    <Text tag="p">asdfasdfasdf asdf asdf</Text>
-  </Card>
-  <Card>
-    <Text tag="h2">Random</Text>
-    <Text tag="p">asdfasdfasdf asdf asdf</Text>
-  </Card>
-  <Card>
-    <Text tag="h2">Random</Text>
-    <Text tag="p">asdfasdfasdf asdf asdf</Text>
-  </Card>
+<SectionContainer class="temp_bg card_collections" varient="full">
+  <Text tag="h2" class="about_card_header">
+    Bit more <br /><span class="about_card_header-shiftRight">about me</span>
+  </Text>
+  <div class="card_columns-right">
+    <Card>
+      <Text tag="h2">Random</Text>
+      <Text tag="p">
+        Top Priority My commitment is foremost to my family.I wouldn't be the
+        person I am without them. They're a constant source of support, and I
+        actively choose to build a strong family by making them a priority in my
+        daily life
+      </Text>
+    </Card>
+    <Card>
+      <Text tag="h2">Random</Text>
+      <Text tag="p">
+        The Others I love stepping away from the computer to embrace a more
+        hands-on lifestyle. Taking care of chickens and lambs, tending to my
+        garden, and crafting projects in my small woodshop—like my desk and
+        garden trellis—keep me outdoors. In the barn, my blacksmith shop comes
+        alive as I hand forge knives, S hooks, and hangers. Amidst it all, I own
+        a 1968 Mustang, brought back to life with a roaring 351 Windsor engine.
+        I'm always on the move, enjoying a balanced and healthy lifestyle by
+        staying busy, immersing myself in nature, and working on the farm.
+      </Text>
+    </Card>
+  </div>
+  <div class="card_columns-left">
+    <Card>
+      <Text tag="h2">Random</Text>
+      <Text tag="p">
+        Professional Role When it comes to web technologies, I consider myself a
+        bit of a generalist, but my sweet spot is definitely in the front-end. I
+        love using the web to solve real-life problems, often getting ideas to
+        make things simpler. My go-to for staying in the loop is tuning into
+        podcasts, and I enjoy diving into code bases to discover new tricks that
+        can level up my projects. With a background in automotive engineering
+        spanning decades, my coding approach is all about precision and
+        accuracy. What really gets me going is improving workflows. I kicked off
+        a project to streamline product removal processes and whipped up a handy
+        site to support my wife in homeschooling our kids. I also write scripts
+        to make life easier for my teammates, simplifying data extraction and
+        boosting efficiency
+      </Text>
+    </Card>
+  </div>
 </SectionContainer>
 
 <style>
   .temp_bg {
     background-color: var(--main_black);
     color: var(--main_white);
-    width: 100%;
-    display: flex;
+    padding: 10px;
+  }
+  .about_card_header {
+    justify-self: center;
+    font-size: 60px;
+    letter-spacing: 4px;
+    line-height: 1.2;
+  }
+
+  .card_collections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 1fr;
+    grid-template-areas:
+      "title right_column"
+      "left_column right_column";
+  }
+  .card_columns-right {
+    grid-area: right_column;
+    margin-top: 40px;
+  }
+  .card_columns-left {
+    grid-area: left_column;
+  }
+  .about_card_header-shiftRight {
+    margin-left: 60px;
   }
 </style>

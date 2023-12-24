@@ -3,7 +3,7 @@ import LargeLetter from "../large_letter/LargeLetter.astro";
 ---
 
 <div class="role_card">
-  <LargeLetter />
+  <LargeLetter char="R" />
   <slot />
 </div>
 
@@ -12,7 +12,8 @@ import LargeLetter from "../large_letter/LargeLetter.astro";
     background-color: var(--main_white);
     color: var(--main_black);
     border-radius: 5px;
-    width: 45%;
-    margin-top: 90px;
+    margin: 55px;
+    padding: 20px;
+    height: min-content;
   }
 </style>

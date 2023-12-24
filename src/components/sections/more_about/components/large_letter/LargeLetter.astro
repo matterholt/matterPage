@@ -1,24 +1,25 @@
 ---
 import { Text } from "@components/lib_comps/index";
+const { char } = Astro.props;
 ---
 
 <div class="large_letter_circle">
-  <Text class="large_letter">T</Text>
+  <Text class="large_letter">{char}</Text>
 </div>
 <style>
   .large_letter_circle {
     border-radius: 100%;
     background-color: var(--main_black);
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     color: var(--main_white);
     position: relative;
-    top: -5em;
-    left: -5em;
+    top: -50px;
+    left: -50px;
   }
   .large_letter {
     color: var(--main_gold);
-    font-size: 150px;
+    font-size: 100px;
     margin: auto 0;
     position: absolute;
     top: -5%;

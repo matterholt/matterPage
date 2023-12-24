@@ -1,5 +1,7 @@
 ---
-const { class: className, ...rest } = Astro.props;
+const { varient, class: className, ...rest } = Astro.props;
+
+const sectionWidth = varient === "full" ? "100%" : "";
 ---
 
 <section
@@ -8,9 +10,9 @@ const { class: className, ...rest } = Astro.props;
 >
   <slot />
 </section>
-<style>
+<style define:vars={{ sectionWidth }}>
   section {
-    max-width: 1024px;
+    width: var(--sectionWidth, 1024px);
     margin-top: var(--section-margin-top, 80px);
   }
 </style>
