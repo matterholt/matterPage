@@ -1,9 +1,13 @@
 ---
 import LargeLetter from "../large_letter/LargeLetter.astro";
+const { asignChar } = Astro.props;
 ---
 
 <div class="role_card">
-  <LargeLetter char="R" />
+  <LargeLetter char={asignChar} />
+  <div>
+    <slot name="role_title" />
+  </div>
   <slot />
 </div>
 

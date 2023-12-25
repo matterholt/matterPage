@@ -1,5 +1,5 @@
 ---
-title: other interest
+title: Other Interest
 isPublish: true
 largeLetter: O
 order: 3

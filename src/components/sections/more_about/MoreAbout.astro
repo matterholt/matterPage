@@ -1,58 +1,57 @@
 ---
-import { PostIntro, Text, Alink } from "@components/lib_comps/index";
-import { filterCollectionsBy } from "@utils/post_collections/";
-import { SectionContainer, InternalLink, DateIt } from "@components/blocks";
-import * as data from "./data/roles.json";
+import { getCollection } from "astro:content";
+import { properOrder } from "@utils/helpers";
+import { Text } from "@components/lib_comps/index";
+import { SectionContainer } from "@components/blocks";
 
-import Card from "./components//card/Card.astro";
+import Card from "./components/card/Card.astro";
+
+const ourPublishedWork = await getCollection("about", ({ data }) => {
+  return data.isPublish === true;
+});
+
+const inOrder = ourPublishedWork.sort(properOrder);
+
+function sortThingsOut(notes) {
+  const rightside = notes.filter((x) => x.data.order % 2 === 1);
+  const leftSide = notes.filter((x) => x.data.order % 2 === 0);
+  return { rightside, leftSide };
+}
+
+// loop through and then
+const { rightside, leftSide } = sortThingsOut(inOrder);
+
+console.log(inOrder);
+function columnSort(entryNumb) {
+  return entryNumb % 2 ? "card_columns-right" : "card_columns-left";
+}
 ---
 
-<SectionContainer class="temp_bg card_collections" varient="full">
+<SectionContainer class:list={["temp_bg", "card_collections"]} varient="full">
   <Text tag="h2" class="about_card_header">
     Bit more <br /><span class="about_card_header-shiftRight">about me</span>
   </Text>
-  <div class="card_columns-right">
-    <Card>
-      <Text tag="h2">Random</Text>
-      <Text tag="p">
-        Top Priority My commitment is foremost to my family.I wouldn't be the
-        person I am without them. They're a constant source of support, and I
-        actively choose to build a strong family by making them a priority in my
-        daily life
-      </Text>
-    </Card>
-    <Card>
-      <Text tag="h2">Random</Text>
-      <Text tag="p">
-        The Others I love stepping away from the computer to embrace a more
-        hands-on lifestyle. Taking care of chickens and lambs, tending to my
-        garden, and crafting projects in my small woodshop—like my desk and
-        garden trellis—keep me outdoors. In the barn, my blacksmith shop comes
-        alive as I hand forge knives, S hooks, and hangers. Amidst it all, I own
-        a 1968 Mustang, brought back to life with a roaring 351 Windsor engine.
-        I'm always on the move, enjoying a balanced and healthy lifestyle by
-        staying busy, immersing myself in nature, and working on the farm.
-      </Text>
-    </Card>
-  </div>
   <div class="card_columns-left">
-    <Card>
-      <Text tag="h2">Random</Text>
-      <Text tag="p">
-        Professional Role When it comes to web technologies, I consider myself a
-        bit of a generalist, but my sweet spot is definitely in the front-end. I
-        love using the web to solve real-life problems, often getting ideas to
-        make things simpler. My go-to for staying in the loop is tuning into
-        podcasts, and I enjoy diving into code bases to discover new tricks that
-        can level up my projects. With a background in automotive engineering
-        spanning decades, my coding approach is all about precision and
-        accuracy. What really gets me going is improving workflows. I kicked off
-        a project to streamline product removal processes and whipped up a handy
-        site to support my wife in homeschooling our kids. I also write scripts
-        to make life easier for my teammates, simplifying data extraction and
-        boosting efficiency
-      </Text>
-    </Card>
+    {
+      leftSide.map((entry) => (
+        <Card asignChar={entry.data.largeLetter}>
+          <Text tag="h2" name="role_title">
+            {entry.data.title}
+          </Text>
+          <Text tag="p">{entry.body}</Text>
+        </Card>
+      ))
+    }
+  </div>
+  <div class="card_columns-right">
+    {
+      rightside.map((entry) => (
+        <Card asignChar={entry.data.largeLetter}>
+          <Text tag="h2">{entry.data.title}</Text>
+          <Text tag="p">{entry.body}</Text>
+        </Card>
+      ))
+    }
   </div>
 </SectionContainer>
 
