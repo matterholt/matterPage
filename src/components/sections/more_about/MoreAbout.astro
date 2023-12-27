@@ -21,13 +21,18 @@ function sortThingsOut(notes) {
 // loop through and then
 const { rightside, leftSide } = sortThingsOut(inOrder);
 
-console.log(inOrder);
 function columnSort(entryNumb) {
   return entryNumb % 2 ? "card_columns-right" : "card_columns-left";
 }
+const sectionMarginTop = 0;
 ---
 
-<SectionContainer class:list={["temp_bg", "card_collections"]} varient="full">
+<SectionContainer
+  varient="noBackground"
+  sectionMarginTop={0}
+  class:list={["temp_bg", "card_collections"]}
+  varient="full"
+>
   <Text tag="h2" class="about_card_header">
     Bit more <br /><span class="about_card_header-shiftRight">about me</span>
   </Text>
@@ -57,7 +62,7 @@ function columnSort(entryNumb) {
 
 <style>
   .temp_bg {
-    background-color: var(--main_black);
+    background-color: none;
     color: var(--main_white);
     padding: 10px;
   }

@@ -3,6 +3,8 @@ import "../styles/global.css";
 
 // Component Imports
 import { PageLayout } from "@layouts/index";
+import { BackgroundImage } from "@components/blocks";
+import { TopCurve, BottomCurve } from "@components/svg";
 
 import {
   ProfessionalWorkExperience,
@@ -15,8 +17,13 @@ import {
 
 <PageLayout pageId="home">
   <HeroHome />
-  <MoreAbout />
   <LatestPost />
+  <BackgroundImage>
+    <BottomCurve />
+    <MoreAbout />
+    <TopCurve />
+  </BackgroundImage>
+
   <ProfessionalWorkExperience
     currentPostion={true}
     sectionTitle="Current Position"
@@ -34,3 +41,4 @@ import {
     max-width: 1024px;
   }
 </style>
+ ``

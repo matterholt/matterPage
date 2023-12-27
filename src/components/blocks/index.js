@@ -4,7 +4,9 @@ import ProjectDetail from "./ProjectDetail.astro"
 import NavBar from "./nav_bar/NavBar.astro"
 import InternalLink from "./internal_link/InternalLinkl.astro"
 import DateIt from "./date_it/DateIt.astro"
+import BackgroundImage from "./background_image/BackgroundImage.astro"
 
 export {
+    BackgroundImage,
     SectionContainer, JobPositions, ProjectDetail, NavBar, InternalLink, DateIt
 }

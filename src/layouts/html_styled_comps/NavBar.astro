@@ -1,6 +1,6 @@
 ---
 const { pageId } = Astro.props;
-import activeNavigationPage from "@scripts/helpers_build/currentNav.js";
+import activeNavigationPage from "@routes/currentNav.js";
 import { Alink } from "@components/lib_comps/index";
 
 let navigationLinks = activeNavigationPage(pageId);
@@ -66,3 +66,4 @@ let navigationLinks = activeNavigationPage(pageId);
     display: none;
   }
 </style>
+ @routes/currentNav.js

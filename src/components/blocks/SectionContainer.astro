@@ -1,18 +1,35 @@
 ---
-const { varient, class: className, ...rest } = Astro.props;
+const {
+  varient = "base",
+  sectionMarginTop,
+  class: className,
+  ...rest
+} = Astro.props;
 
-const sectionWidth = varient === "full" ? "100%" : "";
+const sectionWidth = varient === "full" ? "100vw" : "";
+
+const isBase = varient === "base" || !varient || false;
+const hasNoBackground = varient === "noBackground";
 ---
 
 <section
-  class:list={["flex flex-col px-2 md:px-20 mb-20", className]}
+  class:list={[
+    className,
+    { noBackground: hasNoBackground },
+    { whiteContainer: isBase },
+  ]}
   {...rest}
 >
   <slot />
 </section>
-<style define:vars={{ sectionWidth }}>
+<style>
   section {
-    width: var(--sectionWidth, 1024px);
-    margin-top: var(--section-margin-top, 80px);
+    max-width: 1450px;
+  }
+  .whiteContainer {
+    background-color: var(--main_white);
+  }
+  .noBackground {
+    background-color: none;
   }
 </style>
