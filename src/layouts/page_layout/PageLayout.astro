@@ -2,6 +2,7 @@
 import Head from "../html/Head.astro";
 import Body from "../html/Body.astro";
 import Footer from "../html/Footer.astro";
+import { BackgroundImage } from "@components/blocks";
 
 const { pageId } = Astro.props;
 ---
@@ -9,7 +10,9 @@ const { pageId } = Astro.props;
 <html lang="en">
   <Head />
   <Body pageId={pageId}>
+    <!-- <BackgroundImage> -->
     <slot />
+    <!-- </BackgroundImage> -->
     <Footer />
   </Body>
 </html>

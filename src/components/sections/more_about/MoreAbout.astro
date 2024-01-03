@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { properOrder } from "@utils/helpers";
-import { Text } from "@components/lib_comps/index";
+import { Text, LinkBreak } from "@components/lib_comps/index";
 import { SectionContainer } from "@components/blocks";
 
 import Card from "./components/card/Card.astro";
@@ -34,13 +34,13 @@ const sectionMarginTop = 0;
   varient="full"
 >
   <Text tag="h2" class="about_card_header">
-    Bit more <br /><span class="about_card_header-shiftRight">about me</span>
+    Bit more <LinkBreak>about me</LinkBreak>
   </Text>
   <div class="card_columns-left">
     {
       leftSide.map((entry) => (
         <Card asignChar={entry.data.largeLetter}>
-          <Text tag="h2" name="role_title">
+          <Text tag="h3" name="role_title">
             {entry.data.title}
           </Text>
           <Text tag="p">{entry.body}</Text>
@@ -52,7 +52,7 @@ const sectionMarginTop = 0;
     {
       rightside.map((entry) => (
         <Card asignChar={entry.data.largeLetter}>
-          <Text tag="h2">{entry.data.title}</Text>
+          <Text tag="h3">{entry.data.title}</Text>
           <Text tag="p">{entry.body}</Text>
         </Card>
       ))
@@ -67,10 +67,10 @@ const sectionMarginTop = 0;
     padding: 10px;
   }
   .about_card_header {
-    justify-self: center;
+    /* justify-self: center;
     font-size: 60px;
     letter-spacing: 4px;
-    line-height: 1.2;
+    line-height: 1.2; */
   }
 
   .card_collections {
@@ -87,8 +87,5 @@ const sectionMarginTop = 0;
   }
   .card_columns-left {
     grid-area: left_column;
-  }
-  .about_card_header-shiftRight {
-    margin-left: 60px;
   }
 </style>

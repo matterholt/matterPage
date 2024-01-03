@@ -4,9 +4,9 @@ import { Text, Alink } from "@components/lib_comps/index";
 
 const { postFrontMatter } = Astro.props;
 
-const titleLink = postFrontMatter.data.title.split(" ").join("-");
+const titleLink = postFrontMatter?.data?.title.split(" ").join("-");
 
-const latestPostDate = postFrontMatter.data.pubDate;
+const latestPostDate = postFrontMatter?.data?.pubDate;
 const [year, month, date] = [
   latestPostDate.getFullYear(),
   latestPostDate.getMonth() + 1,
@@ -19,7 +19,7 @@ const [year, month, date] = [
 
   <div class="postIntro_header">
     <Text tag="h4" class="title_placement">
-      {postFrontMatter.data.title}
+      {postFrontMatter?.data?.title}
     </Text>
   </div>
 

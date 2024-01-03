@@ -1,5 +1,5 @@
 ---
-import { PostIntro, Text, Alink } from "@components/lib_comps/index";
+import { PostIntro, Text, Alink, LinkBreak } from "@components/lib_comps/index";
 import { filterCollectionsBy } from "@utils/post_collections/";
 import { SectionContainer, InternalLink, DateIt } from "@components/blocks";
 
@@ -14,7 +14,7 @@ const { id, link, title } = {
 
 <SectionContainer>
   <div class="latestpost_layout">
-    <Text tag="h2">What has peek my Interest</Text>
+    <Text tag="h2">What has <LinkBreak>peek my Interest</LinkBreak></Text>
     <div class="latestpost_writeup">
       <PostIntro postFrontMatter={latestPost} />
     </div>
@@ -26,8 +26,8 @@ const { id, link, title } = {
 <style>
   .latestpost_layout {
     display: grid;
-    grid-template-rows: 70px 1fr;
-    grid-template-columns: 1fr 150px;
+    grid-template-rows: 170px 1fr;
+    grid-template-columns: 1fr 200px;
   }
   .latestpost_writeup {
     grid-column: 1;
@@ -36,6 +36,6 @@ const { id, link, title } = {
   .latestpost_linktomore {
     grid-column: 2;
     grid-row: 2;
-    justify-self: flex-end;
+    justify-self: center;
   }
 </style>
