@@ -1,5 +1,7 @@
 ---
 import { Text, Heading } from "@components/lib_comps/index";
+import { TopCurve, BottomCurve } from "@components/svg";
+
 import * as data from "./data/jobHistory.json";
 import { JobPositions, SectionContainer } from "@components/blocks/";
 
@@ -13,7 +15,11 @@ const {
 } = data;
 ---
 
-<SectionContainer parentColor="bgLight">
+<SectionContainer Cssvars={{ sectionMarginControl: "150px 0 0 0 " }}>
+  <div class="wicked_curve_offset">
+    <TopCurve />
+  </div>
+
   <Heading>
     <Text tag="h2">
       {sectionTitle}
@@ -44,3 +50,8 @@ const {
     ) : null
   }
 </SectionContainer>
+<style>
+  .wicked_curve_offset {
+    position: relative;
+  }
+</style>

@@ -24,14 +24,11 @@ const { rightside, leftSide } = sortThingsOut(inOrder);
 function columnSort(entryNumb) {
   return entryNumb % 2 ? "card_columns-right" : "card_columns-left";
 }
-const sectionMarginTop = 0;
 ---
 
 <SectionContainer
-  varient="noBackground"
-  sectionMarginTop={0}
+  varient="nobackground"
   class:list={["temp_bg", "card_collections"]}
-  varient="full"
 >
   <Text tag="h2" class="about_card_header">
     Bit more <LinkBreak>about me</LinkBreak>
@@ -62,8 +59,6 @@ const sectionMarginTop = 0;
 
 <style>
   .temp_bg {
-    background-color: none;
-    color: var(--main_white);
     padding: 10px;
   }
   .about_card_header {

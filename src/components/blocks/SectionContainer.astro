@@ -2,6 +2,7 @@
 const {
   varient = "base",
   sectionMarginTop,
+  Cssvars = {},
   class: className,
   ...rest
 } = Astro.props;
@@ -22,12 +23,16 @@ const hasNoBackground = varient === "noBackground";
 >
   <slot />
 </section>
-<style>
+<style define:vars={Cssvars}>
   section {
     max-width: 1450px;
+    margin: var(--sectionMarginControl, 0px);
   }
   .whiteContainer {
     background-color: var(--main_white);
+  }
+  .styledBackground {
+    background: url("./svgs/logo_background-repeat.png") repeat;
   }
   .noBackground {
     background-color: none;
