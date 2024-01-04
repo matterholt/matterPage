@@ -1,27 +1,26 @@
 ---
 import Head from "../html/Head.astro";
-import Body from "../html/Body.astro";
+
 import Footer from "../html/Footer.astro";
-import { BackgroundImage } from "@components/blocks";
 
 const { pageId } = Astro.props;
 ---
 
 <html lang="en">
   <Head />
-  <Body pageId={pageId}>
-    <!-- <BackgroundImage> -->
+  <body id={pageId}>
     <slot />
-    <!-- </BackgroundImage> -->
     <Footer />
-  </Body>
-  <style>
-    body {
-      color: var(--main_white);
-      background: url("./svgs/logo_background-repeat.png") repeat;
-      background-color: var(--main_black);
-    }
-  </style>
-
-
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        color: var(--main_white);
+        background: url("./svgs/logo_background-repeat.png") repeat;
+        background-color: var(--main_black);
+      }
+    </style>
+  </body>
 </html>
