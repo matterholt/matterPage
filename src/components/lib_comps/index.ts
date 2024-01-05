@@ -7,9 +7,11 @@ import BGImageBase from "./bg_image_base/BGImageBase.astro";
 import LinkBreak from "./line_break/LineBreak.astro";
 
 import Text from "./text/Text.astro";
+import Box from "./box/Box.astro";
 
 export {
   BGImageBase,
+  Box,
   Alink,
   Heading,
   Text,

@@ -1,5 +1,5 @@
 ---
-import { PostIntro, Text, Alink, LinkBreak } from "@components/lib_comps/index";
+import { Box, PostIntro, Text, Alink, LinkBreak } from "@components/lib_comps";
 import { filterCollectionsBy } from "@utils/post_collections/";
 import { SectionContainer, InternalLink, DateIt } from "@components/blocks";
 
@@ -12,7 +12,7 @@ const { id, link, title } = {
 };
 ---
 
-<SectionContainer>
+<Box varient="light">
   <div class="latestpost_layout">
     <Text tag="h2">What has <LinkBreak>peek my Interest</LinkBreak></Text>
     <div class="latestpost_writeup">
@@ -22,7 +22,7 @@ const { id, link, title } = {
       <InternalLink>Write Ups</InternalLink>
     </div>
   </div>
-</SectionContainer>
+</Box>
 <style>
   .latestpost_layout {
     display: grid;

@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1450"
-   height="213.33601"
-   viewBox="0 0 383.64583 56.445155"
+   width="381.52917mm"
+   height="57.304329mm"
+   viewBox="0 0 381.52918 57.304329"
    version="1.1"
    id="svg1"
    xmlns="http://www.w3.org/2000/svg"
@@ -12,11 +12,11 @@
   <defs
      id="defs1" />
   <g
-     id="layer3"
-     transform="translate(-0.19120281,-51.377383)">
+     id="layer2"
+     transform="translate(-20.008938,-34.742814)">
     <path
-       id="rect1"
-       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:7.72607;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.180392"
-       d="M 0.1912028,107.82254 V 69.55792 C 69.865168,89.525931 99.771803,63.078446 169.4987,70.474172 281.09283,82.310631 316.70288,105.072 383.64583,56.985154 v -5.607769 h 0.19121 v 56.445155 z" />
+       style="opacity:0.410114;fill:#28ffff;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.436199"
+       d="m 401.5381,60.940796 c 0,0 -114.35678,25.473627 -160.22573,19.267597 C 195.44342,74.002365 172.41901,42.245148 134.40682,36.211828 96.394641,30.178509 20.008938,44.679435 20.008938,44.679435 V 92.047142 H 401.5381 Z"
+       id="path1" />
   </g>
 </svg>

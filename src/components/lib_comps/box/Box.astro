@@ -1,0 +1,43 @@
+---
+const {
+  varient = "base",
+  sectionMarginTop,
+  Cssvars = {},
+  class: className,
+  ...rest
+} = Astro.props;
+
+//make light/ dark /tranperent with white fonts
+
+const lightBox = varient === "light";
+const darkBox = varient === "dark";
+---
+
+<section
+  class:list={[
+    "section_base",
+    className,
+    { lightContainer: lightBox },
+    { darkContainer: darkBox },
+  ]}
+  {...rest}
+>
+  <slot />
+</section>
+
+<style define:vars={Cssvars}>
+  .section_base {
+    max-width: 1440px;
+
+    margin: var(--sectionMarginControl, 0px);
+  }
+  .darkContainer {
+    color: var(--main_white, #fff);
+    background: url("./svgs/logo_background-repeat.png") repeat;
+    background-color: var(--main_black, #000);
+  }
+  .lightContainer {
+    background-color: var(--main_white, #fff);
+    color: var(--main_black, #000);
+  }
+</style>

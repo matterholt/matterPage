@@ -1,8 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import { properOrder } from "@utils/helpers";
-import { Text, LinkBreak } from "@components/lib_comps/index";
+import { Text, Box, LinkBreak } from "@components/lib_comps/index";
 import { SectionContainer } from "@components/blocks";
+import { BottomCurve, TopCurve } from "@components/svg";
 
 import Card from "./components/card/Card.astro";
 
@@ -26,18 +27,24 @@ function columnSort(entryNumb) {
 }
 ---
 
-<SectionContainer
-  varient="nobackground"
-  class:list={["temp_bg", "card_collections"]}
+<Box
+  varient="dark"
+  Cssvars={{ sectionMarginControl: "150px 0px" }}
+  class:list={["card_collections"]}
 >
-  <Text tag="h2" class="about_card_header">
+  <div class="curvit-top">
+    <BottomCurve />
+  </div>
+
+  <Text tag="h2" class="header_position">
     Bit more <LinkBreak>about me</LinkBreak>
   </Text>
-  <div class="card_columns-left">
+
+  <div class="card_columns-left card_columns_layout">
     {
       leftSide.map((entry) => (
         <Card asignChar={entry.data.largeLetter}>
-          <Text tag="h3" name="role_title">
+          <Text slot="role_title" tag="h3" name="role_title">
             {entry.data.title}
           </Text>
           <Text tag="p">{entry.body}</Text>
@@ -45,42 +52,61 @@ function columnSort(entryNumb) {
       ))
     }
   </div>
-  <div class="card_columns-right">
+
+  <div class="card_columns-right card_columns_layout">
     {
       rightside.map((entry) => (
         <Card asignChar={entry.data.largeLetter}>
-          <Text tag="h3">{entry.data.title}</Text>
+          <Text slot="role_title" tag="h3">
+            {entry.data.title}
+          </Text>
           <Text tag="p">{entry.body}</Text>
         </Card>
       ))
     }
   </div>
-</SectionContainer>
+
+  <div class="curveit-bottom">
+    <TopCurve />
+  </div>
+</Box>
 
 <style>
-  .temp_bg {
-    padding: 10px;
+  .header_position {
+    margin-left: 70px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
   }
-  .about_card_header {
-    /* justify-self: center;
-    font-size: 60px;
-    letter-spacing: 4px;
-    line-height: 1.2; */
-  }
-
   .card_collections {
+    overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 150px 1fr;
+    grid-template-rows: 90px 150px 1fr 90px;
     grid-template-areas:
+      "cutout_top cutout_top"
       "title right_column"
-      "left_column right_column";
+      "left_column right_column"
+      "cutout-bottom cutout-bottom";
   }
   .card_columns-right {
     grid-area: right_column;
     margin-top: 40px;
+    padding-right: 30px;
   }
   .card_columns-left {
     grid-area: left_column;
+    padding-left: 30px;
+  }
+
+  .card_columns_layout {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .curvit-top {
+    grid-area: cutout_top;
+  }
+  .curveit-bottom {
+    grid-area: cutout-bottom;
   }
 </style>

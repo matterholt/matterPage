@@ -5,10 +5,12 @@ const { asignChar } = Astro.props;
 
 <div class="role_card">
   <LargeLetter char={asignChar} />
-  <div>
+  <div class="role_card_title">
     <slot name="role_title" />
   </div>
-  <slot />
+  <div class="role_card_content">
+    <slot />
+  </div>
 </div>
 
 <style>
@@ -16,8 +18,10 @@ const { asignChar } = Astro.props;
     background-color: var(--main_white);
     color: var(--main_black);
     border-radius: 5px;
-    margin: 55px;
+    margin: 70px 55px;
     padding: 20px;
     height: min-content;
+    display: flex;
+    flex-direction: column;
   }
 </style>
