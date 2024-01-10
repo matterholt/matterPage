@@ -1,48 +1,22 @@
 ---
-import { Text, Box, Heading } from "@components/lib_comps/index";
+import { getCollection } from "astro:content";
+import { DateIt } from "@components/blocks";
 
-import * as data from "./data/jobHistory.json";
-import { JobPositions, SectionContainer } from "@components/blocks/";
+import { Text, Box, LinkBreak } from "@components/lib_comps/index";
 
-const { currentPostion = false, sectionTitle = "Professional history" } =
-  Astro.props;
-
-const {
-  AutomotiveValidationEngineering,
-  AutomotiveDesignEngineering,
-  MenuApplicationDeveloper,
-} = data;
+const currentPosition = await getCollection("positions", ({ data }) => {
+  return data.isCurrent === true;
+});
+console.log(currentPosition);
+const { data, body } = currentPosition[0];
 ---
 
-<Box varient="light" Cssvars={{ sectionMarginControl: "150px 0 0 0 " }}>
-  <Heading>
-    <Text tag="h2">
-      {sectionTitle}
-    </Text>
-  </Heading>
-  <slot />
-
-  <JobPositions
-    title={MenuApplicationDeveloper?.title}
-    description={MenuApplicationDeveloper?.description}
-    positions={MenuApplicationDeveloper?.positions}
-  />
-
-  {
-    !currentPostion ? (
-      <>
-        <JobPositions
-          title={AutomotiveDesignEngineering?.title}
-          description={AutomotiveDesignEngineering?.description}
-          positions={AutomotiveDesignEngineering?.positions}
-        />
-        <JobPositions
-          title={AutomotiveValidationEngineering?.title}
-          description={AutomotiveValidationEngineering?.description}
-          positions={AutomotiveValidationEngineering?.positions}
-        />
-      </>
-    ) : null
-  }
+<Box varient="light" Cssvars={{ sectionMarginControl: "0px " }}>
+  <Text tag="h2">Current <LinkBreak>Position</LinkBreak></Text>
+  <div>
+    <DateIt YY="0000" mm="00" dd="00" />
+    <Text tag="h3">{data?.jobTitle}</Text>
+    <Text tag="p">{body}</Text>
+  </div>
 </Box>
 <style></style>

@@ -7,11 +7,11 @@ import { BottomCurve, TopCurve } from "@components/svg";
 
 import Card from "./components/card/Card.astro";
 
-const ourPublishedWork = await getCollection("about", ({ data }) => {
+const aboutMe = await getCollection("about", ({ data }) => {
   return data.isPublish === true;
 });
 
-const inOrder = ourPublishedWork.sort(properOrder);
+const inOrder = aboutMe.sort(properOrder);
 
 function sortThingsOut(notes) {
   const rightside = notes.filter((x) => x.data.order % 2 === 1);
@@ -29,7 +29,7 @@ function columnSort(entryNumb) {
 
 <Box
   varient="dark"
-  Cssvars={{ sectionMarginControl: "150px 0px" }}
+  Cssvars={{ sectionMarginControl: "0px 0px" }}
   class:list={["card_collections"]}
 >
   <div class="curvit-top">
