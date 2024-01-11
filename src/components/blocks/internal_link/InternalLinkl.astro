@@ -1,29 +1,36 @@
 ---
+import { Text } from "@components/lib_comps/index";
 
+interface Props {
+  interPath: string;
+}
+const { interPath } = Astro.props;
 ---
 
 <div class="internal_link_container">
-  <div class="internal_link_text">
-    <slot />
-  </div>
-  <svg
-    class="internal_link_svg"
-    width="39mm"
-    height="39mm"
-    viewBox="0 0 39 39.6875"
-    version="1.1"
-    id="svg1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:svg="http://www.w3.org/2000/svg"
-  >
-    <defs id="defs1"></defs>
-    <g id="layer1">
-      <path
-        style="opacity:1;stroke:none;stroke-width:4.99999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.180392"
-        d="M 0,39.6875 V 0 l 39.6875,19.84375 z"
-        id="path1"></path>
-    </g>
-  </svg>
+  <a href={interPath}>
+    <Text class="internal_link_text">
+      <slot />
+    </Text>
+    <svg
+      class="internal_link_svg"
+      width="39mm"
+      height="39mm"
+      viewBox="0 0 39 39.6875"
+      version="1.1"
+      id="svg1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:svg="http://www.w3.org/2000/svg"
+    >
+      <defs id="defs1"></defs>
+      <g id="layer1">
+        <path
+          style="opacity:1;stroke:none;stroke-width:4.99999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.180392"
+          d="M 0,39.6875 V 0 l 39.6875,19.84375 z"
+          id="path1"></path>
+      </g>
+    </svg>
+  </a>
 </div>
 <style>
   .internal_link_text {
@@ -31,6 +38,10 @@
     font-weight: 900;
     letter-spacing: 0.1em;
     color: var(--main_gold);
+
+    position: absolute;
+    top: 32px;
+    left: 18px;
   }
   .internal_link_container {
     width: 125px;
@@ -40,10 +51,13 @@
     display: grid;
     place-items: center;
     position: relative;
+    z-index: 2;
   }
   .internal_link_svg {
     fill: var(--main_white);
     position: absolute;
     left: 13px;
+    top: 0px;
+    z-index: 5;
   }
 </style>
