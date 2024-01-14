@@ -1,5 +1,5 @@
 ---
-workingDate: March, 2022 - June, 2022
+workingDate: 2022-03 / 2022-05
 employer: Ftech R&D North America
 location: Troy, Ohio
 jobTitle: Principal Design Technician
