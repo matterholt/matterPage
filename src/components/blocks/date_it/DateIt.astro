@@ -1,34 +1,60 @@
 ---
 export interface Props {
-  YY: string;
-  mm: string;
-  dd: string;
+  varient?: "endDate";
+  text?: string;
+  YY?: string;
+  mm?: string;
+  dd?: string;
 }
-const { YY, mm, dd } = Astro.props;
+const { varient, YY, mm, dd, text } = Astro.props;
+
+const isEndDate = varient === "endDate"; // just date, and end date
 ---
 
-<ul class="date_it_container date_it_text">
-  <li>{YY}</li>
-  <li>{mm}</li>
-  <li>{dd}</li>
+<ul
+  class:list={[
+    { varient_end_type: isEndDate },
+    "date_it_container date_it_text",
+  ]}
+>
+  {
+    text ? (
+      <li set:html={text} />
+    ) : (
+      <>
+        <li>{YY}</li>
+        <li>{mm}</li>
+        <li>{dd}</li>
+      </>
+    )
+  }
 </ul>
 
 <style>
+  .varient_end_type {
+    /* transform: rotate(180deg); */
+    --date_it_bg_color: var(--main_gold);
+    --date_it_text_color: var(--main_black);
+    --date_it_text_flex-direction: column-reverse;
+    --date_it_circle_clip-path: circle(3.6rem at 0% 50%);
+    --date_it_bg_text-align: left;
+  }
   .date_it_container {
     width: 80px;
     height: 120px;
-    margin: 10px;
-    background-color: var(--main_black);
-    clip-path: circle(3.6rem at 100% 50%);
+    margin: 10px 0px;
+    background-color: var(--date_it_bg_color, var(--main_black));
+    clip-path: var(--date_it_circle_clip-path, circle(3.6rem at 100% 50%));
   }
 
   .date_it_text {
-    color: var(--main_white);
-    text-align: right;
+    color: var(--date_it_text_color, var(--main_white));
+    text-align: var(--date_it_bg_text-align, right);
     padding-top: 5px;
     padding-right: 5px;
+    padding-left: 5px;
     display: flex;
-    flex-direction: column;
+    flex-direction: var(--date_it_text_flex-direction, column);
     justify-content: center;
     font-family: "Hanuman-thin", "PT Sans", Calibri, Tahoma, sans-serif;
   }

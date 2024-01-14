@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { DateIt } from "@components/blocks";
-
+import { DateIt, InternalLink } from "@components/blocks";
 import { Text, Box, LinkBreak } from "@components/lib_comps/index";
 
 const currentPosition = await getCollection("positions", ({ data }) => {
@@ -9,14 +8,34 @@ const currentPosition = await getCollection("positions", ({ data }) => {
 });
 console.log(currentPosition);
 const { data, body } = currentPosition[0];
+const bodyParagraph = body.split("\n");
 ---
 
 <Box varient="light" Cssvars={{ sectionMarginControl: "0px " }}>
   <Text tag="h2">Current <LinkBreak>Position</LinkBreak></Text>
-  <div>
-    <DateIt YY="0000" mm="00" dd="00" />
-    <Text tag="h3">{data?.jobTitle}</Text>
-    <Text tag="p">{body}</Text>
+  <div class="text_box_content">
+    <div class="dateit_container">
+      <DateIt YY="0000" mm="00" dd="00" />
+      <DateIt varient="endDate" text="to</br>date" />
+    </div>
+    <div>
+      <Text tag="h3">{data?.jobTitle}</Text>
+
+      <Text tag="p">
+        {bodyParagraph[1]}
+      </Text>
+    </div>
+    <InternalLink interPath="./career">Past Positions</InternalLink>
   </div>
+  <style>
+    .text_box_content {
+      display: grid;
+      grid-template-columns: min-content 1fr max-content;
+    }
+    .dateit_container {
+      display: grid;
+      grid-template-columns: repeat(2, 85px);
+      /* grid-template-rows: repeat(2, 100px); */
+    }
+  </style>
 </Box>
-<style></style>
