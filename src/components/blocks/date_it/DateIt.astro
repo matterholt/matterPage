@@ -2,13 +2,13 @@
 export interface Props {
   varient?: "endDate";
   text?: string;
-  YY?: string;
-  mm?: string;
-  dd?: string;
+  date?: string;
 }
-const { varient, YY, mm, dd, text } = Astro.props;
+const { varient, date, text } = Astro.props;
+const [YY, mm, dd] = date ? date?.split("-") : [];
 
 const isEndDate = varient === "endDate"; // just date, and end date
+console.log([YY, mm, dd]);
 ---
 
 <ul

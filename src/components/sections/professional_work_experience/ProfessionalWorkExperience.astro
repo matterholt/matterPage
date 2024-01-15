@@ -9,13 +9,14 @@ const currentPosition = await getCollection("positions", ({ data }) => {
 console.log(currentPosition);
 const { data, body } = currentPosition[0];
 const bodyParagraph = body.split("\n");
+const [start, end] = data.workingDate.split("/");
 ---
 
 <Box varient="light" Cssvars={{ sectionMarginControl: "0px " }}>
   <Text tag="h2">Current <LinkBreak>Position</LinkBreak></Text>
   <div class="text_box_content">
     <div class="dateit_container">
-      <DateIt YY="0000" mm="00" dd="00" />
+      <DateIt date={start} />
       <DateIt varient="endDate" text="to</br>date" />
     </div>
     <div>
