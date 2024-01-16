@@ -26,17 +26,27 @@ const [start, end] = data.workingDate.split("/");
         {bodyParagraph[1]}
       </Text>
     </div>
-    <InternalLink interPath="./career">Past Positions</InternalLink>
+    <div class="link_container">
+      <InternalLink interPath="./career">Past Positions</InternalLink>
+    </div>
   </div>
   <style>
     .text_box_content {
       display: grid;
-      grid-template-columns: min-content 1fr max-content;
+      outline: solid;
+      grid-template-columns: min-content max(550px) 1fr;
     }
     .dateit_container {
       display: grid;
       grid-template-columns: repeat(2, 85px);
+      place-items: center;
       /* grid-template-rows: repeat(2, 100px); */
+    }
+    .link_container {
+      place-self: center;
+      align-self: center;
+      justify-self: center;
+      outline: solid;
     }
   </style>
 </Box>

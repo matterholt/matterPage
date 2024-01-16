@@ -21,7 +21,10 @@ const { asignChar } = Astro.props;
     margin: 70px 55px;
     padding: 20px;
     height: min-content;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1px 75px 1fr;
+  }
+  .role_card_title {
+    place-self: center;
   }
 </style>

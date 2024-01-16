@@ -80,7 +80,9 @@ function columnSort(entryNumb) {
   .card_collections {
     overflow: hidden;
     display: grid;
+    width: 100%;
     grid-template-columns: 1fr 1fr;
+
     grid-template-rows: 90px 150px 1fr 90px;
     grid-template-areas:
       "cutout_top cutout_top"
@@ -90,23 +92,40 @@ function columnSort(entryNumb) {
   }
   .card_columns-right {
     grid-area: right_column;
-    margin-top: 40px;
-    padding-right: 30px;
+    margin-top: var(--card_columns-right_margin-top, 40px);
+    padding-right: var(--card_columns-right_padding-right, 30px);
   }
   .card_columns-left {
     grid-area: left_column;
-    padding-left: 30px;
+    padding-left: var(--card_columns-left_padding-left, 30px);
   }
 
   .card_columns_layout {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    margin-bottom: var(--card_columns_layout-margin-bottom, 50px);
   }
   .curvit-top {
     grid-area: cutout_top;
   }
   .curveit-bottom {
     grid-area: cutout-bottom;
+  }
+  @media screen and (max-width: 768px) {
+    .card_collections {
+      --card_columns-left_padding-left: 0px;
+      --card_columns-right_padding-right: 0px;
+      --card_columns-right_margin-top: 0px;
+      --card_columns_layout-margin-bottom: 0px;
+      grid-template-columns: 100vw;
+      grid-template-rows: 90px 150px 1fr 2fr 90px;
+      grid-template-areas:
+        "cutout_top "
+        "title "
+        "left_column"
+        "right_column"
+        "cutout-bottom";
+    }
   }
 </style>
