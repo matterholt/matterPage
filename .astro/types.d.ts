@@ -174,7 +174,46 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"blog": {
+		"about": {
+"otherIntrests.md": {
+	id: "otherIntrests.md";
+  slug: "otherintrests";
+  body: string;
+  collection: "about";
+  data: InferEntrySchema<"about">
+} & { render(): Render[".md"] };
+"profesional.md": {
+	id: "profesional.md";
+  slug: "profesional";
+  body: string;
+  collection: "about";
+  data: InferEntrySchema<"about">
+} & { render(): Render[".md"] };
+"topPriority.md": {
+	id: "topPriority.md";
+  slug: "toppriority";
+  body: string;
+  collection: "about";
+  data: InferEntrySchema<"about">
+} & { render(): Render[".md"] };
+};
+"accomplishment": {
+"fetchAccomplishment.md": {
+	id: "fetchAccomplishment.md";
+  slug: "fetchaccomplishment";
+  body: string;
+  collection: "accomplishment";
+  data: any
+} & { render(): Render[".md"] };
+"personalAccomplishments.md": {
+	id: "personalAccomplishments.md";
+  slug: "personalaccomplishments";
+  body: string;
+  collection: "accomplishment";
+  data: any
+} & { render(): Render[".md"] };
+};
+"blog": {
 "2020/2020-06-10-directions/index.md": {
 	id: "2020/2020-06-10-directions/index.md";
   slug: "Working the daily job.";
@@ -400,11 +439,50 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
+"positions": {
+"applicationDeveloper.md": {
+	id: "applicationDeveloper.md";
+  slug: "applicationdeveloper";
+  body: string;
+  collection: "positions";
+  data: InferEntrySchema<"positions">
+} & { render(): Render[".md"] };
+"principalDesignTechician.md": {
+	id: "principalDesignTechician.md";
+  slug: "principaldesigntechician";
+  body: string;
+  collection: "positions";
+  data: InferEntrySchema<"positions">
+} & { render(): Render[".md"] };
+"principalValidationTechician.md": {
+	id: "principalValidationTechician.md";
+  slug: "principalvalidationtechician";
+  body: string;
+  collection: "positions";
+  data: InferEntrySchema<"positions">
+} & { render(): Render[".md"] };
+"seniorValidationTechician.md": {
+	id: "seniorValidationTechician.md";
+  slug: "seniorvalidationtechician";
+  body: string;
+  collection: "positions";
+  data: InferEntrySchema<"positions">
+} & { render(): Render[".md"] };
+"validationTechician.md": {
+	id: "validationTechician.md";
+  slug: "validationtechician";
+  body: string;
+  collection: "positions";
+  data: InferEntrySchema<"positions">
+} & { render(): Render[".md"] };
+};
 
 	};
 
 	type DataEntryMap = {
-		
+		"schemas": {
+};
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

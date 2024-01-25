@@ -1,0 +1,11 @@
+---
+import { getCollection } from "astro:content";
+
+import { Text } from "@components/lib_comps";
+
+const accomplishedDates = await getCollection("coolDates");
+
+console.log(accomplishedDates);
+---
+
+<Text tag="h1">The professional/personal accomplishments</Text>

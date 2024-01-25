@@ -6,7 +6,6 @@ import { Text, Box, LinkBreak } from "@components/lib_comps/index";
 const currentPosition = await getCollection("positions", ({ data }) => {
   return data.isCurrent === true;
 });
-console.log(currentPosition);
 const { data, body } = currentPosition[0];
 const bodyParagraph = body.split("\n");
 const [start, end] = data.workingDate.split("/");

@@ -9,7 +9,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@styles/*": ["src/styles/*"],
-      "@scripts/*": ["src/scripts/*"],
+      "@scripts/*": ["src/utils/scripts/*"],
       "@layouts/*": ["src/layouts/*"],
       "@routes/*": ["src/routes/*"],
       "@utils/*" :["src/utils/*"]
