@@ -37,5 +37,5 @@ export const collections = {
   blog: blog,
   about: aboutMeCollection,
   positions: jobPosition,
-  coolDates: accomplishments,
+  accomplishDates: accomplishments,
 };

@@ -3,9 +3,26 @@ import { getCollection } from "astro:content";
 
 import { Text } from "@components/lib_comps";
 
-const accomplishedDates = await getCollection("coolDates");
+const accomplishedDates = await getCollection("accomplishDates");
 
-console.log(accomplishedDates);
+const bodyList = accomplishedDates
+  .map((entry) => entry.body.split(/\r?\n/))
+  .flat();
+
+console.log(bodyList);
 ---
 
 <Text tag="h1">The professional/personal accomplishments</Text>
+<ul>
+  {bodyList.map((x) => <li>{x}</li>)}
+
+  <style>
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+    li {
+      margin: 10px;
+    }
+  </style>
+</ul>
