@@ -29,7 +29,6 @@ for (var entry of collectCollection) {
 
     if (dateSorts.has(dateKey)) {
       const dateKeyValue = dateSorts.get(dateKey);
-      console.log();
       dateSorts.set(dateKey, [
         ...dateKeyValue,
         { entries: dataContent, type: collectionKey?.[0] },

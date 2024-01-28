@@ -7,7 +7,7 @@ const heldJobPosition = z.object({
   jobTitle: z.string(),
   type: z.string(),
   isCurrent: z.boolean(),
-  job_id: z.number(),
+  jobId: z.number(),
 });
 
 export default heldJobPosition;

@@ -5,7 +5,7 @@ location: Troy, Ohio
 jobTitle: Principal Design Technician
 type: Automotive Design Engineering
 isCurrent: false
-job_id: 3
+jobId: 3
 ---
 
 ## Description
