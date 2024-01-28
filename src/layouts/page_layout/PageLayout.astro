@@ -1,5 +1,7 @@
 ---
 import Head from "../html/Head.astro";
+import { NavBar } from "@components/blocks";
+import { Logo } from "@components/lib_comps";
 
 import Footer from "../html/Footer.astro";
 
@@ -9,18 +11,12 @@ const { pageId } = Astro.props;
 <html lang="en">
   <Head />
   <body id={pageId}>
+    <header>
+      <NavBar />
+      <Logo />
+    </header>
+
     <slot />
     <Footer />
-    <style>
-      body {
-        display: flex;
-        gap: 150px;
-        width: 100vw;
-        flex-direction: column;
-        align-items: center;
-        color: var(--main_white);
-        background-color: var(--main_white);
-      }
-    </style>
   </body>
 </html>

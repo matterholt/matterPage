@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
+import { PageLayout } from "@layouts/index";
 
 import { Text } from "@components/lib_comps";
-import { fade } from "astro:transitions";
 
 const accomplishedDates = await getCollection("accomplishDates");
 
@@ -44,20 +44,21 @@ for (var entry of collectCollection) {
 const sortedDateRange = [...yearRange].sort((a: number, b: number) => b - a);
 ---
 
-<Text tag="h1">The professional/personal accomplishments</Text>
-<ul>
-  {
-    sortedDateRange.map((year) => {
-      return dateSorts.get(year).map((contentItems) => (
-        <li class:list={[contentItems.type, "base"]}>
-          <h3 class="year">{year}</h3>
-          <p set:html={contentItems.entries} />
-        </li>
-      ));
-    })
-  }
-</ul>
-
+<PageLayout pageId="dates">
+  <Text tag="h1">The professional/personal accomplishments</Text>
+  <ul>
+    {
+      sortedDateRange.map((year) => {
+        return dateSorts.get(year).map((contentItems) => (
+          <li class:list={[contentItems.type, "base"]}>
+            <h3 class="year">{year}</h3>
+            <p set:html={contentItems.entries} />
+          </li>
+        ));
+      })
+    }
+  </ul>
+</PageLayout>
 <style>
   ul {
     display: flex;

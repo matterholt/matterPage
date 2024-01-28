@@ -16,7 +16,9 @@
   --main_white: rgb(248 250 252); /* //text-zinc-50 */
   --main_gold: rgb(191, 143, 43); /* gold */
 }
-
+body {
+  background-color: var(--main_white, #fff);
+}
 @font-face {
   font-family: "Hanuman-reg";
   src: url("fonts/Hanuman-Regular.ttf") format("truetype");
