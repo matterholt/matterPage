@@ -1,4 +1,7 @@
 ---
+import { Box } from "@components/lib_comps/";
+import { BottomCurve } from "@components/svg";
+
 import Stackbliz from "@components/Stackbliz.astro";
 import Replit from "@components/Replit.astro";
 
@@ -6,15 +9,17 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
 ---
 
 <footer>
-  <Stackbliz />
-  <Replit />
-  <SocialLink />
+  <Box varient="dark">
+    <BottomCurve />
 
-  <div class="m-2 text-xs text-right">
+    <Stackbliz />
+    <Replit />
+    <SocialLink />
+
     <p class="m-2 text-xs font-thin">
-      ​All Rights Reserved |Website & Hosting by Matterholt made
+      All Rights Reserved |Website & Hosting by Matterholt made
     </p>
-  </div>
+  </Box>
 </footer>
 
 <style>

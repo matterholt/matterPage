@@ -4,6 +4,7 @@ import PersonalProjects from "./personal_projects/PersonalProjects.astro";
 import PersonalBio from "./personal_bio/PersonalBio.astro";
 import LatestPost from "./latest_post/LatestPost.astro";
 import MoreAbout from "./more_about/MoreAbout.astro";
+import Footer from "./footer/Footer.astro";
 
 export {
   ProfessionalWorkExperience,
@@ -12,4 +13,5 @@ export {
   PersonalBio,
   LatestPost,
   MoreAbout,
+  Footer,
 };

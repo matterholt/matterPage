@@ -12,11 +12,14 @@ Primary building dynamic Menu boards with VUE.js with JSX. Trying to learn as mu
 
 ## Job Responsibilities
 
--Utilize JavaScript and Vue JS with Jsx to translate business needs into client-friendly functions
+- Maintain code base for assigned projects, code review MR going into code base.
 
--Resolve bug tickets assigned through JIRA, that improves and fixes to web components using modern JavaScript frameworks
+- Utilize JavaScript and Vue JS with Jsx to translate business needs into client-friendly functions
 
--Implementing features, maintaining software, and learning proprietary JavaScript frameworks
+- Resolve bug tickets assigned through JIRA, that improves and fixes to web components using modern JavaScript frameworks
 
--Create and add to documentation and provide assistance to other team members,
-Work with other developer with issues on applications
+- Implementing features, maintaining software, and learning proprietary JavaScript frameworks
+
+- Create and add to documentation and provide assistance to other team members,
+
+- Work with other developer with issues on applications
