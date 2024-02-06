@@ -1,9 +1,9 @@
 ---
 import { Box, PostIntro, Text, Alink, LinkBreak } from "@components/lib_comps";
-import { filterCollectionsBy } from "@utils/post_collections/";
+import { filterCollectionsBy } from "@utils/helpers/post_collections/";
 import { SectionContainer, InternalLink } from "@components/blocks";
 
-const latestPost = await filterCollectionsBy("most_recent");
+const [latestPost, ...r] = await filterCollectionsBy("most_recent");
 
 const { id, link, title } = {
   id: "writeups",

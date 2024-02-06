@@ -1,8 +1,12 @@
 ---
+interface Props {
+  varient?: string;
+  postFrontMatter: any[];
+}
 import { DateIt } from "@components/blocks";
 import { Text, Alink } from "@components/lib_comps/index";
 
-const { postFrontMatter } = Astro.props;
+const { postFrontMatter, varient = "full" } = Astro.props;
 
 const titleLink = postFrontMatter?.data?.title.split(" ").join("-");
 
@@ -13,30 +17,56 @@ const [year, month, date] = [
   latestPostDate.getDate(),
 ];
 
-const introPara = postFrontMatter.body.split(/\r?\n/).filter((x) => x !== "");
+const [introhead, introContent, ...r] = postFrontMatter.body
+  .split(/\r?\n/)
+  .filter((x) => x !== "");
 ---
 
-<div class="writeup_summary">
-  <DateIt date={`${year}-${month}-${date}`} />
-
+<div class:list={[varient, "writeup_summary"]}>
+  {
+    varient !== "simple" ? (
+      <DateIt class="dateit_placement" date={`${year}-${month}-${date}`} />
+    ) : (
+      <Text tag="p">{`${year}-${month}-${date}`} </Text>
+    )
+  }
   <div class="postIntro_header">
     <Text tag="h4" class="title_placement">
       {postFrontMatter?.data?.title}
     </Text>
   </div>
 
-  <Text tag="p" class="content_placement">{introPara[1]}</Text>
+  {
+    varient !== "simple" ? (
+      <Text tag="p" class="content_placement">
+        {introContent}
+      </Text>
+    ) : (
+      ""
+    )
+  }
   <div class="postIntro_link link_placement">
-    <Alink varient="base" link={`/posts/${titleLink}/`}>contiue...</Alink>
+    <Alink varient="base" link={`/posts/${titleLink}/`}>continue...</Alink>
   </div>
 </div>
 
 <style>
   .writeup_summary {
+    grid-template-columns: 100px 66% 25px;
+    grid-template-areas: "date title continue";
+  }
+  .full {
     display: grid;
-    gap: 20px;
+    margin: 15px 0px;
     grid-template-columns: 80px 70%;
-    grid-template-rows: 50px 1fr 25px;
+    gap: 5px;
+    grid-template-areas:
+      "date title"
+      "date content"
+      "date continue";
+  }
+  .simple {
+    display: grid;
   }
   .postIntro_header {
     display: flex;
@@ -46,16 +76,17 @@ const introPara = postFrontMatter.body.split(/\r?\n/).filter((x) => x !== "");
     display: flex;
     justify-content: flex-end;
   }
+  .dateit_placement {
+    grid-area: date;
+    background-color: rebeccapurple;
+  }
   .title_placement {
-    grid-column: 2;
-    grid-row: 1;
+    grid-area: title;
   }
   .content_placement {
-    grid-column: 2;
-    grid-row: 2;
+    grid-area: content;
   }
   .link_placement {
-    grid-column: 2;
-    grid-row: 3;
+    grid-area: continue;
   }
 </style>

@@ -1,7 +1,7 @@
 ---
 import Main from "@layouts/page_layout/PageLayout.astro";
 import { PostIntro, Text, Heading } from "@components/lib_comps/";
-import { filterCollectionsBy } from "@utils/post_collections/";
+import { filterCollectionsBy } from "@utils/helpers/post_collections/";
 
 const [currentYear, OtherYears] = await filterCollectionsBy("current_year");
 ---
@@ -11,8 +11,8 @@ const [currentYear, OtherYears] = await filterCollectionsBy("current_year");
     <Text tag="h2">latest Posts</Text>
   </Heading>
   {currentYear.map((x) => <PostIntro postFrontMatter={x} />)}
-  <Text tag="h2">Previous</Text>
-  {OtherYears.map((x) => <PostIntro postFrontMatter={x} />)}
+  <Text tag="h2">Previous Years</Text>
+  {OtherYears.map((x) => <PostIntro varient="simple" postFrontMatter={x} />)}
 </Main>
 
 <style>
