@@ -12,6 +12,8 @@ const [year, month, date] = [
   latestPostDate.getMonth() + 1,
   latestPostDate.getDate(),
 ];
+
+const introPara = postFrontMatter.body.split(/\r?\n/).filter((x) => x !== "");
 ---
 
 <div class="writeup_summary">
@@ -23,7 +25,7 @@ const [year, month, date] = [
     </Text>
   </div>
 
-  <Text tag="p" class="content_placement">{postFrontMatter.slug}</Text>
+  <Text tag="p" class="content_placement">{introPara[1]}</Text>
   <div class="postIntro_link link_placement">
     <Alink varient="base" link={`/posts/${titleLink}/`}>contiue...</Alink>
   </div>
@@ -31,10 +33,9 @@ const [year, month, date] = [
 
 <style>
   .writeup_summary {
-    margin: 10px;
     display: grid;
-
-    grid-template-columns: 130px 1fr;
+    gap: 20px;
+    grid-template-columns: 80px 1fr;
     grid-template-rows: 50px 1fr 25px;
   }
   .postIntro_header {
