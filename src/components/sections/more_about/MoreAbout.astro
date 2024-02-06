@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { properOrder } from "@utils/helpers";
+import { definedContentOrder } from "@utils/helpers";
 import { Text, Box, LinkBreak } from "@components/lib_comps/index";
 import { SectionContainer } from "@components/blocks";
 import { BottomCurve, TopCurve } from "@components/svg";
@@ -11,7 +11,7 @@ const aboutMe = await getCollection("about", ({ data }) => {
   return data.isPublish === true;
 });
 
-const inOrder = aboutMe.sort(properOrder);
+const inOrder = aboutMe.sort(definedContentOrder);
 
 function sortThingsOut(notes) {
   const rightside = notes.filter((x) => x.data.order % 2 === 1);

@@ -3,14 +3,16 @@ import Main from "@layouts/page_layout/PageLayout.astro";
 import { PostIntro, Text, Heading } from "@components/lib_comps/";
 import { filterCollectionsBy } from "@utils/post_collections/";
 
-const currentYear = await filterCollectionsBy("current_year");
+const [currentYear, OtherYears] = await filterCollectionsBy("current_year");
 ---
 
 <Main pageId="writeups">
   <Heading>
-    <Text tag="h2">2023 Post</Text>
+    <Text tag="h2">latest Posts</Text>
   </Heading>
   {currentYear.map((x) => <PostIntro postFrontMatter={x} />)}
+  <Text tag="h2">Previous</Text>
+  {OtherYears.map((x) => <PostIntro postFrontMatter={x} />)}
 </Main>
 
 <style>

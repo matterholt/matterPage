@@ -1,3 +1,3 @@
-import { properOrder } from "./collections";
+import { definedContentOrder } from "./collections";
 
-export { properOrder };
+export { definedContentOrder };
