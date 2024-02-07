@@ -1,14 +1,10 @@
 ---
-import { getCollection } from "astro:content";
 import { DateIt, InternalLink } from "@components/blocks";
 import { Text, Box, LinkBreak } from "@components/lib_comps/index";
+import { jobPositionSummary } from "@utils/helpers";
 
-const currentPosition = await getCollection("positions", ({ data }) => {
-  return data.isCurrent === true;
-});
-const { data, body } = currentPosition[0];
-const bodyParagraph = body.split("\n");
-const [start, end] = data.workingDate.split("/");
+const jobs = await jobPositionSummary("summary");
+const { start, data, bodyParagraph } = jobs;
 ---
 
 <Box varient="light" Cssvars={{ sectionMarginControl: "0px " }}>
@@ -21,7 +17,7 @@ const [start, end] = data.workingDate.split("/");
     <div>
       <Text tag="h3">{data?.jobTitle}</Text>
       <Text tag="p">
-        {bodyParagraph[1]}
+        {bodyParagraph}
       </Text>
     </div>
     <div class="link_container">

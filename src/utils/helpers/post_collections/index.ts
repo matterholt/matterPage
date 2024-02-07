@@ -40,8 +40,8 @@ async function filterCollectionsBy(collectionType) {
     otherYearsOfContent.map((year) => writeUpByYears.get(year)).flat()
   );
   if (collectionType === "most_recent") {
-    console.log(mostRecentWriteUps);
-    return mostRecentWriteUps;
+    // console.log(mostRecentWriteUps);
+    return [mostRecentWriteUps[0]];
   }
 
   // returns the most recent first, then the rest
