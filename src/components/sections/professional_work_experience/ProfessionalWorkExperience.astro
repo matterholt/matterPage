@@ -10,45 +10,56 @@ interface Props {
   providedCareerPositions: ContentCareers[];
 }
 
-const { providedCareerPositions = [] } = Astro.props;
+const { providedCareerPositions = null } = Astro.props;
 
-const currentPositionHeld = await getCollection("positions", ({ data }) => {
-  return data.isCurrent;
-});
-
+const currentPositionHeld = async () => {
+  const [mostRecent, ...r] = await getCollection("positions", ({ data }) => {
+    return data.isCurrent;
+  });
+  return mostRecent;
+};
 // if career positions are provided then skip the summary
-const defaultCurrentPosition =
-  providedCareerPositions.length === 0 ? true : false;
+const defaultCurrentPosition = !providedCareerPositions ? true : false;
+
+const careerStuff = defaultCurrentPosition
+  ? await currentPositionHeld()
+  : providedCareerPositions;
 
 const jobs = defaultCurrentPosition
-  ? await formatContent(currentPositionHeld)
-  : await formatContent(providedCareerPositions);
+  ? await formatContent(careerStuff, "summary")
+  : await formatContent(careerStuff, "full");
 
-console.log(defaultCurrentPosition);
+const { start, end, data, bodyParagraph } = jobs;
 ---
 
 <Box varient="light" Cssvars={{ sectionMarginControl: "0px " }}>
-  <Text tag="h2">Current <LinkBreak>Position</LinkBreak></Text>
   {
-    jobs.map((heldPosition) => {
-      const { start, end, data, bodyParagraph } = heldPosition;
-      return (
-        <div class="text_box_content">
-          <div class="dateit_container">
-            <DateIt date={start} />
-            <DateIt varient="endDate" text="to</br>date" />
-          </div>
-          <div>
-            <Text tag="h3">{data?.jobTitle}</Text>
-            <Text tag="p">{bodyParagraph}</Text>
-          </div>
-          <div class="link_container">
-            <InternalLink interPath="./career">Past Positions</InternalLink>
-          </div>
-        </div>
-      );
-    })
+    defaultCurrentPosition ? (
+      <Text tag="h2">
+        Current <LinkBreak>Position</LinkBreak>
+      </Text>
+    ) : null
   }
+
+  <div class="text_box_content">
+    <div class="dateit_container">
+      <DateIt date={start} />
+      <DateIt varient="endDate" text={end} />
+    </div>
+    <div>
+      <Text tag="h3">{data?.jobTitle}</Text>
+      <Text tag="p">{bodyParagraph}</Text>
+    </div>
+
+    {
+      defaultCurrentPosition ? (
+        <div class="link_container">
+          <InternalLink interPath="./career">Past Positions</InternalLink>
+        </div>
+      ) : null
+    }
+  </div>
+
   <style>
     .text_box_content {
       display: grid;

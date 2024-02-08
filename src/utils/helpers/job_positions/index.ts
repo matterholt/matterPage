@@ -11,16 +11,13 @@ function datesOfServices(dateData: ContentFrontMatter) {
 }
 
 async function formatContent(currentPosition, contentSize) {
-  if (currentPosition === undefined) {
-    console.log("nothing here");
-    return [];
-  }
   const { start, end } = datesOfServices(currentPosition?.data);
   const bodyParagraph =
     contentSize === "summary"
       ? summarizedJob(currentPosition?.body)
       : currentPosition?.body;
-  return [{ start, end, data: currentPosition.data, bodyParagraph }];
+
+  return { start, end, data: currentPosition.data, bodyParagraph };
 }
 
 export { formatContent };
