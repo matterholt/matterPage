@@ -1,29 +1,54 @@
 ---
+import { getCollection } from "astro:content";
+
+import type { ContentCareers } from "@utils/types";
 import { DateIt, InternalLink } from "@components/blocks";
 import { Text, Box, LinkBreak } from "@components/lib_comps/index";
-import { jobPositionSummary } from "@utils/helpers";
+import { formatContent } from "@utils/helpers";
 
-const jobs = await jobPositionSummary("summary");
-const { start, data, bodyParagraph } = jobs;
+interface Props {
+  providedCareerPositions: ContentCareers[];
+}
+
+const { providedCareerPositions = [] } = Astro.props;
+
+const currentPositionHeld = await getCollection("positions", ({ data }) => {
+  return data.isCurrent;
+});
+
+// if career positions are provided then skip the summary
+const defaultCurrentPosition =
+  providedCareerPositions.length === 0 ? true : false;
+
+const jobs = defaultCurrentPosition
+  ? await formatContent(currentPositionHeld)
+  : await formatContent(providedCareerPositions);
+
+console.log(defaultCurrentPosition);
 ---
 
 <Box varient="light" Cssvars={{ sectionMarginControl: "0px " }}>
   <Text tag="h2">Current <LinkBreak>Position</LinkBreak></Text>
-  <div class="text_box_content">
-    <div class="dateit_container">
-      <DateIt date={start} />
-      <DateIt varient="endDate" text="to</br>date" />
-    </div>
-    <div>
-      <Text tag="h3">{data?.jobTitle}</Text>
-      <Text tag="p">
-        {bodyParagraph}
-      </Text>
-    </div>
-    <div class="link_container">
-      <InternalLink interPath="./career">Past Positions</InternalLink>
-    </div>
-  </div>
+  {
+    jobs.map((heldPosition) => {
+      const { start, end, data, bodyParagraph } = heldPosition;
+      return (
+        <div class="text_box_content">
+          <div class="dateit_container">
+            <DateIt date={start} />
+            <DateIt varient="endDate" text="to</br>date" />
+          </div>
+          <div>
+            <Text tag="h3">{data?.jobTitle}</Text>
+            <Text tag="p">{bodyParagraph}</Text>
+          </div>
+          <div class="link_container">
+            <InternalLink interPath="./career">Past Positions</InternalLink>
+          </div>
+        </div>
+      );
+    })
+  }
   <style>
     .text_box_content {
       display: grid;

@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { DateIt, InternalLink } from "@components/blocks";
+import { ProfessionalWorkExperience } from "@components/sections";
 import { Text, Box, LinkBreak } from "@components/lib_comps/index";
 
 const allJobs = await getCollection("positions");
@@ -8,6 +8,5 @@ import { PageLayout } from "@layouts/index";
 ---
 
 <PageLayout pageId="career">
-  {allJobs.map((x) => <p>{x.data.jobTitle}</p>)}
-  {JSON.stringify(allJobs)}
+  {allJobs.map((x) => <ProfessionalWorkExperience />)}
 </PageLayout>

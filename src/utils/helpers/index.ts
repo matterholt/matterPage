@@ -1,4 +1,4 @@
 import { definedContentOrder } from "./collections";
-import { jobPositionSummary } from "./job_positions";
+import { formatContent } from "./job_positions";
 
-export { definedContentOrder, jobPositionSummary };
+export { definedContentOrder, formatContent };
