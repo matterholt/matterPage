@@ -30,6 +30,8 @@ const jobs = defaultCurrentPosition
   : await formatContent(careerStuff, "full");
 
 const { start, end, data, bodyParagraph } = jobs;
+
+const { Content, headings } = await careerStuff.render();
 ---
 
 <Box varient="light" Cssvars={{ sectionMarginControl: "0px " }}>
@@ -48,7 +50,14 @@ const { start, end, data, bodyParagraph } = jobs;
     </div>
     <div>
       <Text tag="h3">{data?.jobTitle}</Text>
-      <Text tag="p">{bodyParagraph}</Text>
+
+      {
+        defaultCurrentPosition ? (
+          <Text tag="p">{bodyParagraph}</Text>
+        ) : (
+          <Content />
+        )
+      }
     </div>
 
     {
@@ -63,12 +72,11 @@ const { start, end, data, bodyParagraph } = jobs;
   <style>
     .text_box_content {
       display: grid;
-      grid-template-columns: min-content max(550px) 1fr;
+      grid-template-columns: min-content 5fr 1fr;
     }
     .dateit_container {
       display: grid;
       grid-template-columns: repeat(2, 85px);
-      place-items: center;
       /* grid-template-rows: repeat(2, 100px); */
     }
     .link_container {

@@ -1,4 +1,6 @@
 ---
+layout: ../../layouts/career_writeups/CareerWriteups.astro
+
 workingDate: 2005-05 / 2013-06
 employer: Ftech R&D North America
 location: Troy, Ohio

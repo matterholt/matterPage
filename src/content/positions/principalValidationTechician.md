@@ -1,4 +1,6 @@
 ---
+layout: ../../layouts/career_writeups/CareerWriteups.astro
+
 workingDate: 2017-04 / 2021-04
 employer: Ftech R&D North America
 location: Troy, Ohio
@@ -7,8 +9,6 @@ type: Automotive Validation2 Engineering
 isCurrent: false
 jobId: 2
 ---
-
-## Description
 
 In 2005 I joined the CAE / Validation group, The group was a new group and consist of 4 people including me. I needed to learn on my own, to be adaptable to any new jobs presented to the group. Being a newly establish group I established best practices and methods that are still in use today. In my 10 plus years of experience, I have participated in difficult competitions that challenge the spirit to achieve difficult performance targets. To have the grit to accomplish projects to meet tough deadlines Above all, it is important to me to continually learn from peers and to help others succeed in their careers.
 

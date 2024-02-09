@@ -1,4 +1,6 @@
 ---
+layout: ../../layouts/career_writeups/CareerWriteups.astro
+
 workingDate: 2022-03 / 2022-05
 employer: Ftech R&D North America
 location: Troy, Ohio
@@ -7,8 +9,6 @@ type: Automotive Design Engineering
 isCurrent: false
 jobId: 3
 ---
-
-## Description
 
 Join Design group to challenge myself and to learn more about the business. To work with client and other groups to build chaises for OEM. Provide support to fellow teammates, due to my experience performing analysis on similar
 

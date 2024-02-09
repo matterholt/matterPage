@@ -8,9 +8,19 @@ const allJobs = await getCollection("positions");
 ---
 
 <PageLayout pageId="career">
-  {
-    allJobs.map((x) => (
-      <ProfessionalWorkExperience providedCareerPositions={x} />
-    ))
-  }
+  <div class="career_box">
+    {
+      allJobs.map((x) => (
+        <ProfessionalWorkExperience providedCareerPositions={x} />
+      ))
+    }
+  </div>
 </PageLayout>
+<style>
+  .career_box {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 70px;
+  }
+</style>
