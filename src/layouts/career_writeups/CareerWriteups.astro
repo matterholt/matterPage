@@ -14,6 +14,7 @@
     text-align: center;
     font-size: 1.2em;
     font-weight: 700;
+
     margin-bottom: 10px;
     text-transform: uppercase;
     grid-column: 2;
@@ -21,6 +22,7 @@
   }
   .writeup_content p {
     margin-top: 45px;
+    margin-bottom: 45px;
     line-height: 30px;
   }
   .writeup_content ul {
@@ -34,6 +36,12 @@
         margin: 0px;
         /* line-height: 10px; */
       }
+    }
+  }
+  @media (max-width: 930px) {
+    .writeup_content {
+      display: flex;
+      flex-direction: column;
     }
   }
 </style>

@@ -1,13 +1,16 @@
 ---
 import { getCollection } from "astro:content";
 import { ProfessionalWorkExperience } from "@components/sections";
-import { Text, Box, LinkBreak } from "@components/lib_comps/index";
+import { Text, Heading } from "@components/lib_comps/index";
 import { PageLayout } from "@layouts/index";
 
 const allJobs = await getCollection("positions");
 ---
 
 <PageLayout pageId="career">
+  <Heading>
+    <Text tag="h2">Career</Text>
+  </Heading>
   <div class="career_box">
     {
       allJobs.map((x) => (
