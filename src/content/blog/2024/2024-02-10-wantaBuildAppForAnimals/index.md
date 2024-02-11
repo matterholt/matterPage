@@ -3,7 +3,7 @@ layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
 title: "Django App for tracking my animals"
 pubDate: 2024-02-10
 
-published: false
+published: true
 slug: "django app htmx animal tracker "
 tags: ["server", "django", "app"]
 ---
@@ -24,14 +24,14 @@ I can keep adding to an app till I get over whelmed and bail on app due to the s
 
 ### Data
 
-Keeping the app at a minimal viable product, plan on having a data table with with just animal specs.
+Keeping the app at a minimal viable product, plan on having a data table with with just animal species and general information pertaining to the animal. I think the mother/father
 
-Animal_Species
+<strong>Animal_Species</strong>
 
 - breed
 - species
 
-Animal_Specs
+<strong>Animal_Specs</strong>
 
 - Name/id
 - mother

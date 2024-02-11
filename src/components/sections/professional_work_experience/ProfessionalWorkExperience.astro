@@ -53,7 +53,9 @@ const { Content, headings } = await careerStuff.render();
 
       {
         defaultCurrentPosition ? (
-          <Text tag="p">{bodyParagraph}</Text>
+          <Text class="text_postion" tag="p">
+            {bodyParagraph}
+          </Text>
         ) : (
           <Content />
         )
@@ -77,12 +79,24 @@ const { Content, headings } = await careerStuff.render();
     .dateit_container {
       display: grid;
       grid-template-columns: repeat(2, 85px);
-      /* grid-template-rows: repeat(2, 100px); */
+      grid-area: dateit;
     }
     .link_container {
       place-self: center;
       align-self: center;
       justify-self: center;
+      grid-area: linkit;
+    }
+    .text_postion {
+      grid-area: content;
+    }
+
+    @media (max-width: 930px) {
+      .text_box_content {
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: 200px 1fr;
+        grid-template-areas: "dateit content" "linkit content";
+      }
     }
   </style>
 </Box>
