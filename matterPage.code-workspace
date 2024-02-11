@@ -10,7 +10,7 @@
             "path":"./src/pages"
         },
         {
-            "path":"./src/components"
+            "path":"./src"
 
         }
 
