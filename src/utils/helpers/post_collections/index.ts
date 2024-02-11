@@ -21,7 +21,9 @@ function sortByYears(completeBlogContent) {
 }
 
 async function filterCollectionsBy(collectionType) {
-  const allBlogPosts = await getCollection("blog");
+  const allBlogPosts = await getCollection("blog", ({ data }) => {
+    return data.published;
+  });
   const writeUpByYears = await sortByYears(allBlogPosts);
   const valueStoredInMap = [...writeUpByYears.keys()];
 
