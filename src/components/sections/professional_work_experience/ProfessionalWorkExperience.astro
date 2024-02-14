@@ -75,6 +75,7 @@ const { Content, headings } = await careerStuff.render();
     .text_box_content {
       display: grid;
       grid-template-columns: min-content 5fr 1fr;
+      grid-template-areas: "dateit content linkit ";
     }
     .dateit_container {
       display: grid;
@@ -95,6 +96,7 @@ const { Content, headings } = await careerStuff.render();
       .text_box_content {
         grid-template-columns: min-content 1fr;
         grid-template-rows: 200px 1fr;
+        min-height: 580px;
         grid-template-areas: "dateit content" "linkit content";
       }
     }
