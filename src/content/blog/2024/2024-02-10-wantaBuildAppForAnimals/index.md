@@ -1,11 +1,11 @@
 ---
 layout: ../../../../layouts/writeups/MdWriteUpLayout.astro
-title: "Django App for tracking my animals"
+title: "Wanta: Setup Project to tracking my animals"
 pubDate: 2024-02-10
 
-published: true
+published: false
 slug: "django app htmx animal tracker "
-tags: ["server", "django", "app"]
+tags: ["wanta", "server", "django", "app"]
 ---
 
 ## Introduction
@@ -18,26 +18,46 @@ Django because it server, I haven't done too much work on the server would like 
 
 Htmx : this one is a last minute addition, currently is on the hype train but it sounds interesting to me. It's simple and light weight and has a different way to tackle front end interactions.
 
-## Getting set up
+## Scope 
 
-I can keep adding to an app till I get over whelmed and bail on app due to the shear size and complication. I could see tracking multiple thing but I need to narrow my focus so I am able to "release" something into the world.
+- Add any new animals that have arrived on the farm
+- Document animal relations
+- Track animal health and other events
 
-### Data
+## Stories
 
-Keeping the app at a minimal viable product, plan on having a data table with with just animal species and general information pertaining to the animal. I think the mother/father
+- a page to see all animal on the farm
+- form to add new animal
+- pages for each animal to where it can add a new status update 
+- on animals page, if they have children have them listed
+
+## Note
+
+I can keep adding to an app till I get over whelmed and bail on app due to the shear size and complication. I could see tracking multiple thing but I need to narrow my focus so I am able to "release" something into the world. So keeping the app at a minimal viable product, plan on having a data table with with just animal species and general information pertaining to the animal. 
+
+## Data
 
 <strong>Animal_Species</strong>
 
 - breed
 - species
 
-<strong>Animal_Specs</strong>
+<strong>Animal_GeneralInfo</strong>
 
 - Name/id
 - mother
 - father
-- sex
+- male/female
 - date of arrival
+
+<strong>Animal_status_updates</strong>
+
+- status
+- notes 
+
+## Stack Set up
+
+
 
 ### Django
 
@@ -48,8 +68,28 @@ Keeping the app at a minimal viable product, plan on having a data table with wi
   - exit out: deactivate
   - packages: pip freeze > requirements.txt
 - Install django
-  - render "Add Animal" form
-  - render list of all Animals
+  - active venv, install Django
+  - django-admin startproject livestocks
+  - cd livestocks
+  - python3 manage.py runserver
+  - http://127.0.0.1:8000/
+  
+### HTMX
+
+- Install
+  - '<script src="https://unpkg.com/htmx.org@1.3.3"></script>'
+- add script to template
+ 
+
+yeah thats it. 
+
+
+
+## Conslusion
+
+I have a basic stucture for an App and feel like that I got a good base to start building something. The Tech listed the main tools that I want to use. I pretty sure once I get into I'll be adding more, but I want to get something done. Any new additions I provide a note on what get added and when. 
+
+[github repo](https://github.com/matterholt/livestock_rollcall/tree/3ef5d9c13da4a10c9abf9bcaef5d0ffeb98c4d9f)
 
 ## Resources
 
