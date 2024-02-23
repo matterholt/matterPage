@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import { PageLayout } from "@layouts/index";
 
-import { Text } from "@components/lib_comps";
+import { Text, Box } from "@components/lib_comps";
 
 const accomplishedDates = await getCollection("accomplishDates");
 
@@ -42,44 +42,79 @@ for (var entry of collectCollection) {
   }
 }
 const sortedDateRange = [...yearRange].sort((a: number, b: number) => b - a);
+
+const colorThemes = {
+  developer: "rgb(89, 46, 131)",
+  automotive: "rgb(22, 81, 126)",
+  personal: "rgb(191, 144, 43)",
+};
 ---
 
 <PageLayout pageId="dates">
-  <Text tag="h1">The professional/personal accomplishments</Text>
-  <ul>
-    {
-      sortedDateRange.map((year) => {
-        return dateSorts.get(year).map((contentItems) => (
-          <li class:list={[contentItems.type, "base"]}>
-            <h3 class="year">{year}</h3>
-            <p set:html={contentItems.entries} />
-          </li>
-        ));
-      })
-    }
-  </ul>
+  <Text tag="h1">Professional / Personal<br /> accomplishments</Text>
+  <div>
+    <Text tag="p">automotive</Text>
+    <Text tag="p">personal</Text>
+    <Text tag="p">developer</Text>
+  </div>
+  <div class="accomplishment_list">
+    <Box varient="dark" class="container_dates">
+      <ul>
+        {
+          sortedDateRange.map((year) => {
+            return dateSorts.get(year).map((contentItems) => (
+              <li class:list={[contentItems.type, "base"]}>
+                <h3 class="year">{year}</h3>
+                <p set:html={contentItems.entries} />
+              </li>
+            ));
+          })
+        }
+      </ul>
+    </Box>
+  </div>
 </PageLayout>
 <style>
-  ul {
+  .accomplishment_list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .container_dates {
+    padding: 40px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  ul {
+    display: flex;
+    background-color: var(--main_black);
+    flex-direction: column;
+    width: 50%;
+    color: var(--main_white);
+  }
+  li {
+    /* background-color: rgba(255, 255, 255, 0.479); */
   }
 
   .base {
-    margin: 10px;
+    border-radius: 5px;
+    margin: 5px;
     display: flex;
     gap: 10px;
-    padding: 2px;
-    border-radius: 5px;
+    padding: 10px;
   }
   .developer {
-    border: 2px solid rgba(102, 51, 153, 0.8);
+    background: rgba(89, 46, 131, 0.377);
   }
 
   .personal {
-    border: 2px solid rgba(102, 51, 153, 0.5);
+    background: rgba(191, 144, 43, 0.411);
   }
   .automotive {
-    border: 2px solid rgba(102, 51, 153, 0.2);
+    background: rgba(22, 81, 126, 0.274);
   }
 </style>

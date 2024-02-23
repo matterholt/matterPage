@@ -7,14 +7,14 @@ const collectCollection = accomplishedDates.map((entry) => {
   return { [collectionKey]: colectionEntry };
 });
 
-function timeLineDateSort() {
-  for (var entry of collectCollection) {
-    const collectionKey = Object.keys(entry);
-    const collectionEntry = Object.values(entry).flat();
+function sortTimelineDates() {
+  for (const entryCollections of collectCollection) {
+    const [collectionKey, ...r] = Object.keys(entryCollections);
+    const collectionEntry = Object.values(entryCollections).flat();
 
-    for (const entry of collectionEntry) {
-      const rg = /\(([^)]+)\)\s*(.+)$/;
-      const matchItem = entry.match(rg);
+    for (let entry of collectionEntry) {
+      const dateRegex = /\(([^)]+)\)\s*(.+)$/;
+      const matchItem = entry.match(dateRegex);
       const dateKey = matchItem?.[1] || "00";
       const dataContent = matchItem?.[2] || "";
 
@@ -24,15 +24,12 @@ function timeLineDateSort() {
         const dateKeyValue = dateSorts.get(dateKey);
         dateSorts.set(dateKey, [
           ...dateKeyValue,
-          { entries: dataContent, type: collectionKey?.[0] },
+          { entries: dataContent, type: collectionKey },
         ]);
-        continue;
       }
-      dateSorts.set(dateKey, [
-        { entries: dataContent, type: collectionKey?.[0] },
-      ]);
-      continue;
+      dateSorts.set(dateKey, [{ entries: dataContent, type: collectionKey }]);
     }
   }
 }
+
 const sortedDateRange = [...yearRange].sort((a: number, b: number) => b - a);

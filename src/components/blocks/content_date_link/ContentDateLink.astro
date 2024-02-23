@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+
+import type { ContentCareers } from "@utils/types";
+import { DateIt, InternalLink } from "@components/blocks";
+import { Text, Box, LinkBreak } from "@components/lib_comps/index";
+import { formatContent } from "@utils/helpers";
+---
+
+<Box varient="light" Cssvars={{ sectionMarginControl: "0px " }}>
+  <div class="content_container">
+    <div>Date</div>
+
+    <div class="textBody_container">
+      <slot< div>
+        <div>Link to page</div>
+      </slot<>
+    </div>
+
+    <style>
+      .content_container {
+        display: grid;
+        grid-template-columns: min-content 5fr 1fr;
+        grid-template-areas: "dateit content linkit ";
+      }
+      .dateit_container {
+        display: grid;
+        grid-template-columns: repeat(2, 85px);
+        grid-area: dateit;
+      }
+      .link_container {
+        place-self: center;
+        align-self: center;
+        justify-self: center;
+        grid-area: linkit;
+      }
+      .textBody_container {
+        grid-area: content;
+      }
+
+      @media (max-width: 930px) {
+        .content_container {
+          grid-template-columns: min-content 1fr;
+          grid-template-rows: 200px 1fr;
+          grid-template-areas: "dateit content" "linkit content";
+        }
+      }
+    </style>
+  </div>
+</Box>
