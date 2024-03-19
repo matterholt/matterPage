@@ -1,7 +1,6 @@
 ---
 import Head from "../html/Head.astro";
 import { NavBar } from "@components/blocks";
-import { Logo } from "@components/lib_comps";
 
 import { Footer } from "../../components/sections";
 
@@ -13,7 +12,6 @@ const { pageId } = Astro.props;
   <body id={pageId}>
     <header>
       <NavBar />
-      <Logo />
     </header>
 
     <slot />
