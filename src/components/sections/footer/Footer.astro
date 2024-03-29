@@ -1,9 +1,7 @@
 ---
-import { Box,Text ,BentoBox} from "@components/lib_comps/";
+import { Box,Text ,BentoBox,Logo} from "@components/lib_comps/";
 import { BottomCurve } from "@components/svg";
-
-import Stackbliz from "@components/Stackbliz.astro";
-import Replit from "@components/Replit.astro";
+import {SocialLinkCode} from "@components/blocks"
 
 import SocialLink from "@components/blocks/SocialLink.jsx";
 ---
@@ -12,21 +10,29 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
   <Box varient="dark" class="footer_layout">
     <BentoBox class="footer_code_playground">
       <Text tag="h5">code playground</Text>
-      <Stackbliz />
-      <Replit />
+    <BentoBox>
+    <SocialLinkCode propChoice="stackblitz" />
+  </BentoBox>
+  <BentoBox>
+    <SocialLinkCode propChoice="replit" />
+  </BentoBox>
+  <BentoBox>
+    <SocialLinkCode propChoice="codepen" />
+  </BentoBox>
     </BentoBox>
 <BentoBox  class="footer_socilal_links">
 
   <SocialLink />
 </BentoBox>
 <BentoBox class="footer_site_logo">
+  <Logo size="50mm"/>
 </BentoBox>
 
     <BentoBox class="footer_other_content">
 
-    <p class="m-2 text-s font-thin">
-      All Rights Reserved |Website & Hosting by Matterholt made
-    </p>
+    <Text tag="p">
+      All Rights Reserved</br>Website & Hosting by Matterholt made
+    </Text>
 </BentoBox>
   </Box>
 </footer>
@@ -43,23 +49,38 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
   }
   .footer_layout{
    display: grid;
+   padding: 20px 0px 20px 0px;
+   gap:20px;
    grid-template-columns: repeat(3, 1fr);
    grid-template-rows: repeat(2, 1fr);
    grid-template-areas:
-     "footerCodePlayground footerOtherContent footerSiteLogo"
-     "footerCodePlayground footerSocilalLinks footerSiteLogo";
-  }
-  .footer_code_playground{
-    grid-area: footerCodePlayground;
-  }
-  .footer_socilal_links{
-    grid-area: footerSocilalLinks;
-  }
-  .footer_site_logo{
-    grid-area: footerSiteLogo;
-    background-color: red;
-  }
-  .footer_other_content{
-    grid-area: footerOtherContent;
+     "footerCodePlayground footerSocilalLinks  footerSiteLogo"
+     "footerCodePlayground footerOtherContent footerSiteLogo";
+    }
+    .footer_code_playground{
+      grid-area: footerCodePlayground;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .footer_socilal_links{
+      grid-area: footerSocilalLinks;
+      display: grid;
+      place-items: center;
+
+    }
+    .footer_site_logo{
+      grid-area: footerSiteLogo;    
+      display: grid;
+      place-items: center;
+    }
+    .footer_other_content{
+      color:var(--main_white);
+      grid-area: footerOtherContent;
+      text-align: center;
+      display: grid;
+      place-items: center;
   }
 </style>
