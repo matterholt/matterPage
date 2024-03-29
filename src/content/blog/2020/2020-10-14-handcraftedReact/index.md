@@ -51,7 +51,7 @@ const nestedElem = React.createElement(
       React.createElement("h4", null, "Element"),
     ],
     className: "container",
-  }
+  },
   // "Uncomment this section and a string will generate in the DOM"
 );
 ReactDOM.render(nestedElem, extraCreditRoot);

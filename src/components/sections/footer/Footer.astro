@@ -39,14 +39,10 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
 
 <style>
   footer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    overflow: hidden;
-    max-width: 1440px;
-    color: var(--main_white);
-
 
   }
+
+
   .footer_layout{
    display: grid;
    padding: 20px 0px 20px 0px;
@@ -82,5 +78,13 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
       text-align: center;
       display: grid;
       place-items: center;
+  }
+
+
+  @container (max-width: 375px) {
+    footer {
+      background-color: rebeccapurple;
+      outline: solid;
+    }
   }
 </style>

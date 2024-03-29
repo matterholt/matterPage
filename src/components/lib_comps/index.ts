@@ -9,4 +9,14 @@ import BentoBox from "./bento_box/BentoBox.astro";
 import Text from "./text/Text.astro";
 import Box from "./box/Box.astro";
 
-export { BGImageBase, Box, Alink, Heading, Text, PostIntro, Logo, BentoBox,LinkBreak };
+export {
+  BGImageBase,
+  Box,
+  Alink,
+  Heading,
+  Text,
+  PostIntro,
+  Logo,
+  BentoBox,
+  LinkBreak,
+};

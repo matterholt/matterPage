@@ -30,16 +30,16 @@ async function filterCollectionsBy(collectionType) {
   // return most the post with latest
   const latestDateOfContent = valueStoredInMap.reduce(
     (prevNumb: number, currentLgNumb: number) =>
-      currentLgNumb > prevNumb ? currentLgNumb : prevNumb
+      currentLgNumb > prevNumb ? currentLgNumb : prevNumb,
   );
 
   const otherYearsOfContent = [...valueStoredInMap].filter(
-    (x) => x !== latestDateOfContent
+    (x) => x !== latestDateOfContent,
   );
 
   const mostRecentWriteUps = sortDates(writeUpByYears.get(latestDateOfContent));
   const restOfContent = sortDates(
-    otherYearsOfContent.map((year) => writeUpByYears.get(year)).flat()
+    otherYearsOfContent.map((year) => writeUpByYears.get(year)).flat(),
   );
   if (collectionType === "most_recent") {
     // console.log(mostRecentWriteUps);

@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
 const contact__icons = {
-  textAlign: 'center',
-  display: 'flex',
-  justifyContent: 'right',
+  textAlign: "center",
+  display: "flex",
+  justifyContent: "right",
 };
 
 const contact__icons_a = {
-  fontSize: '1.2rem',
-  color: 'rgb(191, 143, 43)',
-  display: 'flex',
-  flexFlow: 'column',
+  fontSize: "1.2rem",
+  color: "rgb(191, 143, 43)",
+  display: "flex",
+  flexFlow: "column",
   marginRight: 20,
   padding: 10,
 };
@@ -19,7 +19,14 @@ export default function SocialLink() {
   return (
     <div style={contact__icons}>
       <a style={contact__icons_a} href="https://github.com/matterholt">
-        <svg style={{"marginLeft":"14px"}} role="img" viewBox="0 0 24 24" width="35" height="35" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          style={{ marginLeft: "14px" }}
+          role="img"
+          viewBox="0 0 24 24"
+          width="35"
+          height="35"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <title>GitHub icon</title>
           <path
             fill={contact__icons_a.color}
@@ -30,7 +37,14 @@ export default function SocialLink() {
       </a>
 
       <a style={contact__icons_a} href="https://twitter.com/MatterholtDev">
-        <svg style={{"marginLeft":"14px"}} role="img" viewBox="0 0 24 24" width="35" height="35" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          style={{ marginLeft: "14px" }}
+          role="img"
+          viewBox="0 0 24 24"
+          width="35"
+          height="35"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <title>twitter icon</title>
           <path
             fill={contact__icons_a.color}
