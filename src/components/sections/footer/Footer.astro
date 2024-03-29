@@ -1,5 +1,5 @@
 ---
-import { Box } from "@components/lib_comps/";
+import { Box,Text ,BentoBox} from "@components/lib_comps/";
 import { BottomCurve } from "@components/svg";
 
 import Stackbliz from "@components/Stackbliz.astro";
@@ -9,16 +9,25 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
 ---
 
 <footer>
-  <Box varient="dark">
-    <BottomCurve />
+  <Box varient="dark" class="footer_layout">
+    <BentoBox class="footer_code_playground">
+      <Text tag="h5">code playground</Text>
+      <Stackbliz />
+      <Replit />
+    </BentoBox>
+<BentoBox  class="footer_socilal_links">
 
-    <Stackbliz />
-    <Replit />
-    <SocialLink />
+  <SocialLink />
+</BentoBox>
+<BentoBox class="footer_site_logo">
+</BentoBox>
 
-    <p class="m-2 text-xs font-thin">
+    <BentoBox class="footer_other_content">
+
+    <p class="m-2 text-s font-thin">
       All Rights Reserved |Website & Hosting by Matterholt made
     </p>
+</BentoBox>
   </Box>
 </footer>
 
@@ -27,5 +36,30 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     overflow: hidden;
+    max-width: 1440px;
+    color: var(--main_white);
+
+
+  }
+  .footer_layout{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+   grid-template-areas:
+     "footerCodePlayground footerOtherContent footerSiteLogo"
+     "footerCodePlayground footerSocilalLinks footerSiteLogo";
+  }
+  .footer_code_playground{
+    grid-area: footerCodePlayground;
+  }
+  .footer_socilal_links{
+    grid-area: footerSocilalLinks;
+  }
+  .footer_site_logo{
+    grid-area: footerSiteLogo;
+    background-color: red;
+  }
+  .footer_other_content{
+    grid-area: footerOtherContent;
   }
 </style>
