@@ -25,7 +25,7 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
   <SocialLink />
 </BentoBox>
 <BentoBox class="footer_site_logo">
-  <Logo size="50mm"/>
+  <Logo size="50mm" color="rgb(191, 143, 43)"/>
 </BentoBox>
 
     <BentoBox class="footer_other_content">
@@ -33,17 +33,16 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
     <Text tag="p">
       All Rights Reserved</br>Website & Hosting by Matterholt made
     </Text>
+    
 </BentoBox>
   </Box>
 </footer>
 
 <style>
-  footer {
-
-  }
 
 
   .footer_layout{
+width: 100vw;
    display: grid;
    padding: 20px 0px 20px 0px;
    gap:20px;
@@ -55,11 +54,14 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
     }
     .footer_code_playground{
       grid-area: footerCodePlayground;
-      padding: 0 40px;
+      padding: 40px;
+
       display: flex;
       justify-content: space-evenly;
       text-align: center;
       text-transform: uppercase;
+      gap:20px;
+
     }
     .footer_socilal_links{
       grid-area: footerSocilalLinks;
@@ -71,6 +73,7 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
       grid-area: footerSiteLogo;    
       display: grid;
       place-items: center;
+      padding:50px;
     }
     .footer_other_content{
       color:var(--main_white);
@@ -81,10 +84,17 @@ import SocialLink from "@components/blocks/SocialLink.jsx";
   }
 
 
-  @container (max-width: 375px) {
-    footer {
-      background-color: rebeccapurple;
-      outline: solid;
+  @media (max-width: 640px) { 
+    .footer_layout {
+      padding: 10px;
+      grid-template-columns: repeat(1, 1fr);
+     grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+      "footerSiteLogo"
+      "footerSocilalLinks"
+     "footerCodePlayground"
+     "footerOtherContent";
+     
     }
   }
 </style>
