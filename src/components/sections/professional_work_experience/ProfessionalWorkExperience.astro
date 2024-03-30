@@ -3,14 +3,14 @@ import { getCollection } from "astro:content";
 
 import type { ContentCareers } from "@utils/types";
 import { DateIt, InternalLink } from "@components/blocks";
-import { Text, Box, LinkBreak } from "@components/lib_comps/index";
+import { Text, Box, LinkBreak, BentoBox } from "@components/lib_comps/index";
 import { formatContent } from "@utils/helpers";
 
 interface Props {
-  providedCareerPositions: ContentCareers[];
+  providedCareerPositions?: ContentCareers[];
 }
 
-const { providedCareerPositions = null } = Astro.props;
+const { providedCareerPositions = [] } = Astro.props;
 
 const currentPositionHeld = async () => {
   const [mostRecent, ...r] = await getCollection("positions", ({ data }) => {
@@ -19,7 +19,7 @@ const currentPositionHeld = async () => {
   return mostRecent;
 };
 // if career positions are provided then skip the summary
-const defaultCurrentPosition = !providedCareerPositions ? true : false;
+const defaultCurrentPosition = providedCareerPositions.length === 0 ? true : false;
 
 const careerStuff = defaultCurrentPosition
   ? await currentPositionHeld()
@@ -34,7 +34,7 @@ const { start, end, data, bodyParagraph } = jobs;
 const { Content, headings } = await careerStuff.render();
 ---
 
-<Box varient="light" Cssvars={{ sectionMarginControl: "0px " }}>
+<Box class="customBox"  Cssvars={{ sectionMarginControl: "0px " }}>
   {
     defaultCurrentPosition ? (
       <Text tag="h2">
@@ -48,7 +48,7 @@ const { Content, headings } = await careerStuff.render();
       <DateIt date={start} />
       <DateIt varient="endDate" text={end} />
     </div>
-    <div>
+    <BentoBox>
       <Text tag="h3">{data?.jobTitle}</Text>
 
       {
@@ -60,7 +60,7 @@ const { Content, headings } = await careerStuff.render();
           <Content />
         )
       }
-    </div>
+    </BentoBox>
 
     {
       defaultCurrentPosition ? (
@@ -72,6 +72,10 @@ const { Content, headings } = await careerStuff.render();
   </div>
 
   <style>
+    .customBox{
+      padding: 0px 20px;
+      padding-bottom: 50px; 
+    }
     .text_box_content {
       display: grid;
       grid-template-columns: min-content 5fr 1fr;

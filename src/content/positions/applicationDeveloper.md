@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/career_writeups/CareerWriteups.astro
 
-workingDate: 2022-06-01 / present
+workingDate: 2022-06-01 / today
 employer: Stratacache
 location: Dayton, Ohio
 jobTitle: Application Developer

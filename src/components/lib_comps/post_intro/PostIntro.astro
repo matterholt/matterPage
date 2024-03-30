@@ -65,7 +65,7 @@ const [introhead, introContent, ...r] = postFrontMatter.body
     grid-template-areas:
       "title title"
       "date writeup_content"
-      "date continue";
+      " .  continue";
   }
   .simple {
     display: grid;
@@ -90,6 +90,7 @@ const [introhead, introContent, ...r] = postFrontMatter.body
   }
   .content_placement {
     grid-area: writeup_content;
+    padding-top:2.5%;
   }
   .link_placement {
     grid-area: continue;
