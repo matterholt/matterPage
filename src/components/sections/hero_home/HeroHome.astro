@@ -6,7 +6,7 @@ import { NavBar } from "@components/blocks";
 <Box class="hero_custom_container" varient="light">
   <div class="hero_main">
     <div class="logo_float">
-      <Logo size="200mm" />
+      <Logo size="100%" />
     </div>
     <div class="text_container">
       <Text tag="h2" class="hero_text-main">
@@ -30,13 +30,12 @@ import { NavBar } from "@components/blocks";
 </Box>
 <style>
   .text_container {
-    margin-right: 10px;
     --ptag_fontSize: 1.4em;
     --ptag_line-height: 2.5;
+    width: 100%;
   }
   header {
-    background-color: white;
-    height: 400px;
+    min-height: 400px;
   }
 
   .hero_custom_container {
@@ -48,18 +47,23 @@ import { NavBar } from "@components/blocks";
     text-align: right;
     display: flex;
     justify-content: center;
-    height: 750px;
     overflow: hidden;
-    margin: 40px 20px;
+     width: 100vw;
+
   }
   .hero_text-main {
     line-height: 1.5;
   }
+  .logo_float{
+    width: 80vw;
+  }
 
-  .logo_float {
+  @media (max-width: 640px) { 
+    .hero_main {
+    display: flex;
+    flex-direction: column;
+
+    }
   }
-  .hero_img {
-    float: right;
-    shape-outside: url("/images/hero/profile2_me2_b&w.png");
-  }
+
 </style>
