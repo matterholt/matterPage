@@ -97,4 +97,16 @@ width: 100vw;
      
     }
   }
+  @media (max-width: 768px) { 
+    .footer_layout {
+      padding: 10px;
+      grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: repeat(3, 1fr);
+      grid-template-areas:
+      "footerSiteLogo footerSiteLogo"
+     "footerCodePlayground footerCodePlayground"
+     "footerOtherContent footerSocilalLinks ";
+     
+    }
+  }
 </style>

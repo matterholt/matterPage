@@ -4,7 +4,7 @@ interface Props {
   postFrontMatter: any[];
 }
 import { DateIt } from "@components/blocks";
-import { Text, Alink } from "@components/lib_comps/index";
+import { Text, Alink,BentoBox } from "@components/lib_comps/index";
 
 const { postFrontMatter, varient = "full" } = Astro.props;
 
@@ -38,9 +38,11 @@ const [introhead, introContent, ...r] = postFrontMatter.body
 
   {
     varient !== "simple" ? (
-      <Text tag="p" class="content_placement">
+      <BentoBox class="content_placement">
+      <Text tag="p" >
         {introContent}
       </Text>
+    </BentoBox>
     ) : (
       ""
     )
@@ -58,11 +60,11 @@ const [introhead, introContent, ...r] = postFrontMatter.body
   .full {
     display: grid;
     margin: 15px 0px;
-    grid-template-columns: 80px 70%;
-    gap: 5px;
+    grid-template-columns: 80px 1fr;
+    gap: 15px;
     grid-template-areas:
-      "date title"
-      "date content"
+      "title title"
+      "date writeup_content"
       "date continue";
   }
   .simple {
@@ -71,6 +73,9 @@ const [introhead, introContent, ...r] = postFrontMatter.body
   .postIntro_header {
     display: flex;
     justify-content: space-between;
+    place-self: center;
+    height: 80%;
+    grid-area: title;
   }
   .postIntro_link {
     display: flex;
@@ -78,15 +83,28 @@ const [introhead, introContent, ...r] = postFrontMatter.body
   }
   .dateit_placement {
     grid-area: date;
-    background-color: rebeccapurple;
   }
   .title_placement {
     grid-area: title;
+    font-size: 30px;
   }
   .content_placement {
-    grid-area: content;
+    grid-area: writeup_content;
   }
   .link_placement {
     grid-area: continue;
+  }
+  @media (max-width: 640px) { 
+    .full {
+    display: grid;
+    grid-template-columns: 80px 70%;
+    justify-content: center;
+    gap: 5px;
+    grid-template-areas:
+      "date title"
+      "writeup_content writeup_content"
+      "continue continue";
+  }
+
   }
 </style>
