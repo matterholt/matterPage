@@ -3,7 +3,7 @@ interface Props {
   varient?: string;
   postFrontMatter: any[];
 }
-import { DateIt } from "@components/blocks";
+import { DateIt ,TitleWDate } from "@components/blocks";
 import { Text, Alink,BentoBox } from "@components/lib_comps/index";
 
 const { postFrontMatter, varient = "full" } = Astro.props;
@@ -23,18 +23,14 @@ const [introhead, introContent, ...r] = postFrontMatter.body
 ---
 
 <div class:list={[varient, "writeup_summary"]}>
-  {
-    varient !== "simple" ? (
-      <DateIt class="dateit_placement" date={`${year}-${month}-${date}`} />
-    ) : (
-      <Text tag="p">{`${year}-${month}-${date}`} </Text>
-    )
-  }
-  <div class="postIntro_header">
-    <Text tag="h4" class="title_placement">
-      {postFrontMatter?.data?.title}
-    </Text>
-  </div>
+  <TitleWDate 
+  title={postFrontMatter?.data?.title}}
+  start={`${year}-${month}-${date}`}
+  
+
+  />
+
+
 
   {
     varient !== "simple" ? (
@@ -62,6 +58,7 @@ const [introhead, introContent, ...r] = postFrontMatter.body
     margin: 15px 0px;
     grid-template-columns: 80px 1fr;
     gap: 15px;
+    width: 100vw;
     grid-template-areas:
       "title title"
       "date writeup_content"

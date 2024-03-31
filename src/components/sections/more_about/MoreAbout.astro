@@ -78,14 +78,13 @@ function columnSort(entryNumb) {
     overflow: hidden;
     display: grid;
     width: 100%;
+    
     grid-template-columns: 1fr 1fr;
     gap:20px;
-    grid-template-rows: 90px 150px 1fr 90px;
+    grid-template-rows:  150px 1fr ;
     grid-template-areas:
-      "cutout_top cutout_top"
       "title right_column"
       "left_column right_column"
-      "cutout-bottom cutout-bottom";
   }
   .card_columns-right {
     grid-area: right_column;
@@ -115,14 +114,15 @@ function columnSort(entryNumb) {
       --card_columns-right_padding-right: 0px;
       --card_columns-right_margin-top: 0px;
       --card_columns_layout-margin-bottom: 0px;
+      height: min-content;
+      margin: 150px 0px;
       grid-template-columns: 100vw;
-      grid-template-rows: 90px 150px 1fr 1.7fr 90px;
+      grid-template-rows: 150px auto auto;
+
       grid-template-areas:
-        "cutout_top "
         "title "
         "left_column"
         "right_column"
-        "cutout-bottom";
     }
   }
 </style>

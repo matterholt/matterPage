@@ -1,13 +1,17 @@
 ---
 const {
+  varient = "base",
   class: className,
   ...rest
 } = Astro.props;
 
 
+
+const isBase = varient === "base" ? "flex flex-col ":""; 
+
 ---
 
-<div class:list={["flex flex-col bg-main_black border rounded-md",
+<div class:list={[isBase, "bg-main_black border rounded-md",
  className]}   {...rest}>
 <slot/>
 </div>
