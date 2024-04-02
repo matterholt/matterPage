@@ -1,10 +1,22 @@
 ---
 import { mainNavigation } from "@routes/mainNavigation";
+const { currentPage } = Astro.props;
+const filterOutActive = mainNavigation.filter((link) => link.isPublish);
 ---
 
 <div class="nav_inflineFloat">
   <nav>
-    {mainNavigation.map((link) => <a href={link.path}>{link.title}</a>)}
+    {
+      filterOutActive.map((link) => (
+        <a href={link.path}>
+          <div
+            class:list={["navBox", { viewingPage: currentPage === link.title }]}
+          >
+            {link.title}
+          </div>
+        </a>
+      ))
+    }
   </nav>
 </div>
 
@@ -13,13 +25,22 @@ import { mainNavigation } from "@routes/mainNavigation";
     display: flex;
     position: fixed;
     z-index: 100;
-    left: 15%;
-    width: 70vw;
-    margin: 0 10px;
+    width: 100vw;
     justify-content: space-evenly;
     background-color: var(--main_black);
     color: var(--main_white);
     text-transform: uppercase;
-    border-bottom: solid black 2px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 25px;
+  }
+  .navBox {
+    padding: 10px;
+    border-bottom: 2px solid var(--main_white);
+  }
+
+  .viewingPage {
+    color: var(--main_black);
+    background-color: var(--main_white);
   }
 </style>

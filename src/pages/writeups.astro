@@ -1,23 +1,37 @@
 ---
-import Main from "@layouts/page_layout/PageLayout.astro";
-import { PostIntro, Text, Heading } from "@components/lib_comps/";
+import { PageLayout } from "@layouts/index";
+import { PostIntro, Text, BentoBox, Logo } from "@components/lib_comps/";
 import { filterCollectionsBy } from "@utils/helpers/post_collections/";
+
 
 const [currentYear, OtherYears] = await filterCollectionsBy("current_year");
 ---
-
-<Main pageId="writeups">
-  <Heading>
+<PageLayout pageId="write ups">
+  <div class="pt-40  pb-20 text-center  ">
+    <BentoBox class="page_header">
+      <Logo 
+      color="var(--main_gold)"
+      />
     <Text tag="h2">latest Posts</Text>
-  </Heading>
+  </BentoBox>
+  </div>
   {currentYear.map((x) => <PostIntro postFrontMatter={x} />)}
   <Text tag="h2">Previous Years</Text>
   {OtherYears.map((x) => <PostIntro varient="simple" postFrontMatter={x} />)}
-</Main>
+</PageLayout>
 
 <style>
   .blog_sections {
     margin-bottom: 100px;
+  }
+  .page_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    h2{
+      margin-left: 25%;
+      text-transform: capitalize;
+    }
   }
   .section_header {
     font-weight: 700;
