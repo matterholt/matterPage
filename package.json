@@ -20,6 +20,8 @@
     "tailwindcss": "^3.3.1"
   },
   "devDependencies": {
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "postcss-nesting": "^12.1.1",
     "prettier": "^3.2.5"
   }
 }

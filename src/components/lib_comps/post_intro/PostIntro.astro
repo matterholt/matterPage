@@ -38,9 +38,7 @@ const [introhead, introContent, ...r] = postFrontMatter.body
         {introContent}
       </Text>
     </BentoBox>
-    ) : (
-      ""
-    )
+    ) : ( null )
   }
   <div class="postIntro_link link_placement">
     <Alink varient="base" link={`/posts/${titleLink}/`}>continue...</Alink>
@@ -49,8 +47,7 @@ const [introhead, introContent, ...r] = postFrontMatter.body
 
 <style>
   .writeup_summary {
-    grid-template-columns: 100px 66% 25px;
-    grid-template-areas: "date title ." ". . continue";
+    grid-template-areas: "date title " ".  continue";
   }
   .full {
     display: flex;
@@ -58,6 +55,7 @@ const [introhead, introContent, ...r] = postFrontMatter.body
     margin: 15px 0px;
     grid-template-columns: 80px 1fr;
     gap: 15px;
+    width: 100vw;
   }
   .simple {
     display: grid;
