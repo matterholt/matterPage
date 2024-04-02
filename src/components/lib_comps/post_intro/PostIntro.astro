@@ -26,9 +26,8 @@ const [introhead, introContent, ...r] = postFrontMatter.body
   <TitleWDate 
   title={postFrontMatter?.data?.title}}
   start={`${year}-${month}-${date}`}
-  
-
   />
+
 
 
 
@@ -54,15 +53,11 @@ const [introhead, introContent, ...r] = postFrontMatter.body
     grid-template-areas: "date title ." ". . continue";
   }
   .full {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     margin: 15px 0px;
     grid-template-columns: 80px 1fr;
     gap: 15px;
-    width: 100vw;
-    grid-template-areas:
-      "title title"
-      "date writeup_content"
-      " .  continue";
   }
   .simple {
     display: grid;
@@ -84,6 +79,8 @@ const [introhead, introContent, ...r] = postFrontMatter.body
   .title_placement {
     grid-area: title;
     font-size: 30px;
+    display: flex;
+
   }
   .content_placement {
     grid-area: writeup_content;
@@ -92,17 +89,5 @@ const [introhead, introContent, ...r] = postFrontMatter.body
   .link_placement {
     grid-area: continue;
   }
-  @media (max-width: 640px) { 
-    .full {
-    display: grid;
-    grid-template-columns: 80px 70%;
-    justify-content: center;
-    gap: 5px;
-    grid-template-areas:
-      "date title"
-      "writeup_content writeup_content"
-      "continue continue";
-  }
 
-  }
 </style>
