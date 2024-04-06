@@ -1,21 +1,37 @@
 ---
-import Main from "@layouts/html/Main.astro";
-import { PostIntro, Text, Heading } from "@components/lib_comps";
-import { filterCollectionsBy } from "@utils/post_collections/";
+import { PageLayout } from "@layouts/index";
+import { PostIntro, Text, BentoBox, Logo } from "@components/lib_comps/";
+import { filterCollectionsBy } from "@utils/helpers/post_collections/";
 
-const currentYear = await filterCollectionsBy("current_year");
+
+const [currentYear, OtherYears] = await filterCollectionsBy("current_year");
 ---
-
-<Main pageId="writeups">
-  <Heading>
-    <Text tag="h2">2023 Post</Text>
-  </Heading>
+<PageLayout pageId="write ups">
+  <div class="pt-40  pb-20 text-center  ">
+    <BentoBox class="page_header">
+      <Logo 
+      color="var(--main_gold)"
+      />
+    <Text tag="h2">latest Posts</Text>
+  </BentoBox>
+  </div>
   {currentYear.map((x) => <PostIntro postFrontMatter={x} />)}
-</Main>
+  <Text tag="h2">Previous Years</Text>
+  {OtherYears.map((x) => <PostIntro varient="simple" postFrontMatter={x} />)}
+</PageLayout>
 
 <style>
   .blog_sections {
     margin-bottom: 100px;
+  }
+  .page_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    h2{
+      margin-left: 25%;
+      text-transform: capitalize;
+    }
   }
   .section_header {
     font-weight: 700;
@@ -33,4 +49,3 @@ const currentYear = await filterCollectionsBy("current_year");
     margin: 25px 0px;
   }
 </style>
-<script></script>

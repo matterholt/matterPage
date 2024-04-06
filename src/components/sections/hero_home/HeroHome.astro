@@ -1,89 +1,77 @@
 ---
-import { Text } from "@components/lib_comps";
+import { Box, Text, Logo, BGImageBase } from "@components/lib_comps";
+import { NavBar } from "@components/blocks";
 ---
 
-<header class="">
-  <slot name="Nav" />
+<Box class="hero_custom_container" varient="light">
+  <div class="hero_main">
+    <div class="logo_float">
+      <Logo size="100%" />
+    </div>
+    <div class="text_container">
+      <Text tag="h2" class="hero_text-main">
+        Full Stack developer,<br />
+        Over-all Generalist,
+        <br /> Husband of 1,
+        <br /> Father of 6
+      </Text>
 
-  <div class="top">
-    <div>
-      <div class="top_header-font top_header-layout">
-        <div class="specialChar">M</div>
-        <div class="theRestCar">atterholt</div>
-
-        <div class="specialChar">M</div>
-
-        <div class="theRestCar">ade</div>
+      <div class="hero_text">
+        <Text tag="p">
+          I have had the experience to lead and release multiple projects in
+          automotive. I coordinate with multiple groups and teams to accomplish
+          tasks for the success of the project. Always interested in improving
+          my coding skills and lending hands to others. I want to keep moving
+          forward and making things better than the way I found it.
+        </Text>
       </div>
     </div>
-
-    <p class="mt-4 text-right justify-self-end mr-10">
-      <span class="font-bold text-lg">Matthew Atterholt</span><br />
-      Husband, Father, Developer In Tech.
-    </p>
-    <div class="hero_box">
-      <Text tag="p">
-        I'm all about diving into the latest in web technologies and soaking up
-        new knowledge. Day-to-day, I'm knee-deep in Vue.js and Node.js, but when
-        it comes to personal projects, I've got a soft spot for
-        Svelte.js/SvelteKit and Astro.build, especially for static sites.
-        Lately, I've been exploring Tauri, a native web-based framework, which
-        is nudging me to pick up Rust Lang. What really gets me going is
-        tackling challenges within my team and finding ways to use code and
-        programming to make everyone's tasks a bit smoother and more efficient
-        needs.
-      </Text>
-    </div>
   </div>
-</header>
+  
+</Box>
 <style>
-  .hero_box {
-    width: 50%;
-    place-self: baseline;
-  }
-  .titleBoundry {
-    display: flex;
-    height: min-content;
-  }
-  .top_header-layout {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: repeat(2, 100px);
-    line-height: 100px;
-  }
-  .top_header-font {
-    font-family: "Anton", sans-serif;
-    text-transform: uppercase;
-    font-size: 60px;
-    font-weight: 900;
-    letter-spacing: 8px;
-  }
-
-  .theRestCar {
-    align-items: center;
-    justify-self: flex-start;
-  }
-  .specialChar {
-    background-color: var(--bg-primary);
-    color: var(--accent);
-    font-size: 90px;
-    place-self: center;
-    padding: 5px;
-    padding-left: 10px;
+  .text_container {
+    --ptag_fontSize: 1.4em;
+    --ptag_line-height: 2.5;
+    width: 100%;
   }
   header {
-    max-width: 1024px;
-    margin: 5px;
+    min-height: 400px;
   }
-  .top {
-    display: grid;
-    place-items: center;
-    height: 50vh;
+
+  .hero_custom_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .sub {
-    font-size: 12px;
-    font-weight: 400;
-    margin: 5px 0px;
-    padding: 5px;
+  .hero_main {
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+     width: 100vw;
+
   }
+  .hero_text-main {
+    line-height: 1.5;
+  }
+  .logo_float{
+    width: 80vw;
+  }
+
+  @media (max-width: 640px) { 
+    .hero_main {
+    display: flex;
+    flex-direction: column;
+
+    }
+    .text_container {
+    --ptag_fontSize: 1.3em;
+    --ptag_line-height: 1.4;
+  }
+  .hero_text-main {
+    line-height: 1.2;
+  }
+  }
+
 </style>

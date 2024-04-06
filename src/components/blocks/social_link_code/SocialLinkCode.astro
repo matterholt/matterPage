@@ -1,0 +1,37 @@
+---
+interface Props {
+  propChoice: string;
+} 
+const {propChoice} = Astro.props
+
+
+const codeLinks ={
+  replit: {
+    title : "Replit",
+    link:"https://replit.com/@matterholt"},
+    stackblitz:{
+      title:"Stackblitz",
+      link: 'https://stackblitz.com/@matterholt'},
+    codepen:{
+      title:'Codepen',
+      link: 'https://codepen.io/matterholt-the-dev'
+    }
+}
+---
+
+<div class="social_link-code">
+  <a
+    class="p-4 font-bold uppercase w-40 bg-blue-800 text-center rounded-md m-2 text-zinc-50"
+    class="underline font-extrabold"
+    href={codeLinks?.[propChoice]?.link}>{codeLinks?.[propChoice]?.title}</a
+  >
+</div>
+<style scoped>
+  .social_link-code {
+    display: grid;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+</style>

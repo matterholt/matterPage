@@ -1,0 +1,3 @@
+## Front end developer, Over-all Generalist and a bit of Designer Husband, Father and few other things
+
+I'm all about diving into the latest in web technologies and soaking up new knowledge. Day-to-day, I'm knee-deep in Vue.js and Node.js, but when it comes to personal projects, I've got a soft spot for Svelte.js/SvelteKit and Astro.build, especially for static sites. Lately, I've been exploring Tauri, a native web-based framework, which is nudging me to pick up Rust Lang. What really gets me going is tackling challenges within my team and finding ways to use code and programming to make everyone's tasks a bit smoother and more efficient needs.

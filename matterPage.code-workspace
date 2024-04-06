@@ -1,0 +1,18 @@
+{
+    "folders":[
+        {
+            "path":"./"
+        },
+        {
+            "path":"./src/content"
+        },
+        {
+            "path":"./src/pages"
+        },
+        {
+            "path":"./src"
+
+        }
+
+    ]
+}

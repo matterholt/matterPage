@@ -1,0 +1,40 @@
+---
+import BaseHead from "../html/BaseHead.astro";
+import "@styles/global.css";
+
+import { NavBar } from "@components/blocks";
+
+import { Footer } from "../../components/sections";
+
+const { pageId } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+  <title>Matterholt</title>
+  <meta name="description" content="developer and lover of tech" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+  <body id={pageId}>
+    <div  class="background_wallpaper">
+
+      <header>
+        <NavBar currentPage = {pageId}/>
+      </header>
+      
+      <slot />
+      <Footer />
+    </div>
+    </body>
+</html>
+
+<style>
+  .background_wallpaper {
+    color: var(--main_white, #fff);
+  background: url("./svgs/logo_background-repeat.png") repeat;
+  background-color: var(--main_black, #000);
+  width:100vw;
+
+  }
+</style>

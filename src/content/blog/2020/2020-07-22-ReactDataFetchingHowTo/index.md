@@ -81,7 +81,7 @@ export default function HooksReactTable() {
       <UserTables>
         <BodyForTable userList={usersList.users} />
       </UserTables>
-      <p>{usersList.isFetching ? 'Fetching Users ... ' : ''}</p>
+      <p>{usersList.isFetching ? "Fetching Users ... " : ""}</p>
     </div>
   );
 }

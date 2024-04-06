@@ -1,54 +1,65 @@
 ---
-const { tag, fontSize = undefined, addAClass = [] } = Astro.props;
+const {
+  tag,
+  addAClass = "",
+  Cssvars = {},
+  class: className,
+  ...rest
+} = Astro.props;
 
-const Element = tag || "div";
+const Element = tag || "span";
 // font-black text-3xl text-center mt-2 p-5 uppercase"
 ---
 
-<Element class:list={["content_commonformat", ...addAClass]}>
+<Element class:list={["content_commonformat", className]} {...rest}>
   <slot />
 </Element>
 
-<style scoped>
-  h4.content_commonformat {
+<style define:vars={addAClass} scoped>
+  h4 {
     font-size: 20px;
     font-weight: 600;
     letter-spacing: -0.5px;
     line-height: 30px;
   }
 
-  h3.content_commonformat {
+  h3 {
     font-size: 24px;
     font-weight: 600;
     letter-spacing: -0.6px;
     line-height: 32px;
   }
 
-  h2.content_commonformat {
-    font-size: 40px;
+  h2 {
     font-weight: 700;
     letter-spacing: -0.75px;
-    line-height: 40px;
+    line-height: 42px;
+    font-size: 55px;
+    line-height: 1.2;
   }
-  h1.content_commonformat {
+
+  h1 {
     font-size: 48px;
     font-weight: 700;
     letter-spacing: -0.75px;
     line-height: 40px;
   }
-  p.content_commonformat {
-    font-size: 16px;
-    font-weight: 400;
+  p {
+    margin: auto;
+    font-size: var(--ptag_fontSize, 17.5px);
+    font-weight: 00;
     letter-spacing: normal;
-    line-height: 24px;
+    line-height: var(--ptag_line-height, 27.4px);
     margin-top: 6px;
     margin-bottom: 6px;
   }
+  h5{
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.75px;
+    line-height: 40px;
+  }
   .content_commonformat {
-    color: var(--bg-primary-black);
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
+    margin: var(--all_font_margin, 10px);
   }
 </style>

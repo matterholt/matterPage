@@ -12,6 +12,19 @@
   --accent: #bf8f2b;
   --bg-primary-60: #6b7983;
   --bg-primary-30: #b5bbc0;
+  --main_black: rgb(24 24 27); /* //text-zinc-900 */
+  --main_white: rgb(248 250 252); /* //text-zinc-50 */
+  --main_gold: rgb(191, 143, 43); /* gold */
+}
+body {
+}
+@font-face {
+  font-family: "Hanuman-reg";
+  src: url("fonts/Hanuman-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Hanuman-thin";
+  src: url("fonts/Hanuman-thin.ttf") format("truetype");
 }
 
 @layer utilities {

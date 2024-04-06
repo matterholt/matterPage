@@ -1,0 +1,30 @@
+<div class="scrolling-image-container">
+  <div class="scrolling-image"></div>
+  <div class="content_cover">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .scrolling-image-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    
+  }
+  .content_cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .scrolling-image {
+    background: url("./svgs/logo_background-repeat.png") repeat;
+    height: 1450px;
+    width: 7680px;
+    /* animation: slideL2R linear 20ms alternate infinite; */
+  }
+</style>

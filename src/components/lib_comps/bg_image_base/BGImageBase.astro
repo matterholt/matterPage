@@ -1,0 +1,16 @@
+---
+const { imageLayer } = Astro.props;
+---
+
+<div class:list={[imageLayer, "heroOverlay ", ""]}>
+  <slot />
+</div>
+<style>
+  .heroOverlay {
+    width: 60%;
+    height: 200vh;
+    background-repeat: no-repeat;
+    background-image: url(/images/hero/profile2_me2_b&w.png);
+    float: right;
+  }
+</style>

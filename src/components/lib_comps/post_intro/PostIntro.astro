@@ -1,39 +1,91 @@
 ---
-import { Text, Alink } from "@components/lib_comps/";
-import { SectionContainer } from "@components/blocks";
+interface Props {
+  varient?: string;
+  postFrontMatter: any[];
+}
+import { DateIt ,TitleWDate } from "@components/blocks";
+import { Text, Alink,BentoBox } from "@components/lib_comps/index";
 
-const { postFrontMatter } = Astro.props;
-const publishDate = postFrontMatter.data.pubDate;
-const formatDate = [
-  publishDate.getFullYear(),
-  publishDate.getMonth() + 1,
-  publishDate.getDate(),
-].join("-");
-const titleLink = postFrontMatter.data.title.split(" ").join("-");
+const { postFrontMatter, varient = "full" } = Astro.props;
+
+const titleLink = postFrontMatter?.data?.title.split(" ").join("-");
+
+const latestPostDate = postFrontMatter?.data?.pubDate;
+const [year, month, date] = [
+  latestPostDate.getFullYear(),
+  latestPostDate.getMonth() + 1,
+  latestPostDate.getDate(),
+];
+
+const [introhead, introContent, ...r] = postFrontMatter.body
+  .split(/\r?\n/)
+  .filter((x) => x !== "");
 ---
 
-<SectionContainer>
-  <div class="postIntro_header">
-    <Text tag="h4">
-      {postFrontMatter.data.title}
-    </Text>
+<div class:list={[varient, "writeup_summary"]}>
+  <TitleWDate 
+  title={postFrontMatter?.data?.title}}
+  start={`${year}-${month}-${date}`}
+  />
 
-    <Text tag="p">{formatDate}</Text>
-  </div>
 
-  <Text tag="p">{postFrontMatter.slug}</Text>
-  <div class="postIntro_link">
-    <Alink varient="base" link={`/posts/${titleLink}/`}>contiue...</Alink>
+
+
+  {
+    varient !== "simple" ? (
+      <BentoBox class="content_placement">
+      <Text tag="p" >
+        {introContent}
+      </Text>
+    </BentoBox>
+    ) : ( null )
+  }
+  <div class="postIntro_link link_placement">
+    <Alink varient="base" link={`/posts/${titleLink}/`}>continue...</Alink>
   </div>
-</SectionContainer>
+</div>
 
 <style>
+  .writeup_summary {
+    grid-template-areas: "date title " ".  continue";
+  }
+  .full {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0px;
+    grid-template-columns: 80px 1fr;
+    gap: 15px;
+    width: 100vw;
+  }
+  .simple {
+    display: grid;
+  }
   .postIntro_header {
     display: flex;
     justify-content: space-between;
+    place-self: center;
+    height: 80%;
+    grid-area: title;
   }
   .postIntro_link {
     display: flex;
     justify-content: flex-end;
   }
+  .dateit_placement {
+    grid-area: date;
+  }
+  .title_placement {
+    grid-area: title;
+    font-size: 30px;
+    display: flex;
+
+  }
+  .content_placement {
+    grid-area: writeup_content;
+    padding-top:2.5%;
+  }
+  .link_placement {
+    grid-area: continue;
+  }
+
 </style>

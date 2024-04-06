@@ -1,9 +1,9 @@
 ---
-import { PostIntro, Text, Heading, Alink } from "@components/lib_comps";
-import { filterCollectionsBy } from "@utils/post_collections/";
-import { SectionContainer } from "@components/blocks";
+import { Box, PostIntro, Text, Alink, LinkBreak,BentoBox } from "@components/lib_comps";
+import { filterCollectionsBy } from "@utils/helpers/post_collections/";
+import { SectionContainer, InternalLink } from "@components/blocks";
 
-const latestPost = await filterCollectionsBy("most_recent");
+const [latestPost, ...r] = await filterCollectionsBy("most_recent");
 
 const { id, link, title } = {
   id: "writeups",
@@ -12,12 +12,42 @@ const { id, link, title } = {
 };
 ---
 
-<SectionContainer>
-  <Heading>
-    <Text tag="h2">Latest Post</Text>
-  </Heading>
-  <PostIntro postFrontMatter={latestPost} />
-  <Alink {id} {link}>
-    {title}
-  </Alink>
-</SectionContainer>
+<Box >
+  <div class="latestpost_layout">
+    <Text tag="h2">What has <LinkBreak>peek my Interest</LinkBreak></Text>
+    <div class="latestpost_writeup">
+      <PostIntro postFrontMatter={latestPost} />
+    </div>
+    <div class="latestpost_linktomore">
+      <InternalLink interPath="./writeups">Write Ups</InternalLink>
+    </div>
+  </div>
+</Box>
+<style>
+  .latestpost_layout {
+    display: grid;
+    grid-template-rows: 170px  1fr ;
+    grid-template-columns: 1fr 130px;
+    grid-template-areas: "title linkTo""latestpost latestpost";
+    margin: 50px 10px;
+    gap:15px;
+  }
+  .latestpost_writeup {
+    grid-area: latestpost;
+  }
+  .latestpost_linktomore {
+    align-self: center;
+    justify-self: center;
+    grid-area: linkTo
+  }
+  @media (max-width: 640px) { 
+    .latestpost_layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px ;
+    text-align: center;
+  }
+  }
+</style>
