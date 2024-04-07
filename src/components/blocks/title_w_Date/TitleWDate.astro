@@ -32,8 +32,9 @@ const { title = "", start = "", end = "" } = Astro.props;
     display: grid;
     grid-template-columns: min-content 1.5fr;
     grid-template-rows: 1fr;
-    padding: 10px;
+    padding: 10px 0px;
     gap:10px;
+    --all_font_margin :2px;
   }
   .titleDate_date {
     width: 100px;
@@ -53,6 +54,7 @@ const { title = "", start = "", end = "" } = Astro.props;
     grid-area: start;
     font-weight: 700;
     font-size: 1.25em;
+    height: 100%;
   }
   .date_endDate {
     background-color:;
@@ -60,5 +62,13 @@ const { title = "", start = "", end = "" } = Astro.props;
     height: 50%;
     font-weight: 700;
     font-size: 1.25em;
+  }
+
+
+  @media (max-width: 930px) {
+  .titleDate_section_header {
+  }
+
+
   }
 </style>

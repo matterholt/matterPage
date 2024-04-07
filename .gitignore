@@ -25,3 +25,6 @@ pnpm-debug.log*
 ## other
 No_go_notes.md
 .astro
+
+# Local Netlify folder
+.netlify

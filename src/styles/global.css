@@ -17,6 +17,7 @@
   --main_gold: rgb(191, 143, 43); /* gold */
 }
 body {
+  max-width: 1024px;
 }
 @font-face {
   font-family: "Hanuman-reg";
