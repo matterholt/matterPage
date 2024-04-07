@@ -1,0 +1,30 @@
+---
+import { Text, BentoBox, Logo } from "@components/lib_comps/index";
+---
+
+<BentoBox class="page_header" varient="light">
+  <div class="page_header_logo">
+    <Logo color="var(--main_gold)" />
+  </div>
+  <Text tag="h2">
+    <slot />
+  </Text>
+</BentoBox>
+
+<style>
+  .page_header {
+    margin: 120px 20px 40px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--main_gold);
+    h2 {
+      text-transform: capitalize;
+    }
+  }
+  .page_header_logo {
+    position: relative;
+  }
+</style>

@@ -1,21 +1,15 @@
 ---
 import { getCollection } from "astro:content";
 import { ProfessionalWorkExperience } from "@components/sections";
-import { Text, Heading, BentoBox ,Logo} from "@components/lib_comps/index";
+import { PageTitleBlock } from "@components/blocks";
+
 import { PageLayout } from "@layouts/index";
 
 const allJobs = await getCollection("positions");
 ---
 
 <PageLayout pageId="career">
-<div class="pt-40 text-center  ">
-  <BentoBox class="page_header" varient="light">
-    <Logo 
-    color="var(--main_gold)"
-    />
-  <Text tag="h2">Career</Text>
-</BentoBox>
-</div>
+  <PageTitleBlock>Career</PageTitleBlock>
 
   <div class="career_box">
     {
@@ -31,14 +25,5 @@ const allJobs = await getCollection("positions");
     flex-direction: column;
     gap: 25px;
     margin-top: 70px;
-  }
-  .page_header{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    h2{
-      margin-left: 25%;
-      text-transform: capitalize;
-    }
   }
 </style>

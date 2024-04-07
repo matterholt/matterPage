@@ -7,9 +7,10 @@ import DateIt from "./date_it/DateIt.astro";
 import BackgroundImage from "./background_image/BackgroundImage.astro";
 import SocialLinkCode from "./social_link_code/SocialLinkCode.astro";
 import TitleWDate from "./title_w_Date/TitleWDate.astro";
+import PageTitleBlock from "./page_title_block/PageTitleBlock.astro";
 
 export {
-  BackgroundImage,TitleWDate,
+  BackgroundImage, TitleWDate, PageTitleBlock,
   SocialLinkCode,
   SectionContainer,
   JobPositions,
