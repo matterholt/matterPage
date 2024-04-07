@@ -17,9 +17,7 @@ const { pageId } = Astro.props;
   </head>
   <body id={pageId} class="background_wallpaper">
     <div class="layout_container">
-      <header>
-        <NavBar currentPage={pageId} />
-      </header>
+      <NavBar currentPage={pageId} />
 
       <slot />
       <Footer />
