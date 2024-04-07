@@ -11,30 +11,34 @@ const { pageId } = Astro.props;
 
 <html lang="en">
   <head>
-  <title>Matterholt</title>
-  <meta name="description" content="developer and lover of tech" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <title>Matterholt</title>
+    <meta name="description" content="developer and lover of tech" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body id={pageId}>
-    <div  class="background_wallpaper">
-
+  <body id={pageId} class="background_wallpaper">
+    <div class="layout_container">
       <header>
-        <NavBar currentPage = {pageId}/>
+        <NavBar currentPage={pageId} />
       </header>
-      
+
       <slot />
       <Footer />
     </div>
-    </body>
+  </body>
 </html>
 
 <style>
   .background_wallpaper {
     color: var(--main_white, #fff);
-  background: url("./svgs/logo_background-repeat.png") repeat;
-  background-color: var(--main_black, #000);
-  width:100vw;
+    background: url("./svgs/logo_background-repeat.png") repeat;
+    background-color: var(--main_black, #000);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .layout_container {
+    max-width: 1450px;
   }
 </style>

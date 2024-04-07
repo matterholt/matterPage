@@ -6,7 +6,7 @@ interface Props {
 import { DateIt ,TitleWDate } from "@components/blocks";
 import { Text, Alink,BentoBox } from "@components/lib_comps/index";
 
-const { postFrontMatter, varient = "full" } = Astro.props;
+const { postFrontMatter, varient = "post_intro-full" } = Astro.props;
 
 const titleLink = postFrontMatter?.data?.title.split(" ").join("-");
 
@@ -32,7 +32,7 @@ const [introhead, introContent, ...r] = postFrontMatter.body
 
 
   {
-    varient !== "simple" ? (
+    varient !== "post_intro-simple" ? (
       <BentoBox class="content_placement">
       <Text tag="p" >
         {introContent}
@@ -49,15 +49,14 @@ const [introhead, introContent, ...r] = postFrontMatter.body
   .writeup_summary {
     grid-template-areas: "title " "continue";
   }
-  .full {
+  .post_intro-full {
     display: flex;
     flex-direction: column;
     margin: 15px 0px;
     grid-template-columns: 80px 1fr;
     gap: 15px;
-    width: 100vw;
   }
-  .simple {
+  .post_intro-simple {
     display: grid;
   }
   .postIntro_header {
