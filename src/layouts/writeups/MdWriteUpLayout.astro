@@ -1,17 +1,23 @@
 ---
 const { frontmatter } = Astro.props;
 import Main from "@layouts/page_layout/PageLayout.astro";
+import { PageLayout } from "@layouts/index";
+
+import { Text, Heading } from "@components/lib_comps/index";
 import { SectionContainer } from "@components/blocks";
+
 ---
 
-<Main pageId="writeups">
-  <SectionContainer>
-    <div class="writeup_header">
-      <div class="writeup_info">
-        <p>{frontmatter.author || "Matterholt"}</p>
-        <p>{frontmatter.pubDate.slice(0, 10)}</p>
+<PageLayout>
+  <div class="writeup_header">
+
+    
+    <Text tag ="h2">{frontmatter.title}</Text>
+    <div>
+
+      <Text tag="p">{frontmatter.author || "Matterholt"}</Text>
+      <Text tag="p">{frontmatter.pubDate.slice(0, 10)}</p>
       </div>
-      <h2>{frontmatter.title}</h2>
     </div>
 
     <div class="writeup_actions">
@@ -30,55 +36,39 @@ import { SectionContainer } from "@components/blocks";
     </div>
 
     <div class="writeup_content">
+<div class="writeup_contentwords">
       <slot />
     </div>
-  </SectionContainer>
-</Main>
-
+    </div>
+</PageLayout>
 <style>
-  .writeup_actions {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .writeup_header{
+margin-top: 150px;
+display: flex;
+justify-content: space-between;
+padding:50px;
   }
-  .writeup_info {
-    justify-self: flex-end;
-    letter-spacing: 1px;
-    font-size: 0.8em;
-    margin-bottom: 30px;
-  }
-  .writeup_header {
-    background-color: var(--bg-primary);
-    color: var(--accent);
-    padding: 20px;
-    border-radius: 5px;
-    font-weight: 500;
-    display: grid;
-    font-size: 20px;
-  }
-  h2 {
-    font-size: 40px;
-    text-align: center;
-    font-size: 2.3em;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
-  .writeup_tags {
+  .writeup_tags{
     display: flex;
-    justify-content: center;
-    margin: 10px;
-    font-size: 0.5em;
-    letter-spacing: 1px;
-    margin: 12px;
+
   }
-  .writeup_tag {
-    border: 1px solid var(--bg-primary-white);
-    padding: 6px;
-    border-radius: 8px;
-    margin: 0px 10px;
+  .writeup_tag{
+    outline: solid;
+    width: min-content;
+    margin:10px;
+    padding:10px;
+    border-radius: 5px;
   }
-  .writeup_content {
-    margin: 50px;
+  .writeup_content{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+  .writeup_contentwords{
+    width: 750px;
+  }
+
 </style>
 <style is:global>
   #writeups {
