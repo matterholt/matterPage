@@ -20,33 +20,20 @@ import { SectionContainer } from "@components/blocks";
       </div>
     </div>
 
-    <div class="writeup_actions">
-      <div class="writeup_tags">
-        <!-- <a href="./writeup"> writeup/posts/</a> -->
-      </div>
-      {
-        frontmatter.tags ? (
-          <div class="writeup_tags">
-            {frontmatter.tags.map((tag) => (
-              <p class="writeup_tag">{tag}</p>
-            ))}
-          </div>
-        ) : null
-      }
-    </div>
+
 
     <div class="writeup_content">
-<div class="writeup_contentwords">
+<div class="writeup_content-text">
       <slot />
     </div>
     </div>
 </PageLayout>
 <style>
   .writeup_header{
-margin-top: 150px;
-display: flex;
-justify-content: space-between;
-padding:50px;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .writeup_tags{
     display: flex;
@@ -65,8 +52,8 @@ padding:50px;
     flex-direction: column;
     align-items: center;
   }
-  .writeup_contentwords{
-    width: 750px;
+  .writeup_content-text{
+    width:90vw; 
   }
 
 </style>
@@ -75,20 +62,29 @@ padding:50px;
     --section-margine-top: 0px;
   }
   .writeup_content p {
-    margin: 5px;
+    margin-bottom: 50px;
   }
   .writeup_content h2 {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
   }
   .writeup_content h1 {
     font-weight: 800;
     font-size: 1.5rem;
+    margin-bottom: 15px;
+
   }
   .writeup_content li {
     margin: 10px;
   }
   .writeup_content ul {
     margin: 5px 0px;
+  }
+  .writeup_content code,pre{
+    width:90%;
+    overflow:scroll;
+    margin:10px;
+    padding:5px;
   }
 </style>
