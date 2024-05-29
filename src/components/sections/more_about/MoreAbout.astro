@@ -26,8 +26,8 @@ function columnSort(entryNumb) {
 ---
 
 <Box
-  varient="dark"
-  Cssvars={{ sectionMarginControl: "0px 0px" }}
+  varient="light"
+  Cssvars={{ sectionMarginControl: "50px 0px" }}
   class:list={["card_collections"]}
 >
  
@@ -39,7 +39,7 @@ function columnSort(entryNumb) {
   <div class="card_columns-left card_columns_layout">
     {
       leftSide.map((entry) => (
-    <BentoBox>
+    <BentoBox >
         <Card asignChar={entry.data.largeLetter}>
           <Text slot="role_title" tag="h3" name="role_title">
             {entry.data.title}
@@ -78,6 +78,8 @@ function columnSort(entryNumb) {
     overflow: hidden;
     display: grid;
     width: 100%;
+    padding-top:50px ;
+    padding-bottom:50px ;
     
     grid-template-columns: 1fr 1fr;
     gap:20px;

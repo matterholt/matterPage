@@ -7,12 +7,12 @@ const {
 
 
 
-const isBase = varient === "base" ? "flex flex-col ":""; 
+const isBase = varient === "base" ? "flex flex-col border rounded-xl p-6":"border rounded-xl p-6"; 
 const isLight = varient === "light" ? "bg-main_white text-main_black" : "bg-main_black text-main_white" ;
 
 ---
 
-<div class:list={[isBase,isLight, " border rounded-md p-6",
+<div class:list={[  isBase,isLight,
  className]}   {...rest}>
 <slot/>
 </div>
