@@ -1,0 +1,200 @@
+  <svg
+    height={size}
+    stroke-miterlimit="10"
+    style={`border-width:${borderWidth};fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round; border`}
+    version="1.1"
+    viewBox="0 0 1024 1024"
+    width={size}
+    xml:space="preserve"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:vectornator="http://vectornator.io"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <defs></defs>
+    <clipPath id="ArtboardFrame">
+      <rect height="1024" width="1024" x="0" y="0"></rect>
+    </clipPath>
+    <g
+      clip-path="url(#ArtboardFrame)"
+      id="Layer-4"
+      vectornator:layerName="Layer 4"
+      visibility="hidden"
+    >
+      <path
+        d="M-6.66856-5.31558L1052.51-5.31558L1052.51 1033.55L-6.66856 1033.55L-6.66856-5.31558Z"
+        fill="#171618"
+        fill-rule="nonzero"
+        opacity="1"
+        stroke="none"></path>
+      <path
+        d="M1148.61 328.024L1176.56 328.024L1176.56 616.446L1148.61 616.446L1148.61 328.024Z"
+        fill="#171618"
+        fill-rule="nonzero"
+        opacity="1"
+        stroke="none"></path>
+    </g>
+    <g id="Layer-2" vectornator:layerName="Layer 2" visibility="hidden">
+      <path
+        d="M18.8374 525.732C18.8374 260.585 239.186 45.6409 510.999 45.6409C782.812 45.6409 1003.16 260.585 1003.16 525.732C1003.16 790.879 782.812 1005.82 510.999 1005.82C239.186 1005.82 18.8374 790.879 18.8374 525.732Z"
+        fill="#40484e"
+        fill-rule="nonzero"
+        opacity="1"
+        stroke="#091f30"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="34.4405"></path>
+    </g>
+    <g
+      clip-path="url(#ArtboardFrame)"
+      id="Layer-2-copy"
+      vectornator:layerName="Layer 2 copy"
+      visibility="hidden"
+    >
+      <path
+        d="M-2.16264 513.732C-2.16264 232.017 227.14 3.64093 509.999 3.64093C792.858 3.64093 1022.16 232.017 1022.16 513.732C1022.16 795.448 792.858 1023.82 509.999 1023.82C227.14 1023.82-2.16264 795.448-2.16264 513.732Z"
+        fill="#39454f"
+        fill-rule="nonzero"
+        opacity="1"
+        stroke="#091f30"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="60"></path>
+    </g>
+    <g
+      clip-path="url(#ArtboardFrame)"
+      id="Layer-4-copy-copy-copy"
+      vectornator:layerName="Layer 4 copy copy copy"
+      visibility="hidden"
+    >
+      <path
+        d="M203.07 1089.22C202.099 1089.77 690.697 169.989 690.697 169.989L793.747 407.769"
+        fill="none"
+        opacity="1"
+        stroke="#e3e3e3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="73.8922"></path>
+      <path
+        d="M-15.4665 907.741C-16.3293 908.236 379.314 154.15 379.314 154.15C379.999 152.845 385.519 163.24 391.642 177.369L483.604 389.566"
+        fill="none"
+        opacity="1"
+        stroke="#e3e3e3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="73.8922"></path>
+      <path
+        d="M665.431 489.032C664.46 489.59 863.412 488.643 863.412 488.643L922.103 624.069L966.461 726.423"
+        fill="none"
+        opacity="1"
+        stroke="#e3e3e3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="73.8922"></path>
+    </g>
+    <g
+      id="Layer-5-copy-copy"
+      vectornator:layerName="Layer 5 copy copy"
+      visibility="hidden"
+    >
+      <path
+        d="M403.764 225L650 725L150 725L403.764 225Z"
+        fill="#a484af"
+        fill-rule="nonzero"
+        opacity="1"
+        stroke="none"></path>
+      <path
+        d="M653.764 225L900 725L400 725L653.764 225Z"
+        fill="#8499ad"
+        fill-rule="nonzero"
+        opacity="1"
+        stroke="none"></path>
+    </g>
+    <g
+      id="Layer-5-copy-copy_2"
+      vectornator:layerName="Layer 5 copy copy"
+      visibility="hidden"
+    >
+      <path
+        d="M651.705 445.892L867.705 443.894L967.408 632.618"
+        fill="none"
+        opacity="0.308139"
+        stroke="#e3e3e3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="73.8922"></path>
+      <path
+        d="M66.0494 647.719L395.085 165.831L494.788 354.555"
+        fill="none"
+        opacity="0.308139"
+        stroke="#e3e3e3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="73.8922"></path>
+      <path
+        d="M394.519 649.311L723.554 167.423L823.257 356.146"
+        fill="none"
+        opacity="0.308139"
+        stroke="#e3e3e3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="73.8922"></path>
+    </g>
+    <g
+      id="Layer-4-copy-copy-copy-copy-copy"
+      vectornator:layerName="Layer 4 copy copy copy copy copy"
+    >
+      <path
+        d="M383.84 719.159L638.976 215.691L732.185 406.84"
+        fill="none"
+        opacity="1"
+        stroke="#bf8f2b"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="60"></path>
+      <path
+        d="M110 718.003L365.291 213.802C365.976 212.497 453.036 391.72 453.036 391.72"
+        fill="none"
+        opacity="1"
+        stroke="#bf8f2b"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="60"></path>
+      <path
+        d="M599 486L773.293 486L885.119 717.931"
+        fill="none"
+        opacity="1"
+        stroke="#bf8f2b"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="60"></path>
+    </g>
+    <g
+      id="Layer-4-copy-copy-copy-copy-copy-copy"
+      vectornator:layerName="Layer 4 copy copy copy copy copy copy"
+    >
+      <path
+        d="M398.84 728.159L653.976 224.691L747.185 415.84"
+        fill="none"
+        opacity="1"
+        stroke="#091f30"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="60"></path>
+      <path
+        d="M125 727.003L380.291 222.802C380.976 221.497 468.036 400.72 468.036 400.72"
+        fill="none"
+        opacity="1"
+        stroke="#091f30"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="60"></path>
+      <path
+        d="M614 495L788.293 495L900.119 726.931"
+        fill="none"
+        opacity="1"
+        stroke="#091f30"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="60"></path>
+    </g>
+  </svg>
