@@ -1,50 +1,63 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
-const { title } = Astro.props;
+const { title = "Matterholt" } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    --accent: hsl(44, 94%, 58%);
+    --accent_light: hsl(191, 55%, 53%);
+    --accent_dark: hsl(202, 15%, 5%);
+    --accent_dark-lighter: hsl(202, 15%, 8%);
+    --main_black: rgba(18, 18, 18, 1);
+    --main_gray: #323232;
+    --main_white: hsl(288, 29%, 97%);
+  }
+  body {
+    font-family: system-ui, sans-serif;
+    background-color: var(--accent_dark);
+    color: var(--main_white);
+    background: linear-gradient(
+      var(--accent_dark),
+      var(--accent_dark-lighter) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* box-shadow: inset 0em 0em 160px var(--accent_dark-lighter); */
+  }
+  main {
+    padding: 50px;
+    max-width: 1024px;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 </style>

@@ -1,0 +1,30 @@
+---
+interface Props {
+  listItems: string[];
+  class?: string;
+}
+
+const { listItems, class: className, ...rest } = Astro.props;
+import Logo from "../Logo.astro";
+---
+
+<ul class={className} {...rest}>
+  {listItems.map((item) => <li>{item}</li>)}
+</ul>
+
+<style>
+  ul {
+    font-size: 1.2em;
+    padding: 0px;
+    margin: 0px;
+  }
+  li {
+    list-style-type: none;
+    /* list-style-image: url("logo_background-single.png"); */
+    margin: 20px 0px;
+    line-height: 1.7;
+  }
+  li::before {
+    content: "";
+  }
+</style>

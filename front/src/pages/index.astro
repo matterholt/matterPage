@@ -1,46 +1,68 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Logo from '../components/base/Logo.astro';
+import Layout from "../layouts/Layout.astro";
+import Logo from "../components/base/Logo.astro";
+import Text from "../components/base/text/Text.astro";
+import List from "../components/base/list/List.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-	</main>
- <div class="logo_float">
-      <Logo size="20%" />
+<Layout title="Matterholt">
+  <div class="indexHero">
+    <Logo size="220px" fillColor="#323232;" />
+
+    <Text tag="h2" class="indexHeroText">
+      Full Stack Engineer<br />
+      Over-all Generalist<br />
+      Husband of 1<br />
+      Father of 6
+    </Text>
+  </div>
+  <div class="indexHeroWhoIAm">
+    <Text tag="h3">Summary of what I do</Text>
+    <List
+      listItems={[
+        "17 years of experience to lead and release dozens projects in automotive eningeering. Foundation of my professionalism and engineering best practices",
+        "3 years and counting of software experiance of application developer maintaining an app with Vue, JSX and Typescript. Along with working on internal tools that use Vue2 composition api",
+        "Currently I maintain a couple clients applications, where I coordinate with multiple groups and teams, throught slack and JIRA, to accomplish tasks for the success of the project.",
+        "Python staying current with the ecosystem, exploring libraries, building backends Flask and FastAPI. Toying around micro python embeded systems. Tooling and other scripting task",
+      ]}
+    />
+  </div>
+  <div>
+    <Text tag="h3">Last write up </Text>
+    <div>
+      <Text tag="h4"> Alemba's Database Migrations </Text>
+      <p>2025-02-02</p>
+      <Text tag="p">
+        Building an app a database changes are inevitable. Alembic is light
+        weight tool for database migrations mainly used with
+        [SQLAlchemy](https://www.sqlalchemy.org) . What it basically does will
+        apply git like tracking to the database. Alembic will give Django like
+        database migrations to python applications and allow the dev to see
+        changes made over time. The benefit of tracking the history of the
+        database will allow teammates have the most current changes and if there
+        is any issue the database can be rolled back the previous version.
+      </Text>
+      <a href=".../">more</a>
     </div>
-
-
-    <h2  class="hero_text-main">
-      Full Stack developer,<br />
-      Over-all Generalist,
-      <br /> Husband of 1,
-      <br /> Father of 6
-    </h2>
-    <p >
-      I have had the experience to lead and release dozens projects in
-      automotive eningeering. Started my coding journey in 2016, with Python
-      scripting which help automated engineering data extraction. From there
-      I went to front end development and building app with modern JS
-      framworks. In 2022, I worked professionally as an application
-      developer maintaining an app with Vue, JSX and Typescript. I
-      coordinate with multiple groups and teams to accomplish tasks for the
-      success of the project. I make alway make time to learn new
-      technologies and always interested in improving my coding skills and
-      lending hands to others. I want to keep moving forward and making
-      things better than the way I found it.
-    </p>
+  </div>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
+  .indexHero {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 250px 1fr;
+  }
+  .indexHeroText {
+    grid-column: 2;
+    place-self: flex-end;
+    --common_textAlign: right;
+  }
+  .indexHeroWhoIAm {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
 
+  @media screen and (max-width: 790px) {
+  }
 </style>

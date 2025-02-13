@@ -10,8 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.16.8",
     "@astrojs/check": "^0.9.4",
-    "typescript": "^5.6.3"
+    "@astrojs/ts-plugin": "^1.10.4",
+    "astro": "^4.16.8"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.0",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
