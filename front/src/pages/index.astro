@@ -1,8 +1,19 @@
 ---
+import { getCollection, getEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/base/Logo.astro";
 import Text from "../components/base/text/Text.astro";
 import List from "../components/base/list/List.astro";
+import JobList from "../components/job_list/JobList.astro";
+
+const introBio = [
+  "17 years of experience to lead and release dozens projects in automotive eningeering. Foundation of my professionalism and engineering best practices",
+  "3 years and counting of software experiance of application developer maintaining an app with Vue, JSX and Typescript. Along with working on internal tools that use Vue2 composition api",
+  "Currently I maintain a couple clients applications, where I coordinate with multiple groups and teams, throught slack and JIRA, to accomplish tasks for the success of the project.",
+  "Enjoy coding in Python,  staying current with the ecosystem, exploring libraries, building backends Flask and FastAPI. Toying around micro python embeded systems. Tooling and other scripting task",
+];
+
+const latestPositon = await getEntry("positions", "current");
 ---
 
 <Layout title="Matterholt">
@@ -18,32 +29,12 @@ import List from "../components/base/list/List.astro";
   </div>
   <div class="indexHeroWhoIAm">
     <Text tag="h3">Summary of what I do</Text>
-    <List
-      listItems={[
-        "17 years of experience to lead and release dozens projects in automotive eningeering. Foundation of my professionalism and engineering best practices",
-        "3 years and counting of software experiance of application developer maintaining an app with Vue, JSX and Typescript. Along with working on internal tools that use Vue2 composition api",
-        "Currently I maintain a couple clients applications, where I coordinate with multiple groups and teams, throught slack and JIRA, to accomplish tasks for the success of the project.",
-        "Python staying current with the ecosystem, exploring libraries, building backends Flask and FastAPI. Toying around micro python embeded systems. Tooling and other scripting task",
-      ]}
-    />
+    <List listItems={introBio} />
   </div>
   <div>
-    <Text tag="h3">Last write up </Text>
-    <div>
-      <Text tag="h4"> Alemba's Database Migrations </Text>
-      <p>2025-02-02</p>
-      <Text tag="p">
-        Building an app a database changes are inevitable. Alembic is light
-        weight tool for database migrations mainly used with
-        [SQLAlchemy](https://www.sqlalchemy.org) . What it basically does will
-        apply git like tracking to the database. Alembic will give Django like
-        database migrations to python applications and allow the dev to see
-        changes made over time. The benefit of tracking the history of the
-        database will allow teammates have the most current changes and if there
-        is any issue the database can be rolled back the previous version.
-      </Text>
-      <a href=".../">more</a>
-    </div>
+    <Text tag="h3">Current Position</Text>
+
+    <JobList job={latestPositon} />
   </div>
 </Layout>
 
