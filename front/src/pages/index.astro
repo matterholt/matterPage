@@ -1,10 +1,10 @@
 ---
-import { getCollection, getEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/base/Logo.astro";
 import Text from "../components/base/text/Text.astro";
 import List from "../components/base/list/List.astro";
-import JobList from "../components/job_list/JobList.astro";
+
+import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
 
 const introBio = [
   "17 years of experience to lead and release dozens projects in automotive eningeering. Foundation of my professionalism and engineering best practices",
@@ -12,8 +12,6 @@ const introBio = [
   "Currently I maintain a couple clients applications, where I coordinate with multiple groups and teams, throught slack and JIRA, to accomplish tasks for the success of the project.",
   "Enjoy coding in Python,  staying current with the ecosystem, exploring libraries, building backends Flask and FastAPI. Toying around micro python embeded systems. Tooling and other scripting task",
 ];
-
-const latestPositon = await getEntry("positions", "current");
 ---
 
 <Layout title="Matterholt">
@@ -28,32 +26,30 @@ const latestPositon = await getEntry("positions", "current");
     </Text>
   </div>
   <div class="indexHeroWhoIAm">
-    <Text tag="h3">Summary of what I do</Text>
+    <Text tag="h2">Summary of what I do</Text>
     <List listItems={introBio} />
   </div>
   <div>
-    <Text tag="h3">Current Position</Text>
-
-    <JobList job={latestPositon} />
+    <CurrentCareerPosition />
   </div>
+
+  <style>
+    .indexHero {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      grid-template-rows: 250px 1fr;
+    }
+    .indexHeroText {
+      grid-column: 2;
+      place-self: flex-end;
+      --common_textAlign: right;
+    }
+    .indexHeroWhoIAm {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+
+    @media screen and (max-width: 790px) {
+    }
+  </style>
 </Layout>
-
-<style>
-  .indexHero {
-    display: grid;
-    grid-template-columns: 350px 1fr;
-    grid-template-rows: 250px 1fr;
-  }
-  .indexHeroText {
-    grid-column: 2;
-    place-self: flex-end;
-    --common_textAlign: right;
-  }
-  .indexHeroWhoIAm {
-    grid-column: 1 / span 2;
-    grid-row: 2;
-  }
-
-  @media screen and (max-width: 790px) {
-  }
-</style>

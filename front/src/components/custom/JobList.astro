@@ -1,0 +1,27 @@
+---
+interface Props {
+  contentFrontMatter: {
+    jobTitle: string;
+    type: string;
+    location: string;
+    workingDate: string;
+  };
+}
+import Text from "../base/text/Text.astro";
+const { contentFrontMatter } = Astro.props;
+const { jobTitle, type, location, workingDate } = contentFrontMatter;
+---
+
+<div class="joblist">
+  <Text tag="p">{workingDate}</Text>
+  <Text>{jobTitle}</Text>
+  <Text>{location}</Text>
+  <Text>{type}</Text>
+</div>
+
+<style>
+  .joblist {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>

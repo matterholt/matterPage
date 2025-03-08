@@ -1,85 +1,44 @@
 ---
 const {
-    tag,
-    varient = ['dark'],
-    textAlign = 'left',
-    addAClass = '',
-    Cssvars = {},
-    class: className,
-    ...rest
+  tag,
+  varient = ["dark"],
+  textAlign = "left",
+  addAClass = "",
+  Cssvars = {},
+  class: className,
+  ...rest
 } = Astro.props;
-const Element = tag || 'span';
-
-const whiteLetters = varient.includes('light');
-const pageHeading = varient.includes('pageHeader');
+const Element = tag || "span";
 ---
 
-{
-    pageHeading ? (
-        <div class="pageHeading_layout">
-            <Element
-                class:list={[
-                    'content_commonformat',
-                    className,
-                    { varient_light_text: whiteLetters },
-                    { varient_page_title: pageHeading },
-                ]}
-                {...rest}
-            >
-                <slot />
-            </Element>
-        </div>
-    ) : (
-        <Element
-            class:list={[
-                'content_commonformat',
-                className,
-                { varient_light_text: whiteLetters },
-                { varient_page_title: pageHeading },
-            ]}
-            {...rest}
-        >
-            <slot />
-        </Element>
-    )
-}
-<style>
-    .content_commonformat {
-        text-align: var(--common_textAlign);
-        font-size: 15px;
-    }
-    span.content_commonformat{
-        font-size:0.8em;
-        font-weight: 200;
-    }
-    p.content_commonformat {
-        font-size: 1em;
-        letter-spacing: 1.5px;
-        line-height: 1.6;
-    }
-    h2.content_commonformat {
-        font-size: 2em;
-    }
-    h3.content_commonformat {
-        font-size: 1.8em;
-    }
-    h4.content_commonformat {
-        font-size: 1.5em;
-    }
-    .varient_page_title {
-        font-weight: 900;
-        font-size: 3em;
-        text-align: center;
-        display: flex;
-        gap: 50px;
-    }
-    .varient_light_text {
-    }
-    .pageHeading_layout {
-        display: grid;
-        grid-template-columns: auto max-content auto;
-        gap: 15px;
-        justify-content: center;
-        align-items: center;
-    }
+<Element class="content_commonformat" class:list={[className]} {...rest}>
+  <slot />
+</Element>
+<style is:global>
+  .scopedContent,
+  .content_commonformat {
+    text-align: var(--common_textAlign);
+  }
+  span.content_commonformat {
+    font-size: 0.8rem;
+    font-weight: 200;
+  }
+  .scopedContent p,
+  p.content_commonformat {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+  }
+  .scopedContent h2,
+  h2.content_commonformat {
+    font-size: 2rem;
+  }
+  .scopedContent h3,
+  h3.content_commonformat {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+  h4.content_commonformat {
+    font-size: 1.5rem;
+  }
 </style>

@@ -1,7 +1,4 @@
 ---
-
-
-layout: ../layouts/CareerWriteups.astro
 slug: current
 workingDate: 2022-06-01 / today
 employer: Stratacache
@@ -14,7 +11,7 @@ id: 4
 
 Primary building dynamic Menu boards with VUE.js with JSX. Trying to learn as much as I can to build an efficient and affective application for future team member and achieve clients expectations. Able to leverage my year of engineering experiences to ramp up on applications and start working with PM , QA and other Developers. I touch multiple application each one slightly different and able to take a concept or idea and apply it to other to make a better application.
 
-## Job Responsibilities
+### Job Responsibilities
 
 - Maintain code base for assigned projects, code review MR going into code base.
 
