@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry, render } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 import Text from "../base/text/Text.astro";
 import JobList from "./JobList.astro";
@@ -9,12 +9,9 @@ const { Content, headings } = await render(latestPositon);
 ---
 
 <div class="currentCareerPosition">
-  <Text tag="h2">Current Position</Text>
-  <div>
-    <JobList contentFrontMatter={latestPositon.data} />
-  </div>
+  <JobList contentFrontMatter={latestPositon.data} />
 
-  <div class:list={["currentCareerPosition_content", " scopedContent"]}>
+  <div class:list={["currentCareerPosition_content", "scopedContent"]}>
     <Content />
   </div>
 </div>

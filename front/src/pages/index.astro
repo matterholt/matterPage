@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Logo from "../components/base/Logo.astro";
+import Logo from "../components/custom/Logo.astro";
 import Text from "../components/base/text/Text.astro";
 import List from "../components/base/list/List.astro";
+import LinkTo from "../components/base/linkTo/LinkTo.astro";
 
 import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
 
@@ -25,31 +26,32 @@ const introBio = [
       Father of 6
     </Text>
   </div>
+
   <div class="indexHeroWhoIAm">
     <Text tag="h2">Summary of what I do</Text>
     <List listItems={introBio} />
   </div>
   <div>
+    <Text tag="h2">Current Position</Text>
     <CurrentCareerPosition />
+    <LinkTo path="/careers"> Past Careers </LinkTo>
   </div>
-
-  <style>
-    .indexHero {
-      display: grid;
-      grid-template-columns: 350px 1fr;
-      grid-template-rows: 250px 1fr;
-    }
-    .indexHeroText {
-      grid-column: 2;
-      place-self: flex-end;
-      --common_textAlign: right;
-    }
-    .indexHeroWhoIAm {
-      grid-column: 1 / span 2;
-      grid-row: 2;
-    }
-
-    @media screen and (max-width: 790px) {
-    }
-  </style>
 </Layout>
+<style>
+  .indexHero {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+  .indexHeroText {
+    --common_textAlign: right;
+  }
+  @media screen and (max-width: 790px) {
+    .indexHero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+</style>

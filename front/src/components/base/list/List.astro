@@ -7,31 +7,30 @@ interface Props {
 }
 
 const { listItems, class: className, ...rest } = Astro.props;
+
+const formatClass = () => {};
 ---
 
-<ul class={className} {...rest}>
+<ul class:list={[className, "commonlist"]} {...rest}>
   {
     listItems.map((item) => (
-      <li>
+      <li class={item}>
         <Text tag="p">{item}</Text>
       </li>
     ))
   }
 </ul>
 
-<style>
-  ul {
+<style is:global>
+  .scopedContent ul,
+  ul.commonlist {
     font-size: 1.2em;
     padding: 0px;
     margin: 0px;
-  }
-  li {
     list-style-type: none;
-    /* list-style-image: url("logo_background-single.png"); */
-    margin: 20px 0px;
-    line-height: 1.7;
   }
-  li::before {
-    content: "";
+  .scopedContent ul,
+  li.commonlist {
+    line-height: 1.7;
   }
 </style>

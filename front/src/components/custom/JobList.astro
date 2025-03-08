@@ -7,21 +7,28 @@ interface Props {
     workingDate: string;
   };
 }
-import Text from "../base/text/Text.astro";
 const { contentFrontMatter } = Astro.props;
+
+import List from "../base/list/List.astro";
+
 const { jobTitle, type, location, workingDate } = contentFrontMatter;
 ---
 
 <div class="joblist">
-  <Text tag="p">{workingDate}</Text>
-  <Text>{jobTitle}</Text>
-  <Text>{location}</Text>
-  <Text>{type}</Text>
+  <List
+    class="joblist_details scopedContent"
+    listItems={[jobTitle, location, type, workingDate]}
+  />
 </div>
 
 <style>
   .joblist {
+  }
+  .joblist_details {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
+    font-weight: 200;
   }
 </style>
