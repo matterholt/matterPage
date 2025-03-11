@@ -1,0 +1,19 @@
+---
+interface Props {
+  path: string;
+}
+const { path } = Astro.props;
+---
+
+<a class:list={["link_base"]} href={path}>
+  <slot />
+</a>
+
+<style>
+  .link_base {
+    min-width: 50px;
+    border-bottom: 2px solid white;
+    padding: 10px;
+    margin: 2px 5px;
+  }
+</style>

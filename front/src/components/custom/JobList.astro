@@ -1,0 +1,38 @@
+---
+interface Props {
+  contentFrontMatter: {
+    jobTitle: string;
+    type: string;
+    location: string;
+    workingDate: string;
+  };
+}
+const { contentFrontMatter } = Astro.props;
+import List from "../base/list/List.astro";
+import Text from "../base/text/Text.astro";
+
+const { jobTitle = "test", type, location, workingDate } = contentFrontMatter;
+---
+
+<div class="joblist">
+  <Text tag="h3">{jobTitle}</Text>
+  <List
+    class:list={["joblist_details scopedContent"]}
+    listItems={[workingDate, type, location]}
+  />
+</div>
+
+<style>
+  .jobTitle {
+    font-weight: 900;
+    font-size: 1.3em;
+  }
+
+  .joblist_details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-weight: 200;
+  }
+</style>

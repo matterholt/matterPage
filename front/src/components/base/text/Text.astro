@@ -1,0 +1,44 @@
+---
+const {
+  tag,
+  varient = ["dark"],
+  textAlign = "left",
+  addAClass = "",
+  Cssvars = {},
+  class: className,
+  ...rest
+} = Astro.props;
+const Element = tag || "span";
+---
+
+<Element class="content_commonformat" class:list={[className]} {...rest}>
+  <slot />
+</Element>
+<style is:global>
+  .scopedContent,
+  .content_commonformat {
+    text-align: var(--common_textAlign);
+  }
+  span.content_commonformat {
+    font-size: 0.8rem;
+    font-weight: 200;
+  }
+  .scopedContent p,
+  p.content_commonformat {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+  }
+  .scopedContent h2,
+  h2.content_commonformat {
+    font-size: 2rem;
+  }
+  .scopedContent h3,
+  h3.content_commonformat {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+  h4.content_commonformat {
+    font-size: 1.5rem;
+  }
+</style>

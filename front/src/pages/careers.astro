@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Text from "../components/base/text/Text.astro";
+import JobDetails from "../components/custom/JobDetails.astro";
+
+import { getCollection } from "astro:content";
+
+const allJobPositionHeld = await getCollection("positions");
+const orderedPosition = allJobPositionHeld.sort(
+  (a, b) => b.data.id - a.data.id,
+);
+---
+
+<Layout title="Careers">
+  <Text tag="h1">Career History</Text>
+  <Text tag="p">
+    I have work in automotive engineering for a decade and a half. Saw potental
+    in software development and choose to pursue a career is software. I have
+    many work on large project and stressful deadlines. I'm self taught and ager
+    to understand and be better at my craft.
+  </Text>
+  <hr />
+  {
+    orderedPosition.map((x) => (
+      <div>
+        <JobDetails jobPositions={x} />
+        <hr />
+      </div>
+    ))
+  }
+</Layout>
+<style></style>
