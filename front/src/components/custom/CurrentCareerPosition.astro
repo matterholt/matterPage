@@ -1,13 +1,12 @@
 ---
-import { getCollection, getEntry, render } from "astro:content";
+import { getCollection, render } from "astro:content";
 
-import Text from "../base/text/Text.astro";
 import JobList from "./JobList.astro";
 
 const [latestPositon] = await getCollection("positions", ({ data }) => {
   return data.isCurrent === true;
 });
-const { Content, headings } = await render(latestPositon);
+const { Content } = await render(latestPositon);
 ---
 
 <div class="currentCareerPosition">
