@@ -3,5 +3,13 @@ const { frontmatter } = Astro.prop;
 ---
 
 <div class="writeup_content">
+  {frontmatter.employer}
   <slot />
 </div>
+
+<style>
+  p {
+    color: red;
+    font-size: 60px;
+  }
+</style>

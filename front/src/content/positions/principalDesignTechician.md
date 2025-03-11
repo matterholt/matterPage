@@ -1,6 +1,4 @@
 ---
-layout: ../../layouts/career_writeups/CareerWriteups.astro
-
 workingDate: 2022-03 / 2022-05
 employer: Ftech R&D North America
 location: Troy, Ohio

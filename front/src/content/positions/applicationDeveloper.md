@@ -1,5 +1,4 @@
 ---
-slug: current
 workingDate: 2022-06-01 / today
 employer: Stratacache
 location: Dayton, Ohio

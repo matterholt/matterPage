@@ -1,5 +1,4 @@
 ---
-import Logo from "../Logo.astro";
 import Text from "../text/Text.astro";
 interface Props {
   listItems: string[];
@@ -8,13 +7,13 @@ interface Props {
 
 const { listItems, class: className, ...rest } = Astro.props;
 
-const formatClass = () => {};
+const formatClass = (title) => title.split(" ").join("_").toLowerCase();
 ---
 
 <ul class:list={[className, "commonlist"]} {...rest}>
   {
     listItems.map((item) => (
-      <li class={item}>
+      <li class={formatClass(item)}>
         <Text tag="p">{item}</Text>
       </li>
     ))
