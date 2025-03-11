@@ -29,23 +29,22 @@ const introBio = [
       <Text tag="p">There is too much to do, </Text>keep things simple
     </div>
   </div>
-</Layout>
 
-<hr />
-<div class="indexHeroWhoIAm">
-  <Text tag="h2">Summary of what I do</Text>
-  <List listItems={introBio} />
-</div>
-<hr />
-<div>
-  <Text tag="h2">Current Position</Text>
-  <CurrentCareerPosition />
-  <div class="linkTo_box">
-    <LinkTo path="/careers"> Past Careers </LinkTo>
+  <hr />
+  <div class="indexHeroWhoIAm">
+    <Text tag="h2">Summary of what I do</Text>
+    <List listItems={introBio} />
   </div>
-</div>
-<Footer />
-
+  <hr />
+  <div>
+    <Text tag="h2">Current Position</Text>
+    <CurrentCareerPosition />
+    <div class="linkTo_box">
+      <LinkTo path="/careers"> Past Careers </LinkTo>
+    </div>
+  </div>
+  <Footer />
+</Layout>
 <style>
   .indexHero {
     display: grid;
