@@ -7,19 +7,10 @@ type: Automotive Design Engineering
 isCurrent: false
 id: 3
 ---
+Develop and maintain the life cycle of suspension products. Work with OEM to fully capture design requirements. Coordinate with the Test and Validation group for best performance of products
 
-Join Design group to challenge myself and to learn more about the business. To work with client and other groups to build chaises for OEM. Provide support to fellow teammates, due to my experience performing analysis on similar
+## Notable Events
 
-## Job Responsibilities
-
-- Create models that meet customer requirements
-
-- Apply counter measures that will improve performance / reduce weight and decrease cost
-
-- Write detailed technical documents about project results and provide details on areas of improvement.
-
-- Keep in communication with other group keep everyone on the same page and development on schedule.
-
-- Create 3D CAD models based on concepts that are manufacturable and fit within the specification of the OEM. The 3D Models would have a clean part history allowing ease of updating.
-- SCreate accurate 2D drawings with proper GD&T practices.
-- Build scripts with python that can work flow, improve workflow with CatiaV5 macros.
+- Researching into creating Catia macros with Python. Looked into libraries and possible ways to improve engineers' development experience and help with speed.
+- Catia V5 modeling, Model 3D geometry that maintains a clean working history, So that models that could be easily updated and tweaked for better performance.
+- GD&T geometrical product specification training, create 2D drawings that provided tolerances for allowable prototypes
