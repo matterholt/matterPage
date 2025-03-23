@@ -1,0 +1,18 @@
+:root {
+  --accent: hsl(44, 94%, 58%);
+  --accent_light: hsl(191, 55%, 53%);
+  --accent_dark: hsl(240, 4%, 19%);
+  --accent_dark-lighter: hsl(202, 15%, 8%);
+  --main_black: hsl(0, 0%, 15%);
+  --main_gray: hsl(0, 0%, 52%);
+  --main_white: hsl(210, 20%, 98%);
+  --main_accent-blue: hsl(216, 94%, 62%);
+  --main_complementary: hsl(36, 95%, 63%);
+  font-size: 15px;
+}
+
+hr {
+  color: var(--main_accent-blue);
+  width: 100%;
+  margin: 5px 0px;
+}

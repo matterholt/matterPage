@@ -1,4 +1,7 @@
 ---
+import '../styles/fonts.css';
+import '../styles/main.css';
+
 interface Props {
   title: string;
 }
@@ -13,8 +16,12 @@ const { title = "Matterholt" } = Astro.props;
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+     <link rel="stylesheet" href="/styles/fonts.css" />   <meta name="generator" content={Astro.generator} />
+
+     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Doto:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">   <title>{title}</title>
+      -->
   </head>
   <body>
     <main>
@@ -23,23 +30,11 @@ const { title = "Matterholt" } = Astro.props;
   </body>
 </html>
 <style is:global>
-  :root {
-    --accent: hsl(44, 94%, 58%);
-    --accent_light: hsl(191, 55%, 53%);
-    --accent_dark: hsl(202, 15%, 5%);
-    --accent_dark-lighter: hsl(202, 15%, 8%);
-    --main_black: rgba(18, 18, 18, 1);
-    --main_gray: #323232;
-    --main_white: hsl(288, 29%, 97%);
-    font-size: 15px;
-  }
+
   body {
     font-family: system-ui, sans-serif;
     background-color: var(--accent_dark);
     color: var(--main_white);
-    background: linear-gradient(
-      var(--accent_dark),
-      var(--accent_dark-lighter) 100%
     );
     display: flex;
     flex-direction: column;
@@ -65,8 +60,5 @@ const { title = "Matterholt" } = Astro.props;
       Courier New,
       monospace;
   }
-  hr {
-    width: 100%;
-    margin: 25px 0px;
-  }
+
 </style>

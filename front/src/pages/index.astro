@@ -17,7 +17,7 @@ const introBio = [
 
 <Layout title="Matterholt">
   <div class="indexHero">
-    <Logo size={220} fillColor="#323232;" />
+    <Logo size={220} />
 
     <Text tag="h2" class="indexHeroText">
       Full Stack Engineer<br />
@@ -26,7 +26,7 @@ const introBio = [
       Father of 6<br />
     </Text>
     <div class="indexHeroSub">
-      <Text tag="p">There is too much to do, </Text>keep things simple
+      <Text tag="p">There is too much to do,<br /> keep things simple</Text>
     </div>
   </div>
 
@@ -52,6 +52,7 @@ const introBio = [
     grid-template-rows: max-content 1fr;
     justify-content: space-between;
     width: 90%;
+    align-items: center;
   }
   .indexHeroText {
     --common_textAlign: right;

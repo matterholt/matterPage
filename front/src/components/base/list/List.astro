@@ -24,9 +24,9 @@ const formatClass = (title) => title.split(" ").join("_").toLowerCase();
   .scopedContent ul,
   ul.commonlist {
     font-size: 1.2em;
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
+    padding: 5px;
+    margin: 5px;
+    list-style-type: var(--globalList_listStypeType, none);
   }
   .scopedContent ul,
   li.commonlist {

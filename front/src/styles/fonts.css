@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Doto";
+  src: url("/fonts/Doto/Doto-VariableFont_ROND,wght.ttf") format("opentype");
+  font-weight: 100 400;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+    format("opentype");
+  font-weight: 100 400;
+}
+
+@font-face {
+  font-family: "Crimson_Text";
+  src: url("/fonts/Crimson_Text/CrimsonText-Regular.ttf") format("opentype");
+}
