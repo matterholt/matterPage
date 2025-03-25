@@ -5,15 +5,33 @@ interface Props {
 const { path } = Astro.props;
 ---
 
-<a class:list={["link_base"]} href={path}>
+<a class:list={["link_base", "fontStyle"]} href={path}>
   <slot />
 </a>
 
 <style>
   .link_base {
     min-width: 50px;
-    border-bottom: 2px solid white;
     padding: 10px;
-    margin: 2px 5px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    margin: 10px;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  a {
+    color: var(--main_white);
+    /* border-bottom: 2px solid var(--main_accent-blue); */
+  }
+  a:active {
+    color: var(--main_accent-blue);
+  }
+
+  .fontStyle {
+    text-decoration: none;
+    font-family: "Doto Variable", sans-serif;
+    font-weight: 300;
+    font-size: 25px;
   }
 </style>

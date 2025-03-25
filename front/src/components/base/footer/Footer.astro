@@ -1,8 +1,15 @@
-<footer>this is a working footer</footer>
+---
+import Navbar from "../../custom/Navbar.astro";
+---
+
+<footer>
+  <slot />
+</footer>
 <style>
   footer {
-    height: 250px;
+    margin-top: 50px;
+    height: 50px;
+    width: 100%;
     display: grid;
-    place-items: center;
   }
 </style>

@@ -2,12 +2,16 @@
 import '../styles/main.css';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/crimson-pro';
+import Navbar from '../components/custom/Navbar.astro';
+import Footer from '../components/base/footer/Footer.astro';
+
 
 interface Props {
   title: string;
+  activePage: string
 }
 
-const { title = "Matterholt" } = Astro.props;
+const { title = "Matterholt" ,activePage} = Astro.props;
 ---
 
 <!doctype html>
@@ -23,9 +27,13 @@ const { title = "Matterholt" } = Astro.props;
      </head>
   <body>
     <main>
+    <Navbar activePage={activePage}/>
       <slot />
+
     </main>
-  </body>
+    <Footer>
+    <Navbar activePage={activePage}/>
+    </Footer> </body>
 </html>
 <style is:global>
 
