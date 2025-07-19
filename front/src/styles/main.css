@@ -5,10 +5,11 @@
   --accent_dark-lighter: hsl(202, 15%, 8%);
   --main_black: hsl(0, 0%, 15%);
   --main_gray: hsl(0, 0%, 52%);
+  --main_lightGray: #f1f0f0;
   --main_white: hsl(210, 20%, 98%);
   --main_accent-blue: hsl(216, 94%, 62%);
   --main_complementary: hsl(36, 95%, 63%);
-  font-size: 12px;
+  font-size: 15px;
 }
 
 hr {

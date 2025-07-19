@@ -20,7 +20,10 @@ const { title = "Matterholt" ,activePage} = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
+
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
@@ -40,7 +43,7 @@ const { title = "Matterholt" ,activePage} = Astro.props;
   body {
     font-family: system-ui, sans-serif;
     background-color: var(--accent_dark);
-    color: var(--main_white);
+    color: var( --main_lightGray);
     );
     display: flex;
     flex-direction: column;

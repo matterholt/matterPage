@@ -9,7 +9,7 @@ id: 1
 ---
 The lead analyst for assigned projects. Documented results and presented findings to the team.  Provided feedback to improve the design of the suspension model
 
-## Highlights
+### Highlights
 
 - Authored technical documents on meshing techniques and methods. The objective was to lay the foundation for future Engineers and Technicians to have the best quality mesh within a reasonable time.
 - Analysis of suspension systems and components ensuring that targets and design specifications are met.

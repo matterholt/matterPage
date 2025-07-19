@@ -9,7 +9,7 @@ id: 0
 ---
 Analyzed and reported on the performance of Models using FEA method. Created virtual testing in software to mimic real-world conditions.
 
-## Highlights
+### Highlights
 
 - Presented at Global Environmental Conference 2012 on Lightweight vehicles achieving better fuel efficiency.
 - Contributed heavily to the Maker Layout competition for a Rear Sub 2010 to 2011.

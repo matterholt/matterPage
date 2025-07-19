@@ -1,0 +1,23 @@
+---
+import { render } from "astro:content";
+import Text from "../base/text/Text.astro";
+import List from "../base/list/List.astro";
+
+const { accomplishment } = Astro.props;
+const { Content } = await render(accomplishment);
+
+const { area, type } = accomplishment.data;
+---
+
+<div class="accomplishments">
+  <Text tag="h4">{type}: {area}</Text>
+  <div class:list={["accomplishments_content", "scopedContent"]}>
+    <Content />
+  </div>
+</div>
+
+<style>
+  .accomplishments {
+    padding: 10px;
+  }
+</style>

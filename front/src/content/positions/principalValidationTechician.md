@@ -10,7 +10,7 @@ id: 2
 
 Validate the performance of models from the design group, and provide countermeasures to improve design. Manage and support other members of the group. Research new methods and technologies to improve group performance.
 
-## Highlights
+### Highlights
 
 - Created Python script to improve workflow for other teammates. Reduce space on drives with Python scripts would look for large files that are duplicated and archiving them. Used Python scripts that would extract key data points in a large result database file.
 - Reporting Validation reports using Excel and Visual Basic programming. Help organize model results with stiffness/durability and Static analysis results.

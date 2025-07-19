@@ -9,7 +9,7 @@ id: 3
 ---
 Develop and maintain the life cycle of suspension products. Work with OEM to fully capture design requirements. Coordinate with the Test and Validation group for best performance of products
 
-## Highlights
+### Highlights
 
 - Researching into creating Catia macros with Python. Looked into libraries and possible ways to improve engineers' development experience and help with speed.
 - Catia V5 modeling, Model 3D geometry that maintains a clean working history, So that models that could be easily updated and tweaked for better performance.
