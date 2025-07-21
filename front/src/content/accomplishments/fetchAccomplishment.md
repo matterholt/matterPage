@@ -1,5 +1,5 @@
 ---
-type: Automotive
+type: Automotive Engineering
 area: Ftech R&D North America
 ---
 

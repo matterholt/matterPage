@@ -7,7 +7,7 @@ type: Automotive Validation Engineering
 isCurrent: false
 id: 1
 ---
-The lead analyst for assigned projects. Documented results and presented findings to the team.  Provided feedback to improve the design of the suspension model
+The lead analyst for assigned projects.Set up a accurate virtual representation of a vehicle's suspension. Researched alternative ways for team to work more efficiently, by python scripts, visual basic, or in 3D printing.
 
 ### Highlights
 
