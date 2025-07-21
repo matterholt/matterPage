@@ -19,14 +19,28 @@ const introBio = [
   <div class="indexHero">
     <Logo size={250} />
 
-    <Text tag="h2" class="indexHeroText">
-      Full Stack Engineer<br />
-      Over-all Generalist<br />
-      Husband of 1<br />
-      Father of 6<br />
+    <Text tag="h1" class="indexHeroText">
+      Self taught Programmer<br />
+      Specialized in Web Technologies
     </Text>
+
+    <div class="indexHeroExternalLinks">
+      <LinkTo path=""> Linkedin </LinkTo>
+      <LinkTo path="https://github.com/matterholt">Github</LinkTo>
+    </div>
+
     <div class="indexHeroSub">
-      <Text tag="p">There is too much to do,<br /> keep things simple</Text>
+      <Text tag="p">
+        A decade in automotive engineer turned developer. Driven to build
+        purposeful projects that help the goals of the company. Experience
+        gained engineering translates well to coding, especially in
+        collaborative, product-focused environments. Skilled in modern frontend
+        development using Vue and React, with modern HTML/CSS practices.
+        Comfortable with backend tools like Hono.js and FastAPI, and enjoy
+        working in the Python ecosystem for scripting, scraping, and general
+        programming. A versatile contributor who adapts quickly across the
+        stack. A bit of jack of all trades.
+      </Text>
     </div>
   </div>
 
@@ -40,7 +54,7 @@ const introBio = [
     <Text tag="h2">Current Position</Text>
     <CurrentCareerPosition />
     <div class="linkTo_box">
-      <LinkTo path="/careers"> Past Careers </LinkTo>
+      <LinkTo path="/careers"> Past Positions </LinkTo>
     </div>
   </div>
   <Footer />
@@ -48,20 +62,33 @@ const introBio = [
 <style>
   .indexHero {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: max-content 1fr;
     justify-content: space-between;
     width: 90%;
     align-items: center;
   }
   .indexHeroText {
-    --common_textAlign: right;
+    grid-column: 2;
+    grid-row: 1;
+    --common_textAlign: center;
+  }
+  .indexHeroExternalLinks {
+    grid-column: 3;
+    grid-row: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
   }
   .indexHeroSub {
     grid-row: 2;
-    grid-column: 1 /3;
+    grid-column: 1 /4;
     place-self: center;
     text-align: center;
+    width: 60%;
+    min-width: 550px;
   }
 
   .linkTo_box {

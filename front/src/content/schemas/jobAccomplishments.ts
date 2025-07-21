@@ -1,8 +1,8 @@
 import { z } from "astro:content";
 
-const accomplishDates = z.object({
+const jobAccomplishments = z.object({
   type: z.string(),
   area: z.string(),
 });
 
-export default accomplishDates;
+export default jobAccomplishments;

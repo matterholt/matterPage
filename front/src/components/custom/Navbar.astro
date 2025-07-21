@@ -30,9 +30,9 @@ const isPage = (title) => title === activePage;
     justify-content: space-evenly;
     width: 100%;
     height: 35px;
-    margin-bottom: 55px;
+    margin: 25px 0px;
     a {
-      color: var(--main_accent-blue);
+      color: var(--main_white);
     }
     a:active {
       color: var(--main_white);
@@ -45,9 +45,9 @@ const isPage = (title) => title === activePage;
     font-size: 25px;
   }
   a.isActive {
-    color: var(--main_white);
+    color: var(--main_accent-blue);
     border-bottom: none;
-    border-bottom: 2px dotted var(--main_white);
+    border-bottom: 2px dotted var(--main_accent-blue);
     cursor: default;
     pointer-events: none;
   }

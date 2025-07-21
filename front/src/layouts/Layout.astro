@@ -1,7 +1,8 @@
 ---
 import '../styles/main.css';
 import '@fontsource-variable/inter';
-import '@fontsource-variable/crimson-pro';
+import '@fontsource-variable/crimson-pro';// Supports weights 100-900
+import '@fontsource-variable/raleway';
 import Navbar from '../components/custom/Navbar.astro';
 import Footer from '../components/base/footer/Footer.astro';
 
@@ -20,7 +21,10 @@ const { title = "Matterholt" ,activePage} = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
+
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
@@ -40,7 +44,7 @@ const { title = "Matterholt" ,activePage} = Astro.props;
   body {
     font-family: system-ui, sans-serif;
     background-color: var(--accent_dark);
-    color: var(--main_white);
+    color: var( --main_lightGray);
     );
     display: flex;
     flex-direction: column;

@@ -8,10 +8,11 @@ isCurrent: false
 id: 2
 ---
 
-Validate the performance of models from the design group, and provide countermeasures to improve design. Manage and support other members of the group. Research new methods and technologies to improve group performance.
+Responsible for analyzing data reporting them to the team. Providing insight on performance of design and ideas for improvements. Support other members of the group. Researched alternative ways for team to work more efficiently by python scripts or utilizing visual basic for reporting
 
-## Highlights
+### Highlights
 
-- Created Python script to improve workflow for other teammates. Reduce space on drives with Python scripts would look for large files that are duplicated and archiving them. Used Python scripts that would extract key data points in a large result database file.
+- Technical Lead for the validation group provided feedback  on FEA techniques and other methods.
+- Analysis of suspension systems and components ensuring that targets and design specifications are met.
+- Created Python script to improve workflow for other teammates. Reduce space on drives with Python scripts would look for large files that are duplicated and archiving them. Used Python scripts that would extract key data points in a large result database file. 
 - Reporting Validation reports using Excel and Visual Basic programming. Help organize model results with stiffness/durability and Static analysis results.
-- Help setup  / Manage 3d print lab, Creating process for a 3d print, building Model that would print properly
