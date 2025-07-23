@@ -2,6 +2,7 @@
 interface Props {
   contentFrontMatter: {
     jobTitle: string;
+    employer: string;
     type: string;
     location: string;
     workingDate: string;
@@ -11,11 +12,18 @@ const { contentFrontMatter } = Astro.props;
 import List from "../base/list/List.astro";
 import Text from "../base/text/Text.astro";
 
-const { jobTitle = "test", type, location, workingDate } = contentFrontMatter;
+const {
+  jobTitle = "test",
+  type,
+  location,
+  workingDate,
+  employer,
+} = contentFrontMatter;
 ---
 
 <div class="joblist">
-  <Text tag="h3">{jobTitle}</Text>
+  <Text tag="h3">{jobTitle} at {employer}</Text>
+
   <List
     class:list={["joblist_details scopedContent"]}
     listItems={[workingDate, type, location]}
@@ -34,5 +42,10 @@ const { jobTitle = "test", type, location, workingDate } = contentFrontMatter;
     justify-content: space-between;
     flex-wrap: wrap;
     font-weight: 200;
+  }
+  @media screen and (max-width: 790px) {
+    .joblist_details {
+      display: inline;
+    }
   }
 </style>

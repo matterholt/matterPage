@@ -54,13 +54,7 @@ const orderedPosition = allJobPositionHeld.sort(
 
     <aside class="career__aside">
       <Text tag="h2">Accomplishments</Text>
-      <div>
-        {
-          jobAccomplishments.map((x) => (
-            <JobAccomplishments accomplishment={x} />
-          ))
-        }
-      </div>
+      {jobAccomplishments.map((x) => <JobAccomplishments accomplishment={x} />)}
     </aside>
   </div>
 </Layout>
