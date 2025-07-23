@@ -6,12 +6,12 @@ import List from "../base/list/List.astro";
 const { jobPositions } = Astro.props;
 const { Content } = await render(jobPositions);
 
-const { jobTitle, type, location, workingDate } = jobPositions.data;
+const { jobTitle, type, location, workingDate, employer } = jobPositions.data;
 ---
 
 <div class="currentCareerPosition">
   <div class="joblist">
-    <Text tag="h3">{jobTitle}</Text>
+    <Text tag="h3">{jobTitle}: {employer}</Text>
     <List
       class:list={["joblist_details scopedContent"]}
       listItems={[workingDate, type, location]}

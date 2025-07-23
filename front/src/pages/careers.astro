@@ -29,16 +29,13 @@ const orderedPosition = allJobPositionHeld.sort(
     requirements and handle project deadlines.
   </Text>
   <Text tag="p">
-    I have work in automotive engineering for a decade and a half. Competed in
-    maker layout competitions for automakers such as Honda, Tesla and GMC. Setup
-    and performed analysis on 3d models to build confidence in safety and
-    reliability in the parts for automakers.
+    My Time spent in automotive engineering. I competed in maker layout
+    competitions for automakers such as Honda, Tesla and GMC. Setup and
+    performed analysis on 3d models to build confidence in safety and
+    reliability in the parts for automakers. Started to code to make tool that
+    would help document results.
   </Text>
-  <Text tag="p">
-    Able to use leverage programming for daily task, I enjoyed programming and
-    choose to pursue a career in software development. I have many work on large
-    project and stressful deadlines.
-  </Text>
+
   <hr />
   <div class="career">
     <div>
@@ -54,13 +51,7 @@ const orderedPosition = allJobPositionHeld.sort(
 
     <aside class="career__aside">
       <Text tag="h2">Accomplishments</Text>
-      <div>
-        {
-          jobAccomplishments.map((x) => (
-            <JobAccomplishments accomplishment={x} />
-          ))
-        }
-      </div>
+      {jobAccomplishments.map((x) => <JobAccomplishments accomplishment={x} />)}
     </aside>
   </div>
 </Layout>

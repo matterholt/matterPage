@@ -2,17 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/custom/Logo.astro";
 import Text from "../components/base/text/Text.astro";
-import List from "../components/base/list/List.astro";
 import LinkTo from "../components/base/linkTo/LinkTo.astro";
-import Footer from "../components/base/footer/Footer.astro";
 import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
-
-const introBio = [
-  "17 years of experience to lead and release dozens projects in automotive eningeering. Foundation of my professionalism and engineering best practices",
-  "3 years and counting of software experiance of application developer maintaining an app with Vue, JSX and Typescript. Along with working on internal tools that use Vue2 composition api",
-  "Currently I maintain a couple clients applications, where I coordinate with multiple groups and teams, throught slack and JIRA, to accomplish tasks for the success of the project.",
-  "Enjoy coding in Python,  staying current with the ecosystem, exploring libraries, building backends Flask and FastAPI. Toying around micro python embeded systems. Tooling and other scripting task",
-];
 ---
 
 <Layout title="Matterholt" activePage="Home">
@@ -25,8 +16,15 @@ const introBio = [
     </Text>
 
     <div class="indexHeroExternalLinks">
-      <LinkTo path=""> Linkedin </LinkTo>
-      <LinkTo path="https://github.com/matterholt">Github</LinkTo>
+      <LinkTo
+        type="external"
+        path="https://www.linkedin.com/in/matthew-atterholt-5628b575"
+      >
+        Linkedin
+      </LinkTo>
+      <LinkTo type="external" path="https://github.com/matterholt"
+        >Github</LinkTo
+      >
     </div>
 
     <div class="indexHeroSub">
@@ -46,18 +44,23 @@ const introBio = [
 
   <hr />
   <div class="indexHeroWhoIAm">
-    <Text tag="h2">Summary of what I do</Text>
-    <List listItems={introBio} />
+    <Text tag="h2">Who I am</Text>
+    <Text tag="p">
+      I'm a husband to a beautiful wife. Together we raise our 6 children. Yes
+      it is crazy but we both embrace it and enjoy the time we have. We live out
+      in rural area and have a little homestead. We focus on growing organic
+      produce and regenerative practices. I coach my kiddo's soccer team. Try to
+      keep every day spicy and enjoy the challenges that pass my way.
+    </Text>
   </div>
   <hr />
   <div>
     <Text tag="h2">Current Position</Text>
     <CurrentCareerPosition />
     <div class="linkTo_box">
-      <LinkTo path="/careers"> Past Positions </LinkTo>
+      <LinkTo type="internal" path="/careers"> Past Positions </LinkTo>
     </div>
   </div>
-  <Footer />
 </Layout>
 <style>
   .indexHero {
@@ -65,7 +68,6 @@ const introBio = [
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: max-content 1fr;
     justify-content: space-between;
-    width: 90%;
     align-items: center;
   }
   .indexHeroText {
@@ -87,8 +89,6 @@ const introBio = [
     grid-column: 1 /4;
     place-self: center;
     text-align: center;
-    width: 60%;
-    min-width: 550px;
   }
 
   .linkTo_box {

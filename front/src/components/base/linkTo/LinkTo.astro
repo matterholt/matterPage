@@ -1,11 +1,19 @@
 ---
 interface Props {
   path: string;
+  type: string;
 }
-const { path } = Astro.props;
+const { path, type } = Astro.props;
+
+const linkType = type == "external" ? "_blank" : "_self";
 ---
 
-<a class:list={["link_base", "fontStyle"]} href={path}>
+<a
+  class:list={["link_base", "fontStyle"]}
+  target={linkType}
+  rel="noopener noreferrer"
+  href={path}
+>
   <slot />
 </a>
 
