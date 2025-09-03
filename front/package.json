@@ -17,7 +17,9 @@
     "@fontsource-variable/inter": "^5.2.5",
     "@fontsource-variable/raleway": "^5.2.6",
     "@phosphor-icons/web": "^2.1.2",
-    "astro": "^5"
+    "@shoelace-style/shoelace": "^2.20.1",
+    "astro": "^5",
+    "rollup-plugin-copy": "^3.5.0"
   },
   "devDependencies": {
     "prettier": "^3.5.0",

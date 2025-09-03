@@ -1,5 +1,6 @@
 ---
 import '../styles/main.css';
+import "@shoelace-style/shoelace/dist/themes/light.css";
 import '@fontsource-variable/inter';
 import '@fontsource-variable/crimson-pro';// Supports weights 100-900
 import '@fontsource-variable/raleway';
@@ -16,13 +17,15 @@ const { title = "Matterholt" ,activePage} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="sl-theme-dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
 
     <meta name="generator" content={Astro.generator} />
@@ -38,6 +41,13 @@ const { title = "Matterholt" ,activePage} = Astro.props;
     <Footer>
     <Navbar activePage={activePage}/>
     </Footer> </body>
+  <script>
+    // setBasePath to tell Shoelace where to load icons from.
+
+
+    // Load all components.
+    import "@shoelace-style/shoelace";
+  </script>
 </html>
 <style is:global>
 

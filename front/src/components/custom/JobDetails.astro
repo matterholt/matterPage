@@ -7,6 +7,10 @@ const { jobPositions } = Astro.props;
 const { Content } = await render(jobPositions);
 
 const { jobTitle, type, location, workingDate, employer } = jobPositions.data;
+
+const sortingHTML = jobPositions.rendered.html.split("\n");
+const introText = sortingHTML.slice(0, 1);
+const detailText = sortingHTML.slice(1, -1);
 ---
 
 <div class="currentCareerPosition">
@@ -18,7 +22,11 @@ const { jobTitle, type, location, workingDate, employer } = jobPositions.data;
     />
   </div>
   <div class:list={["currentCareerPosition_content", "scopedContent"]}>
-    <Content />
+    <div set:html={introText} />
+
+    <sl-details summary="Toggle Me">
+      <div set:html={detailText} />
+    </sl-details>
   </div>
 </div>
 <style></style>
