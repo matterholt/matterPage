@@ -12,6 +12,10 @@
 
   --main_fontSize: 15px;
   font-size: var(--main_fontSize);
+
+  --rosePine_dark: #191724;
+
+  --background_color: var(--rosePine_dark);
 }
 
 hr {
