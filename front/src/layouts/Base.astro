@@ -36,9 +36,10 @@ const { title = "Matterholt" ,activePage} = Astro.props;
 
     <main>
       <Header title={title}>
-        <NavBar activePage={activePage} /> 
+        <NavBar slot="topNav" activePage={activePage} />
       <Header />
-      <slot />
+
+      <slot name="mainContent" />
 
     </main>
     <Footer>

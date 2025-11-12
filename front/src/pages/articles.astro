@@ -2,14 +2,27 @@
 import { getCollection } from "astro:content";
 
 import Base from "../layouts/Base.astro";
+import List from "../components/base/list/List.astro"
+import Text from "../components/base/text/Text.astro"
 
 const allArticles = await getCollection('articles');
+
+
  ---
 
 <Base title="Articles" activePage="Articles">
-  {allArticles.map(post => (
-    <li><a href={`/blog/${post.id}`}>{post.data.title}</a></li>
-  ))}
+  <div slot="mainContent">
 
+  {allArticles.map(article =>(
+  <Text tag="h3">{article.data.title}</Text>
+    ))}
+
+  </div>
 
 </Base>
+
+<style>
+
+
+
+  </style>
