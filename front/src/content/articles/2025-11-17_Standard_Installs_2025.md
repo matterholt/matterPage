@@ -1,5 +1,11 @@
+---
+title: Things that will be install on the next machine.
+slug: new-machine-installs
+publishDate: 2025-11-17
+tags: [ "terminal", "TUI", "installs" , "setup", "dev_environment" ]
+---
 
-Things that will be install on the next machine.
+
 
 ## Programing Geared
 

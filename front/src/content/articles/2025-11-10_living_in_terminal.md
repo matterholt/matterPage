@@ -3,7 +3,6 @@ title: Life in the Terminal Lane
 slug: dive-into-the-terminal
 publishDate: 2025-11-10
 tags: [ "terminal", "shell", "setup", "dev_environment" ]
-
 ---
 
 ## Un-OhMyZsh Myself

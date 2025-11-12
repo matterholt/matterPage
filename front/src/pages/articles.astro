@@ -1,7 +1,15 @@
 ---
-import Base from "../layouts/Base.astro";
----
+import { getCollection } from "astro:content";
 
-<Base title="Personal Articles" activePage="Articles">
-  <p>TESTINGS</p>
+import Base from "../layouts/Base.astro";
+
+const allArticles = await getCollection('articles');
+ ---
+
+<Base title="Articles" activePage="Articles">
+  {allArticles.map(post => (
+    <li><a href={`/blog/${post.id}`}>{post.data.title}</a></li>
+  ))}
+
+
 </Base>

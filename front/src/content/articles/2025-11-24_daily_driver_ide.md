@@ -1,3 +1,10 @@
+---
+title: Dear Daily IDE
+slug: daily-driver-IDe
+publishDate: 2025-11-24
+tags: [ "IDE", "Zed", "editor", "dev_environment" ]
+---
+
 
 why.. why change editor , Visual Studio Code can do it all. Big ole  sledge hammer of an editor. Ready for to install any number of extension ready to take a chunk of ram to only run half speed. It's not as bad as I'm making it out to be VsCode has pushed editor to be more than getting text on screen. VS code has been out since 2015, I started with Atom and quickly moved to Visual Studio Code. It has been my primary way I created code, and what I use daily for work. 
 

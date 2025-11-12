@@ -1,9 +1,15 @@
 ---
+import Text from '../text/Text.astro'
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 
 ---
 
 
 <header>
-  
-  {title}
+  <slot/>
+  <Text tag="h1">{title}</Text>
 </header>
