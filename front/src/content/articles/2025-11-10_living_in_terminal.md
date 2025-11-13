@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/ArticleContent.astro
 title: Life in the Terminal Lane
 slug: dive-into-the-terminal
 publishDate: 2025-11-10

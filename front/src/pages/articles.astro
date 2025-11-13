@@ -2,27 +2,32 @@
 import { getCollection } from "astro:content";
 
 import Base from "../layouts/Base.astro";
-import List from "../components/base/list/List.astro"
-import Text from "../components/base/text/Text.astro"
+import Text from "../components/base/text/Text.astro";
 
-const allArticles = await getCollection('articles');
-
-
- ---
+const allArticles = await getCollection("articles");
+---
 
 <Base title="Articles" activePage="Articles">
   <div slot="mainContent">
+    {
+      allArticles.map((article) => (
+        <li>
+          <Text tag="h3">{article.data.title}</Text>
+          <Text tag="p">
+            {article.data.publishDate.toString().slice(0, 10)}
+          </Text>
 
-  {allArticles.map(article =>(
-  <Text tag="h3">{article.data.title}</Text>
-    ))}
-
+          <a href="link">more</a>
+        </li>
+      ))
+    }
   </div>
-
 </Base>
 
 <style>
-
-
-
-  </style>
+  li {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    grid-template-rows: 1fr 1fr;
+  }
+</style>
