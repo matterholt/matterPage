@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleContent.astro
 title: Dear Daily IDE
 slug: daily-driver-IDe
 publishDate: 2025-11-24

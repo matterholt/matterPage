@@ -4,6 +4,11 @@ import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import Text from "../components/base/text/Text.astro";
 
+const allPosts = Object.values(
+  import.meta.glob("../content/articles/*.md", { eager: true }),
+);
+console.log(allPosts);
+
 const allArticles = await getCollection("articles");
 ---
 
@@ -18,6 +23,17 @@ const allArticles = await getCollection("articles");
           </Text>
 
           <a href="link">more</a>
+        </li>
+      ))
+    }
+    <h1>testing below</h1>
+    {
+      allPosts.map((post: any) => (
+        <li>
+          <p>slug: {post.frontmatter.slug}</p>
+          <p>url:{post.url}</p>
+          <h1>title: {post.frontmatter.title}</h1>
+          <p>{post.frontmatter.publishDate}</p>
         </li>
       ))
     }

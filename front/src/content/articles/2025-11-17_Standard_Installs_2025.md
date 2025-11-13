@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleContent.astro
 title: Things that will be install on the next machine.
 slug: new-machine-installs
 publishDate: 2025-11-17
