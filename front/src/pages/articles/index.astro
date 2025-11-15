@@ -3,47 +3,52 @@ import { getCollection } from "astro:content";
 
 import Base from "../../layouts/Base.astro";
 import Text from "../../components/base/text/Text.astro";
+import { object } from "astro:schema";
 
-const allPosts = Object.values(
-  import.meta.glob("../content/articles/*.md", { eager: true }),
-);
-console.log(allPosts);
+function validateArticle(data) {
+  const buildDate = new Date();
 
-const allArticles = await getCollection("articles");
+  const isProducts = import.meta.env.PROD;
+
+  const afterPublishDate = new Date(data.publishDate) <= buildDate;
+
+  return afterPublishDate;
+}
+
+const allPosts = (
+  await getCollection("articles", ({ data }) => validateArticle(data))
+).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+const firstParagraph = (contentBody) => contentBody.split("\n")[2];
 ---
 
 <Base title="Articles" activePage="Articles">
   <div slot="mainContent">
     {
-      allArticles.map((article) => (
-        <li>
-          <Text tag="h3">{article.data.title}</Text>
-          <Text tag="p">
-            {article.data.publishDate.toString().slice(0, 10)}
-          </Text>
-
-          <a href="link">more</a>
-        </li>
-      ))
-    }
-    <h1>testing below</h1>
-    {
       allPosts.map((post: any) => (
-        <li>
-          <p>slug: {post.frontmatter.slug}</p>
-          <p>url:{post.url}</p>
-          <h1>title: {post.frontmatter.title}</h1>
-          <p>{post.frontmatter.publishDate}</p>
-        </li>
+        <div class="postBlock">
+          <div class="postBlock_header">
+            <Text tag="h1">{post.data.title}</Text>
+            <Text tag="p">{post.data.publishDate.toString().slice(0, 10)}</Text>
+          </div>
+          <Text tag="p">
+            {firstParagraph(post.body)}{" "}
+            <a href={`articles/${post.data.slug}`}>Contiue...</a>
+          </Text>
+        </div>
       ))
     }
   </div>
 </Base>
 
 <style>
-  li {
-    display: grid;
-    grid-template-columns: 1fr 150px;
-    grid-template-rows: 1fr 1fr;
+  .postBlock {
+    display: flex;
+    flex-direction: column;
+  }
+  .postBlock_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 </style>
