@@ -10,7 +10,7 @@ function validateArticle(data) {
 
   const isProducts = import.meta.env.PROD;
 
-  const afterPublishDate = new Date(data.publishDate) >= buildDate;
+  const afterPublishDate = new Date(data.publishDate) <= buildDate;
 
   return afterPublishDate;
 }

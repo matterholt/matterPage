@@ -1,6 +1,6 @@
 ---
-title: Dear Daily IDE
-slug: daily-driver-IDe
+title: The Daily IDE
+slug: daily-driver-IDE
 publishDate: 2025-11-24
 tags: [ "IDE", "Zed", "editor", "dev_environment" ]
 ---
@@ -14,6 +14,8 @@ Zed is refreshing and snappy. the VIM keybinding are pretty good, I'm no expert 
 
 If you are VS code power user then it could cause you some trouble switch, to be honest you would have trouble switching to anything. There is  one issue I have is that I work in a mono-repo, nested repos and the workspace isn't as clean or nice to work with as the VS code.  DO WHAT YOU WANT, if it keeps you in the code. My concern is that don't want to put all my eggs in one basket. As in wanting to keep competition alive and not have one company rule the developer ecosystem. 
 
+
+
 ## Don't  like VS code
 - terminal is not fun or fast
 - too much there, overwhelming 
@@ -22,7 +24,7 @@ If you are VS code power user then it could cause you some trouble switch, to be
 - old news, 2015 
 
 
-## Zed Neat-0
+## Zed makes it
 
 1. ```grn``` -> rename all instances
 2. ```crtl + r``` -> open AI
@@ -30,7 +32,7 @@ If you are VS code power user then it could cause you some trouble switch, to be
 4. collaborative panel -> connect to people in the editor
 5. Native support for debugging
 6. cross platform , windows linux and mac
-7.  Good docs
+7. Good docs
 8. snippets
 9. task, editor scripts
 10. good vim, helix mode like a vim

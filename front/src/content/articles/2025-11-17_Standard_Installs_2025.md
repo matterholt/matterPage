@@ -5,6 +5,7 @@ publishDate: 2025-11-17
 tags: [ "terminal", "TUI", "installs" , "setup", "dev_environment" ]
 ---
 
+Over the years of professonal development I've found some neat tools that have really made my terminal a pleasure to work in. It started out to help get out of VSCode and to utilize the power of the terminal. There some many tools and  
 
 
 ## Programing Geared
@@ -29,8 +30,12 @@ Command History / Search, Base Terminal can back search for command and go back 
 **Zoxide**
 Basically shortcut to commonly visited directories. The ability to Tab completion, so if you are exploring a new dir or couldn't quite remember how you structure the directories . A better option for visited dirs, would be the interaction mode which brings up a list of visited dirs.
 
+**EZA**
+This a better ```cd``` command it has some preconfigured styling nad 
+
 **Tree**
 Ever wanted to just see the file structure of a directory, install Tree. Prompt is ```tree -l3```  and you got 3 layers deep of the a dir. A helpful when trying to ```mv``` or ```cp``` a file or dir.
+
 
 **NeoVim with LazyVim**
 Fist NeoVim.  Vim that uses Lua, which is similar to JS.  This it a little easier in building packages, opposed to Vimscript. LazyVim, quick install with all the amenities of a modern editor. A heavy lift for newbies, but you are able to get things going.  One that are not ready to go down the path of a custom NeoVim, One day but not today.
