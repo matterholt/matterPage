@@ -1,13 +1,13 @@
 ---
 const { frontmatter } = Astro.props;
-
+import { dateDisplay } from "@util/dateActions.ts";
 import Base from "../layouts/Base.astro";
 ---
 
 <Base>
   <meta charset="utf-8" />
   <h1>{frontmatter.title}</h1>
-  <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
+  <p>Published on: {dateDisplay(frontmatter.pubDate)}</p>
 
   <slot />
 </Base>

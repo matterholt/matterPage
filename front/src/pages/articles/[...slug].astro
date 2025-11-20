@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 
+import { dateDisplay } from "@util/dateActions.ts";
 import Base from "../../layouts/Base.astro";
 import TagList from "../../components/base/tagList/TagList.astro";
 
@@ -20,7 +21,7 @@ const { Content } = await render(post);
 <Base title={title} activePage="Articles">
   <div slot="mainContent">
     <div class="subNav">
-      <p>{publishDate.toString().slice(0, 15)}</p>
+      <p>{dateDisplay(publishDate)}</p>
       <a href="/articles"> All Articles</a>
       <TagList tags={tags} />
     </div>
