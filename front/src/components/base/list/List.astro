@@ -15,6 +15,7 @@ const formatClass = (title) => title.split(" ").join("_").toLowerCase();
     listItems.map((item) => (
       <li class={formatClass(item)}>
         <Text tag="p">{item}</Text>
+          <slot/>
       </li>
     ))
   }

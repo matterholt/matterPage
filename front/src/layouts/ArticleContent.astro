@@ -1,0 +1,14 @@
+---
+const { frontmatter } = Astro.props;
+
+import Base from "../layouts/Base.astro";
+---
+
+<Base>
+  <meta charset="utf-8" />
+  <h1>{frontmatter.title}</h1>
+  <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
+
+  <slot />
+</Base>
+<style></style>

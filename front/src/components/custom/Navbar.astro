@@ -1,18 +1,19 @@
 ---
 import "@fontsource-variable/doto";
 interface Props {
-  activePage: string;
+  activePage?: string;
 }
-const { activePage } = Astro.props;
+const { activePage = "" } = Astro.props;
 
 const navLinks = [
   { title: "Home", path: "/" },
   { title: "Careers", path: "/careers" },
+  { title: "Articles", path: "/articles" },
 ];
 const isPage = (title) => title === activePage;
 ---
 
-<nav>
+<nav slot="topNav">
   {
     navLinks.map((x) => (
       <a

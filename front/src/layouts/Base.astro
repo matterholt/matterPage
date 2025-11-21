@@ -1,0 +1,87 @@
+---
+import '../styles/main.css';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/crimson-pro';// Supports weights 100-900
+import '@fontsource-variable/raleway';
+
+
+import Header from '../components/base/header/Header.astro';
+import NavBar from '../components/custom/Navbar.astro' 
+import Footer from '../components/base/footer/Footer.astro';
+
+
+interface Props {
+  title: string;
+  activePage: string
+}
+
+const { title = "Matterholt" ,activePage} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
+
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+  </head>
+  <body>
+
+    <main>
+      <Header title={title}>
+        <NavBar slot="topNav" activePage={activePage} />
+
+      </Header>
+      <slot name="mainContent" />
+
+    </main>
+    <Footer>
+      <NavBar activePage={activePage} />
+    </Footer>
+  </body>
+</html>
+<style is:global>
+
+  body {
+    font-family: system-ui, sans-serif;
+    background-color: var(--background_color);
+    color: var( --main_lightGray);
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-content: 90vh;
+    /* box-shadow: inset 0em 0em 160px var(--accent_dark-lighter); */
+  }
+  main {
+    max-width: 1212px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  @media screen and (max-width: 790px) {
+    main {
+    width: 100%;
+    }
+  }
+</style>

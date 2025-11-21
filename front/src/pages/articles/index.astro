@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+
+import Base from "../../layouts/Base.astro";
+import Text from "../../components/base/text/Text.astro";
+import { object } from "astro:schema";
+
+function validateArticle(data) {
+  const buildDate = new Date();
+
+  const isProducts = import.meta.env.PROD;
+
+  const afterPublishDate = new Date(data.publishDate) <= buildDate;
+
+  return afterPublishDate;
+}
+
+const allPosts = (
+  await getCollection("articles", ({ data }) => validateArticle(data))
+).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+const firstParagraph = (contentBody) => contentBody.split("\n")[2];
+---
+
+<Base title="Articles" activePage="Articles">
+  <div class="mainContent" slot="mainContent">
+    {
+      allPosts.map((post: any) => (
+        <div class="postBlock">
+          <div class="postBlock_header">
+            <Text tag="h3">{post.data.title}</Text>
+            <Text tag="p">{post.data.publishDate.toString().slice(0, 15)}</Text>
+          </div>
+          <Text tag="p">
+            {firstParagraph(post.body)}{" "}
+            <a href={`articles/${post.data.slug}`}>Contiue...</a>
+          </Text>
+        </div>
+      ))
+    }
+  </div>
+</Base>
+
+<style>
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .postBlock {
+    display: flex;
+    flex-direction: column;
+  }
+  .postBlock_header {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+  }
+</style>
