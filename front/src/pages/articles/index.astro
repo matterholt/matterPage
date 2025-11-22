@@ -1,8 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 import { dateDisplay } from "@utils/dateActions";
-import Base from "../../layouts/Base.astro";
-import Text from "../../components/base/text/Text.astro";
+import Base from "@layouts/Base.astro";
+import Text from "@components/base/text/Text.astro";
+import TagList from "@components/base/tagList/TagList.astro";
+import TagSelection from "@components/custom/TagSelection.astro";
 
 function validateArticle(data) {
   const buildDate = new Date();
@@ -18,19 +20,28 @@ const allPosts = (
   await getCollection("articles", ({ data }) => validateArticle(data))
 ).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
-const firstParagraph = (content) => {
+function firstParagraph(content) {
   return content.split("\n").filter((y) => y.length > 0)[0];
-};
+}
+
+const taglistCollection = new Set();
+
+function content(test) {
+  taglistCollection.add(test.data.tags);
+  return test.data.tags;
+}
 ---
 
 <Base title="Articles" activePage="Articles">
   <div class="mainContent" slot="mainContent">
+    <TagSelection allTags={[1, 2, 3, 4]} />
     {
       allPosts.map((post: any) => (
         <div class="postBlock">
           <div class="postBlock_header">
             <Text tag="h3">{post.data.title}</Text>
             <Text tag="p">{dateDisplay(post.data.publishDate)}</Text>
+            <TagList tags={content(post)} />
           </div>
           <Text tag="p">
             {firstParagraph(post.body)}{" "}
@@ -53,9 +64,8 @@ const firstParagraph = (content) => {
     flex-direction: column;
   }
   .postBlock_header {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    /* align-items: center; */
+    display: grid;
+    align-items: end;
+    justify-content: space-between;
   }
 </style>
