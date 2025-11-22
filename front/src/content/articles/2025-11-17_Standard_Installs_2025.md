@@ -7,7 +7,6 @@ tags: [ "terminal", "TUI", "installs" , "setup", "dev_environment" ]
 
 Over the years of professonal development I've found some neat tools that have really made my terminal a pleasure to work in. It started out to help get out of VSCode and to utilize the power of the terminal. There some many tools and  
 
-
 ## Programing Geared
 
 Brew -> Mac missing packaging manager

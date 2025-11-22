@@ -5,9 +5,10 @@ publishDate: 2025-11-10
 tags: [ "terminal", "shell", "setup", "dev_environment" ]
 ---
 
-## Un-OhMyZsh Myself
 
 As starting dev in the 2020, all i wanted is to get spun up as quick I could to start developing. I wasn't sure what the terminal was or did i care, all that I new is that when you got your mac you installed iterm2 and oh-my-zsh. It worked fine and got work done. but there was a lull in work and I started to wonder what was installed with OhMyZsh and how many feature did i actually leverage.
+
+## Un-OhMyZsh Myself
 
 The questions lead me down a path of multiplexer, shells, terminals and aliases. At home I was using a linux distro, Pop Os. I wanted to find terminals to work on both environments. Iterm2 wasn't going to cut it and plus the work was already done and I really wanted to explore the area.  Alacritty, rust base terminal, multi-platform and nothing installed. This was the starting line. From there I asked what did I use the most with ohMyZsh and how to get it on Alacritty
 
@@ -24,10 +25,12 @@ Night themes.
 - Alacritty -> barebones
 - Ghostty -> future
 - Kitty -> herd good things
+
 #### Shell
 - bash -> the OG & Linux
 - zsh -> Mac default
 - Elvish -> have no experience; had to mention
+
 #### Configs
 - Themes any light or dark:  'Rose Pine' and 'Tokyo Night'
 - Fonts : Ghosty defaults and Departure mono.
