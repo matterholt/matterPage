@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+
+import Base from "../../layouts/Base.astro";
+import Text from "../../components/base/text/Text.astro";
+import { object } from "astro:schema";
+
+function validateArticle(data) {
+  const buildDate = new Date();
+
+  const isProducts = import.meta.env.PROD;
+
+  const afterPublishDate = new Date(data.publishDate) >= buildDate;
+
+
+  // .sort((a,b)=> b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+  return afterPublishDate;
+}
+
+const allPosts = await getCollection("articles", ({ data }) => validateArticle(data)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),;
+---
+
+<Base title="Articles" activePage="Articles">
+  <div slot="mainContent">
+    <h1>testing below</h1>
+    {
+      allPosts.map((post: any) => (
+        <li>
+          <p>slug: {post.data.slug}</p>
+          <p>url:{post.url}</p>
+          <h1>title: {post.data.title}</h1>
+          <p>{post.data.publishDate}</p>
+          <a href={`articles/${post.data.slug}`}>Read it</a>
+        </li>
+<hr/>
+      ))
+    }
+  </div>
+</Base>
+
+<style>
+  li {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    grid-template-rows: 1fr 1fr;
+  }
+</style>

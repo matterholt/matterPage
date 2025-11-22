@@ -18,8 +18,9 @@ const allPosts = (
   await getCollection("articles", ({ data }) => validateArticle(data))
 ).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
-const firstParagraph = (contentBody) =>
-  contentBody.split("\n").filter((x) => x.length > 0)[0];
+const firstParagraph = (content) => {
+  return content.split("\n").filter((y) => y.length > 0)[0];
+};
 ---
 
 <Base title="Articles" activePage="Articles">
