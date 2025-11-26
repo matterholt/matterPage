@@ -1,5 +1,17 @@
 ---
+interface Props {
+  allTags: string[];
+}
 
+const { allTags } = Astro.props;
 ---
 
-<div>impliment a way to filter out articles when tags are sleected</div>
+<div>
+  <ul>
+    {allTags.map((tag) => <li>{tag}</li>)}
+  </ul>
+</div>
+
+<script>
+  const activeTags = [""];
+</script>
