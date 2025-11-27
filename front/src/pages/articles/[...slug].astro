@@ -1,20 +1,24 @@
 ---
 import { getCollection, render } from "astro:content";
+import type { Article } from "@typesAh/article";
 
 import { dateDisplay } from "@utils/dateActions.ts";
-import Base from "../../layouts/Base.astro";
-import TagList from "../../components/base/tagList/TagList.astro";
+import Base from "@layouts/Base.astro";
+
+interface Props {
+  post: Article;
+}
 
 export async function getStaticPaths() {
   const posts = await getCollection("articles");
-  return posts.map((p) => ({
+  return posts.map((p: Article) => ({
     params: { slug: p.data.slug },
     props: { post: p },
   }));
 }
 
 const { post } = Astro.props;
-const { title, publishDate, tags } = post.data;
+const { title, publishDate } = post.data;
 const { Content } = await render(post);
 ---
 
@@ -23,7 +27,6 @@ const { Content } = await render(post);
     <div class="subNav">
       <p>{dateDisplay(publishDate)}</p>
       <a href="/articles"> All Articles</a>
-      <TagList tags={tags} />
     </div>
     <div class="scopedContent">
       <article>
@@ -38,6 +41,7 @@ const { Content } = await render(post);
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     justify-content: space-evenly;
+    gap: 50px;
     width: 100%;
     align-items: center;
     a {

@@ -1,0 +1,26 @@
+---
+interface Props {
+  linkTo: string;
+}
+
+const { linkTo } = Astro.props;
+---
+
+<a class:list={["fontStyle"]} href={linkTo}>Contiue...</a>
+
+<style>
+  .fontStyle {
+    text-decoration: none;
+    font-family: "Doto Variable", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  a.isActive {
+    color: var(--main_accent-blue);
+    border-bottom: none;
+    border-bottom: 2px dotted var(--main_accent-blue);
+    cursor: default;
+    pointer-events: none;
+  }
+</style>

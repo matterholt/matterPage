@@ -1,10 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import { dateDisplay } from "@utils/dateActions";
+
 import Base from "@layouts/Base.astro";
 import Text from "@components/base/text/Text.astro";
-import TagList from "@components/base/tagList/TagList.astro";
 import TagSelection from "@components/custom/TagSelection.astro";
+import ArticleLink from "@components/custom/ArticleLink.astro";
+
 import {
   articlePublish,
   firstParagraph,
@@ -15,31 +17,28 @@ const allPosts = (
   await getCollection("articles", ({ data }) => articlePublish(data))
 ).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
-function articleTags(article) {
-  return article.data.tags;
-}
-
-const tagCollection = await collectAllTags(allPosts);
+const tagCollection = collectAllTags(allPosts);
 ---
 
 <Base title="Articles" activePage="Articles">
   <div class="mainContent" slot="mainContent">
     <TagSelection allTags={tagCollection} />
-    {
-      allPosts.map((post: any) => (
-        <div class="postBlock">
-          <div class="postBlock_header">
-            <Text tag="h3">{post.data.title}</Text>
-            <Text tag="p">{dateDisplay(post.data.publishDate)}</Text>
-            <TagList tags={articleTags(post)} />
+    <div class="articleContent_listing">
+      {
+        allPosts.map((post: any) => (
+          <div class="postBlock">
+            <div class="postBlock_header">
+              <Text tag="h3">{post.data.title}</Text>
+              <Text tag="p">{dateDisplay(post.data.publishDate)}</Text>
+            </div>
+            <Text tag="p">
+              {firstParagraph(post.body)}{" "}
+              <ArticleLink linkTo={`articles/${post.data.slug}`} />
+            </Text>
           </div>
-          <Text tag="p">
-            {firstParagraph(post.body)}{" "}
-            <a href={`articles/${post.data.slug}`}>Contiue...</a>
-          </Text>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
 </Base>
 
@@ -47,14 +46,20 @@ const tagCollection = await collectAllTags(allPosts);
   .mainContent {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 50px;
+  }
+  .articleContent_listing {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
   }
   .postBlock {
     display: flex;
     flex-direction: column;
+    gap: 30px;
   }
   .postBlock_header {
-    display: grid;
+    display: flex;
     align-items: end;
     justify-content: space-between;
   }
