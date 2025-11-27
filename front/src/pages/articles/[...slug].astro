@@ -9,6 +9,8 @@ interface Props {
   post: Article;
 }
 
+import ArticleLink from "@components/custom/ArticleLink.astro";
+
 export async function getStaticPaths() {
   const posts = await getCollection("articles");
   return posts.map((p: Article) => ({
@@ -26,7 +28,7 @@ const { Content } = await render(post);
   <div slot="mainContent">
     <div class="subNav">
       <p>{dateDisplay(publishDate)}</p>
-      <a href="/articles"> All Articles</a>
+      <ArticleLink linkTo="/articles" textDisplay="All Articles" />
     </div>
     <div class="scopedContent">
       <article>
@@ -38,10 +40,9 @@ const { Content } = await render(post);
 <style>
   .subNav {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
     justify-content: space-evenly;
-    gap: 50px;
     width: 100%;
     align-items: center;
     a {

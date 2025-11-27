@@ -17,7 +17,7 @@ const isPage = (title) => title === activePage;
   {
     navLinks.map((x) => (
       <a
-        class:list={[{ isActive: isPage(x.title) }, "fontStyle"]}
+        class:list={[{ isCurrentPage: isPage(x.title) }, "fontStyle"]}
         href={x.path}
       >
         {x.title}
@@ -38,6 +38,9 @@ const isPage = (title) => title === activePage;
     a:active {
       color: var(--main_white);
     }
+    a:hover {
+      font-weight: 900;
+    }
   }
   .fontStyle {
     text-decoration: none;
@@ -45,9 +48,9 @@ const isPage = (title) => title === activePage;
     font-weight: 500;
     font-size: 25px;
   }
-  a.isActive {
-    color: var(--main_accent-blue);
+  .isCurrentPage {
     border-bottom: none;
+    color: var(--main_accent-blue);
     border-bottom: 2px dotted var(--main_accent-blue);
     cursor: default;
     pointer-events: none;
