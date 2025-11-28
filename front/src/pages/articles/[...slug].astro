@@ -1,15 +1,15 @@
 ---
 import { getCollection, render } from "astro:content";
 import type { Article } from "@typesAh/article";
-
 import { dateDisplay } from "@utils/dateActions.ts";
+
 import Base from "@layouts/Base.astro";
+import Text from "@components/base/text/Text.astro";
+import ArticleLink from "@components/custom/ArticleLink.astro";
 
 interface Props {
   post: Article;
 }
-
-import ArticleLink from "@components/custom/ArticleLink.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("articles");
@@ -24,11 +24,14 @@ const { title, publishDate } = post.data;
 const { Content } = await render(post);
 ---
 
-<Base title={title} activePage="Articles">
+<Base title={"Articles"} activePage="Articles">
   <div slot="mainContent">
     <div class="subNav">
+      <ArticleLink linkTo="/articles" textDisplay="Back to Articles" />
       <p>{dateDisplay(publishDate)}</p>
-      <ArticleLink linkTo="/articles" textDisplay="All Articles" />
+    </div>
+    <div>
+      <Text tag="h2">{title}</Text>
     </div>
     <div class="scopedContent">
       <article>
@@ -40,13 +43,10 @@ const { Content } = await render(post);
 <style>
   .subNav {
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-evenly;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
+    justify-content: space-between;
     width: 100%;
     align-items: center;
-    a {
-      justify-self: flex-end;
-    }
   }
 </style>
