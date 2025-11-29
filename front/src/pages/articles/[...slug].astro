@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import type { Article } from "@typesAh/article";
+import type { ArticleCollection } from "@typesAh/article";
 import { dateDisplay } from "@utils/dateActions.ts";
 
 import Base from "@layouts/Base.astro";
@@ -8,12 +8,12 @@ import Text from "@components/base/text/Text.astro";
 import ArticleLink from "@components/custom/ArticleLink.astro";
 
 interface Props {
-  post: Article;
+  post: ArticleCollection;
 }
 
 export async function getStaticPaths() {
   const posts = await getCollection("articles");
-  return posts.map((p: Article) => ({
+  return posts.map((p: ArticleCollection) => ({
     params: { slug: p.data.slug },
     props: { post: p },
   }));

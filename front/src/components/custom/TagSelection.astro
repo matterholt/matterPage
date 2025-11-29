@@ -11,7 +11,7 @@ const { allTags } = Astro.props;
 </ul>
 
 <style>
-  .targetedTag {
+  .selected_tag {
     background-color: #ffffff52;
   }
   .taglist {
@@ -19,12 +19,18 @@ const { allTags } = Astro.props;
     display: flex;
     list-style: none;
     gap: 10px;
-    margin: 0pc;
+    margin: 0px;
     padding: 10px;
     text-transform: uppercase;
     li {
-      padding: 5px;
+      padding: 6px;
       border-radius: 5px;
+    }
+    li:hover {
+      margin: 0;
+      padding: 5px;
+      border: solid 1px #ffffff52;
+      cursor: pointer;
     }
   }
 </style>

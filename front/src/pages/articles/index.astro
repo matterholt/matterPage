@@ -1,11 +1,15 @@
 ---
 import { getCollection } from "astro:content";
+
 import { dateDisplay } from "@utils/dateActions";
 
 import Base from "@layouts/Base.astro";
+
 import Text from "@components/base/text/Text.astro";
 import TagSelection from "@components/custom/TagSelection.astro";
 import ArticleLink from "@components/custom/ArticleLink.astro";
+
+import TagList from "@components/base/tagList/TagList.astro";
 
 import {
   articlePublish,
@@ -23,14 +27,18 @@ const tagCollection = collectAllTags(allPosts);
 <script src="../../scripts/tagaction.js"></script>
 <Base title="Articles" activePage="Articles">
   <div class="mainContent" slot="mainContent">
-    <TagSelection allTags={tagCollection} />
+    <div>
+      <button id="resetTag">reset</button>
+      <TagSelection allTags={tagCollection} />
+    </div>
     <div class="articleContent_listing">
       {
         allPosts.map((post: any) => (
-          <div class="postBlock">
+          <div id={post.data.slug.split("-").join("_")} class="postBlock">
             <div class="postBlock_header">
               <Text tag="h3">{post.data.title}</Text>
               <Text tag="p">{dateDisplay(post.data.publishDate)}</Text>
+              <TagSelection allTags={post.data.tags} />
             </div>
             <Text tag="p">
               {firstParagraph(post.body)}{" "}
@@ -57,10 +65,11 @@ const tagCollection = collectAllTags(allPosts);
   .postBlock {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
   }
   .postBlock_header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
     align-items: end;
     justify-content: space-between;
   }

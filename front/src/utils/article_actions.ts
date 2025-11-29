@@ -1,3 +1,4 @@
+import type { ArticleCollection } from "@typesAh/article";
 
 export function articlePublish(data) {
   const buildDate = new Date();
@@ -15,7 +16,7 @@ export function firstParagraph(content) {
 }
 
 
-export function collectAllTags(blogPosts): string[] {
+export function collectAllTags(blogPosts: ArticleCollection[]): string[] {
   // takes the blog post for all tag that are active tags
 
   const allTags = blogPosts.flatMap(post => post.data.tags || []);

@@ -1,4 +1,4 @@
-export interface Article {
+export interface ArticleCollection {
   id: string;
   data: {
     title: string;
