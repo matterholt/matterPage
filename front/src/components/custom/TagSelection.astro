@@ -6,7 +6,7 @@ interface Props {
 const { allTags } = Astro.props;
 ---
 
-<ul id="tagCollection_list">
+<ul class="taglist" id="tagCollection_list">
   {allTags.map((tag) => <li class={tag.toLocaleLowerCase()}>{tag}</li>)}
 </ul>
 
@@ -14,14 +14,13 @@ const { allTags } = Astro.props;
   .targetedTag {
     background-color: #ffffff52;
   }
-  ul {
+  .taglist {
     font-size: 10px;
-    isplay: flex;
+    display: flex;
     list-style: none;
     gap: 10px;
     margin: 0pc;
     padding: 10px;
-    outline: solid white;
     text-transform: uppercase;
     li {
       padding: 5px;
