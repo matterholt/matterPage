@@ -6,23 +6,26 @@ interface Props {
 const { allTags } = Astro.props;
 ---
 
-<div>
-  <ul>
-    {allTags.map((tag) => <li>{tag}</li>)}
-  </ul>
-</div>
+<ul id="tagCollection_list">
+  {allTags.map((tag) => <li class={tag.toLocaleLowerCase()}>{tag}</li>)}
+</ul>
 
-<script>
-  const activeTags = [""];
-</script>
 <style>
+  .targetedTag {
+    background-color: #ffffff52;
+  }
   ul {
     font-size: 10px;
-    display: flex;
+    isplay: flex;
     list-style: none;
     gap: 10px;
     margin: 0pc;
-    padding: 0px;
+    padding: 10px;
+    outline: solid white;
     text-transform: uppercase;
+    li {
+      padding: 5px;
+      border-radius: 5px;
+    }
   }
 </style>

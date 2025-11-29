@@ -20,6 +20,7 @@ const allPosts = (
 const tagCollection = collectAllTags(allPosts);
 ---
 
+<script src="../../scripts/tagaction.js"></script>
 <Base title="Articles" activePage="Articles">
   <div class="mainContent" slot="mainContent">
     <TagSelection allTags={tagCollection} />
