@@ -28,11 +28,12 @@ const linkType = type == "external" ? "_blank" : "_self";
     background-color: rgba(255, 255, 255, 0.06);
   }
 
-  a {
-    color: var(--main_white);
+  a,
+  a:visited {
+    color: var(--main_complementary);
     /* border-bottom: 2px solid var(--main_accent-blue); */
   }
-  a:active {
+  active {
     color: var(--main_accent-blue);
   }
 

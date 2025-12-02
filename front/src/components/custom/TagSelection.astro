@@ -6,7 +6,7 @@ interface Props {
 const { allTags } = Astro.props;
 ---
 
-<ul class="taglist" id="tagCollection_list">
+<ul class="taglist tagCollection_list">
   {allTags.map((tag) => <li class={tag.toLocaleLowerCase()}>{tag}</li>)}
 </ul>
 

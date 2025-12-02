@@ -22,16 +22,18 @@ const allPosts = (
 ).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
 const tagCollection = collectAllTags(allPosts);
+// <script src="../../scripts/articlePosts.js"></script>
 ---
 
 <script src="../../scripts/tagaction.js"></script>
+
 <Base title="Articles" activePage="Articles">
   <div class="mainContent" slot="mainContent">
     <div>
       <button id="resetTag">reset</button>
       <TagSelection allTags={tagCollection} />
     </div>
-    <div class="articleContent_listing">
+    <div id="articleContent" class="articleContent_listing">
       {
         allPosts.map((post: any) => (
           <div id={post.data.slug.split("-").join("_")} class="postBlock">
