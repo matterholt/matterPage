@@ -46,6 +46,7 @@ function handleCssClass(targetTag, action) {
 function evealuate() {
   console.log("check slecelted tags");
   console.log(selectedTag);
+  blogit()
 }
 
 
@@ -71,3 +72,70 @@ function resetTags() {
 
 const resetTagButton = document.getElementById("resetTag")
 resetTagButton.addEventListener("click", resetTags)
+
+
+// temp
+
+
+
+
+// below remove from file and place into other 
+// main index file and pull in modules
+
+function articleTags(post) {
+
+  const tagit = post.getElementsByClassName("taglist")
+  const litag = tagit.querySelectorAll('li')
+  // const listContent = Array.from(litag).map(x => x.textContent)
+  debugger
+
+
+  return tagit
+}
+
+
+
+
+let orginalCollection = [];
+
+function blogit() {
+  const parentDom = document.getElementById("articleContent")
+  const articleCollection = parentDom.getElementsByClassName("postBlock")
+  if (orginalCollection.length === 0) [
+    orginalCollection = [...articleCollection]
+  ]
+
+  const newElement = []
+
+  for (let article of orginalCollection) {
+    /**
+     *
+     *
+     * 1. take orginal collection 
+     * 2. collect the tag set for each article
+     * 3. if any tag match the selected_tag
+     * 4. return any article that has a selected_tag
+     *
+     */
+    const tagging = orginalCollection
+    console.log("article", tagging)
+    debugger
+
+
+
+    if (false) {
+      newElement.push(article)
+    }
+
+  }
+
+  console.log("newElement", newElement)
+  console.log("orginal", orginalCollection)
+  console.log("parent", parentDom)
+
+  parentDom.innerHTML = ''
+  parentDom.append(...newElement);
+
+  // articleCollection.replaceWith(newElement);
+  // console.log(orginalCollection)
+}
