@@ -22,10 +22,9 @@ const allPosts = (
 ).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
 const tagCollection = collectAllTags(allPosts);
-// <script src="../../scripts/articlePosts.js"></script>
 ---
 
-<script src="../../scripts/tagaction.js"></script>
+<script src="../../scripts/highlightTag.js"></script>
 
 <Base title="Articles" activePage="Articles">
   <div class="mainContent" slot="mainContent">

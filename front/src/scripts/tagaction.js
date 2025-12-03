@@ -1,23 +1,4 @@
 import { resetTags, handleSelectedTags } from './tagClass.js'
-const tagCollectionUnorderList = document.getElementsByClassName("taglist");
-
-for (let unorderList of tagCollectionUnorderList) {
-  lisentersOnTag(unorderList.childNodes)
-}
-
-
-let selectedTag = [];
-
-
-function lisentersOnTag(listItems) {
-  listItems.forEach((element) =>
-    element.addEventListener("click", handleSelectedTags),
-  );
-}
-
-const resetTagButton = document.getElementById("resetTag")
-resetTagButton.addEventListener("click", resetTags)
-
 
 // temp
 
@@ -28,11 +9,7 @@ function articleTags(post) {
   return Array.from(post.querySelectorAll('li')).map(x => x.innerText.trim())
 }
 
-
-
-
 let orginalCollection = [];
-
 
 function blogit() {
 

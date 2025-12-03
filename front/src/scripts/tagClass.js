@@ -1,3 +1,4 @@
+let selectedTag = []
 
 function updateSelectedTag(targetTag) {
   if (selectedTag.includes(targetTag)) {
@@ -20,7 +21,6 @@ export function handleSelectedTags(event) {
   const targetTag = event.target.innerText;
   const cssAction = updateSelectedTag(targetTag)
   handleCssClass(targetTag, cssAction)
-  evealuate();
 };
 
 
@@ -35,17 +35,10 @@ function handleCssClass(targetTag, action) {
 }
 
 
-function evealuate() {
-  console.log("check slecelted tags");
-  console.log(selectedTag);
-}
-
-
 export function resetTags() {
   if (selectedTag.length === 0) {
     return
   }
-  console.log("reset", selectedTag)
   for (let tag of selectedTag) {
     const collection = document.getElementsByClassName(tag.toLowerCase())
     for (let collect of collection) {
