@@ -1,23 +1,29 @@
 ---
 export async function getStaticPaths() {
   const allPosts = Object.values(
-    import.meta.glob("../articles/*.md", { eager: true }),
+    import.meta.glob("../../../content/articles/*.md", { eager: true }),
   );
-
-  return [
-    { params: { tag: "astro" } },
-    { params: { tag: "successes" } },
-    { params: { tag: "community" } },
-    { params: { tag: "blogging" } },
-
-    { params: { tag: "shell" }, props: { posts: allPosts } },
+  const uniqueTags = [
+    ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
   ];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post: any) => {
+      const tagMod = post.frontmatter.tags.map((x) => x.toLowerCase());
+      return tagMod.includes(tag.toLowerCase());
+    });
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
 }
+
 const { posts } = Astro.props;
 const { tag } = Astro.params;
-const filteredPosts = posts.filter((post: any) =>
-  post.frontmatter.tags?.includes(tag),
-);
+const filteredPosts = posts.filter((post: any) => {
+  return post.frontmatter.tags;
+});
 ---
 
 <div>
