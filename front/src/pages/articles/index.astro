@@ -6,10 +6,9 @@ import { dateDisplay } from "@utils/date_actions";
 import Base from "@layouts/Base.astro";
 
 import Text from "@components/base/text/Text.astro";
-import TagSelection from "@components/custom/TagSelection.astro";
 import ArticleLink from "@components/custom/ArticleLink.astro";
 
-import TagList from "@components/base/tagList/TagList.astro";
+import TagList from "@components/custom/TagList.astro";
 
 import {
   articlePublish,
@@ -30,7 +29,7 @@ const tagCollection = collectAllTags(allPosts);
   <div class="mainContent" slot="mainContent">
     <div>
       <button id="resetTag">reset</button>
-      <TagSelection allTags={tagCollection} />
+      <TagList />
     </div>
     <div id="articleContent" class="articleContent_listing">
       {
@@ -39,7 +38,7 @@ const tagCollection = collectAllTags(allPosts);
             <div class="postBlock_header">
               <Text tag="h3">{post.data.title}</Text>
               <Text tag="p">{dateDisplay(post.data.publishDate)}</Text>
-              <TagSelection allTags={post.data.tags} />
+              <TagList tags={post.data.tags} />
             </div>
             <Text tag="p">
               {firstParagraph(post.body)}{" "}

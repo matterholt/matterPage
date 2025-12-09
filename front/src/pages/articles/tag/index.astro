@@ -1,4 +1,5 @@
 ---
+import Text from "@components/base/text/Text.astro";
 const allPosts = Object.values(
   import.meta.glob("../../../content/articles/*.md", { eager: true }),
 );
@@ -8,7 +9,6 @@ const uniqueTags = [
 ---
 
 <div>
-  list of tags
-
+  <Text tag="h2"> list of tags </Text>
   {uniqueTags.map((x) => <li>{x}</li>)}
 </div>

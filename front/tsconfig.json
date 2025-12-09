@@ -6,7 +6,8 @@
           "@layouts/*": ["./src/layouts/*"],
           "@assets/*": ["./src/assets/*"],
           "@utils/*":["./src/utils/*"],
-          "@typesAh/*":["src/typesAh/*"]
+          "@typesAh/*":["./src/typesAh/*"],
+          "@content/*":["./src/content/*"]
       },
     "plugins": [
       {
