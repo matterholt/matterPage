@@ -10,25 +10,16 @@ import ArticleLink from "@components/custom/ArticleLink.astro";
 
 import TagList from "@components/custom/TagList.astro";
 
-import {
-  articlePublish,
-  firstParagraph,
-  collectAllTags,
-} from "@utils/article_actions";
+import { articlePublish, firstParagraph } from "@utils/article_actions";
 
 const allPosts = (
   await getCollection("articles", ({ data }) => articlePublish(data))
 ).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
-
-const tagCollection = collectAllTags(allPosts);
 ---
 
-<script src="../../scripts/highlightTag.js"></script>
-
-<Base title="Articles" activePage="Articles">
+<Base title="Articles">
   <div class="mainContent" slot="mainContent">
     <div>
-      <button id="resetTag">reset</button>
       <TagList />
     </div>
     <div id="articleContent" class="articleContent_listing">

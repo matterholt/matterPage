@@ -1,16 +1,20 @@
 ---
 import "@fontsource-variable/doto";
-interface Props {
-  activePage?: string;
-}
-const { activePage = "" } = Astro.props;
 
 const navLinks = [
   { title: "Home", path: "/" },
   { title: "Careers", path: "/careers" },
   { title: "Articles", path: "/articles" },
 ];
-const isPage = (title) => title === activePage;
+
+const { pathname } = Astro.url;
+const isPage = (title: string) => {
+  const urlPath = pathname.split("/");
+  if (title === "Home" && urlPath.every((x) => x === "")) {
+    return true;
+  }
+  return urlPath.includes(title.toLowerCase());
+};
 ---
 
 <nav slot="topNav">

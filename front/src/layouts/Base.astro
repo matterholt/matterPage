@@ -12,10 +12,9 @@ import Footer from '../components/base/footer/Footer.astro';
 
 interface Props {
   title: string;
-  activePage: string
 }
 
-const { title = "Matterholt" ,activePage} = Astro.props;
+const { title = "Matterholt"} = Astro.props;
 ---
 
 <!doctype html>
@@ -36,14 +35,13 @@ const { title = "Matterholt" ,activePage} = Astro.props;
 
     <main>
       <Header title={title}>
-        <NavBar slot="topNav" activePage={activePage} />
-
+        <NavBar slot="topNav" />
       </Header>
       <slot name="mainContent" />
 
     </main>
     <Footer>
-      <NavBar activePage={activePage} />
+      <NavBar />
     </Footer>
   </body>
 </html>
