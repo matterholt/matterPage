@@ -19,7 +19,9 @@ const displayedTags = tags.length === 0 ? uniqueTags : tags;
   {
     displayedTags.map((tag) => (
       <li class={tag.toLocaleLowerCase()}>
-        <a href={`articles/tag/${tag}`}>{tag}</a>
+        <a class="tagLink" href={`articles/tag/${tag}`}>
+          {tag}
+        </a>
       </li>
     ))
   }
@@ -30,20 +32,27 @@ const displayedTags = tags.length === 0 ? uniqueTags : tags;
     background-color: #ffffff52;
   }
   .taglist {
-    font-size: 10px;
+    font-size: 12px;
     display: flex;
     list-style: none;
     gap: 10px;
     margin: 0px;
-    padding: 10px;
+    padding: 0px;
     text-transform: uppercase;
-    li {
-      padding: 6px;
+
+    .tagLink {
+      color: var(--main_fontLinkableColor);
+      border: solid 1px var(--main_fontLinkableColor);
+      border-radius: 30px;
+      corner-shape: scoop;
+      padding: 8px;
       border-radius: 5px;
+      text-decoration: none;
     }
-    li:hover {
+    .tagLink:hover,
+    .tagLink:active {
+      color: #ffffff52;
       margin: 0;
-      padding: 5px;
       border: solid 1px #ffffff52;
       cursor: pointer;
     }
