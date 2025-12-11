@@ -1,0 +1,55 @@
+---
+import Text from "@components/base/text/Text.astro";
+import ArticleLink from "@components/custom/ArticleLink.astro";
+import TagList from "@components/custom/TagList.astro";
+
+import { articlePublish, firstParagraph } from "@utils/article_actions";
+
+import type { FrontMatterContent } from "@typesAh/article";
+
+import { dateDisplay } from "@utils/date_actions";
+interface Props {
+  listedArticles: [FrontMatterContent];
+}
+
+const { listedArticles } = Astro.props;
+---
+
+<div id="articleContent" class="articleContent_listing">
+  {
+    listedArticles.map((post: any) => (
+      <div id={post.frontmatter.slug.split("-").join("_")} class="postBlock">
+        <div class="postBlock_header">
+          <Text tag="h3">{post.frontmatter.title}</Text>
+          <Text tag="p">{dateDisplay(post.frontmatter.publishDate)}</Text>
+          <TagList tags={post.frontmatter.tags} />
+        </div>
+        <Text tag="p">
+          {post?.body ? firstParagraph(post.body) : ""}{" "}
+          <ArticleLink linkTo={`/articles/${post.frontmatter.slug}`} />
+        </Text>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .articleContent_listing {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+  .postBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .postBlock_header {
+    display: grid;
+    grid-template-rows: max-content 50px;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+  }
+</style>

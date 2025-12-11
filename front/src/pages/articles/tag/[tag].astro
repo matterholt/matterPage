@@ -1,4 +1,10 @@
 ---
+const { posts } = Astro.props;
+const { tag } = Astro.params;
+
+import ArticleList from "@layouts/component/ArticleList.astro";
+import Base from "@layouts/Base.astro";
+
 export async function getStaticPaths() {
   const allPosts = Object.values(
     import.meta.glob("../../../content/articles/*.md", { eager: true }),
@@ -19,23 +25,15 @@ export async function getStaticPaths() {
   });
 }
 
-const { posts } = Astro.props;
-const { tag } = Astro.params;
+// title.slug,tags,publishDate
 const filteredPosts = posts.filter((post: any) => {
   return post.frontmatter.tags;
 });
 ---
 
-<div>
-  <p>Posts tagged with {tag}</p>
-
-  <ul>
-    {
-      filteredPosts.map((post: any) => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
-      ))
-    }
-  </ul>
-</div>
+<Base title="Article Tags">
+  <div slot="mainContent">
+    <p>Posts tagged with ''{tag}''</p>
+    <ArticleList listedArticles={filteredPosts} />
+  </div>
+</Base>

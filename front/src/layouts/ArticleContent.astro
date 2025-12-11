@@ -4,7 +4,7 @@ import { dateDisplay } from "@util/dateActions.ts";
 import Base from "../layouts/Base.astro";
 ---
 
-<Base>
+<Base slot="mainContent">
   <meta charset="utf-8" />
   <h1>{frontmatter.title}</h1>
   <p>Published on: {dateDisplay(frontmatter.pubDate)}</p>
