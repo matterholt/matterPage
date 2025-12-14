@@ -18,8 +18,8 @@ const allPosts = (
 
 <Base title="Articles">
   <div class="mainContent" slot="mainContent">
-    <div>
-      <TagList />
+    <div class="articleContent_tagList">
+      <TagList linkStyle="enclosed" />
     </div>
     <div id="articleContent" class="articleContent_listing">
       {
@@ -47,10 +47,11 @@ const allPosts = (
     flex-direction: column;
     gap: 50px;
   }
+
   .articleContent_listing {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 30px;
   }
   .postBlock {
     display: flex;
@@ -59,7 +60,7 @@ const allPosts = (
   }
   .postBlock_header {
     display: grid;
-    grid-template-rows: max-content 50px;
+    grid-template-rows: max-content 25px;
     grid-template-columns: 3fr 1fr;
     align-items: center;
     justify-content: space-between;

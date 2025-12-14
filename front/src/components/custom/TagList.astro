@@ -1,9 +1,10 @@
 ---
 interface Props {
-  tags?: string[];
+  tags?: String[];
+  linkStyle?: "base" | "enclosed";
 }
 
-const { tags = [] } = Astro.props;
+const { tags = [], linkStyle = "base" } = Astro.props;
 
 const allPosts = Object.values(
   import.meta.glob("@content/articles/*.md", { eager: true }),
@@ -19,7 +20,7 @@ const displayedTags = tags.length === 0 ? uniqueTags : tags;
   {
     displayedTags.map((tag) => (
       <li class={tag.toLocaleLowerCase()}>
-        <a class="tagLink" href={`articles/tag/${tag}`}>
+        <a class:list={["tagLink", linkStyle]} href={`/articles/tag/${tag}`}>
           {tag}
         </a>
       </li>
@@ -40,13 +41,16 @@ const displayedTags = tags.length === 0 ? uniqueTags : tags;
     padding: 0px;
     text-transform: uppercase;
 
+    .enclosed.tagLink {
+      border-radius: 5px;
+      border: solid 1px var(--main_fontLinkableColor);
+      corner-shape: scoop;
+    }
+    .base.tagLink {
+    }
     .tagLink {
       color: var(--main_fontLinkableColor);
-      border: solid 1px var(--main_fontLinkableColor);
-      border-radius: 30px;
-      corner-shape: scoop;
-      padding: 8px;
-      border-radius: 5px;
+      padding: 9px;
       text-decoration: none;
     }
     .tagLink:hover,
