@@ -37,7 +37,8 @@ const filteredPosts = posts.filter((post: any) => {
   <div slot="mainContent">
     <div class="subHaeder">
       <Text tag="h2"> Articles that have been <br /> tag : "{tag}"</Text>
-      <LinkTo path="/articles/"> Article Main</LinkTo>
+
+      <LinkTo path="/articles/" type="internal"> Article Main</LinkTo>
     </div>
     <ArticleList listedArticles={filteredPosts} />
   </div>

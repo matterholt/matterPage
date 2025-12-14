@@ -5,10 +5,10 @@ import ArticleLink from "@components/custom/ArticleLink.astro";
 import type { FrontMatterContent } from "@typesAh/article";
 
 import { dateDisplay } from "@utils/date_actions";
-interface Props {
-  listedArticles?: [FrontMatterContent];
-}
 
+interface Props {
+  listedArticles?: FrontMatterContent[];
+}
 const { listedArticles = [] } = Astro.props;
 ---
 
