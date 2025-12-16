@@ -2,6 +2,8 @@
 const { posts } = Astro.props;
 const { tag } = Astro.params;
 
+import type { FrontMatterContent } from "@typesAh/article.ts";
+
 import ArticleList from "@layouts/component/ArticleList.astro";
 import Base from "@layouts/Base.astro";
 import Text from "@components/base/text/Text.astro";
@@ -17,7 +19,7 @@ export async function getStaticPaths() {
 
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post: any) => {
-      const tagMod = post.frontmatter.tags.map((x) => x.toLowerCase());
+      const tagMod = post.frontmatter.tags.map((x: string) => x.toLowerCase());
       return tagMod.includes(tag.toLowerCase());
     });
     return {
@@ -28,9 +30,11 @@ export async function getStaticPaths() {
 }
 
 // title.slug,tags,publishDate
-const filteredPosts = posts.filter((post: any) => {
-  return post.frontmatter.tags;
-});
+const filteredPosts = posts
+  .filter((post: FrontMatterContent) => {
+    return post.frontmatter.tags;
+  })
+  .map((x: FrontMatterContent) => x.frontmatter);
 ---
 
 <Base title="Article Tags">

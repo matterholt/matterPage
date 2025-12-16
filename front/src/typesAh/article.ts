@@ -29,7 +29,7 @@ export interface ArticleCollection {
 //"tags":["terminal","TUI","installs","setup","dev_environment"]},
 //"file":"/home/matterholt/Work/sites/matterPage/front/src/content/articles/2025-11-17_Standard_Installs_2025.md"}
 //
-interface ArticleFrontMatter {
+export interface ArticleFrontMatter {
   title: string;
   slug: string;
   publishDate: string;

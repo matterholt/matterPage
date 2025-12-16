@@ -1,13 +1,13 @@
 ---
+import { dateDisplay } from "@utils/date_actions";
+
+import type { ArticleFrontMatter } from "@typesAh/article";
+
 import Text from "@components/base/text/Text.astro";
 import ArticleLink from "@components/custom/ArticleLink.astro";
 
-import type { FrontMatterContent } from "@typesAh/article";
-
-import { dateDisplay } from "@utils/date_actions";
-
 interface Props {
-  listedArticles?: FrontMatterContent[];
+  listedArticles?: ArticleFrontMatter[];
 }
 const { listedArticles = [] } = Astro.props;
 ---
@@ -16,14 +16,14 @@ const { listedArticles = [] } = Astro.props;
   {
     listedArticles.map((post: any) => (
       <div
-        id={post.frontmatter.slug.split("-").join("_")}
+        id={post.slug.split("-").join("_")}
         class="postBlock postBlock_header"
       >
-        <Text tag="h3">{post.frontmatter.title}</Text>
-        <Text tag="p">{dateDisplay(post.frontmatter.publishDate)}</Text>
+        <Text tag="h3">{post.title}</Text>
+        <Text tag="p">{dateDisplay(post.publishDate)}</Text>
         <ArticleLink
           textDisplay="Read Article"
-          linkTo={`/articles/${post.frontmatter.slug}`}
+          linkTo={`/articles/${post.slug}`}
         />
       </div>
     ))
