@@ -6,41 +6,22 @@ import LinkTo from "../components/base/linkTo/LinkTo.astro";
 import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
 ---
 
-<Base title="Matterholt">
-  <div class="mainContent" slot="mainContent">
+<Base title="">
+  <div class="mainContent_layout" slot="mainContent">
     <div class="indexHero">
-      <Logo size={250} />
-
-      <Text tag="h1" class="indexHeroText"> A Curious Programmer </Text>
-
-      <div class="indexHeroExternalLinks">
-        <LinkTo
-          type="external"
-          path="https://www.linkedin.com/in/matthew-atterholt-5628b575"
-        >
-          Linkedin
-        </LinkTo>
-        <LinkTo type="external" path="https://github.com/matterholt"
-          >Github</LinkTo
-        >
+      <div class="indexHeroText">
+        <Text tag="h1"> Matterholt </Text>
+        <Text tag="h2"> :Curious </Text>
       </div>
-
       <div class="indexHeroSub">
         <Text tag="p">
-          A decade as an automotive engineer turned developer. Driven to build
-          purposeful projects that help the goals of the company. Experience
-          gained in engineering translates well to coding, especially in
-          collaborative, product-focused environments. Skilled in modern
-          frontend development using Vue and React, with modern HTML/CSS
-          practices. Comfortable with back-end tools like Hono.js and FastAPI,
-          and enjoy working in the Python ecosystem for scripting, scraping, and
-          general programming. A versatile contributor who adapts quickly across
-          the stack. A bit of jack of all trades
+          Be curious, heard that on a podcast and I like the Idea. The sites
+          goals is to attempt to capture my curiousisties**. I've got a touch of
+          ADHD, so keeping on track on things is my weakness, like 2 sides of a
+          coin it also lets me explore a vast amount of subjects.
         </Text>
       </div>
     </div>
-
-    <hr />
     <div class="indexHeroWhoIAm">
       <Text tag="h2">My Career Focus</Text>
       <Text tag="p">
@@ -50,8 +31,8 @@ import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.as
         versatile contributor who adapts quickly across the stack. A bit of jack
         of all trades
       </Text>
+      <hr />
     </div>
-    <hr />
     <div>
       <Text tag="h2">Who I am</Text>
       <Text tag="p">
@@ -62,28 +43,36 @@ import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.as
         team. Try to keep every day spicy and enjoy the challenges that pass my
         way.
       </Text>
+      <hr />
     </div>
-    <hr />
     <div>
       <Text tag="h2">Current Position</Text>
-      <CurrentCareerPosition />
+      <CurrentCareerPosition showDetails={false} />
       <div class="linkTo_box">
-        <LinkTo type="internal" path="/careers"> Past Positions </LinkTo>
+        <LinkTo type="internal" path="/careers">Positions </LinkTo>
       </div>
     </div>
   </div>
 </Base>
 <style>
+  .mainContent_layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
   .indexHero {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: max-content 1fr;
     justify-content: space-between;
     align-items: center;
+    gap: 25px;
   }
   .indexHeroText {
     grid-column: 2;
     grid-row: 1;
+    word-break: none;
+    width: max-content;
     --common_textAlign: center;
   }
   .indexHeroExternalLinks {

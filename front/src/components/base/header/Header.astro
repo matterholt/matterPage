@@ -1,5 +1,7 @@
 ---
 import Text from "../text/Text.astro";
+import Logo from "@components/custom/Logo.astro";
+
 interface Props {
   title: string;
 }
@@ -9,7 +11,9 @@ const { title } = Astro.props;
 
 <header>
   <slot name="topNav" />
-  <Text tag="h1">{title}</Text>
+  <div class="header_titleLayout">
+    {title ? <Text tag="h1">{title}</Text> : <Logo size={50} />}
+  </div>
 </header>
 <style>
   header {
@@ -18,5 +22,8 @@ const { title } = Astro.props;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .header_titleLayout {
+    display: flex;
   }
 </style>

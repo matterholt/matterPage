@@ -1,8 +1,18 @@
 ---
-
+import LinkTo from "../linkTo/LinkTo.astro";
 ---
 
 <footer>
+  <div class="indexHeroExternalLinks">
+    <LinkTo
+      type="external"
+      path="https://www.linkedin.com/in/matthew-atterholt-5628b575"
+    >
+      Linkedin
+    </LinkTo>
+    <LinkTo type="external" path="https://github.com/matterholt">Github</LinkTo>
+  </div>
+
   <slot />
 </footer>
 <style>
