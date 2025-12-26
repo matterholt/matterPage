@@ -8,6 +8,7 @@ const navLinks = [
 ];
 
 const { pathname } = Astro.url;
+
 const isPage = (title: string) => {
   const urlPath = pathname.split("/");
   if (title === "Home" && urlPath.every((x) => x === "")) {
@@ -17,7 +18,7 @@ const isPage = (title: string) => {
 };
 ---
 
-<nav slot="topNav">
+<nav>
   {
     navLinks.map((x) => (
       <a
@@ -32,12 +33,12 @@ const isPage = (title: string) => {
 <style>
   nav {
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+    justify-content: flex-end;
     height: 35px;
     margin: 25px 0px;
     a {
       color: var(--main_complementary);
+      margin: 0 20px;
     }
     a:active {
       color: var(--main_white);

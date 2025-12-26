@@ -5,9 +5,8 @@ import '@fontsource-variable/crimson-pro';// Supports weights 100-900
 import '@fontsource-variable/raleway';
 
 
-import Header from '../components/base/header/Header.astro';
-import NavBar from '../components/custom/Navbar.astro' 
-import Footer from '../components/base/footer/Footer.astro';
+import Header from '../layouts/header/Header.astro';
+import Footer from '../layouts/footer/Footer.astro';
 
 
 interface Props {
@@ -32,16 +31,13 @@ const { title = "Matterholt"} = Astro.props;
 
   </head>
   <body>
-      <Header title={title}>
-        <NavBar slot="topNav" />
-      </Header>
+    <Header title={title}/>
  
     <main>
      <slot name="mainContent" />
 
     </main>
     <Footer>
-      <NavBar />
     </Footer>
   </body>
 </html>

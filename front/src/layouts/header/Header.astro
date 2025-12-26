@@ -1,6 +1,8 @@
 ---
-import Text from "../text/Text.astro";
+import NavBar from "@components/custom/Navbar.astro";
+import Text from "@components/base/text/Text.astro";
 import Logo from "@components/custom/Logo.astro";
+
 interface Props {
   title: string;
 }
@@ -9,21 +11,48 @@ const { title } = Astro.props;
 ---
 
 <header>
-  <Logo />
-  <slot name="topNav" />
+  <div class="header_logo">
+    <Logo size={80} />
+  </div>
+  <div class="header_navBar">
+    <NavBar />
+  </div>
   <div class="header_titleLayout">
     {title ? <Text tag="h1">{title}</Text> : <Text tag="h1">Matterholt</Text>}
   </div>
 </header>
 <style>
   header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    grid-template-rows: 100px 1fr;
+  }
+  .header_logo {
+    padding: 20px;
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    place-items: center;
+  }
+  .header_navBar {
   }
   .header_titleLayout {
-    display: flex;
+    grid-column: 1/3;
+    grid-row: 2;
+    place-self: center;
+  }
+  @media screen and (min-width: 650px) {
+    header {
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px 80px 1fr;
+    }
+    .header_titleLayout {
+      grid-column: 1;
+      grid-row: 3;
+    }
+    .header_navBar {
+      grid-column: 1;
+      grid-row: 2;
+    }
   }
 </style>
