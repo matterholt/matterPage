@@ -32,12 +32,12 @@ const { title = "Matterholt"} = Astro.props;
 
   </head>
   <body>
-
-    <main>
       <Header title={title}>
         <NavBar slot="topNav" />
       </Header>
-      <slot name="mainContent" />
+ 
+    <main>
+     <slot name="mainContent" />
 
     </main>
     <Footer>

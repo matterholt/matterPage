@@ -1,6 +1,5 @@
 ---
 import Base from "@layouts/Base.astro";
-import Logo from "../components/custom/Logo.astro";
 import Text from "../components/base/text/Text.astro";
 import LinkTo from "../components/base/linkTo/LinkTo.astro";
 import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
@@ -10,19 +9,18 @@ import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.as
   <div class="mainContent_layout" slot="mainContent">
     <div class="indexHero">
       <div class="indexHeroText">
-        <Text tag="h1"> Matterholt </Text>
         <Text tag="h2"> :Curious </Text>
       </div>
       <div class="indexHeroSub">
         <Text tag="p">
           Be curious, heard that on a podcast and I like the Idea. The sites
-          goals is to attempt to capture my curiousisties**. I've got a touch of
+          goals is to attempt to capture my curiosities. I've got a touch of
           ADHD, so keeping on track on things is my weakness, like 2 sides of a
           coin it also lets me explore a vast amount of subjects.
         </Text>
       </div>
     </div>
-    <div class="indexHeroWhoIAm">
+    <div class="indexContent">
       <Text tag="h2">My Career Focus</Text>
       <Text tag="p">
         I am a Full Stack Developer, I have targeted to primary focus on Front
@@ -33,7 +31,17 @@ import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.as
       </Text>
       <hr />
     </div>
-    <div>
+
+    <div class="indexContent">
+      <Text tag="h2">Current Position</Text>
+      <CurrentCareerPosition showDetails={false} />
+      <div class="linkTo_box">
+        <LinkTo type="internal" path="/careers">Positions </LinkTo>
+      </div>
+      <hr />
+    </div>
+
+    <div class="indexContent">
       <Text tag="h2">Who I am</Text>
       <Text tag="p">
         I'm a husband to a beautiful wife. Together we raise our 6 children. Yes
@@ -44,13 +52,6 @@ import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.as
         way.
       </Text>
       <hr />
-    </div>
-    <div>
-      <Text tag="h2">Current Position</Text>
-      <CurrentCareerPosition showDetails={false} />
-      <div class="linkTo_box">
-        <LinkTo type="internal" path="/careers">Positions </LinkTo>
-      </div>
     </div>
   </div>
 </Base>
@@ -74,6 +75,12 @@ import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.as
     word-break: none;
     width: max-content;
     --common_textAlign: center;
+  }
+  .indexContent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 25px;
   }
   .indexHeroExternalLinks {
     grid-column: 3;

@@ -1,7 +1,6 @@
 ---
 import Text from "../text/Text.astro";
 import Logo from "@components/custom/Logo.astro";
-
 interface Props {
   title: string;
 }
@@ -10,9 +9,10 @@ const { title } = Astro.props;
 ---
 
 <header>
+  <Logo />
   <slot name="topNav" />
   <div class="header_titleLayout">
-    {title ? <Text tag="h1">{title}</Text> : <Logo size={50} />}
+    {title ? <Text tag="h1">{title}</Text> : <Text tag="h1">Matterholt</Text>}
   </div>
 </header>
 <style>
