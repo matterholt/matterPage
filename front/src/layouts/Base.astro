@@ -11,9 +11,10 @@ import Footer from '../layouts/footer/Footer.astro';
 
 interface Props {
   title: string;
+  subTitle?: string;
 }
 
-const { title = "Matterholt"} = Astro.props;
+const { title = "Matterholt", subTitle} = Astro.props;
 ---
 
 <!doctype html>
@@ -31,7 +32,7 @@ const { title = "Matterholt"} = Astro.props;
 
   </head>
   <body>
-    <Header title={title}/>
+    <Header title={title} subTitle ={subTitle}/>
  
     <main>
      <slot name="mainContent" />

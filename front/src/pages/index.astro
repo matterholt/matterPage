@@ -3,20 +3,22 @@ import Base from "@layouts/Base.astro";
 import Text from "../components/base/text/Text.astro";
 import LinkTo from "../components/base/linkTo/LinkTo.astro";
 import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
+
+const pageSubTitle =
+  "Just doing my best to be a curious programer, staying on track and baalance the rest of my life";
 ---
 
-<Base title="">
+<Base title="Matterholt" subTitle={pageSubTitle}>
   <div class="mainContent_layout" slot="mainContent">
     <div class="indexHero">
-      <div class="indexHeroText">
-        <Text tag="h2"> :Curious </Text>
-      </div>
+      <div class="indexHeroText"></div>
       <div class="indexHeroSub">
         <Text tag="p">
           Be curious, heard that on a podcast and I like the Idea. The sites
-          goals is to attempt to capture my curiosities. I've got a touch of
-          ADHD, so keeping on track on things is my weakness, like 2 sides of a
-          coin it also lets me explore a vast amount of subjects.
+          goals is to attempt to capture my curiosities and wrangle my foucus.
+          I've got a touch of ADHD, so keeping on track on things is my
+          weakness, like 2 sides of a coin it also lets me explore a vast amount
+          of subjects.
         </Text>
       </div>
     </div>
