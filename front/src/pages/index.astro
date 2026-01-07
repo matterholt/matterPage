@@ -1,5 +1,6 @@
 ---
 import Base from "@layouts/Base.astro";
+import SectionBlurb from "@layouts/SectionBlurb.astro";
 import Text from "../components/base/text/Text.astro";
 import LinkTo from "../components/base/linkTo/LinkTo.astro";
 import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
@@ -31,18 +32,16 @@ const pageSubTitle =
         versatile contributor who adapts quickly across the stack. A bit of jack
         of all trades
       </Text>
-      <hr />
-    </div>
 
-    <div class="indexContent">
-      <Text tag="h2">Current Position</Text>
-      <CurrentCareerPosition showDetails={false} />
-      <div class="linkTo_box">
-        <LinkTo type="internal" path="/careers">Positions </LinkTo>
+      <div class="indexContent">
+        <Text tag="h3">Current Position</Text>
+        <CurrentCareerPosition showDetails={false} />
+        <div class="linkTo_box">
+          <LinkTo type="internal" path="/careers">Positions </LinkTo>
+        </div>
       </div>
       <hr />
     </div>
-
     <div class="indexContent">
       <Text tag="h2">Who I am</Text>
       <Text tag="p">
@@ -55,6 +54,7 @@ const pageSubTitle =
       </Text>
       <hr />
     </div>
+    <SectionBlurb />
   </div>
 </Base>
 <style>
