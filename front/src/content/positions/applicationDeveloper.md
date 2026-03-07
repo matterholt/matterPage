@@ -1,10 +1,10 @@
 ---
-workingDate: 2022-06 / today
+workingDate: 2022-06 / 2025-09
 employer: Stratacache
 location: Dayton, Ohio
-jobTitle: Application Developer
+jobTitle: Intermedate Application Developer
 type: Developer with Web Technology
-isCurrent: true
+isCurrent: false
 id: 4
 ---
 Maintainer for VUE.js code base, with composition API. Update UI with creative and add desired features requested from clients.  Fix any bugs or issues found in the application. Orchestrate with groups to ensure that the app can be released seamlessly.

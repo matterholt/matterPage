@@ -1,90 +1,86 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Logo from "../components/custom/Logo.astro";
+import Base from "@layouts/Base.astro";
 import Text from "../components/base/text/Text.astro";
 import LinkTo from "../components/base/linkTo/LinkTo.astro";
 import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
 ---
 
-<Layout title="Matterholt" activePage="Home">
-  <div class="indexHero">
-    <Logo size={250} />
-
-    <Text tag="h1" class="indexHeroText">
-      Self taught Programmer<br />
-      Specialized in Web Technologies
-    </Text>
-
-    <div class="indexHeroExternalLinks">
-      <LinkTo
-        type="external"
-        path="https://www.linkedin.com/in/matthew-atterholt-5628b575"
-      >
-        Linkedin
-      </LinkTo>
-      <LinkTo type="external" path="https://github.com/matterholt"
-        >Github</LinkTo
-      >
+<Base title="">
+  <div class="mainContent_layout" slot="mainContent">
+    <div class="indexHero">
+      <div class="indexHeroText">
+        <Text tag="h2"> :Curious </Text>
+      </div>
+      <div class="indexHeroSub">
+        <Text tag="p">
+          Be curious, heard that on a podcast and I like the Idea. The sites
+          goals is to attempt to capture my curiosities. I've got a touch of
+          ADHD, so keeping on track on things is my weakness, like 2 sides of a
+          coin it also lets me explore a vast amount of subjects.
+        </Text>
+      </div>
     </div>
-
-    <div class="indexHeroSub">
+    <div class="indexContent">
+      <Text tag="h2">My Career Focus</Text>
       <Text tag="p">
-        A decade as an automotive engineer turned developer. Driven to build
-        purposeful projects that help the goals of the company. Experience
-        gained in engineering translates well to coding, especially in
-        collaborative, product-focused environments. Skilled in modern frontend
-        development using Vue and React, with modern HTML/CSS practices.
-        Comfortable with back-end tools like Hono.js and FastAPI, and enjoy
-        working in the Python ecosystem for scripting, scraping, and general
-        programming. A versatile contributor who adapts quickly across the
-        stack. A bit of jack of all trades
+        I am a Full Stack Developer, I have targeted to primary focus on Front
+        end development, I have also have experience with back-end technology. I
+        enjoy using Python for scripting, scraping, and general programming. A
+        versatile contributor who adapts quickly across the stack. A bit of jack
+        of all trades
       </Text>
+      <hr />
     </div>
-  </div>
 
-  <hr />
-  <div class="indexHeroWhoIAm">
-    <Text tag="h2">My Career Focus</Text>
-    <Text tag="p">
-      I am a Full Stack Developer, I have targeted to primary focus on Front end
-      development, I have also have experience with back-end technology. I enjoy
-      using Python for scripting, scraping, and general programming. A versatile
-      contributor who adapts quickly across the stack. A bit of jack of all
-      trades
-    </Text>
-  </div>
-  <hr />
-  <div>
-    <Text tag="h2">Who I am</Text>
-    <Text tag="p">
-      I'm a husband to a beautiful wife. Together we raise our 6 children. Yes
-      it is crazy but we both embrace it and enjoy the time we have. We live out
-      in rural area and have a little homestead. We focus on growing organic
-      produce and regenerative practices. I coach my kiddo's soccer team. Try to
-      keep every day spicy and enjoy the challenges that pass my way.
-    </Text>
-  </div>
-  <hr />
-  <div>
-    <Text tag="h2">Current Position</Text>
-    <CurrentCareerPosition />
-    <div class="linkTo_box">
-      <LinkTo type="internal" path="/careers"> Past Positions </LinkTo>
+    <div class="indexContent">
+      <Text tag="h2">Current Position</Text>
+      <CurrentCareerPosition showDetails={false} />
+      <div class="linkTo_box">
+        <LinkTo type="internal" path="/careers">Positions </LinkTo>
+      </div>
+      <hr />
+    </div>
+
+    <div class="indexContent">
+      <Text tag="h2">Who I am</Text>
+      <Text tag="p">
+        I'm a husband to a beautiful wife. Together we raise our 6 children. Yes
+        it is crazy but we both embrace it and enjoy the time we have. We live
+        out in rural area and have a little homestead. We focus on growing
+        organic produce and regenerative practices. I coach my kiddo's soccer
+        team. Try to keep every day spicy and enjoy the challenges that pass my
+        way.
+      </Text>
+      <hr />
     </div>
   </div>
-</Layout>
+</Base>
 <style>
+  .mainContent_layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
   .indexHero {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: max-content 1fr;
     justify-content: space-between;
     align-items: center;
+    gap: 25px;
   }
   .indexHeroText {
     grid-column: 2;
     grid-row: 1;
+    word-break: none;
+    width: max-content;
     --common_textAlign: center;
+  }
+  .indexContent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 25px;
   }
   .indexHeroExternalLinks {
     grid-column: 3;

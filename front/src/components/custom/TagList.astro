@@ -1,0 +1,64 @@
+---
+interface Props {
+  tags?: String[];
+  linkStyle?: "base" | "enclosed";
+}
+
+const { tags = [], linkStyle = "base" } = Astro.props;
+
+const allPosts = Object.values(
+  import.meta.glob("@content/articles/*.md", { eager: true }),
+);
+const uniqueTags = [
+  ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
+];
+
+const displayedTags = tags.length === 0 ? uniqueTags : tags;
+---
+
+<ul class="taglist tagCollection_list">
+  {
+    displayedTags.map((tag) => (
+      <li class={tag.toLocaleLowerCase()}>
+        <a class:list={["tagLink", linkStyle]} href={`/articles/tag/${tag}`}>
+          {tag}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .selected_tag {
+    background-color: #ffffff52;
+  }
+  .taglist {
+    font-size: 12px;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0px;
+    padding: 0px;
+    text-transform: uppercase;
+
+    .enclosed.tagLink {
+      border-radius: 5px;
+      border: solid 1px var(--main_fontLinkableColor);
+      corner-shape: scoop;
+    }
+    .base.tagLink {
+    }
+    .tagLink {
+      color: var(--main_fontLinkableColor);
+      padding: 9px;
+      text-decoration: none;
+    }
+    .tagLink:hover,
+    .tagLink:active {
+      color: #ffffff52;
+      margin: 0;
+      border: solid 1px #ffffff52;
+      cursor: pointer;
+    }
+  }
+</style>

@@ -1,7 +1,8 @@
 ---
 import { getCollection, render } from "astro:content";
-
 import JobList from "./JobList.astro";
+
+const { showDetails = true } = Astro.props;
 
 const [latestPositon] = await getCollection("positions", ({ data }) => {
   return data.isCurrent === true;
@@ -11,9 +12,13 @@ const { Content } = await render(latestPositon);
 
 <div class="currentCareerPosition">
   <JobList contentFrontMatter={latestPositon.data} />
-  <div class:list={["currentCareerPosition_content", "scopedContent"]}>
-    <Content />
-  </div>
+  {
+    showDetails ? (
+      <div class:list={["currentCareerPosition_content", "scopedContent"]}>
+        <Content />
+      </div>
+    ) : null
+  }
 </div>
 <style>
   .currentCareerPosition_content {

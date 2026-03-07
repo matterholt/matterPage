@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from "astro:content";
+import type { ArticleCollection } from "@typesAh/article";
+import { dateDisplay } from "@utils/date_actions";
+
+import Base from "@layouts/Base.astro";
+import Text from "@components/base/text/Text.astro";
+import ArticleLink from "@components/custom/ArticleLink.astro";
+
+interface Props {
+  post: any;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection("articles");
+  return posts.map((p) => ({
+    params: { slug: p.data.slug },
+    props: { post: p },
+  }));
+}
+
+const { post } = Astro.props;
+const { title, publishDate } = post.data;
+const { Content } = await render(post);
+---
+
+<Base title={"Articles"}>
+  <div slot="mainContent">
+    <div class="subNav">
+      <ArticleLink linkTo="/articles" textDisplay="Back to Articles" />
+      <p>{dateDisplay(publishDate)}</p>
+    </div>
+    <div>
+      <Text tag="h2">{title}</Text>
+    </div>
+    <div class="scopedContent">
+      <article>
+        <Content />
+      </article>
+    </div>
+  </div>
+</Base>
+<style>
+  .subNav {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+</style>

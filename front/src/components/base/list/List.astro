@@ -7,7 +7,7 @@ interface Props {
 
 const { listItems, class: className, ...rest } = Astro.props;
 
-const formatClass = (title) => title.split(" ").join("_").toLowerCase();
+const formatClass = (title: string) => title.split(" ").join("_").toLowerCase();
 ---
 
 <ul class:list={[className, "commonlist"]} {...rest}>
@@ -15,6 +15,7 @@ const formatClass = (title) => title.split(" ").join("_").toLowerCase();
     listItems.map((item) => (
       <li class={formatClass(item)}>
         <Text tag="p">{item}</Text>
+        <slot />
       </li>
     ))
   }

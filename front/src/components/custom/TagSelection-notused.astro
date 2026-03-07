@@ -1,0 +1,42 @@
+---
+interface Props {
+  allTags: string[];
+}
+
+const { allTags } = Astro.props;
+---
+
+<ul class="taglist tagCollection_list">
+  {allTags.map((tag) => <li class={tag.toLocaleLowerCase()}>
+    <a href=`tag/${tag}`>
+
+{tag}
+
+</a>
+</li>)}
+</ul>
+
+<style>
+  .selected_tag {
+    background-color: #ffffff52;
+  }
+  .taglist {
+    font-size: 10px;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0px;
+    padding: 10px;
+    text-transform: uppercase;
+    li {
+      padding: 6px;
+      border-radius: 5px;
+    }
+    li:hover {
+      margin: 0;
+      padding: 5px;
+      border: solid 1px #ffffff52;
+      cursor: pointer;
+    }
+  }
+</style>

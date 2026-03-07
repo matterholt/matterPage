@@ -1,0 +1,36 @@
+---
+interface Props {
+  linkTo: string;
+  textDisplay?: string;
+}
+
+const { linkTo, textDisplay = "...Rest" } = Astro.props;
+---
+
+<a class:list={["fontStyle"]} href={linkTo}>{textDisplay}</a>
+
+<style>
+  .fontStyle {
+    text-decoration: none;
+    font-family: "Doto Variable", sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    margin-left: 10px;
+    color: var(--main_complementary);
+  }
+
+  a:hover:not(.isActive) {
+    color: var(--main_accent-blue);
+    font-weight: 900;
+  }
+  a:visited {
+    color: var(--main_complementary);
+  }
+  a.isActive {
+    color: var(--accent_light);
+    border-bottom: none;
+    border-bottom: 2px dotted var(--main_accent-blue);
+    cursor: default;
+    pointer-events: none;
+  }
+</style>

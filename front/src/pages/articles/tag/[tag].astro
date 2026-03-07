@@ -1,0 +1,58 @@
+---
+const { posts } = Astro.props;
+const { tag } = Astro.params;
+
+import type { FrontMatterContent } from "@typesAh/article.ts";
+
+import ArticleList from "@layouts/component/ArticleList.astro";
+import Base from "@layouts/Base.astro";
+import Text from "@components/base/text/Text.astro";
+import LinkTo from "@components/base/linkTo/LinkTo.astro";
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(
+    import.meta.glob("../../../content/articles/*.md", { eager: true }),
+  );
+  const uniqueTags = [
+    ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
+  ];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post: any) => {
+      const tagMod = post.frontmatter.tags.map((x: string) => x.toLowerCase());
+      return tagMod.includes(tag.toLowerCase());
+    });
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+// title.slug,tags,publishDate
+const filteredPosts = posts
+  .filter((post: FrontMatterContent) => {
+    return post.frontmatter.tags;
+  })
+  .map((x: FrontMatterContent) => x.frontmatter);
+---
+
+<Base title="Article Tags">
+  <div slot="mainContent">
+    <div class="subHaeder">
+      <Text tag="h2"> Articles that have been <br /> tag : "{tag}"</Text>
+
+      <LinkTo path="/articles/" type="internal"> Article Main</LinkTo>
+    </div>
+    <ArticleList listedArticles={filteredPosts} />
+  </div>
+</Base>
+<style>
+  .subHaeder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+  }
+</style>

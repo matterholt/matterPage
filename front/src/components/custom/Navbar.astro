@@ -1,22 +1,28 @@
 ---
 import "@fontsource-variable/doto";
-interface Props {
-  activePage: string;
-}
-const { activePage } = Astro.props;
 
 const navLinks = [
   { title: "Home", path: "/" },
   { title: "Careers", path: "/careers" },
+  { title: "Articles", path: "/articles" },
 ];
-const isPage = (title) => title === activePage;
+
+const { pathname } = Astro.url;
+
+const isPage = (title: string) => {
+  const urlPath = pathname.split("/");
+  if (title === "Home" && urlPath.every((x) => x === "")) {
+    return true;
+  }
+  return urlPath.includes(title.toLowerCase());
+};
 ---
 
 <nav>
   {
     navLinks.map((x) => (
       <a
-        class:list={[{ isActive: isPage(x.title) }, "fontStyle"]}
+        class:list={[{ isCurrentPage: isPage(x.title) }, "fontStyle"]}
         href={x.path}
       >
         {x.title}
@@ -27,15 +33,18 @@ const isPage = (title) => title === activePage;
 <style>
   nav {
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+    justify-content: flex-end;
     height: 35px;
     margin: 25px 0px;
     a {
-      color: var(--main_white);
+      color: var(--main_complementary);
+      margin: 0 20px;
     }
     a:active {
       color: var(--main_white);
+    }
+    a:hover {
+      font-weight: 900;
     }
   }
   .fontStyle {
@@ -44,9 +53,9 @@ const isPage = (title) => title === activePage;
     font-weight: 500;
     font-size: 25px;
   }
-  a.isActive {
-    color: var(--main_accent-blue);
+  a.isCurrentPage {
     border-bottom: none;
+    color: var(--main_accent-blue);
     border-bottom: 2px dotted var(--main_accent-blue);
     cursor: default;
     pointer-events: none;

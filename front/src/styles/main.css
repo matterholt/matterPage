@@ -11,11 +11,16 @@
   --main_complementary: hsl(36, 95%, 63%);
 
   --main_fontSize: 15px;
-  font-size: var(--main_fontSize);
-
+  --main_fontColor:var(--main_lightGray);
+  --main_fontLinkableColor: var(--main_complementary);
+  
   --rosePine_dark: #191724;
 
   --background_color: var(--rosePine_dark);
+
+
+  font-size: var(--main_fontSize);
+  
 }
 
 hr {
