@@ -7,9 +7,11 @@ type: Developer with Web Technology
 isCurrent: true
 id: 5
 ---
-Owner/ Maintainer of POpeye and back up on other RBI clients.
-Maintainer for VUE.js code base, with composition API. Update UI with creative and add desired features requested from clients.  Fix any bugs or issues found in the application. Orchestrate with groups to ensure that the app can be released seamlessly.
+Maintainer of a couple Vue.js code base, Added new features for the client Popeye and Krispy Kreame.
+Perform code review and mentor new developers to the project. Orchestrate with groups to ensure that the
+app can be released seamlessly. Built a couple internal apps for work enhancements and coded scripts to
+compile data for reports.
 
 ### Highlights
 
-- TOBD
+- Re-write on a client outdated code base, working through the full stack removing dead code. Syncing up current development track to avoid bugs. 
