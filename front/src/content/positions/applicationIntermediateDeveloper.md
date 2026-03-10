@@ -2,7 +2,7 @@
 workingDate: 2025-09 / today
 employer: Stratacache
 location: Dayton, Ohio
-jobTitle: Intermedieate Application Developer
+jobTitle: intermediate Application Developer
 type: Developer with Web Technology
 isCurrent: true
 id: 5
