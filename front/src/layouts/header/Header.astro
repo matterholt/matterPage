@@ -10,7 +10,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<header>
+<header class="main_headerLayout">
   <div class="header_logo">
     <Logo size={80} />
   </div>
@@ -22,7 +22,7 @@ const { title } = Astro.props;
   </div>
 </header>
 <style>
-  header {
+  .main_headerLayout {
     display: grid;
     grid-template-columns: 125px 1fr;
     grid-template-rows: 100px 1fr;
@@ -41,8 +41,8 @@ const { title } = Astro.props;
     grid-row: 2;
     place-self: center;
   }
-  @media screen and (min-width: 650px) {
-    header {
+  @media screen and (max-width: 790px) {
+    .main_headerLayout {
       grid-template-columns: 1fr;
       grid-template-rows: 100px 80px 1fr;
     }
