@@ -1,11 +1,6 @@
 ---
-import "@fontsource-variable/doto";
-
-const navLinks = [
-  { title: "Home", path: "/" },
-  { title: "Careers", path: "/careers" },
-  { title: "Articles", path: "/articles" },
-];
+import { siteRoutes } from "./routes";
+import { TopBar, Hamburger } from "./components/index";
 
 const { pathname } = Astro.url;
 
@@ -19,21 +14,40 @@ const isPage = (title: string) => {
 ---
 
 <nav>
-  {
-    navLinks.map((x) => (
-      <a
-        class:list={[{ isCurrentPage: isPage(x.title) }, "fontStyle"]}
-        href={x.path}
-      >
-        {x.title}
-      </a>
-    ))
-  }
+  <TopBar>
+    {
+      siteRoutes.map((x) => (
+        <li>
+          <a
+            class:list={[{ isCurrentPage: isPage(x.title) }, "fontStyle"]}
+            href={x.path}
+          >
+            {x.title}
+          </a>
+        </li>
+      ))
+    }
+  </TopBar>
+  <Hamburger>
+    {
+      siteRoutes.map((x) => (
+        <li>
+          <a
+            class:list={[{ isCurrentPage: isPage(x.title) }, "fontStyle"]}
+            href={x.path}
+          >
+            {x.title}
+          </a>
+        </li>
+      ))
+    }
+  </Hamburger>
 </nav>
 <style>
   nav {
+    position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     height: 35px;
     margin: 25px 0px;
     a {
