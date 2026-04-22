@@ -1,12 +1,16 @@
 ---
+import { getCollection } from "astro:content";
+
 import Base from "@layouts/Base.astro";
 import SectionBlurb from "@layouts/SectionBlurb.astro";
 import Text from "../components/base/text/Text.astro";
 import LinkTo from "../components/base/linkTo/LinkTo.astro";
 import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
+import JobAccomplishments from "../components/custom/JobAccomplishments.astro";
 
+const jobAccomplishments = await getCollection("accomplishments");
 const pageSubTitle =
-  "Just doing my best to be a curious programer, staying on track and baalance the rest of my life";
+  "Just doing my best to be a curious programer, staying on track and balance the rest of my life";
 ---
 
 <Base title="Matterholt" subTitle={pageSubTitle}>
@@ -32,7 +36,6 @@ const pageSubTitle =
         versatile contributor who adapts quickly across the stack. A bit of jack
         of all trades
       </Text>
-
       <div class="indexContent">
         <Text tag="h3">Current Position</Text>
         <CurrentCareerPosition showDetails={false} />
@@ -41,7 +44,16 @@ const pageSubTitle =
         </div>
       </div>
       <hr />
+      <div>
+        <Text tag="h2">Accomplishments</Text>
+        {
+          jobAccomplishments.map((x) => (
+            <JobAccomplishments accomplishment={x} />
+          ))
+        }
+      </div>
     </div>
+
     <div class="indexContent">
       <Text tag="h2">Who I am</Text>
       <Text tag="p">
