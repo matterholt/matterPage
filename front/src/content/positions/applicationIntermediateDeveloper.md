@@ -7,7 +7,7 @@ type: Developer with Web Technology
 isCurrent: true
 id: 5
 ---
-Owner/ Maintainer of POpeye and back up on other RBI clients.
+Owner/ Maintainer of Popeye and back up on other RBI clients.
 Maintainer for VUE.js code base, with composition API. Update UI with creative and add desired features requested from clients.  Fix any bugs or issues found in the application. Orchestrate with groups to ensure that the app can be released seamlessly.
 
 ### Highlights

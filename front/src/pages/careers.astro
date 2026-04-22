@@ -14,9 +14,8 @@ const orderedPosition = allJobPositionHeld.sort(
 );
 ---
 
-<Base title="Careers">
+<Base title="Career History">
   <div class="mainContent" slot="mainContent">
-    <Text tag="h1">Career History</Text>
     <Text tag="p">
       I have a over a decade of experience working in an engineering setting.
       I'm self taught and eager to understand and be better programmer.
@@ -30,7 +29,7 @@ const orderedPosition = allJobPositionHeld.sort(
     </Text>
     <hr />
     <div class="career">
-      <div>
+      <div class="career_joblist">
         {
           orderedPosition.map((x) => (
             <div>
@@ -65,6 +64,10 @@ const orderedPosition = allJobPositionHeld.sort(
     display: flex;
     flex-direction: column;
     gap: 50px;
+  }
+  .career_joblist {
+    display: grid;
+    gap: 70px;
   }
 
   @media screen and (max-width: 790px) {

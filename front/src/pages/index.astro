@@ -8,6 +8,8 @@ import LinkTo from "../components/base/linkTo/LinkTo.astro";
 import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
 import JobAccomplishments from "../components/custom/JobAccomplishments.astro";
 
+import Section from "../layouts/component/Section.astro";
+
 const jobAccomplishments = await getCollection("accomplishments");
 const pageSubTitle =
   "Just doing my best to be a curious programer, staying on track and balance the rest of my life";
@@ -16,46 +18,37 @@ const pageSubTitle =
 <Base title="Matterholt" subTitle={pageSubTitle}>
   <div class="mainContent_layout" slot="mainContent">
     <div class="indexHero">
-      <div class="indexHeroText"></div>
       <div class="indexHeroSub">
         <Text tag="p">
           Be curious, heard that on a podcast and I like the Idea. The sites
-          goals is to attempt to capture my curiosities and wrangle my foucus.
-          I've got a touch of ADHD, so keeping on track on things is my
-          weakness, like 2 sides of a coin it also lets me explore a vast amount
-          of subjects.
+          goals is to attempt to capture my curiosities about web tech. I've got
+          a touch of ADHD, so keeping on track on things is my weakness, like 2
+          sides of a coin it also lets me explore a vast amount of subjects.
         </Text>
       </div>
     </div>
-    <div class="indexContent">
-      <Text tag="h2">My Career Focus</Text>
-      <Text tag="p">
-        I am a Full Stack Developer, I have targeted to primary focus on Front
-        end development, I have also have experience with back-end technology. I
-        enjoy using Python for scripting, scraping, and general programming. A
-        versatile contributor who adapts quickly across the stack. A bit of jack
-        of all trades
-      </Text>
-      <div class="indexContent">
-        <Text tag="h3">Current Position</Text>
-        <CurrentCareerPosition showDetails={false} />
-        <div class="linkTo_box">
-          <LinkTo type="internal" path="/careers">Positions </LinkTo>
-        </div>
-      </div>
-      <hr />
-      <div>
-        <Text tag="h2">Accomplishments</Text>
-        {
-          jobAccomplishments.map((x) => (
-            <JobAccomplishments accomplishment={x} />
-          ))
-        }
-      </div>
-    </div>
 
-    <div class="indexContent">
-      <Text tag="h2">Who I am</Text>
+    <Section title="What I do">
+      <Text tag="p">
+        I have targeted to primary focus on Front end development, I have also
+        have experience with back-end technology. I enjoy using Python for
+        scripting, scraping, and general programming. A versatile contributor
+        who adapts quickly across the stack. A bit of jack of all trades
+      </Text>
+    </Section>
+
+    <Section title="Current Position">
+      <CurrentCareerPosition showDetails={false} />
+      <div class="linkTo_box">
+        <LinkTo type="internal" path="/careers">Positions </LinkTo>
+      </div>
+    </Section>
+
+    <Section title="Accomplishments">
+      {jobAccomplishments.map((x) => <JobAccomplishments accomplishment={x} />)}
+    </Section>
+
+    <Section title="About">
       <Text tag="p">
         I'm a husband to a beautiful wife. Together we raise our 6 children. Yes
         it is crazy but we both embrace it and enjoy the time we have. We live
@@ -64,64 +57,60 @@ const pageSubTitle =
         team. Try to keep every day spicy and enjoy the challenges that pass my
         way.
       </Text>
-      <hr />
-    </div>
-    <SectionBlurb />
+    </Section>
   </div>
-</Base>
-<style>
-  .mainContent_layout {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  .indexHero {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: max-content 1fr;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-  }
-  .indexHeroText {
-    grid-column: 2;
-    grid-row: 1;
-    word-break: none;
-    width: max-content;
-    --common_textAlign: center;
-  }
-  .indexContent {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 25px;
-  }
-  .indexHeroExternalLinks {
-    grid-column: 3;
-    grid-row: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-  .indexHeroSub {
-    grid-row: 2;
-    grid-column: 1 /4;
-    place-self: center;
-    text-align: center;
-  }
-
-  .linkTo_box {
-    display: flex;
-    justify-content: center;
-  }
-  @media screen and (max-width: 790px) {
-    .indexHero {
+  <style>
+    .mainContent_layout {
       display: flex;
       flex-direction: column;
+      gap: 30px;
       align-items: center;
-      justify-content: space-between;
+      width: 90dvw;
+      max-width: 1024px;
     }
-  }
-</style>
+    .indexHero {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: max-content 1fr;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+    .indexHeroText {
+      grid-column: 2;
+      grid-row: 1;
+      word-break: none;
+      width: max-content;
+      --common_textAlign: center;
+    }
+
+    .indexHeroExternalLinks {
+      grid-column: 3;
+      grid-row: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
+    .indexHeroSub {
+      grid-row: 2;
+      grid-column: 1 /4;
+      place-self: center;
+      text-align: center;
+    }
+
+    .linkTo_box {
+      display: flex;
+      justify-content: center;
+    }
+    @media screen and (max-width: 790px) {
+      .indexHero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</Base>
