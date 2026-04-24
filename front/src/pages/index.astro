@@ -12,7 +12,7 @@ import Section from "../layouts/component/Section.astro";
 
 const jobAccomplishments = await getCollection("accomplishments");
 const pageSubTitle =
-  "Just doing my best to be a curious programer, staying on track and balance the rest of my life";
+  "Just doing my best to staying on track and balance the rest of my life";
 ---
 
 <Base title="Matterholt" subTitle={pageSubTitle}>
@@ -30,10 +30,10 @@ const pageSubTitle =
 
     <Section title="What I do">
       <Text tag="p">
-        I have targeted to primary focus on Front end development, I have also
-        have experience with back-end technology. I enjoy using Python for
-        scripting, scraping, and general programming. A versatile contributor
-        who adapts quickly across the stack. A bit of jack of all trades
+        I'm primary focus on Front end development, I have also have experience
+        with back-end technology. I enjoy using Python for scripting, scraping,
+        and general programming. A versatile contributor who adapts quickly
+        across the stack. A bit of jack of all trades.
       </Text>
     </Section>
 
@@ -43,11 +43,6 @@ const pageSubTitle =
         <LinkTo type="internal" path="/careers">Positions </LinkTo>
       </div>
     </Section>
-
-    <Section title="Accomplishments">
-      {jobAccomplishments.map((x) => <JobAccomplishments accomplishment={x} />)}
-    </Section>
-
     <Section title="About">
       <Text tag="p">
         I'm a husband to a beautiful wife. Together we raise our 6 children. Yes
@@ -57,6 +52,10 @@ const pageSubTitle =
         team. Try to keep every day spicy and enjoy the challenges that pass my
         way.
       </Text>
+    </Section>
+
+    <Section title="Accomplishments">
+      {jobAccomplishments.map((x) => <JobAccomplishments accomplishment={x} />)}
     </Section>
   </div>
   <style>

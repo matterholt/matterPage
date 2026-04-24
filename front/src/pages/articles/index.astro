@@ -18,9 +18,7 @@ const allPosts = (
 
 <Base title="Articles">
   <div class="mainContent" slot="mainContent">
-    <div class="articleContent_tagList">
-      <TagList linkStyle="enclosed" />
-    </div>
+    <TagList linkStyle="enclosed" />
     <div id="articleContent" class="articleContent_listing">
       {
         allPosts.map((post: any) => (
@@ -28,7 +26,6 @@ const allPosts = (
             <div class="postBlock_header">
               <Text tag="h3">{post.data.title}</Text>
               <Text tag="p">{dateDisplay(post.data.publishDate)}</Text>
-              <TagList tags={post.data.tags} />
             </div>
             <Text tag="p">
               {firstParagraph(post.body)}{" "}
@@ -51,19 +48,18 @@ const allPosts = (
   .articleContent_listing {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
   }
   .postBlock {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    row-gap: 10px;
   }
   .postBlock_header {
     display: grid;
-    grid-template-rows: max-content 25px;
+    grid-template-rows: 25px 25px;
     grid-template-columns: 3fr 1fr;
     align-items: center;
     justify-content: space-between;
-    gap: 5px;
   }
 </style>
