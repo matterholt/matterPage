@@ -11,6 +11,6 @@ Analyzed and reported on the performance of Models using FEA method. Created vir
 
 ### Highlights
 
-- Presented at Global Environmental Conference 2012 on Lightweight vehicles achieving better fuel efficiency.
-- Contributed heavily to the Maker Layout competition for a Rear Sub 2010 to 2011.
-- Created Finite Element Analysis Models that mimic the designed models performed multiple analyses to determine performance and provided feedback to improve the model.Analyzed and reported on the performance of Models using FEA method. Created virtual testing in software to mimic real-world conditions.
+- Contributed to win maker layout for the Honda MDX subframe, I performed the validation analysis on the model. The project required us to have quick iteration in model to hit the requirements. Received the Presidential "Spirit Of Challenge" award for efforts.
+- To help research and then present the validation group's method on model optimization, the research was to assist engineers in getting the optimal design with the given requirement and restrictions. 
+- The department was new and didn't have a workflow or processes, So a co-worker and I had worked together to get some standardization to help improve the FEA models , Improving quality of said model. Reviewing the model to ensure that results are correct and documenting the findings in Excel and PowerPoint.
