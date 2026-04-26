@@ -12,7 +12,7 @@ import Section from "../layouts/component/Section.astro";
 
 const jobAccomplishments = await getCollection("accomplishments");
 const pageSubTitle =
-  "Just doing my best to staying on track and balance the rest of my life";
+  "Front-end developer, with a dash of Back-end and always curious";
 ---
 
 <Base title="Matterholt" subTitle={pageSubTitle}>
@@ -38,9 +38,9 @@ const pageSubTitle =
     </Section>
 
     <Section title="Current Position">
-      <CurrentCareerPosition showDetails={false} />
+      <CurrentCareerPosition showDetails={true} />
       <div class="linkTo_box">
-        <LinkTo type="internal" path="/careers">Positions </LinkTo>
+        <LinkTo type="internal" path="/careers">Past Positions</LinkTo>
       </div>
     </Section>
     <Section title="About">
@@ -48,14 +48,9 @@ const pageSubTitle =
         I'm a husband to a beautiful wife. Together we raise our 6 children. Yes
         it is crazy but we both embrace it and enjoy the time we have. We live
         out in rural area and have a little homestead. We focus on growing
-        organic produce and regenerative practices. I coach my kiddo's soccer
-        team. Try to keep every day spicy and enjoy the challenges that pass my
-        way.
+        organic produce and regenerative practices. Also do some woodworking.
+        Try to keep every day spicy and enjoy the challenges that pass my way.
       </Text>
-    </Section>
-
-    <Section title="Accomplishments">
-      {jobAccomplishments.map((x) => <JobAccomplishments accomplishment={x} />)}
     </Section>
   </div>
   <style>
