@@ -1,5 +1,5 @@
 ---
-workingDate: 2017-06 / 2021-04
+workingDate: 2017-Jun / 2021-Mar
 employer: Ftech R&D North America
 location: Troy, Ohio
 jobTitle: Principal Validation Technician

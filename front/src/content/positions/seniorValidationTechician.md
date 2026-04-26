@@ -1,5 +1,5 @@
 ---
-workingDate: 2013-06 / 2017-06
+workingDate: 2013-Jun / 2017-Jun
 employer: Ftech R&D North America
 location: Troy, Ohio
 jobTitle: Senior Validation Technician
