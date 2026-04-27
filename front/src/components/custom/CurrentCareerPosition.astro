@@ -11,7 +11,7 @@ const { Content } = await render(latestPositon);
 ---
 
 <div class="currentCareerPosition">
-  <JobList contentFrontMatter={latestPositon.data} />
+  <JobList contentFrontMatter={latestPositon?.data} />
   {
     showDetails ? (
       <div class:list={["currentCareerPosition_content", "scopedContent"]}>

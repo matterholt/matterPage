@@ -1,4 +1,4 @@
-import { z } from "astro:content";
+import { z } from 'astro/zod';
 
 const heldJobPosition = z.object({
   workingDate: z.string(),
