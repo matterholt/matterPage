@@ -37,8 +37,8 @@ const isPage = (title: string) => {
     --linkFontStype-fontSize: 25px;
     display: flex;
     justify-content: center;
-    height: 35px;
-    margin: 25px 0px;
+    justify-content: space-evenly;
+    height: 100%;
     a {
       color: var(--main_complementary);
       margin: 0 20px;
@@ -59,7 +59,6 @@ const isPage = (title: string) => {
   a.isCurrentPage {
     border-bottom: none;
     color: var(--main_accent-blue);
-    border-bottom: 2px dotted var(--main_accent-blue);
     cursor: default;
     pointer-events: none;
   }
