@@ -1,5 +1,5 @@
 ---
-workingDate: 2013-06 / 2017-06
+workingDate: 2013-Jun / 2017-Jun
 employer: Ftech R&D North America
 location: Troy, Ohio
 jobTitle: Senior Validation Technician
@@ -11,7 +11,6 @@ The lead analyst for assigned projects.Set up a accurate virtual representation 
 
 ### Highlights
 
+- Lead the research to incorporate 3d printing in business, Used print for assisting jig holes and holds for prototype parts, Saving the company money in the prototype budget. 
+- Improved correlation between FEA model and test results on Honda brake pedal. Work closely with test group to find the discrepancies, apply them 
 - Authored technical documents on meshing techniques and methods. The objective was to lay the foundation for future Engineers and Technicians to have the best quality mesh within a reasonable time.
-- Analysis of suspension systems and components ensuring that targets and design specifications are met.
-- Led the correlation studies on suspension parts by analyzing the differences between the physical test setup and the FEA model. Documented my findings and presented them to the team.
-- Implemented 3D printer process, defined parameters of modeling, and prepped print for presentations.

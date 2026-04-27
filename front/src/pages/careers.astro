@@ -14,23 +14,22 @@ const orderedPosition = allJobPositionHeld.sort(
 );
 ---
 
-<Base title="Careers">
+<Base title="Career History">
   <div class="mainContent" slot="mainContent">
-    <Text tag="h1">Career History</Text>
     <Text tag="p">
       I have a over a decade of experience working in an engineering setting.
       I'm self taught and eager to understand and be better programmer.
       Front-end development(HTML, CSS, JS: ES5). I'm a maintainer for a medium
       size Vue.js application with JSX and typescript. Toyed around with frame
-      works such as React.js, Svealte.js. I like to use Python as a general
-      purpose language for writing scripts and manipulate data, build simple
-      APIs with FastAPI,Django. I have a engineering experience which allowed me
-      to develop the soft skill to work on demanding projects, working across
-      teams to achieve clients' requirements and handle project deadlines.
+      works such as React.js. I like to use Python as a general purpose language
+      for writing scripts and manipulate data, build simple APIs with
+      FastAPI,Django. I have a engineering experience which allowed me to
+      develop the soft skill to work on demanding projects, working across teams
+      to achieve clients' requirements and handle project deadlines.
     </Text>
     <hr />
     <div class="career">
-      <div>
+      <div class="career_joblist">
         {
           orderedPosition.map((x) => (
             <div>
@@ -40,15 +39,6 @@ const orderedPosition = allJobPositionHeld.sort(
           ))
         }
       </div>
-
-      <aside class="career__aside">
-        <Text tag="h2">Accomplishments</Text>
-        {
-          jobAccomplishments.map((x) => (
-            <JobAccomplishments accomplishment={x} />
-          ))
-        }
-      </aside>
     </div>
   </div>
 </Base>
@@ -61,12 +51,21 @@ const orderedPosition = allJobPositionHeld.sort(
   .career__aside {
     background-color: rgb(37, 37, 39);
   }
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .career_joblist {
+    display: grid;
+    gap: 70px;
+  }
 
   @media screen and (max-width: 790px) {
     .career {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 1fr auto;
     }
   }
 </style>

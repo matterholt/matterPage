@@ -16,6 +16,8 @@ const isPage = (title: string) => {
   }
   return urlPath.includes(title.toLowerCase());
 };
+
+// TODO:  work on menu for mobile, make i a drop down or somethieng
 ---
 
 <nav>
@@ -32,10 +34,11 @@ const isPage = (title: string) => {
 </nav>
 <style>
   nav {
+    --linkFontStype-fontSize: 25px;
     display: flex;
-    justify-content: flex-end;
-    height: 35px;
-    margin: 25px 0px;
+    justify-content: center;
+    justify-content: space-evenly;
+    height: 100%;
     a {
       color: var(--main_complementary);
       margin: 0 20px;
@@ -51,13 +54,22 @@ const isPage = (title: string) => {
     text-decoration: none;
     font-family: "Doto Variable", sans-serif;
     font-weight: 500;
-    font-size: 25px;
+    font-size: var(--linkFontStype-fontSize, 25px);
   }
   a.isCurrentPage {
     border-bottom: none;
     color: var(--main_accent-blue);
-    border-bottom: 2px dotted var(--main_accent-blue);
     cursor: default;
     pointer-events: none;
+  }
+
+  @media screen and (max-width: 790px) {
+    nav {
+      --linkFontStype-fontSize: 15px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 </style>

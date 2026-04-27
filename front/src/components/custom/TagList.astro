@@ -33,24 +33,27 @@ const displayedTags = tags.length === 0 ? uniqueTags : tags;
     background-color: #ffffff52;
   }
   .taglist {
-    font-size: 12px;
+    height: 84px;
+    font-size: 0.7rem;
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
-    gap: 10px;
+    gap: 15px;
     margin: 0px;
     padding: 0px;
     text-transform: uppercase;
-
+    justify-content: center;
+    align-content: center;
     .enclosed.tagLink {
+      margin: 2px;
       border-radius: 5px;
       border: solid 1px var(--main_fontLinkableColor);
-      corner-shape: scoop;
     }
     .base.tagLink {
     }
     .tagLink {
       color: var(--main_fontLinkableColor);
-      padding: 9px;
+      padding: 4px;
       text-decoration: none;
     }
     .tagLink:hover,
