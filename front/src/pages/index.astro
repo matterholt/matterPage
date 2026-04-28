@@ -1,16 +1,13 @@
 ---
-import { getCollection } from "astro:content";
-
 import Base from "@layouts/Base.astro";
 import SectionBlurb from "@layouts/SectionBlurb.astro";
 import Text from "../components/base/text/Text.astro";
 import LinkTo from "../components/base/linkTo/LinkTo.astro";
 import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.astro";
-import JobAccomplishments from "../components/custom/JobAccomplishments.astro";
+// import JobAccomplishments from "../components/custom/JobAccomplishments.astro";
 
 import Section from "../layouts/component/Section.astro";
 
-const jobAccomplishments = await getCollection("accomplishments");
 const pageSubTitle =
   "Front-end developer, with a dash of Back-end and always curious";
 ---
