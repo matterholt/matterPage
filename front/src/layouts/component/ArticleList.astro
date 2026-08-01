@@ -1,0 +1,50 @@
+---
+import { dateDisplay } from "@utils/date_actions";
+
+import type { ArticleFrontMatter } from "@typesAh/article";
+
+import Text from "@components/base/text/Text.astro";
+import ArticleLink from "@components/custom/ArticleLink.astro";
+
+interface Props {
+  listedArticles?: ArticleFrontMatter[];
+}
+const { listedArticles = [] } = Astro.props;
+---
+
+<div id="articleContent" class="articleContent_listing">
+  {
+    listedArticles.map((post: any) => (
+      <div
+        id={post.slug.split("-").join("_")}
+        class="postBlock postBlock_header"
+      >
+        <Text tag="h3">{post.title}</Text>
+        <Text tag="p">{dateDisplay(post.publishDate)}</Text>
+        <ArticleLink
+          textDisplay="Read Article"
+          linkTo={`/articles/${post.slug}`}
+        />
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .articleContent_listing {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .postBlock {
+    display: flex;
+    flex-direction: column;
+  }
+  .postBlock_header {
+    display: grid;
+    grid-template-rows: max-content 50px;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>
