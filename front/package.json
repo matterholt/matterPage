@@ -17,7 +17,10 @@
     "@fontsource-variable/inter": "^5.2.5",
     "@fontsource-variable/raleway": "^5.2.6",
     "@phosphor-icons/web": "^2.1.2",
-    "astro": "^5"
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^5",
+    "daisyui": "^5.7.9",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "prettier": "^3.5.0",
