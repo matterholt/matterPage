@@ -1,20 +1,16 @@
 ---
-import '../styles/main.css';
-import '@fontsource-variable/inter';
-import '@fontsource-variable/crimson-pro';// Supports weights 100-900
-import '@fontsource-variable/raleway';
+import "../styles/main.css";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/crimson-pro"; // Supports weights 100-900
+import "@fontsource-variable/raleway";
 
-
-import Header from '../layouts/header/Header.astro';
-import Footer from '../layouts/footer/Footer.astro';
-
+import Footer from "../layouts/footer/Footer.astro";
 
 interface Props {
-  title: string;
-  subTitle?: string;
+  pageTitle: string;
 }
 
-const { title = "Matterholt", subTitle} = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,58 +21,16 @@ const { title = "Matterholt", subTitle} = Astro.props;
     <meta name="viewport" content="width=device-width" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png" />
 
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <Header title={title} subTitle ={subTitle}/>
- 
     <main>
-     <slot name="mainContent" />
-
+      <slot />
     </main>
-    <Footer>
-    </Footer>
+    <Footer />
   </body>
 </html>
-<style is:global>
-
-  body {
-    font-family: system-ui, sans-serif;
-    background-color: var(--background_color);
-    color: var( --main_lightGray);
-    );
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-content: 90vh;
-    /* box-shadow: inset 0em 0em 160px var(--accent_dark-lighter); */
-  }
-  main {
-    max-width: 1212px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-  @media screen and (max-width: 790px) {
-    main {
-    width: 100%;
-    }
-  }
-</style>
+<style is:global></style>

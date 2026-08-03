@@ -1,5 +1,27 @@
-<div class="avatar">
-  <div class="w-24 rounded">
-    <img src="https://img.daisyui.com/images/profile/demo/batperson@192.webp" />
-  </div>
-</div>
+---
+import Base from "@layouts/Base.astro";
+import Header from "@layouts/header/Header.astro";
+---
+
+<Base pageTitle="Home of Matterholt">
+  <Header title="HOME" subTitle={""} />
+  <nav>
+    <a href="/">HOME</a>
+    <a href="/about">about</a>
+  </nav>
+  <secion>
+    <p>
+      17 years in the automotive engineering, 4 years of Application Developer
+    </p>
+    <p>
+      Past 4 years worked on application for Popeyes, Krispy Kreame and Tim
+      hortons. Front end is base in Vue.js and JavaScript
+    </p>
+    <p>
+      Computer-Aid Eningeering performing Finite Element Analysis on 3d models
+      validate performance and improve design on suspensions for Honda.
+    </p>
+  </secion>
+</Base>
+
+<style></style>
