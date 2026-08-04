@@ -1,6 +1,7 @@
 ---
 import Base from "@layouts/Base.astro";
 import Header from "@layouts/header/Header.astro";
+import ItemList from "@components/ItemList.astro";
 ---
 
 <Base pageTitle="Home of Matterholt">
@@ -22,6 +23,52 @@ import Header from "@layouts/header/Header.astro";
       validate performance and improve design on suspensions for Honda.
     </p>
   </secion>
+
+  <div class="m-4">
+    <h2 class="font-bold text-lg">Main Project Languages</h2>
+    <ItemList
+      items={[
+        "Full time Vue2 and Vue3 applications with a node backend",
+        "Astro.build for personal websites and landing pages for businesses",
+        "Svelte for personal applications",
+        "FastAPI Python for backend for personal application",
+        "Deno.js and Python for scripting and minulplating data",
+        "Tailwinds and Daisy UI ,but do appriecate CSS",
+      ]}
+    />
+  </div>
+  <div class="m-4">
+    <h2 class="font-bold text-lg">Projects</h2>
+    <ItemList
+      items={[
+        "Animal Tracker, Sveltekit, FastAPI",
+        "Business shop landin page",
+      ]}
+    />
+  </div>
+  <div class="m-4">
+    <h2 class="font-bold text-lg">Dev Tools</h2>
+    <ItemList
+      items={[
+        "Solid terminal",
+        "Claude, with Hermes agent",
+        "Zed editor",
+        "mise-en-place, manages programing languages",
+      ]}
+    />
+  </div>
+
+  <div class="m-4">
+    <h2 class="font-bold text-lg">Other Things</h2>
+    <ItemList
+      items={[
+        "Christ follower",
+        "Husband of 1 and Father of 6",
+        "Raise Kathdin Sheep and Chickens",
+        "Handy man and can get things done",
+      ]}
+    />
+  </div>
 </Base>
 
 <style></style>
