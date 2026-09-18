@@ -7,101 +7,21 @@ import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.as
 // import JobAccomplishments from "../components/custom/JobAccomplishments.astro";
 
 import Section from "../layouts/component/Section.astro";
-
-const pageSubTitle =
-  "Front-end developer, with a dash of Back-end and always curious";
 ---
 
-<Base title="Application Developer" subTitle={pageSubTitle}>
+<Base title="Software Developer">
   <div class="mainContent_layout" slot="mainContent">
-    <div class="indexHero">
-      <div class="indexHeroSub">
-        <Text tag="p">
-          Be curious, heard that on a podcast and I like the Idea. The sites
-          goals is to attempt to capture my curiosities about web tech. I've got
-          a touch of ADHD, so keeping on track on things is my weakness, like 2
-          sides of a coin it also lets me explore a vast amount of subjects.
-        </Text>
-      </div>
-    </div>
-
-    <Section title="What I do">
-      <Text tag="p">
-        I'm primary focus on Front end development, I have also have experience
-        with back-end technology. I enjoy using Python for scripting, scraping,
-        and general programming. A versatile contributor who adapts quickly
-        across the stack. A bit of jack of all trades.
-      </Text>
-    </Section>
-
-    <Section title="Current Position">
-      <CurrentCareerPosition showDetails={true} />
-      <div class="linkTo_box">
-        <LinkTo type="internal" path="/careers">Past Positions</LinkTo>
-      </div>
-    </Section>
-    <Section title="About">
-      <Text tag="p">
-        I'm a husband to a beautiful wife. Together we raise our 6 children. Yes
-        it is crazy but we both embrace it and enjoy the time we have. We live
-        out in rural area and have a little homestead. We focus on growing
-        organic produce and regenerative practices. Also do some woodworking.
-        Try to keep every day spicy and enjoy the challenges that pass my way.
-      </Text>
-    </Section>
+    <Text tag="p">
+      A software developer with over 4 years of professional development, I've
+      transitioned from being an automotive engineer for 10 plus years. Started
+      with writing Python script and automations for collecting results and
+      generating reports. Specialized in Front end development to build user
+      intuitive UI's for data collections projects. Used HTML/CSS, along with
+      React and Vue, and Svealte. Used Node with Typescripts for backend and
+      general scripting for projects. I bring the same precision and
+      problem-solving discipline from engineering to every project.
+      Stack-agnostic and adaptable, seeking a role where I can take ownership of
+      a project and work alongside a team to deliver results.
+    </Text>
   </div>
-  <style>
-    .mainContent_layout {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      align-items: center;
-      width: 90dvw;
-      max-width: 1024px;
-    }
-    .indexHero {
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
-      grid-template-rows: max-content 1fr;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-    .indexHeroText {
-      grid-column: 2;
-      grid-row: 1;
-      word-break: none;
-      width: max-content;
-      --common_textAlign: center;
-    }
-
-    .indexHeroExternalLinks {
-      grid-column: 3;
-      grid-row: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-end;
-    }
-    .indexHeroSub {
-      grid-row: 2;
-      grid-column: 1 /4;
-      place-self: center;
-      text-align: center;
-    }
-
-    .linkTo_box {
-      display: flex;
-      justify-content: center;
-    }
-    @media screen and (max-width: 790px) {
-      .indexHero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
-  </style>
 </Base>
