@@ -9,13 +9,24 @@ import CurrentCareerPosition from "../components/custom/CurrentCareerPosition.as
 import Section from "../layouts/component/Section.astro";
 ---
 
-<Base title="Software Developer">
+<Base title="Matterholt">
   <div class="mainContent_layout" slot="mainContent">
+    <Text tag="h4">
+      17 years of experience validating automotive chassis and suspension
+      components,Built and reviewed finite element models in HyperMesh;
+      performed durability analysis in Abaqus, stiffness and NVH (noise,
+      vibration and harshness) analysis in Nastran, and worked on a full body
+      crash simulation with LS-DYNA.
+    </Text>
+    <Text tag="h4">
+      A software developer with over 4 years of professional development, user
+      interfaces using JavaScript, TypeScript, and Vue.js, emphasizing
+      performance, maintainability, and code organization to support
+      contributions from other developers
+    </Text>
     <Text tag="p">
-      A software developer with over 4 years of professional development, I've
-      transitioned from being an automotive engineer for 10 plus years. Started
-      with writing Python script and automations for collecting results and
-      generating reports. Specialized in Front end development to build user
+      Started with writing Python script and automations for collecting results
+      and generating reports. Specialized in Front end development to build user
       intuitive UI's for data collections projects. Used HTML/CSS, along with
       React and Vue, and Svealte. Used Node with Typescripts for backend and
       general scripting for projects. I bring the same precision and
@@ -25,3 +36,10 @@ import Section from "../layouts/component/Section.astro";
     </Text>
   </div>
 </Base>
+<style>
+  .mainContent_layout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+</style>
